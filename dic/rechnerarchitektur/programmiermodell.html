@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="description" content="Blog und Unterrichtsmaterial zu Digitale Systeme und Computersysteme">
+  <meta name="author" content="Günther Jena">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semiversus</title> 
+  <link href="../../theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../theme/css/semiversus.css" rel="stylesheet">
+  <link href="../../theme/css/pygments.css" rel="stylesheet">
+  <script src="../../theme/js/jquery.min.js"></script>
+  <script src="../../theme/js/bootstrap.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../theme/js/html5shiv.js"></script>
+    <script src="../../theme/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body data-spy="scroll" data-target="#sidebar" data-offset=30>
+  <div id="wrap">
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+        <a href="../../dic/uebersicht.html" class="navbar-brand">SEMIVERSUS</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="../../archives.html">Blog</a></li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
+              <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+              <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+              <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+              <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+              <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+              <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+              <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+              <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+              <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+            </ul>
+          <li><a href="../../projekte/projekte.html">Projekte</a></li>
+          <li><a href="../../pages/about.html">Über mich</a></li>
+        </ul>
+    </div>
+  </nav>
+  <div class="container">
+  <div class="row">
+    <div class="col-md-9" role="main">
+    <div class="visible-print-block">Semiversus | Programmiermodell | URL: ../../dic/rechnerarchitektur/programmiermodell.html</div>
+<ol class="breadcrumb hidden-print"><li><a href="../../dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li><li><strong>Programmiermodell</strong></li></ol>    <header><h1>Programmiermodell</h1></header>
+    <h1 id="allgemeines">Allgemeines</h1>
+<p>Das <em>Programmiermodell</em> (engl. <em>Instruction Set Architecture</em> oder kurz <em>ISA</em>) beschreibt den Aufbau eines Prozessors als abstraktes Modell. Dazu geh&ouml;rt:</p>
+<ul>
+<li>Beschreibung der Befehle, die der Prozessor ausf&uuml;hren kann</li>
+<li>Codierung der Befehle</li>
+<li>Adressierungsarten</li>
+<li>Aufbau der Register</li>
+<li>Zeitverhalten (Anzahl der ben&ouml;tigten Taktzyklen)</li>
+</ul>
+<h1 id="befehlssatz">Befehlssatz</h1>
+<p>Die Gesamtheit aller Befehle eines Prozessors wird auch Befehlssatz genannt. Je nach Umfang des Befehlssatzes wird zwischen der <em>CISC</em> und <em>RISC</em> Designphilosophie unterschieden. Bei der <em>Complex Instruction Set Computer</em> Philosophie gibt es Befehle, die sehr komplexe Operationen ausf&uuml;hren k&ouml;nnen. Diese ben&ouml;tigen aber meist mehrere Taktzyklen. Viele klassische Prozessorarchitekturen (zum Beispiel Intel x86, Zilog Z80 und Motorola 68k) gelten als typische Vertreter von Prozessorarchitekturen mit <em>CISC</em>-Befehlss&auml;tzen.</p>
+<p>Der Begriff <em>CISC</em> wurde nachtr&auml;glich eingef&uuml;hrt, um die bis damals vorherrschende Befehlss&auml;tze von neuartigen Design zu unterscheiden, die als <em>RISC</em> (<em>Reduced Instruction Set Computer</em>) Befehlss&auml;tze bezeichnet wurden. Bei <em>RISC</em> Befehlss&auml;tzen wird auf komplexe Befehle verzichtet, dadurch wird ein einfacheres Chipdesign erm&ouml;glicht.</p>
+<h2 id="cisc">CISC</h2>
+<ul>
+<li>ben&ouml;tigt im Vergleich weniger Programmspeicher, da die einzelnen Befehle komplexer sind und dadurch "mehr" ausf&uuml;hren k&ouml;nnen</li>
+<li>Meist ben&ouml;tigt ein Befehl mehrere Takte</li>
+</ul>
+<p>Die Realisierung eines CISC Prozessors wird oft mittels <em>Mikrocode</em> realisiert. Zur Ausf&uuml;hrung eines Befehl f&uuml;hrt das Steuerwerk den entsprechenden Mikrocode aus. Dieser Mikrocode steuert den Datenpfad des Prozessors an. Dadurch k&ouml;nnen komplexe Befehle realisiert werden.</p>
+<h2 id="risc">RISC</h2>
+<p>F&uuml;r die meisten Prozessoren mit <em>RISC</em>-Befehlssatz gilt:</p>
+<ul>
+<li>Load-Store Befehle: Speicherzugriffe erfolgen (nur) durch Load bzw. Store Befehle. Dies vereinfacht den Datenpfad</li>
+<li>Befehlsausf&uuml;hrung meist in einem Taktzyklus</li>
+<li>Sehr viele frei verwendbare Register</li>
+<li>Befehle haben meist eine feste L&auml;nge</li>
+<li>Steuerwerk ist festverdrahtet (vgl. CISC mit Mikrocode)</li>
+<li>unabh&auml;ngige Verarbeitungseinheiten erm&ouml;glichen Pipelining</li>
+</ul>
+<h1 id="befehle_1">Befehle</h1>
+<h2 id="transferbefehle">Transferbefehle</h2>
+<p>Transferbefehle werden verwendet, um Information innerhalb eines Prozessors oder &uuml;ber den Speicher zu transferieren. Da die Daten an ihrem Quellort nicht ver&auml;ndert werden ist der Vorgang eigentlich eine Kopie. Je nach Prozessorarchitektur k&ouml;nnen dies ein- oder mehrere Bytes auf einmal sein.</p>
+<p>Eine Sondergruppe bilden Befehle, die mit dem Stack arbeiten. Es k&ouml;nnen Daten auf den Stack kopiert (<code>push</code>) oder vom Stack geholt (<code>pop</code>) werden.</p>
+<h2 id="arithmetische-und-logische-befehle">Arithmetische und logische Befehle</h2>
+<p>Bei diesem Befehlen wird eine arithmetische Operation (Addition, Subtraktion, Multiplikation, usw.) oder eine logische Operation (UND-, ODER-Verkn&uuml;pfung, usw.). Auch Schiebe- und Rotationsoperationen geh&ouml;ren hier dazu. Die Operationen selbst werden im Prozessor mittels einer <em>Arithmetisch-Logischen Einheit</em> (engl. <em>arithmetic logic unit</em> oder kurz <em>ALU</em>) durchgef&uuml;hrt.</p>
+<h2 id="sprungbefehle">Sprungbefehle</h2>
+<p>Sprungbefehle dienen zum &Auml;ndern des Programmablaufes. Dabei wird zwischen unbedingten und bedingten Spr&uuml;ngen unterschieden. Unbedingte Spr&uuml;nge werden immer ausgef&uuml;hrt, bedingte Spr&uuml;nge sind abh&auml;ngig von einem Prozessorstatus. Bei Spr&uuml;ngen wird dar&uuml;ber hinaus zwischen absoluten Spr&uuml;ngen (referenziert auf die Befehlsspeicheradresse 0) oder relativen Spr&uuml;ngen (relativ zum aktuellen Befehlsz&auml;hler) unterschieden. Bei allen Nicht-Sprung Befehlen wird der Programmablauf mit dem nachfolgenden Befehl fortgesetzt.</p>
+<h2 id="sonstige-befehle">Sonstige Befehle</h2>
+<p>Es gibt noch weitere Befehle, die in keine der aufgef&uuml;hrten Kategorien passen. Dazu z&auml;hlen Befehle zum Umgang mit Interrupts, aktivierung bestimmter Betriebsarten (z.B. Sleep Modes) oder der h&auml;ufig vorhandene <code>No Operation</code> Befehl, der w&auml;hrend seiner Ausf&uuml;hrung keine &Auml;nderung vornimmt und somit nur Zeit "verbraucht".</p>
+<h1 id="adressierungsarten_1">Adressierungsarten</h1>
+<p>Die Adressierungsarten beschreiben die M&ouml;glichkeiten, wie ein Prozessor auf die Daten f&uuml;r eine Operation zugreift. Dies gilt f&uuml;r die Operanden sowie f&uuml;r das Ergebnis einer Operation.</p>
+<h2 id="unmittelbare-adressierung">Unmittelbare Adressierung</h2>
+<p>Der ben&ouml;tigte Wert ist unmittelbar im Befehl selbst kodiert. Bei den meisten Prozessorarchitekturen gibt es Befehle, die ein Register mit einem unmittelbaren Wert laden. Auch absolute Spr&uuml;nge sind meist durch einen Befehl mit unmittelbarer Adressierung realisiert.</p>
+<h2 id="registeradressierung">Registeradressierung</h2>
+<p>Bei der Registeradressierung wird das gew&uuml;nschte Register angegeben.</p>
+<h2 id="absolute-adressierung">Absolute Adressierung</h2>
+<p>Bei der absoluten Adressierung wird  eine Adresse im Speicher &uuml;bergeben. Geladen wird der Wert an dieser Adresse.</p>
+<h2 id="relative-adressierung">Relative Adressierung</h2>
+<p>Die Relative Adressierung bezieht sich auf den Befehlsz&auml;hler und wird f&uuml;r einen relativen Sprung verwendet. Dabei wird ein Wert zum Befehlsz&auml;hler addiert bzw. subtrahiert.</p>
+<h2 id="indirekte-adressierung">Indirekte Adressierung</h2>
+<p>Bei der indirekten Adressierung wird ein Register adressiert, welches eine Adresse auf den Speicher darstellt. Geladen wird der Wert an dieser Adresse.</p>
+<p>Bei der indirekten Adressierung gibt es die Erweiterung, dass die Adresse, die im Register gespeichert ist entweder vor (Pr&auml;- ) oder nach (Post- ) der Ausf&uuml;hrung des Befehls modifiziert wird. Meistens handelt es sich bei der Modifikation um eine Addition oder Subtraktion um 1 (Inkrement bzw. Dekrement).</p>
+<h2 id="indizierte-adressierung">Indizierte Adressierung</h2>
+<p>Bei der indizierten Adressierung kommen zwei Adressen zum Einsatz. Es wird &auml;hnlich zur indirekten Adressierung ein Register adressiert, welches eine Adresse auf den Speicher darstellt. Zu dieser Adresse wird dann ein unmittelbar kodierter Offset addiert.</p>
+<h2 id="andere-adressierungsarten">Andere Adressierungsarten</h2>
+<p>Es gibt ja nach Prozessormodell noch weitere Adressierungsarten. Es ist genauso m&ouml;glich, dass ein Prozessor eine der oben angef&uuml;hrten Adressierungsarten nicht unterst&uuml;tzt.</p>
+<p>F&uuml;r Signalprozessoren steht meist eine Modulo-Adressierung zur Verf&uuml;gung. Dies entspricht einer Indirekten Adressierung mit einer Modifizierung der Adresse im Register, wobei f&uuml;r die Berechnung der neuen Adresse eine Modulo-Operation durchgef&uuml;hrt wird. Dadurch lassen sich effiziente Ringspeicher erzeugen.</p>
+<h1 id="anzahl-der-operanden_1">Anzahl der Operanden</h1>
+<p>Befehlss&auml;tze k&ouml;nnen je nach Anzahl der Operanden, die ein Befehl nutzt, in Kategorien eingeteilt werden.</p>
+<h2 id="drei-adress-architektur">Drei-Adress Architektur</h2>
+<p>Bei dieser Architektur kann ein Befehl bis zu drei Adressen nutzen. Dabei werden zwei Adressen f&uuml;r die Operanden und die dritte Adresse f&uuml;r das Ergebnis genutzt.</p>
+<p>Beispiel (MIPS Architektur):</p>
+<div class="codehilite"><pre><span></span><span class="x">addi </span><span class="p">$</span><span class="nv">t1</span><span class="x">, </span><span class="p">$</span><span class="nv">t0</span><span class="x">, 1 </span><span class="err">#</span><span class="x"> </span><span class="p">$</span><span class="nv">t1</span><span class="x">=</span><span class="p">$</span><span class="nv">t0</span><span class="x">+1</span>
+</pre></div>
+<h2 id="zwei-adress-architektur">Zwei-Adress Architektur</h2>
+<p>Bei dieser Architektur stehen zwei Adressen pro Befehl zur Verf&uuml;gung, wobei f&uuml;r viele Operationen eine Adresse f&uuml;r den Operand und gleichzeitig f&uuml;r das Ergebnis genutzt wird.</p>
+<p>Beispiel (AVR Architektur):</p>
+<div class="codehilite"><pre><span></span>add r24, r25 ; r24=r24+r25
+</pre></div>
+<h2 id="ein-adress-architektur">Ein-Adress Architektur</h2>
+<p>Bei dieser Architektur spricht man auch vom <em>Akkumulator</em>-Rechner, da s&auml;mtliche Rechenoperationen nur &uuml;ber das <em>Akkumulator</em>-Register laufen.</p>
+<p>Beispiel (68HC11 Architektur)</p>
+<div class="codehilite"><pre><span></span>adda $48 ; Addiere den Wert an der Speicherstelle 0x48 zum Akkumulator
+</pre></div>
+<h2 id="0-adress-architektur">0-Adress Architektur</h2>
+<p>Die 0-Adress Architektur ist ein Spezialfall, bei der ein Befehl keine Operanden adressieren kann. Eine Realisierungsvariante ist ein Stack-Prozessor, der selbst keine Register besitzt, sondern alle Operationen am Stack ausf&uuml;hrt. Um Werte auf den Stack zu bekommen ist allerdings die unmittelbare Adressierung notwendig.</p>
+<p>Beispiel (picoJava-II Architektur)</p>
+<div class="codehilite"><pre><span></span>iadd ; Hole zwei Integer vom Stack, addiere diese und lege diese wieder ab
+</pre></div>
+<p>Typische Stack Maschinen haben Befehle wie <code>push</code> und <code>pop</code> um Daten auf den Stack zu legen oder vom Stack zu entfernen. Rechenoperationen wie <code>add</code>, <code>mult</code>, <code>sub</code>, usw. holen zwei Werte vom Stack, f&uuml;hren mit diesen die Rechenoperation aus und legen das Ergebnis wieder am Stack ab.</p>
+<p>Die Rechenoperation 4+5*(3+6) kann dabei mittels</p>
+<div class="codehilite"><pre><span></span>push 4
+push 5
+push 3
+push 6
+add ; addiert 3 und 6 und legt das Ergebnis 9 wieder am Stack ab
+mult ; multipliziert 5 und 9 und legt das Ergebnis 45 wieder am Stack ab
+add ; addiert 45 und 4 und legt das Ergebnis 49 wieder am Stack ab
+</pre></div>
+<p>Nach der Ausf&uuml;hrung liegt nur mehr ein Wert am Stack und dies ist das Ergebnis.</p>
+    </div>
+    <div class="col-md-3 hidden-print" role="complementary">
+      <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
+      <ul class="nav"><li><a href="#allgemeines">Allgemeines</a></li><li><a href="#befehlssatz">Befehlssatz</a><ul class="nav"><li><a href="#cisc">CISC</a></li><li><a href="#risc">RISC</a></li></ul></li><li><a href="#befehle_1">Befehle</a><ul class="nav"><li><a href="#transferbefehle">Transferbefehle</a></li><li><a href="#arithmetische-und-logische-befehle">Arithmetische und logische Befehle</a></li><li><a href="#sprungbefehle">Sprungbefehle</a></li><li><a href="#sonstige-befehle">Sonstige Befehle</a></li></ul></li><li><a href="#adressierungsarten_1">Adressierungsarten</a><ul class="nav"><li><a href="#unmittelbare-adressierung">Unmittelbare Adressierung</a></li><li><a href="#registeradressierung">Registeradressierung</a></li><li><a href="#absolute-adressierung">Absolute Adressierung</a></li><li><a href="#relative-adressierung">Relative Adressierung</a></li><li><a href="#indirekte-adressierung">Indirekte Adressierung</a></li><li><a href="#indizierte-adressierung">Indizierte Adressierung</a></li><li><a href="#andere-adressierungsarten">Andere Adressierungsarten</a></li></ul></li><li><a href="#anzahl-der-operanden_1">Anzahl der Operanden</a><ul class="nav"><li><a href="#drei-adress-architektur">Drei-Adress Architektur</a></li><li><a href="#zwei-adress-architektur">Zwei-Adress Architektur</a></li><li><a href="#ein-adress-architektur">Ein-Adress Architektur</a></li><li><a href="#0-adress-architektur">0-Adress Architektur</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </div>
+  </div>
+  </div>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am unbekannt (Rev. unbekannt)</p></div></footer>
+</body>
+</html>

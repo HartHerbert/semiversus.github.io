@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="description" content="Blog und Unterrichtsmaterial zu Digitale Systeme und Computersysteme">
+  <meta name="author" content="Günther Jena">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semiversus</title> 
+  <link href="../../theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../theme/css/semiversus.css" rel="stylesheet">
+  <link href="../../theme/css/pygments.css" rel="stylesheet">
+  <script src="../../theme/js/jquery.min.js"></script>
+  <script src="../../theme/js/bootstrap.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../theme/js/html5shiv.js"></script>
+    <script src="../../theme/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body data-spy="scroll" data-target="#sidebar" data-offset=30>
+  <div id="wrap">
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+        <a href="../../dic/uebersicht.html" class="navbar-brand">SEMIVERSUS</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="../../archives.html">Blog</a></li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
+              <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+              <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+              <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+              <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+              <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+              <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+              <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+              <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+              <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+            </ul>
+          <li><a href="../../projekte/projekte.html">Projekte</a></li>
+          <li><a href="../../pages/about.html">Über mich</a></li>
+        </ul>
+    </div>
+  </nav>
+  <div class="container">
+  <div class="row">
+    <div class="col-md-9" role="main">
+    <div class="visible-print-block">Semiversus | Hardwareabstraktion für die Megacard | URL: ../../dic/mikrocontroller/hal_megacard.html</div>
+<ol class="breadcrumb hidden-print"><li><a href="../../dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li><li><strong>Hardwareabstraktion für die Megacard</strong></li></ol>    <header><h1>Hardwareabstraktion für die Megacard</h1></header>
+    <h1 id="allgemeines">Allgemeines</h1>
+<ul>
+<li>Download des <a href="../../dic/mikrocontroller/embedded_template_hal.zip">Megacard Templates</a></li>
+<li>Derzeit werden folgende Komponenten unterst&uuml;tzt:<ul>
+<li>Ansteuerung der LEDs</li>
+<li>Auswertung der Tastendr&uuml;cken <em>S0</em> bis <em>S3</em></li>
+<li>Ausgabe von T&ouml;nen &uuml;ber den Lautsprecher</li>
+<li>Timerabstraktion</li>
+<li>LC Display ansteuerung</li>
+</ul>
+</li>
+</ul>
+<p>Die  verwendung der Hardwareabstraktion (kurz <em>HAL</em> f&uuml;r engl. <em>Hardware Abstraction Layer</em>) wird im folgenden erl&auml;utert.</p>
+<h1 id="ansteuerung-der-leds">Ansteuerung der LEDs</h1>
+<p>Zur Ansteuerung der LEDs gibt es zwei Funktionen.</p>
+<h2 id="einzelne-led-steuern">Einzelne LED steuern</h2>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">hal_led_set</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">index</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">value</span><span class="p">);</span>
+</pre></div>
+<ul>
+<li><code>index</code> w&auml;hlt die gew&uuml;nschte LED aus (zwischen <code>0</code> und <code>7</code>)</li>
+<li>Ist <code>index</code> gr&ouml;&szlig;er 7 wird der Zustand der LEDs nicht ver&auml;ndert</li>
+<li><code>value</code> schaltet bei dem Wert <code>0</code> die LED aus, bei jedem anderen Wert ein</li>
+</ul>
+<h2 id="alle-leds-steuern">Alle LEDs steuern</h2>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">hal_leds_set</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">value</span><span class="p">);</span>
+</pre></div>
+<ul>
+<li>Der 8 Bit Wert <code>value</code> gibt das Muster vor, mit dem die LEDs leuchten sollen (z.B. 0xFF f&uuml;r alle ein)</li>
+</ul>
+<h1 id="auswerten-der-tasten_1">Auswerten der Tasten</h1>
+<p>Die Tasten <em>S0</em> bis <em>S3</em> werden durch die Hardwareabstraktion automatisch entprellt.</p>
+<div class="codehilite"><pre><span></span><span class="kt">uint8_t</span> <span class="nf">hal_key_get</span><span class="p">();</span>
+</pre></div>
+<ul>
+<li>Diese Funktion gibt <code>0</code> zur&uuml;ck, wenn keine Taste gedr&uuml;ckt wurde</li>
+<li>Der R&uuml;ckgabewert ungleich <code>0</code> beschreibt die Taste, die gedr&uuml;ckt (genauer losgelassen) wurde</li>
+<li>Wurden mehrere Tasten gleichzeitig losgelassen, wird beim ersten Aufruf die niedrigste Nummer zur&uuml;ckgeben, danach die n&auml;chsth&ouml;here usw.</li>
+</ul>
+<h1 id="ausgabe-von-tonen">Ausgabe von T&ouml;nen</h1>
+<p>Zur Ausgabe von T&ouml;nen wird innerhalb der HAL der Timer 1 verwendet.</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">hal_sound_play</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">frequency</span><span class="p">);</span>
+</pre></div>
+<ul>
+<li>Die Frequenz wird &uuml;ber <code>frequency</code> in Hertz angegeben</li>
+<li>Um die Ausgabe abzuschalten wird als Argument f&uuml;r <code>frequency</code> <code>0</code> verwendet</li>
+</ul>
+<div class="panel panel-warning">
+<div class="panel-heading">Tonausgabe und Ansteuerung des LC Displays ist nicht gemeinsam m&ouml;glich</div>
+<div class="panel-body">
+<p>Es ist leider nicht m&ouml;glich diese beiden Komponenten gleichzeitig zu verwenden, da sie einen gemeinsamen Pin des
+Mikrocontrollers benutzen.</p>
+</div>
+</div>
+<h1 id="timerabstraktion">Timerabstraktion</h1>
+<h2 id="allgemeines_1">Allgemeines</h2>
+<p>Ein gro&szlig;er Teil an Funktionen innerhalb einer Anwendung sind durch Zeiten definiert. Da die Anzahl an hardwarebasierten
+Timern begrenzt ist m&uuml;ssen Timer mehrfachverwendet werden. Innerhalb der Hardwareabstraktion wird ein Timer verwendet,
+um f&uuml;r die Applikation beliebig viele abstrahierte Timervariablen zur Verf&uuml;gung zu stellen.</p>
+<p>Alle verwendeten Timervariablen werden in einem Array &uuml;ber Zeiger registriert. Die Timervariablen werden durch die
+Applikation auf eine gew&uuml;nschte <em>Zeit</em> gesetzt (in Mikrosekunden). Die Hardwareabstraktion z&auml;hlt diese Timervariablen
+entsprechend der vergangen Zeit herunter, bis sie schlussendlich auf <code>0</code> angekommen sind.</p>
+<h2 id="verwendung">Verwendung</h2>
+<p>Die Applikation kann die Timervariable auswerten, um zu uberpr&uuml;fen, ob die gew&uuml;nschte Zeit bereits vergangen ist. Ist
+der Wert ungleich <code>0</code> ist die Zeit noch nicht vergangen.</p>
+<p>Es gibt drei Makros, um das Setzen der Variable auf die gew&uuml;nschte Zeitdauer lesbarer zu machen:</p>
+<ul>
+<li><code>TIMER_MSEC(val)</code> multipliziert den Wert mit Tausend (entspricht dann Millisekunden)</li>
+<li><code>TIMER_SEC(val)</code> multipliziert den Wert mit einer Million (entspricht dann Sekunden)</li>
+<li><code>TIMER_MINUTE(val)</code> multipliziert den Wert mit einer sechzig Million (entspricht dann Minuten)</li>
+</ul>
+<p>Das folgende Beispiel zeigt die Verwendung:</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">"hal.h"</span><span class="cp"></span>
+<span class="n">timer_var_t</span> <span class="n">timer_app</span><span class="o">=</span><span class="n">TIMER_SEC</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+
+<span class="kt">void</span> <span class="nf">app_process</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">timer_app</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span><span class="p">;</span> <span class="c1">// Zeit ist noch nicht abgelaufen</span>
+  <span class="p">}</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+<p>Wird ein Timer nicht verwendet, gibt es den speziellen Wert <code>TIMER_DISABLED</code> (entspricht dem Wert <code>-1</code>). Damit wird
+signalisiert, dass die Timervariable im Moment nicht genutzt wird.</p>
+<h2 id="registrierung">Registrierung</h2>
+<p>Um die Timer in der Applikation zu registrieren wird das Makro <code>TIMERS</code> verwenden. Es ist im Template bereits in der
+Datei <code>main.c</code> vorbereitet.</p>
+<p>Angenommen es gibt zwei Timer: <code>timer_led</code> und <code>timer_off</code>. Dann werden diese wie folgt registriert:</p>
+<div class="codehilite"><pre><span></span><span class="n">TIMERS</span><span class="p">(</span><span class="o">&amp;</span><span class="n">timer_led</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">timer_off</span><span class="p">);</span>
+</pre></div>
+<h1 id="lc-display_1">LC Display</h1>
+<h2 id="loschen-der-anzeige">L&ouml;schen der Anzeige</h2>
+<p>Beim L&ouml;schen der Anzeige werden alle Zeichen des 8x2 Displays gel&ouml;scht (genauer gesagt wird &uuml;berall ein Leerzeichen
+ausgegeben).</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">hal_lcd_clear</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</pre></div>
+<h2 id="ausgabe-eines-textes">Ausgabe eines Textes</h2>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">hal_lcd_printf</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">line</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">pos</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">fmt</span><span class="p">,</span> <span class="p">...);</span>
+</pre></div>
+<ul>
+<li><code>line</code> gibt die gew&uuml;nschte Zeile an (0 oder 1)</li>
+<li><code>pos</code> gibt die gew&uuml;nschte Position an (zwischen 0 oder 7)</li>
+<li>Sind <code>line</code> oder <code>pos</code> au&szlig;erhalb des Bereichs wird am Displayinhalt nicht ver&auml;ndert</li>
+<li><code>fmt</code> und falls erforderlich die nachfolgenden Argumente entsprechen der Verwendung von <code>printf</code></li>
+</ul>
+<p>Folgende Platzhalter sind definiert:</p>
+<ul>
+<li><code>%d</code> gibt einen (16Bit) Integer mit Vorzeichen als Dezimalzahl aus</li>
+<li><code>%u</code> gibt einen (16Bit) Integer ohne Vorzeichen als Dezimalzahl aus</li>
+<li><code>%x</code> und <code>%X</code> geben einen (16Bit) Integer als Hexadezimalzahl aus (<code>%x</code> gibt Buchstaben als Kleinbuchstaben aus)</li>
+<li><code>%c</code> gibt ein einzelnes Zeichen aus</li>
+<li><code>%s</code> gibt einen String aus</li>
+<li><code>%%</code> gibt das Prozentzeichen aus</li>
+</ul>
+<p>Es kann auch eine fixe Breite definiert werden, so werden bei <code>%4d</code> vier Stellen reserviert. Ist die auszugebende Zahl
+von der Breite her kleiner werden links Leerzeichen eingef&uuml;gt. Um <code>0</code> einzuf&uuml;gen wird eine <code>0</code> beim Platzhalter
+eingef&uuml;gt: <code>%04d</code>.</p>
+<h2 id="beispiele">Beispiele</h2>
+<div class="codehilite"><pre><span></span><span class="n">hal_lcd_printf</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s">"Test"</span><span class="p">);</span> <span class="c1">// gibt "Test" aus</span>
+<span class="n">hal_lcd_printf</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s">"%d"</span><span class="p">,</span> <span class="o">-</span><span class="mi">117</span><span class="p">);</span> <span class="c1">// gibt "117" aus</span>
+<span class="n">hal_lcd_printf</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s">"%3dX%3d"</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">17</span><span class="p">);</span> <span class="c1">// gibt "  2X 17" aus</span>
+</pre></div>
+<p>Die Ausgabe von Floatzahlen wird nicht direkt unterst&uuml;tzt, es kann aber emuliert werden:</p>
+<div class="codehilite"><pre><span></span><span class="kt">float</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">27.82</span><span class="p">;</span>
+<span class="n">hal_lcd_printf</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s">"%d.%02d"</span><span class="p">,</span> <span class="p">(</span><span class="kt">int16_t</span><span class="p">)</span><span class="n">temperature</span><span class="p">,</span> <span class="p">(</span><span class="kt">int16_t</span><span class="p">)((</span><span class="n">temperature</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span><span class="o">%</span><span class="mi">100</span><span class="p">));</span> <span class="c1">// gibt "27.82" aus</span>
+</pre></div>
+<p>Alternativ kann in solchen F&auml;llen auch ganz auf Float verzichtet werden, indem man einfach mit Integer in entsprechender
+Dezimaldarstellung rechnet. In diesem Beispiel wird statt in Grad Celsius in 1/100 Grad Celsius gerechnet</p>
+<div class="codehilite"><pre><span></span><span class="n">int16</span> <span class="n">temperature</span><span class="o">=</span><span class="mi">2782</span><span class="p">;</span> <span class="c1">// entspricht 27.82 Grad Celsius</span>
+<span class="n">hal_lcd_printf</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s">"%d.%02d"</span><span class="p">,</span> <span class="n">temperature</span><span class="o">/</span><span class="mi">100</span><span class="p">,</span> <span class="n">temperature</span><span class="o">%</span><span class="mi">100</span><span class="p">);</span> <span class="c1">// gibt "27.82" aus</span>
+</pre></div>
+    </div>
+    <div class="col-md-3 hidden-print" role="complementary">
+      <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
+      <ul class="nav"><li><a href="#allgemeines">Allgemeines</a></li><li><a href="#ansteuerung-der-leds">Ansteuerung der LEDs</a><ul class="nav"><li><a href="#einzelne-led-steuern">Einzelne LED steuern</a></li><li><a href="#alle-leds-steuern">Alle LEDs steuern</a></li></ul></li><li><a href="#auswerten-der-tasten_1">Auswerten der Tasten</a></li><li><a href="#ausgabe-von-tonen">Ausgabe von T&ouml;nen</a></li><li><a href="#timerabstraktion">Timerabstraktion</a><ul class="nav"><li><a href="#allgemeines_1">Allgemeines</a></li><li><a href="#verwendung">Verwendung</a></li><li><a href="#registrierung">Registrierung</a></li></ul></li><li><a href="#lc-display_1">LC Display</a><ul class="nav"><li><a href="#loschen-der-anzeige">L&ouml;schen der Anzeige</a></li><li><a href="#ausgabe-eines-textes">Ausgabe eines Textes</a></li><li><a href="#beispiele">Beispiele</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </div>
+  </div>
+  </div>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am unbekannt (Rev. unbekannt)</p></div></footer>
+</body>
+</html>

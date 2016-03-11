@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="description" content="Blog und Unterrichtsmaterial zu Digitale Systeme und Computersysteme">
+  <meta name="author" content="Günther Jena">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semiversus</title> 
+  <link href="../../theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../theme/css/semiversus.css" rel="stylesheet">
+  <link href="../../theme/css/pygments.css" rel="stylesheet">
+  <script src="../../theme/js/jquery.min.js"></script>
+  <script src="../../theme/js/bootstrap.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../theme/js/html5shiv.js"></script>
+    <script src="../../theme/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body data-spy="scroll" data-target="#sidebar" data-offset=30>
+  <div id="wrap">
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+        <a href="../../dic/uebersicht.html" class="navbar-brand">SEMIVERSUS</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="../../archives.html">Blog</a></li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
+              <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+              <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+              <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+              <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+              <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+              <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+              <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+              <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+              <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+            </ul>
+          <li><a href="../../projekte/projekte.html">Projekte</a></li>
+          <li><a href="../../pages/about.html">Über mich</a></li>
+        </ul>
+    </div>
+  </nav>
+  <div class="container">
+  <div class="row">
+    <div class="col-md-9" role="main">
+    <div class="visible-print-block">Semiversus | IO mittels AVR Portpins | URL: ../../dic/hardwarenahe_programmierung/avr_port_io.html</div>
+<ol class="breadcrumb hidden-print"><li><a href="../../dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li><li><strong>IO mittels AVR Portpins</strong></li></ol>    <header><h1>IO mittels AVR Portpins</h1></header>
+    <h1 id="allgemeines">Allgemeines</h1>
+<p>Die interne Beschaltung jedes IO Port Pins beinhaltet folgende Komponenten:</p>
+<ul>
+<li>Schutzdioden gegen&uuml;ber Masse und Versorgungsspannung (&Uuml;berspannung bzw. ESD)</li>
+<li>Aktivierbarer Pull-Up Widerstand</li>
+<li>Aktivierbare Ausgangsstufe</li>
+<li>Eing&auml;nge besitzen Schmitt-Trigger und Synchronisierung</li>
+</ul>
+<figure><img src="../../dic/hardwarenahe_programmierung/avr_io_pin.png"><figcaption>AVR IO Pin (Quelle: <a href="http://www.atmel.com/images/doc2466.pdf">Datenblatt ATMega16</a> &copy; Atmel Corporation)</figcaption></img></figure>
+<p>Um von der Firmware aus auf einen IO Port Pin zuzugreifen, werden drei Register ben&ouml;tigt. Diese drei Register fassen jeweils 8 IO Pins zusammen. Die Gruppierung von 8 IO Pins wird auch <em>Port</em> genannt. Der ATMega16 hat 4 solcher Ports: Port <em>A</em>, <em>B</em>, <em>C</em> und <em>D</em>. Im folgenden wird statt des Portnamens ein <code>x</code> verwendet.</p>
+<h2 id="pinx-das-eingangsregister"><code>PINx</code> - das Eingangsregister</h2>
+<p>Das Eingangsregister zeigt den aktuellen Zustand der Pins an. Der aktuelle Zustand wird auch eingelesen, wenn der Pin als Ausgang beschalten ist. Die notwendigen Pegel zur Detektion einer <code>0</code> oder <code>1</code> ist abh&auml;ngig von Versorgungsspannung und Temperatur.</p>
+<h2 id="ddrx-das-richtungsregister"><code>DDRx</code> - das Richtungsregister</h2>
+<p>Das <em>Data Direction Register</em> legt fest, ob die jeweiligen Ausgangstreiber aktiv sind oder nicht. Bei aktivem Ausgangstreiber (<code>DDR</code>-Bit auf <code>1</code>) wird der Pegel des entsprechenden <code>PORTx</code> Registerbits auf den Ausgang gelegt.</p>
+<h2 id="portx-das-ausgangsregister"><code>PORTx</code> - das Ausgangsregister</h2>
+<p>Bei aktivem Ausgangstreiber wird der Ausgang entsprechend diesem Bit gesteuert. Ist der Ausgangstreiber nicht aktiv, so wird mit diesem Register der Pull-Up aktiviert.</p>
+<h2 id="pin-konfiguration">Pin Konfiguration</h2>
+<p>Mittels der Register <code>DDRx</code> und <code>PORTx</code> k&ouml;nnen folgende Konfigurationen eingestellt werden:</p>
+<table>
+<thead>
+<tr>
+<th><code>DDRxn</code></th>
+<th><code>PORTxn</code></th>
+<th>I/O</th>
+<th>Pull-Up</th>
+<th>Kommentar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>Eingang</td>
+<td>Nein</td>
+<td>Hochohmiger Eingang (Tri-State)</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>Eingang</td>
+<td>Ja</td>
+<td>Eingang mit Pull Up</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>Ausgang</td>
+<td>Nein</td>
+<td>Ausgang Low</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>Ausgang</td>
+<td>Nein</td>
+<td>Ausgang High</td>
+</tr>
+</tbody>
+</table>
+    </div>
+    <div class="col-md-3 hidden-print" role="complementary">
+      <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
+      <ul class="nav"><li><a href="#allgemeines">Allgemeines</a><ul class="nav"><li><a href="#pinx-das-eingangsregister">PINx - das Eingangsregister</a></li><li><a href="#ddrx-das-richtungsregister">DDRx - das Richtungsregister</a></li><li><a href="#portx-das-ausgangsregister">PORTx - das Ausgangsregister</a></li><li><a href="#pin-konfiguration">Pin Konfiguration</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </div>
+  </div>
+  </div>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am unbekannt (Rev. unbekannt)</p></div></footer>
+</body>
+</html>

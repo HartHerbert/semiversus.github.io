@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="description" content="Blog und Unterrichtsmaterial zu Digitale Systeme und Computersysteme">
+  <meta name="author" content="Günther Jena">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semiversus</title> 
+  <link href="../../theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../theme/css/semiversus.css" rel="stylesheet">
+  <link href="../../theme/css/pygments.css" rel="stylesheet">
+  <script src="../../theme/js/jquery.min.js"></script>
+  <script src="../../theme/js/bootstrap.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../theme/js/html5shiv.js"></script>
+    <script src="../../theme/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body data-spy="scroll" data-target="#sidebar" data-offset=30>
+  <div id="wrap">
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+        <a href="../../dic/uebersicht.html" class="navbar-brand">SEMIVERSUS</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="../../archives.html">Blog</a></li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
+              <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+              <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+              <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+              <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+              <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+              <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+              <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+              <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+              <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+            </ul>
+          <li><a href="../../projekte/projekte.html">Projekte</a></li>
+          <li><a href="../../pages/about.html">Über mich</a></li>
+        </ul>
+    </div>
+  </nav>
+  <div class="container">
+  <div class="row">
+    <div class="col-md-9" role="main">
+    <div class="visible-print-block">Semiversus | Programmierbare Logische Anordnungen | URL: ../../dic/programmierbare_logik/pla.html</div>
+<ol class="breadcrumb hidden-print"><li><a href="../../dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li><li><strong>Programmierbare Logische Anordnungen</strong></li></ol>    <header><h1>Programmierbare Logische Anordnungen</h1></header>
+    <h1 id="allgemeines">Allgemeines</h1>
+<p>Programmierbare Logik hat im Vergleich zu festverdrahten Logikbausteinen folgende Vorteile:</p>
+<ul>
+<li>Hohe Integrationsdichte (viele Gatter auf kleiner Fl&auml;che)</li>
+<li>Teilweise im Feld neu programmierbar</li>
+<li>Hohe Taktfrequenzen m&ouml;glich</li>
+</ul>
+<p>Es gibt je nach Programmierbarkeit folgende Klassifizierungen:</p>
+<ul>
+<li><strong>ASIC</strong>s (Application Specific Integrated Circuits) sind integrierte Schaltkreise, die f&uuml;r ganz bestimmten Einsatzzweck entwickelt und gefertigt werden. Die Logik wird mittels <em>Standardzellenentwurf</em> entwickelt. Die Grundkosten sind sehr hoch, bei gro&szlig;en St&uuml;ckzahlen sind die Kosten pro IC aber sehr gering.</li>
+<li><strong>OTP</strong> (One Time Programmable) sind programmierbare Logikbausteine, die einmal programmierbar sind. F&uuml;r die Speicherzellen wird dabei meist die <em>Anti-Fuse</em> Technologie genutzt.</li>
+<li><strong>Mehrfach Wiederbeschreibbar</strong> sind programmierbare Logikbausteine, wenn als Speicherzellen EEPROM, Flash oder SRAM Zellen verwendet werden.</li>
+</ul>
+<h1 id="kombinatorische-grundstruktur">Kombinatorische Grundstruktur</h1>
+<p>Einfache programmierbare Logikbausteine realisieren meist eine Grundstruktur, die es erm&ouml;glicht, die disjunktive Normalform von booleschen Gleichungen zu realisieren. Dazu werden die Eing&auml;nge mittels eines UND-Arrays zu Mintermen zusammengefasst. Die Minterme werden dann durch ein ODER-Array zur disjunktiven Normalform zusammengefasst und an die Ausgangspins gef&uuml;hrt.</p>
+<p><img alt="Realisierung mittels disjunktiver Minimalform" src="../../dic/programmierbare_logik/pla_extended.png"/></p>
+<p>Mit dieser Struktur k&ouml;nnen alle kombinatorischen Schaltungen realisiert werden, die keine kombinatorische R&uuml;ckkopplung oder Schleife enth&auml;lt. Man  unterscheidet bei den verschiedenen Bauformen, ob das UND- oder das ODER-Array programmierbar ist. Wird eine vom Anwender programmierbare Verbindung nicht genutzt, wird sichergestellt, dass dieses Signal einen Pegel hat, der die Funktionsweise nicht beeintr&auml;chtigt. So wird im UND-Array eine nicht verwendete Leitung auf einem <code>1</code>-Pegel gehalten und im ODER-Array auf einem <code>0</code>-Pegel.</p>
+<p>Um die Darstellung zu vereinfachen werden die parallelen Eing&auml;nge der UND und ODER Gatter meist zusammengefasst:</p>
+<p><img alt="Vereinfachte Darstellung" src="../../dic/programmierbare_logik/pla.png"/></p>
+<h1 id="realisierung">Realisierung</h1>
+<h2 id="rom-baustein">ROM Baustein</h2>
+<p><img alt="Realisierung mittels ROM" src="../../dic/programmierbare_logik/pla_rom.png"/></p>
+<p>Eine programmierbare Logik kann auch mit einem Speicher realisiert werden, wobei die Eing&auml;nge die Adresse darstellen und die Ausg&auml;nge sind die entsprechenden Datenausg&auml;nge. Der Speicherinhalt wird dadurch zur Darstellung einer Wahrheitstabelle.</p>
+<table>
+<thead>
+<tr>
+<th align="center">An</th>
+<th align="center">A2</th>
+<th align="center">A1</th>
+<th align="center">A0</th>
+<th align="center">Dm</th>
+<th align="center">D3</th>
+<th align="center">D2</th>
+<th align="center">D1</th>
+<th align="center">D0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"><em>0</em></td>
+<td align="center"><em>0</em></td>
+<td align="center"><em>0</em></td>
+<td align="center"><em>0</em></td>
+<td align="center"><em>1</em></td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center"><em>0</em></td>
+<td align="center"><em>0</em></td>
+<td align="center"><em>1</em></td>
+<td align="center"><em>1</em></td>
+<td align="center"><em>1</em></td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center"><em>1</em></td>
+<td align="center"><em>1</em></td>
+<td align="center"><em>0</em></td>
+<td align="center"><em>0</em></td>
+<td align="center"><em>0</em></td>
+</tr>
+<tr>
+<td align="center">...</td>
+<td align="center">...</td>
+<td align="center">...</td>
+<td align="center">...</td>
+<td align="center">...</td>
+<td align="center">...</td>
+<td align="center">...</td>
+<td align="center">...</td>
+<td align="center">...</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center"><em>0</em></td>
+<td align="center"><em>0</em></td>
+<td align="center"><em>1</em></td>
+<td align="center"><em>0</em></td>
+<td align="center"><em>1</em></td>
+</tr>
+</tbody>
+</table>
+<p>Ein ROM Baustein entspricht der vorgestellten kombinatorischen Grundstruktur, wobei der Teil im UND-Array fest verdrahtet ist und nur der Teil des ODER-Arrays vom Benutzer programmierbar ist. Ein Speicher mit <code>n</code> Adressbits und <code>m</code> Datenbits kann eine Kombinatorik mit <code>n</code> Eing&auml;ngen und <code>m</code> Ausg&auml;ngen realisieren.</p>
+<h2 id="pla">PLA</h2>
+<p>Bei einem PLA (Programmbable Logic Array) sind sowohl UND- als auch das ODER-Array vom Anwender programmierbar. </p>
+<h2 id="pal">PAL</h2>
+<p>PALs (Programmable Array Logic) werden heute nicht mehr eingesetzt. Sie sind aber die Vorstufe zu vielen Entwicklungen, die heute noch in Verwendung sind. Bei PALs ist das UND-Array frei programmierbar, das ODER-Array ist festverdrahtet. PAL Bausteine sind nur einmal programmierbar.</p>
+<h2 id="gal">GAL</h2>
+<p>Eine Weiterentwicklung der <em>PAL</em>s stellen die <em>GAL</em> (Generic Array Logic) Bausteine von Lattice dar. Diese sind durch UV-Licht oder elektrisch l&ouml;schbar und dadurch wiederbeschreibbar. An jedem Ausgang befindet sich eine <em>OLMC</em> (Output Logic Macro Cell). Diese Ausgangszelle enth&auml;lt neben der Option, den Ausgang zu invertieren auch die M&ouml;glichkeit, ein Flipflop zu verwenden. Es besteht die M&ouml;glichkeit, Signale der OLMC wieder als Eing&auml;nge zu benutzen. Es ist m&ouml;glich, den Ausgangstreiber hochohmig zu schalten und damit diesen Pin als Eingang zu benutzen.</p>
+<p><img alt="Generic Array Logic" src="../../dic/programmierbare_logik/gal.png"/></p>
+    </div>
+    <div class="col-md-3 hidden-print" role="complementary">
+      <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
+      <ul class="nav"><li><a href="#allgemeines">Allgemeines</a></li><li><a href="#kombinatorische-grundstruktur">Kombinatorische Grundstruktur</a></li><li><a href="#realisierung">Realisierung</a><ul class="nav"><li><a href="#rom-baustein">ROM Baustein</a></li><li><a href="#pla">PLA</a></li><li><a href="#pal">PAL</a></li><li><a href="#gal">GAL</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </div>
+  </div>
+  </div>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am unbekannt (Rev. unbekannt)</p></div></footer>
+</body>
+</html>

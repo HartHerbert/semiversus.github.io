@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="description" content="Blog und Unterrichtsmaterial zu Digitale Systeme und Computersysteme">
+  <meta name="author" content="Günther Jena">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semiversus</title> 
+  <link href="../../theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../theme/css/semiversus.css" rel="stylesheet">
+  <link href="../../theme/css/pygments.css" rel="stylesheet">
+  <script src="../../theme/js/jquery.min.js"></script>
+  <script src="../../theme/js/bootstrap.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../theme/js/html5shiv.js"></script>
+    <script src="../../theme/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body data-spy="scroll" data-target="#sidebar" data-offset=30>
+  <div id="wrap">
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+        <a href="../../dic/uebersicht.html" class="navbar-brand">SEMIVERSUS</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="../../archives.html">Blog</a></li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
+              <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+              <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+              <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+              <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+              <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+              <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+              <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+              <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+              <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+            </ul>
+          <li><a href="../../projekte/projekte.html">Projekte</a></li>
+          <li><a href="../../pages/about.html">Über mich</a></li>
+        </ul>
+    </div>
+  </nav>
+  <div class="container">
+  <div class="row">
+    <div class="col-md-9" role="main">
+    <div class="visible-print-block">Semiversus | Fließkommazahlen | URL: ../../dic/mikrocontroller/floatingpoint.html</div>
+<ol class="breadcrumb hidden-print"><li><a href="../../dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li><li><strong>Fließkommazahlen</strong></li></ol>    <header><h1>Fließkommazahlen</h1></header>
+    <h1 id="allgemeines">Allgemeines</h1>
+<p>Im Vergleich zu einer Zahl ohne Nachkommastellen (<em>Integer</em>-Zahl bzw. Ganzzahl) ben&ouml;tigt man f&uuml;r die Speicherung und Verarbeitung von Zahlen mit Nachkommastellen eigene Zahlenformate.</p>
+<h2 id="festkomma-zahlen">Festkomma Zahlen</h2>
+<p>Die Anzahl der Nachkommastellen ist hier fix. Bei der Angabe des Formats gibt man oft die Anzahl der Vorkommastellen (bezeichnet mittels <em>I</em>) und die Anzahl der Nachkommastellen an (bezeichnet mittels <em>Q</em>). Das <code>I.Q</code> Format <code>32.0</code> beschreibt dabei eine 32 Bit Integerzahl. Bei einem <code>I.Q</code> Format von <code>1.31</code> hat die Zahl ein Bit als Vorkommastelle und 31 Bit als Nachkommastelle.</p>
+<p>Beispiel <code>3.5</code> Format und der Bin&auml;rzahl <code>01101011</code>:</p>
+<table>
+<thead>
+<tr>
+<th align="center">0</th>
+<th align="center">1</th>
+<th align="center">1<strong>,</strong></th>
+<th align="center">0</th>
+<th align="center">1</th>
+<th align="center">0</th>
+<th align="center">1</th>
+<th align="center">1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td 2="2" align="center">%%2^</td>
+<td 1="1" align="center">%%2^</td>
+<td 0="0" align="center">%%2^</td>
+<td -1="-1" align="center">%%2^</td>
+<td -2="-2" align="center">%%2^</td>
+<td -3="-3" align="center">%%2^</td>
+<td -4="-4" align="center">%%2^</td>
+<td -5="-5" align="center">%%2^</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">0.5</td>
+<td align="center">0.25</td>
+<td align="center">0.125</td>
+<td align="center">0.0625</td>
+<td align="center">0.03125</td>
+</tr>
+</tbody>
+</table>
+<p>Die oben dargestellte Zahl hat den Wert (<strong>0</strong> * 4) + (<strong>1</strong> * 2) + (<strong>1</strong> * 1) + (<strong>0</strong> * 0.5) + (<strong>1</strong> * 0.25) + (<strong>0</strong> * 0.125) + (<strong>1</strong> * 0.0625) + (<strong>1</strong> * 0.03125) = <strong>3.34375</strong></p>
+<p>Bei der Addition und Subtraktion k&ouml;nnen die Zahlen als reine Integer betrachtet werden. Bei Multiplikation und Division muss eine Anpassung der Kommastelle durchgef&uuml;hrt werden.</p>
+<h2 id="gleitkomma-zahlen">Gleitkomma Zahlen</h2>
+<p>Bei der Gleitkommazahl wird die Darstellung mittels <em>Mantisse</em>(<code>M</code>) und <em>Exponent</em>(<code>E</code>) genutzt. Das Vorzeichen wird durch die Variable <code>S</code> beschrieben. Bei <code>S</code>=0 ist die Zahl Positiv, bei <code>S</code>=1 negativ.</p>
+<p>%%x=-1^{S} \cdot M \cdot B^{E}%%</p>
+<p>In der Digitaltechnik wird durchwegs 2 als Basis(<code>B</code>) verwendet. Um mit Gleitkommazahlen zu Rechnen sind genau Vorgaben zum Zahlenformat und zur Durchf&uuml;hrung mathematischer Operationen, insbesondere f&uuml;r Rundungen, notwendig. Die Norm <em>IEEE 754</em> stellt eine solche Beschreibung dar.</p>
+<p>In der <em>IEEE 754</em> wird die Anzahl und Position der Bits f&uuml;r Mantisse und Exponent definiert:</p>
+<figure><img src="../../dic/mikrocontroller/float_ieeee_754.png"><figcaption>Floating Point Darstellung mittels IEEE 754 (Bild: <a href="https://commons.wikimedia.org/wiki/File:IEEE-754-single.svg">RokerHRO</a> Public Domain)</figcaption></img></figure>
+<h2 id="umrechnung">Umrechnung</h2>
+<p>Zur Berechnung des Wertes aus einer <em>IEEE 754</em> Darstellung wird folgende Methode verwendet.</p>
+<p>Beispiel: <code>0 10000011 00100110011001100110011</code> (aus <a href="https://de.wikipedia.org/wiki/IEEE_754">Wikipedia</a>).</p>
+<p>Der Exponent als Dezimalzahl ist hier <code>10000011</code>-&gt;131. Der Exponent wird als Zahl +127 gespeichert, um negative Zahlen darstellen zu k&ouml;nnen (sogenanntes <em>Biasing</em>). Der Exponent ist also 131-127=4.</p>
+<p>Die Mantisse einer Gleitkommazahl wird immer Normalisiert gespeichert. Die Normalisierung schiebt das Komma in die Position, dass die Zahl einem <code>I.Q</code> Format von 1.23 entspricht und das MSB eine <code>1</code> ist. Da nun vor dem Komma immer eine <code>1</code> ist, muss diese nicht mehr gesondert abgespeichert werden. Um nun die Mantisse aus der Gleitkommadarstellung zu bekommen wird eine <code>1</code> vor das Komma gestellt. Die Mantisse ist also <strong>1,</strong><code>00100110011001100110011</code>.</p>
+<p>Da der Exponent 4 ist, m&uuml;ssen wir das Komma um 4 Stellen nach rechts verschieben:
+<code>10010,0110011001100110011</code>. Als Dezimalzahl hat die Zahl den Wert 18,39999961853.</p>
+<p>Das Vorzeichen ist Positiv, da das Vorzeichenbit <code>0</code> ist. Das Ergebnis ist also <strong>+18,39999961853</strong>.</p>
+<h2 id="besondere-werte">Besondere Werte</h2>
+<p>Der Wert <code>0</code> kann auf Grund der Normalisierung nicht gespeichert werden. Um eine <code>0</code> als Gleitkommazahl zu repr&auml;sentieren wird Exponent und Mantisse auf <code>0</code> gesetzt. Es gibt weiters besondere Darstellungen f&uuml;r positiv und negativ Unendlich sowie eine Darstellung f&uuml;r <code>NaN</code> (not a number bzw. keine Zahl).</p>
+    </div>
+    <div class="col-md-3 hidden-print" role="complementary">
+      <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
+      <ul class="nav"><li><a href="#allgemeines">Allgemeines</a><ul class="nav"><li><a href="#festkomma-zahlen">Festkomma Zahlen</a></li><li><a href="#gleitkomma-zahlen">Gleitkomma Zahlen</a></li><li><a href="#umrechnung">Umrechnung</a></li><li><a href="#besondere-werte">Besondere Werte</a></li></ul></li></ul>
+      </nav>
+    </div>
+  </div>
+  </div>
+  </div>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am unbekannt (Rev. unbekannt)</p></div></footer>
+</body>
+</html>

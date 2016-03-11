@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="description" content="Blog und Unterrichtsmaterial zu Digitale Systeme und Computersysteme">
+  <meta name="author" content="Günther Jena">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semiversus</title> 
+  <link href="../../theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../theme/css/semiversus.css" rel="stylesheet">
+  <link href="../../theme/css/pygments.css" rel="stylesheet">
+  <script src="../../theme/js/jquery.min.js"></script>
+  <script src="../../theme/js/bootstrap.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../theme/js/html5shiv.js"></script>
+    <script src="../../theme/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body data-spy="scroll" data-target="#sidebar" data-offset=30>
+  <div id="wrap">
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+        <a href="../../dic/uebersicht.html" class="navbar-brand">SEMIVERSUS</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="../../archives.html">Blog</a></li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
+              <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+              <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+              <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+              <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+              <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+              <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+              <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+              <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+              <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+            </ul>
+          <li><a href="../../projekte/projekte.html">Projekte</a></li>
+          <li><a href="../../pages/about.html">Über mich</a></li>
+        </ul>
+    </div>
+  </nav>
+  <div class="container">
+  <div class="row">
+    <div class="col-md-9" role="main">
+    <div class="visible-print-block">Semiversus | AVR Assembler | URL: ../../dic/rechnerarchitektur/avr_assembler.html</div>
+<ol class="breadcrumb hidden-print"><li><a href="../../dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li><li><strong>AVR Assembler</strong></li></ol>    <header><h1>AVR Assembler</h1></header>
+    <div class="panel panel-info">
+<div class="panel-heading">&Uuml;bungsblatt</div>
+<div class="panel-body">
+<p>Zu diesem Teil gibt es <a href="../../dic/rechnerarchitektur/uebung_avr_assembler.html">&Uuml;bungsaufgaben</a></p>
+</div>
+</div>
+<h1 id="allgemeines">Allgemeines</h1>
+<p>Der Befehlssatz des Atmel AVR ist ein typischer <em>RISC</em>-Befehlssatz. Bei der Entwicklung der AVR Reihe stand vor allem eine m&ouml;glichst effiziente Nutzung durch C-Compiler im Vordergrund.</p>
+<ul>
+<li><a href="http://www.atmel.com/images/Atmel-0856-AVR-Instruction-Set-Manual.pdf">Komplette &Uuml;bersicht</a> &uuml;ber den Befehlssatz von Atmel</li>
+<li><a href="../../dic/rechnerarchitektur/avr_assembler_befehle.pdf">Auszug</a> der wichtigsten Befehle</li>
+</ul>
+<h1 id="registersatz">Registersatz</h1>
+<p>Die AVR Serie besitzt 32 allgemein verwendbare Register(<code>R0</code> bis <code>R31</code>). Die Register <code>R0</code> bis <code>R15</code> sind nicht verf&uuml;gbar f&uuml;r Befehle mit unmittelbaren Konstanten (z.B. <code>ldi</code>-load immediate).</p>
+<p>Die Register <code>R27:R26</code> bilden gemeinsam das 16 Bit X-Register, wobei <code>R27</code> das h&ouml;herwertige Byte darstellt und <code>R26</code> das niederwertige. Neben dem X-Register gibt es analog das Y und Z Register:</p>
+<ul>
+<li><code>R27:R26</code>: X-Register</li>
+<li><code>R29:R28</code>: Y-Register</li>
+<li><code>R31:R30</code>: Z-Register</li>
+</ul>
+<p>Diese Register k&ouml;nnen f&uuml;r die indirekte Adressierung genutzt werden.</p>
+<h1 id="stack-pointer">Stack Pointer</h1>
+<p>Der Stack Pointer ist eine 16 Bit Adresse und zeigt auf die aktuelle Position im Stack. Auf dem Stack werden die R&uuml;cksprungadressen bei einem <code>call</code>-Befehl und bei einem Interruptaufruf gespeichert. Zus&auml;tzlich kann der Stack genutzt werden, um Register zu sichern oder Zwischenergebnisse zu speichern.</p>
+<p>Der Stackpointer muss vor dem ersten Zugriff initialisiert werden. Dazu wird er an das Ende des Datenspeichers gesetzt. Der AVR Assembler unterst&uuml;tzt das Symbol <code>RAMEND</code>, das die letzte Adresse des Datenspeichers darstellt. Die Makros <code>HIGH</code> und <code>LOW</code> liefern die oberen bzw. unteren 8 Bit eines 16 Bit Wertes.</p>
+<div class="codehilite"><pre><span></span>ldi R16, HIGH(RAMEND)
+out SPH, R16
+ldi R16, LOW(RAMEND)
+out SPL, R16
+</pre></div>
+<h1 id="adressraume">Adressr&auml;ume</h1>
+<p>Bedingt durch die Harvard-Architektur der AVR Serie gibt es eine Trennung der Adressr&auml;ume f&uuml;r den Befehlsspeicher (Flash), den Datenspeicher (SRAM) und dem EEPROM.</p>
+<h2 id="befehlsspeicher">Befehlsspeicher</h2>
+<p>Der Adressraum im Befehlsspeicher wird in folgende Bereiche unterteilt:</p>
+<ul>
+<li><strong>Interruptvektoren</strong>: Sprungmarken f&uuml;r Reset und die Interruptquellen</li>
+<li><strong>Programmspeicher</strong>: Nach den Interruptvektoren befindet sich das eigentliche Programm</li>
+<li><strong>Optionaler Bootloader</strong>: Ein Teil des Befehlsspeichers kann gesch&uuml;tzt und als Bootloader verwendet werden</li>
+</ul>
+<h2 id="datenspeicher">Datenspeicher</h2>
+<table>
+<thead>
+<tr>
+<th>Adresse</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0x00-0x1F</code></td>
+<td>Register <code>R0</code> bis <code>R31</code></td>
+</tr>
+<tr>
+<td><code>0x20-0x5F</code></td>
+<td>I/O Register 0x00 bis 0x3F</td>
+</tr>
+<tr>
+<td><code>0x60</code>-Ende des internen SRAM</td>
+<td>als Datenspeicher verwendbar</td>
+</tr>
+</tbody>
+</table>
+<h2 id="eeprom">EEPROM</h2>
+<p>Das EEPROM wird mittels I/O Register angesprochen.</p>
+<h1 id="befehlsubersicht_1">Befehls&uuml;bersicht</h1>
+<h2 id="transferbefehle">Transferbefehle</h2>
+<h3 id="kopieren-von-registern-mittels-mov">Kopieren von Registern mittels <code>mov</code></h3>
+<p>Kopiert den Inhalt des Registers Rr in das Register Rd.</p>
+<div class="codehilite"><pre><span></span>mov r0, r16 ; Kopiert den Inhalt von R16 nach R0
+</pre></div>
+<p>Eine spezielle Variante ist <code>movw</code> . Hier werden zwei Register gleichzeitig kopiert, wobei als Basisregister nur geradzahlige Register m&ouml;glich sind.</p>
+<div class="codehilite"><pre><span></span><span class="nt">movw</span> <span class="nt">r17</span><span class="nd">:r16</span><span class="o">,</span> <span class="nt">r1</span><span class="nd">:r0</span> <span class="o">;</span> <span class="nt">Kopiert</span> <span class="nt">Register</span> <span class="nt">R1</span> <span class="nt">nach</span> <span class="nt">R17</span> <span class="nt">und</span> <span class="nt">Register</span> <span class="nt">R0</span> <span class="nt">nach</span> <span class="nt">R16</span>
+</pre></div>
+<h3 id="laden-von-registern-mittels-ld">Laden von Registern mittels <code>ld</code></h3>
+<p>Beim Laden gibt es mehrere M&ouml;glichkeiten der Adressierung der Quelle. Soll ein Konstante geladen werden, wird <code>ldi</code> verwendet.</p>
+<div class="codehilite"><pre><span></span>ldi R16, 0x20 ; L&auml;dt den Wert 0x20 in das Register R16
+</pre></div>
+<p>Soll von einer bestimmten Speicheradresse geladen werden, wird <code>lds</code> verwendet.</p>
+<div class="codehilite"><pre><span></span>lds R0, 0x60 ; L&auml;dt den Wert an der Adresse 0x60 ins Register R0
+</pre></div>
+<p>Die Register X,Y und Z k&ouml;nnen zum indirekten Laden von Werten verwendet werden. Dabei wird der Inhalt der Register als Adresse verwendet und an der Wert von der entsprechenden Adresse im Speicher geladen. Weiters ist es m&ouml;glich, die Adresse nach dem Zugriff um 1 zu erh&ouml;hen (Post-Inkrement) oder vor dem Zugriff um 1 zu erniedrigen (Pre-Dekrement).</p>
+<div class="codehilite"><pre><span></span>ld r0, X ; L&auml;dt den Wert an der durch das Register X dargestellten Adresse
+ld r1, Y+ ; Erh&ouml;ht nach dem Laden das Y Register um 1
+ld r3, -Y; Erniedrigt vor dem Laden das Y Register um 1
+</pre></div>
+<p>F&uuml;r den Zugriff auf Tabellen oder auf den Stack Frame eignet sich das Laden mittels Displacment. Dabei wird das Y oder Z Register verwendet und ein Offset hinzugerechnet.</p>
+<div class="codehilite"><pre><span></span>ldd r4, Y+20 ; L&auml;dt den Wert an der durch Y+20 dargestellten Adresse
+</pre></div>
+<h3 id="speichern-von-werten-im-sram">Speichern von Werten im SRAM</h3>
+<p>Beim Speichern auf eine bestimmte Speicheradresse wird der Befehl <code>sts</code> benutzt.</p>
+<div class="codehilite"><pre><span></span>sts 0x60, R0 ; Speichert den Wert des Registers R0 an der Adresse 0x60
+</pre></div>
+<p>&Auml;hnlich zu den <em>Load</em> Befehlen kann auch die indirekte Adressierung &uuml;ber X,Y und Z Register verwendet werden.</p>
+<div class="codehilite"><pre><span></span>st X, r0 ; Speichert das Register an der durch das Register X dargestellten Adresse
+st Y+, r1 ; Erh&ouml;ht nach dem Speichern das Y Register um 1
+st -Y, r1; Erniedrigt vor dem Speichern das Y Register um 1
+</pre></div>
+<h3 id="zugriff-auf-io-register">Zugriff auf I/O Register</h3>
+<p>Der Zugriff auf I/O Register erfolgt mittels <code>in</code> und <code>out</code>.</p>
+<div class="codehilite"><pre><span></span>out PORTD, R0 ; Kopiere den Wert von R0 ins IO Register PORTD
+in R29, PINA   ; Kopiere den Wert des IO Registers PINA ins Register R29
+</pre></div>
+<h3 id="arbeiten-mit-dem-stack">Arbeiten mit dem Stack</h3>
+<p>Der Stackpointer wird in den beiden Register <code>SPH</code> und <code>SPL</code> gespeichert. Mittels <code>push</code> und <code>pop</code> k&ouml;nnen Werte auf den Stack gelegt bzw. wieder vom Stack geholt werden. Der Stack wird au&szlig;erdem genutzt, um die R&uuml;cksprungadresse bei Subroutinen-Aufr&uuml;fen mittels <code>call</code> bzw. <code>rcall</code> zu speichern.</p>
+<h2 id="arithmetische-befehle_1">Arithmetische Befehle</h2>
+<p>Arthmetische Befehle verkn&uuml;pfen &uuml;blicherweise entweder zwei Register miteinander oder ein Register mit einer Konstante.</p>
+<p>Als Operationen stehen die Addtion (<code>add</code>) und Subtraktion (<code>sub</code>) zur Verf&uuml;gung. Es gibt auch jeweils eine Veriante, in der das &Uuml;bertragsbit aus einer vorhergehenden Operation verwendet wird (<code>adc</code> bzw. <code>sbc</code>). F&uuml;r die Addition der Konstante 1 stehen die Befehle <code>inc</code> (Inkrement) bzw. <code>dec</code> (Dekrement) zur Verf&uuml;gung.</p>
+<h2 id="logische-befehle">Logische Befehle</h2>
+<p>Zu den logischen Befehlen geh&ouml;rt die AND Verkn&uuml;pfung (<code>and</code> bzw. <code>andi</code>), die ODER Verkn&uuml;pfung (<code>or</code> bzw. <code>ori</code>), die Exclusive-ODER Verkn&uuml;pfung (<code>eor</code>) und die Invertierung aller Bits (<code>com</code>).</p>
+<h2 id="sprunge">Spr&uuml;nge</h2>
+<h3 id="unbedingte-sprunge">Unbedingte Spr&uuml;nge</h3>
+<p>Bei unbedingten Spr&uuml;ngen ist der Sprung nicht von einer Bedingung abh&auml;ngig. Es gibt relative Spr&uuml;nge (<code>rjmp</code>) und absolute Spr&uuml;nge (<code>jmp</code>). Die relativen Spr&uuml;nge k&ouml;nnen den Befehlsz&auml;hler um +/-2048 ver&auml;ndern. Dies ben&ouml;tigt zwar eine entsprechende Ber&uuml;cksichtigung vom Assembler bzw. Compiler aus, stellt aber durch die kompaktere Ausf&uuml;hrung (ein Befehlswort statt zwei) eine Optimierung dar.</p>
+<h3 id="bedingte-sprunge">Bedingte Spr&uuml;nge</h3>
+<p>Die bedingten Spr&uuml;nge bedienen sich der &Uuml;berpr&uuml;fung von Flags aus dem Statusregister und entscheiden anhand deren Zustandes, ob der Sprung genommen wird oder nicht. H&auml;ufig genutzt werden hier <code>breq</code> (branch if equal), <code>brne</code> (branch if not equal), <code>brlo</code> (branch if lower) und <code>brsh</code> (branch if same or higher).</p>
+<p>Die Statusflags m&uuml;ssen durch einen vorhergehenden Befehl entsprechend gesetzt werden. Will man kein Register f&uuml;r einen Vergleich &auml;ndern, sondern nur die Statusflags, so eignet sich der <code>cp</code> (compare) Befehl. Dieser Vergleicht zwei Register mittels Subtraktion und setzt die Flags entsprechend.</p>
+    </div>
+    <div class="col-md-3 hidden-print" role="complementary">
+      <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
+      <ul class="nav"><li><a href="#allgemeines">Allgemeines</a></li><li><a href="#registersatz">Registersatz</a></li><li><a href="#stack-pointer">Stack Pointer</a></li><li><a href="#adressraume">Adressr&auml;ume</a><ul class="nav"><li><a href="#befehlsspeicher">Befehlsspeicher</a></li><li><a href="#datenspeicher">Datenspeicher</a></li><li><a href="#eeprom">EEPROM</a></li></ul></li><li><a href="#befehlsubersicht_1">Befehls&uuml;bersicht</a><ul class="nav"><li><a href="#transferbefehle">Transferbefehle</a><ul class="nav"><li><a href="#kopieren-von-registern-mittels-mov">Kopieren von Registern mittels mov</a></li><li><a href="#laden-von-registern-mittels-ld">Laden von Registern mittels ld</a></li><li><a href="#speichern-von-werten-im-sram">Speichern von Werten im SRAM</a></li><li><a href="#zugriff-auf-io-register">Zugriff auf I/O Register</a></li><li><a href="#arbeiten-mit-dem-stack">Arbeiten mit dem Stack</a></li></ul></li><li><a href="#arithmetische-befehle_1">Arithmetische Befehle</a></li><li><a href="#logische-befehle">Logische Befehle</a></li><li><a href="#sprunge">Spr&uuml;nge</a><ul class="nav"><li><a href="#unbedingte-sprunge">Unbedingte Spr&uuml;nge</a></li><li><a href="#bedingte-sprunge">Bedingte Spr&uuml;nge</a></li></ul></li></ul></li></ul>
+      </nav>
+    </div>
+  </div>
+  </div>
+  </div>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am unbekannt (Rev. unbekannt)</p></div></footer>
+</body>
+</html>
