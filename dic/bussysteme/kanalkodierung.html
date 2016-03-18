@@ -13,45 +13,65 @@
   <link href="../../theme/css/pygments.css" rel="stylesheet">
   <script src="../../theme/js/jquery.min.js"></script>
   <script src="../../theme/js/bootstrap.min.js"></script>
+
+    <script type= "text/javascript">
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = 'https:' == document.location.protocol ? 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'; 
+        s[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" + 
+            "    config: ['MMLorHTML.js']," + 
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS','output/NativeMML']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," + 
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['%%','%%'] ], " +
+            "        processEscapes: false }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax .mo, .MathJax .mi': {color: 'black ! important'}} " +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(s);
+    </script>
 </head>
 <body data-spy="scroll" data-target="#sidebar" data-offset=30>
   <div id="wrap">
-  <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a href="../../index.html" class="navbar-brand">SEMIVERSUS</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Blog</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
+                <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+                <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+                <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+                <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+                <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+                <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+                <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+                <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+                <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+              </ul>
+            <li><a href="../../projekte/projekte.html">Projekte</a></li>
+            <li><a href="../../about.html">Über mich</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-        </button>
-        <a href="../../dic/uebersicht.html" class="navbar-brand">SEMIVERSUS</a>
-      </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="../../archives.html">Blog</a></li>
-          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
-              <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
-              <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
-              <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
-              <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
-              <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
-              <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
-              <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
-              <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
-              <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
-            </ul>
-          <li><a href="../../projekte/projekte.html">Projekte</a></li>
-          <li><a href="../../about.html">Über mich</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div class="container">
-  <div class="row">
-    <div class="col-md-9" role="main">
-    <div class="visible-print-block">Semiversus | Kanalkodierung | URL: ../../dic/bussysteme/kanalkodierung.html</div>
-<ol class="breadcrumb hidden-print"><li><a href="../../dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li><li><strong>Kanalkodierung</strong></li></ol>    <header><h1>Kanalkodierung</h1></header>
-    <h1 id="allgemeines">Allgemeines</h1>
+    <div class="visible-print-block">Semiversus | Kanalkodierung</div>
+<ol class="breadcrumb hidden-print"><li><a href="../../dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li><li><strong>Kanalkodierung</strong></li></ol>      <div class="row">
+        <div class="col-md-8" role="main">
+  <header><h1>Kanalkodierung</h1></header>
+  <h1 id="allgemeines">Allgemeines</h1>
 <p>Um Information in digitaler Form zu &Uuml;bertragen muss es &uuml;ber ein physkalisches Medium transportiert werden. Die Kanalkodierung bzw. genauer der Leitungskode beschreibt die Pegelfolgen, in der die Daten auf der Leitung liegen. Dies kann in elektrischer Form aber auch in optischer oder elektro-magnetischer Form beschrieben werden.</p>
 <h2 id="synchrone-und-asynchrone-ubertragung">Synchrone und Asynchrone &Uuml;bertragung</h2>
 <p>Bei der synchronen &Uuml;bertragung wird ein Taktsignal mitgeschickt. Der Empf&auml;nger kann sich dadurch mit dem Sender synchronisieren und die Daten empfangen.</p>
@@ -86,15 +106,15 @@ Hierdurch wird erreicht, dass</p>
 <p><strong>4B5B</strong> ist ein Code, der jeweils 4 Bits auf 5 Bits abbildet, also 16 Block-Codes auf 32 Leitungscodes. Der Code ist nicht gleichstromfrei, besitzt aber immer zumindest einen Bitwechsel, um den Takt r&uuml;ckzugewinnen.</p>
 <p>Der <strong>8B10B</strong>-Code ist ein Leitungscode in der Telekommunikationstechnik. Dabei werden 8 Bit Daten mit 10 Bit kodiert, sodass zum einen ein Gleichspannungsausgleich gew&auml;hrleistet ist und zum anderen Taktr&uuml;ckgewinnung aus dem Datensignal m&ouml;glich ist. Der erzeugte Datenstrom hat einen Overhead von 25% gegen&uuml;ber dem originalen. Ein &auml;hnlicher, aber deutlich effizienterer Code ist der <strong>64B66B</strong>-Code, welcher 64 Bits auf 66 Bits abbildet und daher nur ca. 3% Overhead erzeugt.</p>
 <p>Blockcodes k&ouml;nnen zur Fehlererkennung und Fehlerkorrektur bei der &Uuml;bertragung von Daten &uuml;ber fehlerbehaftete Kan&auml;le verwendet werden. Dabei ordnet der Sender dem zu &uuml;bertragenen Informationswort der L&auml;nge m ein Codewort der L&auml;nge n zu, wobei n&gt;m gilt. Durch das Hinzuf&uuml;gen der  zus&auml;tzlichen Symbole entsteht Redundanz und die Informationsrate sinkt; jedoch kann der Empf&auml;nger die redundante Information nun dazu nutzen &Uuml;bertragungsfehler zu erkennen und zu korrigieren.</p>
+        </div>
+        <div class="col-md-4" role="complementary">
+    <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
+    <ul class="nav"><li><a href="#allgemeines">Allgemeines</a><ul class="nav"><li><a href="#synchrone-und-asynchrone-ubertragung">Synchrone und Asynchrone &Uuml;bertragung</a></li><li><a href="#gleichspannungsfreiheit">Gleichspannungsfreiheit</a></li></ul></li><li><a href="#binare-leitungskodes_1">Bin&auml;re Leitungskodes</a><ul class="nav"><li><a href="#nrz-non-return-to-zero">NRZ (Non Return to Zero)</a><ul class="nav"><li><a href="#bitstuffing">Bitstuffing</a></li></ul></li><li><a href="#nrzi_1">NRZI</a></li></ul></li><li><a href="#manchester-kodierung_1">Manchester Kodierung</a></li><li><a href="#blockcodes">Blockcodes</a></li></ul>
+    </nav>
+        </div>
+      </div>
     </div>
-    <div class="col-md-3 hidden-print" role="complementary">
-      <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
-      <ul class="nav"><li><a href="#allgemeines">Allgemeines</a><ul class="nav"><li><a href="#synchrone-und-asynchrone-ubertragung">Synchrone und Asynchrone &Uuml;bertragung</a></li><li><a href="#gleichspannungsfreiheit">Gleichspannungsfreiheit</a></li></ul></li><li><a href="#binare-leitungskodes_1">Bin&auml;re Leitungskodes</a><ul class="nav"><li><a href="#nrz-non-return-to-zero">NRZ (Non Return to Zero)</a><ul class="nav"><li><a href="#bitstuffing">Bitstuffing</a></li></ul></li><li><a href="#nrzi_1">NRZI</a></li></ul></li><li><a href="#manchester-kodierung_1">Manchester Kodierung</a></li><li><a href="#blockcodes">Blockcodes</a></li></ul>
-      </nav>
-    </div>
   </div>
-  </div>
-  </div>
-  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 16.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/7cba344">7cba344</a>)</p></div></footer>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 18.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/7fdb64f">7fdb64f</a>)</p></div></footer>
 </body>
 </html>

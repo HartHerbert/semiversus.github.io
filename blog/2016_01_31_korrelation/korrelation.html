@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="description" content="Blog und Unterrichtsmaterial zu Digitale Systeme und Computersysteme">
+  <meta name="author" content="Günther Jena">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../favicon.ico">
+  <title>Semiversus | Interessante Korrelation, oder anders: Abgeschrieben?</title>
+  <link href="../../theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../theme/css/semiversus.css" rel="stylesheet">
+  <link href="../../theme/css/pygments.css" rel="stylesheet">
+  <script src="../../theme/js/jquery.min.js"></script>
+  <script src="../../theme/js/bootstrap.min.js"></script>
+
+    <script type= "text/javascript">
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = 'https:' == document.location.protocol ? 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'; 
+        s[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" + 
+            "    config: ['MMLorHTML.js']," + 
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS','output/NativeMML']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," + 
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['%%','%%'] ], " +
+            "        processEscapes: false }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax .mo, .MathJax .mi': {color: 'black ! important'}} " +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(s);
+    </script>
+</head>
+<body data-spy="scroll" data-target="#sidebar" data-offset=30>
+  <div id="wrap">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a href="../../index.html" class="navbar-brand">SEMIVERSUS</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Blog</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
+                <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+                <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+                <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+                <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+                <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+                <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+                <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+                <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+                <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+              </ul>
+            <li><a href="../../projekte/projekte.html">Projekte</a></li>
+            <li><a href="../../about.html">Über mich</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+  <div class="visible-print-block">Semiversus | Interessante Korrelation, oder anders: Abgeschrieben?</div>
+      <div class="row">
+        <div class="col-md-8" role="main">
+  <div class="page-header"><h2>Interessante Korrelation, oder anders: Abgeschrieben?</h2>
+  <p><span class="glyphicon glyphicon-calendar"></span> 31.01.2016
+<a href="../../tags/Schule.html"><span class="label label-primary">Schule</span></a> <a href="../../tags/BASH.html"><span class="label label-primary">BASH</span></a> <a href="../../tags/Tools.html"><span class="label label-primary">Tools</span></a> </p>
+  </div>
+  <p>Jede Lehrperson hat ihre eigene Meinung zum Abschreiben. F&uuml;r mich ist es etwas, das mit Gerechtigkeit
+bei der Beurteilung zu tun hat. Schlie&szlig;lich soll ja die Leistung betreffend der Aufgabenstellung beurteilt
+werden und nicht die soziale Kompetenz im Umgang mit anderen.</p>
+<p>Abschreiben als solches zu erkennen ist keine einfache Sache, da der Aufwand massiv mit der Anzahl der zu vergleichenden
+Arbeiten steigt. Bei 5 Arbeiten sind insgesamt 10 Vergleiche zu machen: Die erste Aufgabe wird mit den vier anderen
+verglichen, dann die zweite Arbeit mit den drei verbleibenden, usw.</p>
+<p>Die Anzahl der Vergleiche ergibt sich dabei mittels den Binomialkoeffizienten zu:</p>
+<p>%%N_{Vergleiche}={N_{Arbeiten} \choose 2}=\frac{N_{Arbeiten}!}{(N_{Arbeiten}-2)!\cdot 2!}%%</p>
+<table>
+<thead>
+<tr>
+<th align="center">Anzahl der Arbeiten</th>
+<th align="center">Anzahl der Vergleiche</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">5</td>
+<td align="center">10</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">45</td>
+</tr>
+<tr>
+<td align="center">15</td>
+<td align="center">105</td>
+</tr>
+<tr>
+<td align="center">20</td>
+<td align="center">190</td>
+</tr>
+<tr>
+<td align="center">25</td>
+<td align="center">300</td>
+</tr>
+<tr>
+<td align="center">30</td>
+<td align="center">435</td>
+</tr>
+</tbody>
+</table>
+<p>In der Informatik spricht man auch von einer Laufzeitkomplexit&auml;t von %%\mathcal O(n^2)%%, sprich mit doppelter Anzahl
+an Arbeiten steigt die Anzahl der Vergleiche um (etwas mehr als) das Vierfache.</p>
+<h1 id="nutzen-von-tools">Nutzen von Tools</h1>
+<p>Bei einer Hausaufgabe habe ich nun das konkrete "<em>Problem</em>" 25 Arbeiten miteinander zu vergleichen. Es handelt sich
+um eine Programmieraufgabe in C.</p>
+<p>Jede L&ouml;sung wird als ZIP-Datei abgegeben. Diese entpacke ich in einen Folder</p>
+<div class="codehilite"><pre><span></span>$&gt; unzip *.zip
+</pre></div>
+<p>In jedem Verzeichnisbaum steckt eine Datei, die bereits in der Aufgabe definiert wurde und zur Bearbeitung entsprechend
+ausprogrammiert werden musste: <tt>game.c</tt>.</p>
+<p>Der Vergleich von zwei Textdateien l&auml;sst sich mittels <code>diff</code> bewerkstelligen. Was ich aber brauche ist eine Statistik,
+die mir angibt, wie gro&szlig; die <em>Korrelation</em> zwischen zwei Dateien ist, sprich wie gro&szlig; der Anteil an Hemeinsamkeiten ist.
+Bei dem Vergleich sollten Zeilenumbr&uuml;che, Leerzeichen, usw. keine Rolle spielen. Das Tool der Wahl ist <code>wdiff</code>. Die Option
+<code>-s</code> liefert eine entsprechende Statistik.</p>
+<div class="codehilite"><pre><span></span>$&gt; wdiff -s arbeit1.c arbeit2.c
+...
+arbeit1.c: <span class="m">126</span> W&ouml;rter  <span class="m">48</span> 38% gleich  <span class="m">13</span> 10% gel&ouml;scht  <span class="m">65</span> 52% ver&auml;ndert
+arbeit2.c: <span class="m">140</span> W&ouml;rter  <span class="m">48</span> 34% gleich  <span class="m">7</span> 5% eingef&uuml;gt  <span class="m">85</span> 61% ver&auml;ndert
+</pre></div>
+<p>Der Vergleich von <tt>arbeit1.c</tt> mit <tt>arbeit2.c</tt> liefert ein anderes Ergebnis als der umgekehrte Vergleich und
+h&auml;ngt vorallem mit der unterschiedlichen Anzahl an Gesamtworten zusammen.</p>
+<p>Zum Vergleich von 25 Arbeiten m&uuml;ssen nun 300 dieser Aufrufe gemacht werden. Dazu dient folgendes <tt>bash</tt>-Skript:</p>
+<div class="codehilite"><pre><span></span><span class="nv">files</span><span class="o">=</span><span class="sb">`</span>ls *.c<span class="sb">`</span>
+
+<span class="k">for</span> work1 in <span class="nv">$files</span><span class="p">;</span>
+<span class="k">do</span>
+  <span class="k">for</span> work2 in <span class="nv">$files</span><span class="p">;</span>
+  <span class="k">do</span>
+    <span class="k">if</span> <span class="o">[</span> <span class="nv">$work1</span> <span class="o">==</span> <span class="nv">$work2</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+      <span class="k">continue</span>
+    <span class="k">fi</span>
+    <span class="nb">echo</span> -n <span class="nv">$work1</span> <span class="nv">$work2</span>
+    wdiff -s <span class="nv">$work1</span> <span class="nv">$work2</span><span class="p">|</span>tail -n 1<span class="p">|</span>cut -d: -f2
+  <span class="k">done</span>
+<span class="k">done</span>
+</pre></div>
+<h1 id="auswertung">Auswertung</h1>
+<p>Die Ausf&uuml;hrung f&uuml;hrt dann zu folgendem Ergebnis (ein Ausschnitt):</p>
+<div class="codehilite"><pre><span></span>...
+arbeit20.c arbeit13.c <span class="m">209</span> W&ouml;rter  <span class="m">47</span> 22% gleich  <span class="m">12</span> 6% eingef&uuml;gt  <span class="m">150</span> 72% ver&auml;ndert
+arbeit20.c arbeit14.c <span class="m">116</span> W&ouml;rter  <span class="m">113</span> 97% gleich  <span class="m">0</span> 0% eingef&uuml;gt  <span class="m">3</span> 3% ver&auml;ndert
+arbeit20.c arbeit15.c <span class="m">315</span> W&ouml;rter  <span class="m">54</span> 17% gleich  <span class="m">11</span> 3% eingef&uuml;gt  <span class="m">250</span> 79% ver&auml;ndert
+arbeit20.c arbeit16.c <span class="m">209</span> W&ouml;rter  <span class="m">39</span> 19% gleich  <span class="m">0</span> 0% eingef&uuml;gt  <span class="m">170</span> 81% ver&auml;ndert
+arbeit20.c arbeit17.c <span class="m">290</span> W&ouml;rter  <span class="m">54</span> 19% gleich  <span class="m">13</span> 4% eingef&uuml;gt  <span class="m">223</span> 77% ver&auml;ndert
+...
+</pre></div>
+<p>Es f&auml;llt der zweite Eintrag auf: 97% &Uuml;bereinstimmung. Da muss sehr viel Zufall im Spiel sein, oder auch nicht.</p>
+<p>Ein direkter Vergleich mittels <a href="http://meldmerge.org/">Meld</a> zeigt:</p>
+<p><img alt="Vergleich von arbeit14.c und arbeit20.c" src="../../blog/2016_01_31_korrelation/meld.png"/></p>
+<p>Die Liste nach Korrelation sortiert zeigt folgendes Ergebnis:</p>
+<p><img alt="Auswertung" src="../../blog/2016_01_31_korrelation/auswertung.png"/></p>
+<p>Es zeigen sich zwei "<em>Cluster</em>": <tt>arbeit14.c</tt> und <tt>arbeit20.c</tt> unterscheiden sich durch genau drei "W&ouml;rter",
+<tt>arbeit6.c</tt>, <tt>arbeit15.c</tt> und <tt>arbeit17.c</tt> unterscheiden sich auch nur durch ein paar "W&ouml;rter".</p>
+<h1 id="folgen">Folgen</h1>
+<p>Es f&auml;llt mir schwer zu sagen wie ich <em>richtig</em> handeln soll. Meine L&ouml;sung ist in diesem Fall eine <em>Unterrichtsvereinbarung</em>,
+die ich mit der Klasse am Anfang des Schuljahres definiert habe und in der festgeschrieben ist, dass bei einem solchen Fall
+0 Punkte auf alle L&ouml;sungen mit "zu gro&szlig;er &Auml;hnlichkeit" gegeben wird. Ich habe gehofft, dass dies nie zur Anwendung kommt.</p>
+        </div>
+        <div class="col-md-4" role="complementary">
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 16.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/7cba344">7cba344</a>)</p></div></footer>
+</body>
+</html>

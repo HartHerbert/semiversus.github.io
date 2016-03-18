@@ -13,47 +13,67 @@
   <link href="../../theme/css/pygments.css" rel="stylesheet">
   <script src="../../theme/js/jquery.min.js"></script>
   <script src="../../theme/js/bootstrap.min.js"></script>
+
+    <script type= "text/javascript">
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = 'https:' == document.location.protocol ? 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'; 
+        s[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" + 
+            "    config: ['MMLorHTML.js']," + 
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS','output/NativeMML']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," + 
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['%%','%%'] ], " +
+            "        processEscapes: false }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax .mo, .MathJax .mi': {color: 'black ! important'}} " +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(s);
+    </script>
 </head>
 <body data-spy="scroll" data-target="#sidebar" data-offset=30>
   <div id="wrap">
-  <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a href="../../index.html" class="navbar-brand">SEMIVERSUS</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Blog</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
+                <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+                <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+                <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+                <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+                <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+                <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+                <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+                <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+                <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+              </ul>
+            <li><a href="../../projekte/projekte.html">Projekte</a></li>
+            <li><a href="../../about.html">Über mich</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-        </button>
-        <a href="../../dic/uebersicht.html" class="navbar-brand">SEMIVERSUS</a>
-      </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="../../archives.html">Blog</a></li>
-          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
-              <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
-              <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
-              <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
-              <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
-              <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
-              <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
-              <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
-              <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
-              <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
-            </ul>
-          <li><a href="../../projekte/projekte.html">Projekte</a></li>
-          <li><a href="../../about.html">Über mich</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div class="container">
-  <div class="row">
-    <div class="col-md-9" role="main">
-    <div class="visible-print-block">Semiversus | VHDL Signaltypen | URL: ../../dic/programmierbare_logik/signaltypen.html</div>
+    <div class="visible-print-block">Semiversus | VHDL Signaltypen</div>
 <ol class="breadcrumb hidden-print"><li><a href="../../dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li><li><strong>VHDL Signaltypen</strong></li></ol><nav class="hidden-print"><ul class="pager">
 <li class="previous"><a href="../../dic/programmierbare_logik/grundlagen.html">&larr; VHDL Grundbegriffe</a></li><li class="next"><a href="../../dic/programmierbare_logik/operatoren.html">VHDL Operatoren &rarr;</a></li></ul></nav>
-    <header><h1>VHDL Signaltypen</h1></header>
-    <h1 id="allgemeines">Allgemeines</h1>
+      <div class="row">
+        <div class="col-md-8" role="main">
+  <header><h1>VHDL Signaltypen</h1></header>
+  <h1 id="allgemeines">Allgemeines</h1>
 <p>Um eine digitale Schaltung beschreiben zu k&ouml;nnen ben&ouml;tigt man Leitungen, um einzelne Komponenten miteinander zu
 verbinden. <em>Leitungen</em> entsprechen bei VHDL sogennanten Signalen (Schl&uuml;sselwort <code>signal</code>). Um in VHDL ein Signal zu
 definiere muss das Signal einen bestimmten Signaltyp haben.</p>
@@ -237,15 +257,15 @@ von Bits ist, ohne eine Wertigkeit vorzugeben. Die Umwandlung zu <code>integer</
 </pre></div>
 <p>Bei der Konvertierung eines <code>integer</code>s in einen Vektor sind entsprechende Konvertierungsfunktionen zu nutzen. Der Weg
 von <code>integer</code> zu <code>std_ulogic_vector</code> kann dabei je nach Anwendung &uuml;ber <code>to_unsigned</code> und <code>to_signed</code> f&uuml;hren.</p>
+        </div>
+        <div class="col-md-4" role="complementary">
+    <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
+    <ul class="nav"><li><a href="#allgemeines">Allgemeines</a></li><li><a href="#standard-logic-1164">Standard Logic 1164</a><ul class="nav"><li><a href="#std_logic-und-std_ulogic">std_logic und std_ulogic</a></li><li><a href="#definition-eines-signals-mit-std_ulogic">Definition eines Signals mit std_ulogic</a></li></ul></li><li><a href="#busse-mittels-std_ulogic_vector_1">Busse mittels std_ulogic_vector</a><ul class="nav"><li><a href="#downto-und-to">downto und to</a></li><li><a href="#literale">Literale</a></li><li><a href="#verknupfen-von-bussen">Verkn&uuml;pfen von Bussen</a></li></ul></li><li><a href="#numerische-signaltypen-unsigned-und-signed_1">Numerische Signaltypen unsigned und signed</a></li><li><a href="#ganzzahlen-mittels-integer">Ganzzahlen mittels integer</a><ul class="nav"><li><a href="#eingrenzung-mittels-range">Eingrenzung mittels range</a></li></ul></li><li><a href="#konvertierung-und-casting_1">Konvertierung und Casting</a><ul class="nav"><li><a href="#std_ulogic_vector">std_ulogic_vector</a></li><li><a href="#unsigned-und-signed">unsigned und signed</a></li><li><a href="#integer">integer</a></li></ul></li></ul>
+    </nav>
+        </div>
+      </div>
     </div>
-    <div class="col-md-3 hidden-print" role="complementary">
-      <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
-      <ul class="nav"><li><a href="#allgemeines">Allgemeines</a></li><li><a href="#standard-logic-1164">Standard Logic 1164</a><ul class="nav"><li><a href="#std_logic-und-std_ulogic">std_logic und std_ulogic</a></li><li><a href="#definition-eines-signals-mit-std_ulogic">Definition eines Signals mit std_ulogic</a></li></ul></li><li><a href="#busse-mittels-std_ulogic_vector_1">Busse mittels std_ulogic_vector</a><ul class="nav"><li><a href="#downto-und-to">downto und to</a></li><li><a href="#literale">Literale</a></li><li><a href="#verknupfen-von-bussen">Verkn&uuml;pfen von Bussen</a></li></ul></li><li><a href="#numerische-signaltypen-unsigned-und-signed_1">Numerische Signaltypen unsigned und signed</a></li><li><a href="#ganzzahlen-mittels-integer">Ganzzahlen mittels integer</a><ul class="nav"><li><a href="#eingrenzung-mittels-range">Eingrenzung mittels range</a></li></ul></li><li><a href="#konvertierung-und-casting_1">Konvertierung und Casting</a><ul class="nav"><li><a href="#std_ulogic_vector">std_ulogic_vector</a></li><li><a href="#unsigned-und-signed">unsigned und signed</a></li><li><a href="#integer">integer</a></li></ul></li></ul>
-      </nav>
-    </div>
   </div>
-  </div>
-  </div>
-  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 16.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/7cba344">7cba344</a>)</p></div></footer>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 18.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/7fdb64f">7fdb64f</a>)</p></div></footer>
 </body>
 </html>

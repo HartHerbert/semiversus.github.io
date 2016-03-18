@@ -13,47 +13,68 @@
   <link href="../theme/css/pygments.css" rel="stylesheet">
   <script src="../theme/js/jquery.min.js"></script>
   <script src="../theme/js/bootstrap.min.js"></script>
+
+    <script type= "text/javascript">
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = 'https:' == document.location.protocol ? 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'; 
+        s[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" + 
+            "    config: ['MMLorHTML.js']," + 
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS','output/NativeMML']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," + 
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['%%','%%'] ], " +
+            "        processEscapes: false }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax .mo, .MathJax .mi': {color: 'black ! important'}} " +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(s);
+    </script>
 </head>
 <body data-spy="scroll" data-target="#sidebar" data-offset=30>
   <div id="wrap">
-  <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a href="../index.html" class="navbar-brand">SEMIVERSUS</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Blog</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="../dic/uebersicht.html"><em>Übersicht</em></a></li>
+                <li><a href="../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+                <li><a href="../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+                <li><a href="../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+                <li><a href="../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+                <li><a href="../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+                <li><a href="../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+                <li><a href="../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+                <li><a href="../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+                <li><a href="../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+              </ul>
+            <li><a href="../projekte/projekte.html">Projekte</a></li>
+            <li><a href="../about.html">Über mich</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-        </button>
-        <a href="../dic/uebersicht.html" class="navbar-brand">SEMIVERSUS</a>
-      </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="../archives.html">Blog</a></li>
-          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="../dic/uebersicht.html"><em>Übersicht</em></a></li>
-              <li><a href="../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
-              <li><a href="../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
-              <li><a href="../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
-              <li><a href="../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
-              <li><a href="../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
-              <li><a href="../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
-              <li><a href="../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
-              <li><a href="../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
-              <li><a href="../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
-            </ul>
-          <li><a href="../projekte/projekte.html">Projekte</a></li>
-          <li><a href="../about.html">Über mich</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div class="container">
-  <div class="row">
-    <div class="col-md-9" role="main">
-      <div class="visible-print-block">Semiversus | Interessante Korrelation, oder anders: Abgeschrieben? | URL: http://www.semiversus.com/blog/korrelation.html</div>
-      <header><h1>Interessante Korrelation, oder anders: Abgeschrieben?</h1></header>
-      <small><span class="tags"></span></small>
-      <h1 id="das-problem">Das Problem</h1>
-<p>Jede Lehrperson hat ihre eigene Meinung zum Abschreiben. F&uuml;r mich ist es etwas, das mit Gerechtigkeit
+  <div class="visible-print-block">Semiversus | Interessante Korrelation, oder anders: Abgeschrieben?</div>
+      <div class="row">
+        <div class="col-md-8" role="main">
+  <div class="page-header"><h2>Interessante Korrelation, oder anders: Abgeschrieben?</h2>
+<p><span class="glyphicon glyphicon-calendar"></span> 31.01.2016
+<a href="../tag/schule.html"><span class="label label-primary">Schule</span></a> <a href="../tag/bash.html"><span class="label label-primary">BASH</span></a> <a href="../tag/tools.html"><span class="label label-primary">Tools</span></a> </p>
+  </div>
+  <p>Jede Lehrperson hat ihre eigene Meinung zum Abschreiben. F&uuml;r mich ist es etwas, das mit Gerechtigkeit
 bei der Beurteilung zu tun hat. Schlie&szlig;lich soll ja die Leistung betreffend der Aufgabenstellung beurteilt
 werden und nicht die soziale Kompetenz im Umgang mit anderen.</p>
 <p>Abschreiben als solches zu erkennen ist keine einfache Sache, da der Aufwand massiv mit der Anzahl der zu vergleichenden
@@ -143,19 +164,21 @@ arbeit20.c arbeit17.c <span class="m">290</span> W&ouml;rter  <span class="m">54
 </pre></div>
 <p>Es f&auml;llt der zweite Eintrag auf: 97% &Uuml;bereinstimmung. Da muss sehr viel Zufall im Spiel sein, oder auch nicht.</p>
 <p>Ein direkter Vergleich mittels <a href="http://meldmerge.org/">Meld</a> zeigt:</p>
-<p><img alt="Vergleich von arbeit14.c und arbeit20.c" src="../blog/meld.png"/></p>
+<p><img alt="Vergleich von arbeit14.c und arbeit20.c" src="../blog/2016_01_31_korrelation/meld.png"/></p>
 <p>Die Liste nach Korrelation sortiert zeigt folgendes Ergebnis:</p>
-<p><img alt="Auswertung" src="../blog/auswertung.png"/></p>
+<p><img alt="Auswertung" src="../blog/2016_01_31_korrelation/auswertung.png"/></p>
 <p>Es zeigen sich zwei "<em>Cluster</em>": <tt>arbeit14.c</tt> und <tt>arbeit20.c</tt> unterscheiden sich durch genau drei "W&ouml;rter",
 <tt>arbeit6.c</tt>, <tt>arbeit15.c</tt> und <tt>arbeit17.c</tt> unterscheiden sich auch nur durch ein paar "W&ouml;rter".</p>
 <h1 id="folgen">Folgen</h1>
 <p>Es f&auml;llt mir schwer zu sagen wie ich <em>richtig</em> handeln soll. Meine L&ouml;sung ist in diesem Fall eine <em>Unterrichtsvereinbarung</em>,
 die ich mit der Klasse am Anfang des Schuljahres definiert habe und in der festgeschrieben ist, dass bei einem solchen Fall
 0 Punkte auf alle L&ouml;sungen mit "zu gro&szlig;er &Auml;hnlichkeit" gegeben wird. Ich habe gehofft, dass dies nie zur Anwendung kommt.</p>
+        </div>
+        <div class="col-md-4" role="complementary">
+        </div>
+      </div>
     </div>
   </div>
-  </div>
-  </div>
-  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 16.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/7cba344">7cba344</a>)</p></div></footer>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 18.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/7fdb64f">7fdb64f</a>)</p></div></footer>
 </body>
 </html>

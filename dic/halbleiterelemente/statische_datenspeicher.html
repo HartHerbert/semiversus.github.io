@@ -13,45 +13,65 @@
   <link href="../../theme/css/pygments.css" rel="stylesheet">
   <script src="../../theme/js/jquery.min.js"></script>
   <script src="../../theme/js/bootstrap.min.js"></script>
+
+    <script type= "text/javascript">
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = 'https:' == document.location.protocol ? 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'; 
+        s[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" + 
+            "    config: ['MMLorHTML.js']," + 
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS','output/NativeMML']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," + 
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['%%','%%'] ], " +
+            "        processEscapes: false }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax .mo, .MathJax .mi': {color: 'black ! important'}} " +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(s);
+    </script>
 </head>
 <body data-spy="scroll" data-target="#sidebar" data-offset=30>
   <div id="wrap">
-  <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a href="../../index.html" class="navbar-brand">SEMIVERSUS</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Blog</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
+                <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+                <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+                <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+                <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+                <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+                <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+                <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+                <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+                <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+              </ul>
+            <li><a href="../../projekte/projekte.html">Projekte</a></li>
+            <li><a href="../../about.html">Über mich</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-        </button>
-        <a href="../../dic/uebersicht.html" class="navbar-brand">SEMIVERSUS</a>
-      </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="../../archives.html">Blog</a></li>
-          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
-              <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
-              <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
-              <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
-              <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
-              <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
-              <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
-              <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
-              <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
-              <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
-            </ul>
-          <li><a href="../../projekte/projekte.html">Projekte</a></li>
-          <li><a href="../../about.html">Über mich</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div class="container">
-  <div class="row">
-    <div class="col-md-9" role="main">
-    <div class="visible-print-block">Semiversus | Statische Datenspeicher | URL: ../../dic/halbleiterelemente/statische_datenspeicher.html</div>
-<ol class="breadcrumb hidden-print"><li><a href="../../dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li><li><strong>Statische Datenspeicher</strong></li></ol>    <header><h1>Statische Datenspeicher</h1></header>
-    <h1 id="allgemeines">Allgemeines</h1>
+    <div class="visible-print-block">Semiversus | Statische Datenspeicher</div>
+<ol class="breadcrumb hidden-print"><li><a href="../../dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li><li><strong>Statische Datenspeicher</strong></li></ol>      <div class="row">
+        <div class="col-md-8" role="main">
+  <header><h1>Statische Datenspeicher</h1></header>
+  <h1 id="allgemeines">Allgemeines</h1>
 <p>Bei statischen Speichern wird keine zyklische Erneuerung der Information ben&ouml;tigt, da der Zustand in der Speicherzelle stabil gespeichert wird.</p>
 <h1 id="festwertspeicher">Festwertspeicher</h1>
 <h2 id="masken-rom">Masken ROM</h2>
@@ -98,15 +118,15 @@
 <p>Eine Sonderform stellt eine SRAM Zelle mit 4 Transistoren dar. Dabei werden die beiden p-Kanal FETs durch Widerst&auml;nde ersetzt. Nachteilig ist die schlechte Fertigbarkeit in den heute &uuml;blichen Prozessen und der erh&ouml;hte Stromverbrauch.</p>
 <h3 id="nvram">NVRAM</h3>
 <p>Die hier beschriebene SRAM Zelle mit 6 Transistoren (oft kurz als 6T beschrieben) hat einen sehr kleinen Stromverbrauch (unter 1&micro;A Standby f&uuml;r einen 32KibiByte Speicher). Um aus einem SRAM einen nicht-fl&uuml;chtigen Speicher zu machen gibt es daher die M&ouml;glichkeit, den Speicher mit einer Bufferbatterie zu kombinieren. Dieser Speicher wird dann NVRAM (non-volatile random-acress-memory).</p>
+        </div>
+        <div class="col-md-4" role="complementary">
+    <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
+    <ul class="nav"><li><a href="#allgemeines">Allgemeines</a></li><li><a href="#festwertspeicher">Festwertspeicher</a><ul class="nav"><li><a href="#masken-rom">Masken ROM</a></li><li><a href="#otp-rom">OTP ROM</a></li></ul></li><li><a href="#nicht-fluchtiger-speicher_1">Nicht-Fl&uuml;chtiger Speicher</a><ul class="nav"><li><a href="#eprom">EPROM</a><ul class="nav"><li><a href="#programmiervorgang">Programmiervorgang</a></li><li><a href="#auslesen">Auslesen</a></li><li><a href="#loschen">L&ouml;schen</a></li></ul></li><li><a href="#eeprom_1">EEPROM</a></li><li><a href="#flash">Flash</a><ul class="nav"><li><a href="#slc-vs-mlc">SLC vs. MLC</a></li></ul></li></ul></li><li><a href="#fluchtiger-speicher_2">Fl&uuml;chtiger Speicher</a><ul class="nav"><li><a href="#sram">SRAM</a><ul class="nav"><li><a href="#nvram">NVRAM</a></li></ul></li></ul></li></ul>
+    </nav>
+        </div>
+      </div>
     </div>
-    <div class="col-md-3 hidden-print" role="complementary">
-      <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
-      <ul class="nav"><li><a href="#allgemeines">Allgemeines</a></li><li><a href="#festwertspeicher">Festwertspeicher</a><ul class="nav"><li><a href="#masken-rom">Masken ROM</a></li><li><a href="#otp-rom">OTP ROM</a></li></ul></li><li><a href="#nicht-fluchtiger-speicher_1">Nicht-Fl&uuml;chtiger Speicher</a><ul class="nav"><li><a href="#eprom">EPROM</a><ul class="nav"><li><a href="#programmiervorgang">Programmiervorgang</a></li><li><a href="#auslesen">Auslesen</a></li><li><a href="#loschen">L&ouml;schen</a></li></ul></li><li><a href="#eeprom_1">EEPROM</a></li><li><a href="#flash">Flash</a><ul class="nav"><li><a href="#slc-vs-mlc">SLC vs. MLC</a></li></ul></li></ul></li><li><a href="#fluchtiger-speicher_2">Fl&uuml;chtiger Speicher</a><ul class="nav"><li><a href="#sram">SRAM</a><ul class="nav"><li><a href="#nvram">NVRAM</a></li></ul></li></ul></li></ul>
-      </nav>
-    </div>
   </div>
-  </div>
-  </div>
-  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 16.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/7cba344">7cba344</a>)</p></div></footer>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 18.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/7fdb64f">7fdb64f</a>)</p></div></footer>
 </body>
 </html>

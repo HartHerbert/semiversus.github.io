@@ -13,45 +13,65 @@
   <link href="../../theme/css/pygments.css" rel="stylesheet">
   <script src="../../theme/js/jquery.min.js"></script>
   <script src="../../theme/js/bootstrap.min.js"></script>
+
+    <script type= "text/javascript">
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = 'https:' == document.location.protocol ? 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'; 
+        s[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" + 
+            "    config: ['MMLorHTML.js']," + 
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS','output/NativeMML']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," + 
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['%%','%%'] ], " +
+            "        processEscapes: false }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax .mo, .MathJax .mi': {color: 'black ! important'}} " +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(s);
+    </script>
 </head>
 <body data-spy="scroll" data-target="#sidebar" data-offset=30>
   <div id="wrap">
-  <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a href="../../index.html" class="navbar-brand">SEMIVERSUS</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Blog</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
+                <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+                <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+                <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+                <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+                <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+                <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+                <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+                <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+                <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+              </ul>
+            <li><a href="../../projekte/projekte.html">Projekte</a></li>
+            <li><a href="../../about.html">Über mich</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-        </button>
-        <a href="../../dic/uebersicht.html" class="navbar-brand">SEMIVERSUS</a>
-      </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="../../archives.html">Blog</a></li>
-          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
-              <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
-              <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
-              <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
-              <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
-              <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
-              <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
-              <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
-              <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
-              <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
-            </ul>
-          <li><a href="../../projekte/projekte.html">Projekte</a></li>
-          <li><a href="../../about.html">Über mich</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div class="container">
-  <div class="row">
-    <div class="col-md-9" role="main">
-    <div class="visible-print-block">Semiversus | Scheduling | URL: ../../dic/komplexe_digitale_systeme/scheduling.html</div>
-<ol class="breadcrumb hidden-print"><li><a href="../../dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li><li><strong>Scheduling</strong></li></ol>    <header><h1>Scheduling</h1></header>
-    <h1 id="allgemeines">Allgemeines</h1>
+    <div class="visible-print-block">Semiversus | Scheduling</div>
+<ol class="breadcrumb hidden-print"><li><a href="../../dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li><li><strong>Scheduling</strong></li></ol>      <div class="row">
+        <div class="col-md-8" role="main">
+  <header><h1>Scheduling</h1></header>
+  <h1 id="allgemeines">Allgemeines</h1>
 <p>Unter Scheduling (englisch f&uuml;r &bdquo;Zeitplanerstellung&ldquo;), versteht man das Erstellen eines Ablaufplanes (schedule), der Prozessen zeitlich begrenzt Ressourcen zuteilt. Dem Scheduler stehen als Entscheidungsbasis die anstehenden Aufgaben zur Verf&uuml;gung.</p>
 <h1 id="kriterien">Kriterien</h1>
 <p>Ein gutes Scheduling-Verfahren zeichnet sich dadurch aus, dass es die folgenden Kriterien optimiert:</p>
@@ -251,15 +271,15 @@ Lotterie-Scheduling l&ouml;st das Problem des Verhungerns. Wenn man jedem Prozes
 <p>Existiert nun ein Prozess mit mittlerer Priorit&auml;t, der die fragliche Ressource nicht verwendet, kann dieser mittel priorisierte Prozess den niedrig priorisierten verdr&auml;ngen, d.h. der mittel priorisierte Prozess wird anstelle des niedrig priorisierten Prozesses ausgef&uuml;hrt. Der niedrig priorisierte Prozess kann die Ressource nun nicht mehr freigeben, so dass der hoch priorisierte Prozess nicht zur Ausf&uuml;hrung kommt. Damit hindert der mittel priorisierte Prozess indirekt auch den hoch priorisierten Prozess an der Ausf&uuml;hrung, was er nach dem Prinzip des Priorit&auml;ts-Schedulings nicht darf. Die Priorit&auml;t des hoch priorisierten Prozesses und des mittel priorisierten Prozesses sind somit in einer zweiten Form der Priorit&auml;tsinversion vertauscht.</p>
 <h2 id="aushungern">Aushungern</h2>
 <p>Zur Aushungerung von Prozssen (engl. Starvation) kommt es, wenn niederpriore Prozesse nie zur Ausf&uuml;hrung kommen, da immer h&ouml;her priore Prozesse an die Reihe kommen. Ein Mittel zur Vermeidung von Aushungerung ist das <em>Priority Aging</em>. Dabei wird die Priorit&auml;t eines Prozess w&auml;hrend der Laufzeit erh&ouml;ht, wenn er nicht zur Ausf&uuml;hrung kommt. Irgendwann ist diese dynamische Priorit&auml;t h&ouml;her als die der anderen Prozesse und der Prozess kommt zur Ausf&uuml;hrung. <em>Priority Aging</em> ist auch eine m&ouml;gliche L&ouml;sung zur Priorit&auml;tsinversion.</p>
+        </div>
+        <div class="col-md-4" role="complementary">
+    <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
+    <ul class="nav"><li><a href="#allgemeines">Allgemeines</a></li><li><a href="#kriterien">Kriterien</a></li><li><a href="#praemptiv-und-nicht-praemptiv">Pr&auml;emptiv und Nicht-Pr&auml;emptiv</a></li><li><a href="#scheduling-strategien">Scheduling Strategien</a><ul class="nav"><li><a href="#first-in-first-out-fifo-first-come-first-served-fcfs">First In &ndash; First Out (FIFO), First-Come First-Served (FCFS)</a></li><li><a href="#shortest-job-next-sjn-shortest-job-first-sjf-shortest-processing-time-spt">Shortest-Job-Next (SJN), Shortest Job First (SJF), Shortest Processing Time (SPT)</a></li><li><a href="#earliest-due-date-edd">Earliest Due Date (EDD)</a></li><li><a href="#round-robin-zeitscheibenverfahren">Round Robin, Zeitscheibenverfahren</a></li><li><a href="#lotterie-scheduling">Lotterie-Scheduling</a></li></ul></li><li><a href="#prioritatsscheduling_1">Priorit&auml;tsscheduling</a><ul class="nav"><li><a href="#prioritatsinversion">Priorit&auml;tsinversion</a></li><li><a href="#aushungern">Aushungern</a></li></ul></li></ul>
+    </nav>
+        </div>
+      </div>
     </div>
-    <div class="col-md-3 hidden-print" role="complementary">
-      <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
-      <ul class="nav"><li><a href="#allgemeines">Allgemeines</a></li><li><a href="#kriterien">Kriterien</a></li><li><a href="#praemptiv-und-nicht-praemptiv">Pr&auml;emptiv und Nicht-Pr&auml;emptiv</a></li><li><a href="#scheduling-strategien">Scheduling Strategien</a><ul class="nav"><li><a href="#first-in-first-out-fifo-first-come-first-served-fcfs">First In &ndash; First Out (FIFO), First-Come First-Served (FCFS)</a></li><li><a href="#shortest-job-next-sjn-shortest-job-first-sjf-shortest-processing-time-spt">Shortest-Job-Next (SJN), Shortest Job First (SJF), Shortest Processing Time (SPT)</a></li><li><a href="#earliest-due-date-edd">Earliest Due Date (EDD)</a></li><li><a href="#round-robin-zeitscheibenverfahren">Round Robin, Zeitscheibenverfahren</a></li><li><a href="#lotterie-scheduling">Lotterie-Scheduling</a></li></ul></li><li><a href="#prioritatsscheduling_1">Priorit&auml;tsscheduling</a><ul class="nav"><li><a href="#prioritatsinversion">Priorit&auml;tsinversion</a></li><li><a href="#aushungern">Aushungern</a></li></ul></li></ul>
-      </nav>
-    </div>
   </div>
-  </div>
-  </div>
-  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 16.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/7cba344">7cba344</a>)</p></div></footer>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 18.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/7fdb64f">7fdb64f</a>)</p></div></footer>
 </body>
 </html>
