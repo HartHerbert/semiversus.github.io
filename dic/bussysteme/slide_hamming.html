@@ -1,0 +1,256 @@
+<!--
+Google IO 2012 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahe <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Semiversus | Hamming Abstand</title> 
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="../../theme/css/slides.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="../../theme/css/slides_phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="../../theme/js/slides" src="../../theme/js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+<slide class="title-slide segue" >
+    <hgroup class="auto-fadein">
+      <h1>Hamming Abstand</h1>
+      <p>Günther Jena - 23.03.2015</p>
+    </hgroup>
+</slide>
+<slide class="big" >
+    <hgroup>
+      <h2>Hamming-Abstand</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p>Wieviele Bits unterscheiden die beiden <em>Codewörter</em> W1 und W2?</p>
+<div class="codehilite"><pre><span></span><span class="n">W1</span><span class="o">:</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span>
+<span class="n">W2</span><span class="o">:</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span>
+</pre></div>
+
+
+<ul class="build">
+<li>2 Bit, somit ist der Hammingabstand zwischen diesen Codewörtern <strong>2</strong></li>
+</ul></article>
+</slide>
+<slide  >
+    <hgroup>
+      <h2>Definition</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul class="build">
+<li>
+<p>Der <strong>Hamming-Abstand <em>d</em> </strong> (oder Hamming-<em>Distanz</em>) zweier Blöcke mit fester Länge (sogenannte <em>Codewörter</em>) entspricht der Anzahl der unterschiedlichen Stellen.</p>
+</li>
+<li>
+<p>Der <strong>Hamming-Abstand <em>D</em> </strong> eines vollständigen Codes entspricht dem minimalen Hamming-Abstand <em>d</em> aller Codewörter</p>
+</li>
+</ul></article>
+</slide>
+<slide  >
+    <hgroup>
+      <h2>Hamming Abstand</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><div class="codehilite"><pre><span></span><span class="n">W1</span><span class="o">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="n">W2</span><span class="o">:</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="n">W3</span><span class="o">:</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span>
+<span class="n">W4</span><span class="o">:</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>
+</pre></div>
+
+
+<table>
+<tr><td></td><td>W1</td><td>W2</td><td>W3</td><td>W4</td></tr>
+<tr><td>W1</td><td>-</td><td>4</td><td>6</td><td>5</td></tr>
+<tr><td>W2</td><td>4</td><td>-</td><td>2</td><td>3</td></tr>
+<tr><td>W3</td><td>6</td><td>2</td><td>-</td><td>3</td></tr>
+<tr><td>W4</td><td>5</td><td>3</td><td>3</td><td>-</td></tr>
+</table>
+
+<ul>
+<li>Minimaler Hamming-Abstand: <em>2</em></li>
+</ul></article>
+</slide>
+<slide  >
+    <hgroup>
+      <h2>Fehlererkennung und Fehlerbehebung</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p>Die Fähigkeit eines Codes für Fehlererkennung und -behebung ist abhängig vom Hamming-Abstand</p>
+<ul class="build">
+<li>Fehler<em>erkennung</em> erkennt einen Übertragungsfehler, kann diesen aber nicht beheben<ul class="build">
+<li>Zur Erkennung eines <em>n</em>-Bit Fehlers wird <em>D</em>&gt;=<em>n</em>+1 benötigt</li>
+</ul>
+</li>
+<li>Fehler<em>behebung</em> erkennt einen Übertragungsfehler und kann diesen auch beheben<ul class="build">
+<li>Zur Behebung eines <em>n</em>-Bit Fehlers wird <em>D</em>&gt;=2<em>n</em>+1 benötigt</li>
+</ul>
+</li>
+</ul></article>
+</slide>
+<slide  >
+    <hgroup>
+      <h2>Beispiel Paritätsbit</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p>Wird ein <em>n</em>-Bit Datenwort um ein Paritätsbit erweitert haben wir eine Hammingabstand von <strong>2</strong>.</p>
+<div class="codehilite"><pre><span></span>0 0 0 - 0
+0 0 1 - 1
+0 1 0 - 1
+0 1 1 - 0
+1 0 0 - 1
+1 0 1 - 0
+1 1 0 - 0
+1 1 1 - 1
+</pre></div>
+
+
+<ul>
+<li>Es ist möglich 1-Bit Fehler zu erkennen, aber nicht sie zu beheben</li>
+</ul></article>
+</slide>
+<slide  >
+    <hgroup>
+      <h2>Hamming Code</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul class="build">
+<li>Die einzelnen Codewörter des Hammingcodes weisen einen Abstand von <strong>3</strong> auf</li>
+<li>Kann gezielt für ein <em>n</em>-Bit Datenwort konstruiert werden</li>
+<li>Kann 1-Bit Fehler erkennen und beheben</li>
+<li>Kann (teilweise) 2-Bit Fehler erkennen</li>
+</ul></article>
+</slide>
+<slide  >
+    <hgroup>
+      <h2>Redundanz</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p>Dies wird durch Hinzufügen von Redundanz mittels Paritätsbits durchgeführt.</p>
+<table>
+<tr><td>Datenbits</td><td>Paritätsbits</td><td>Gesamt</td></tr>
+<tr><td>1</td><td>2</td><td>3</td></tr>
+<tr><td>4</td><td>3</td><td>7</td></tr>
+<tr><td>11</td><td>4</td><td>15</td></tr>
+<tr><td>26</td><td>5</td><td>31</td></tr>
+<tr><td>57</td><td>6</td><td>63</td></tr>
+<tr><td>120</td><td>7</td><td>127</td></tr>
+<tr><td>247</td><td>8</td><td>255</td></tr>
+</table></article>
+</slide>
+<slide  >
+    <hgroup>
+      <h2>Konstruktion eines Hamming Codes für 8 Bit</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul class="build">
+<li>Laut Tabelle werden bei 8 Datenbits 4 Paritätsbits benötigt</li>
+<li>Dadurch werden 12 Bit Codewörter entstehen</li>
+<li>Diese werden auf die Positionen 1, 2, 4 und 8 gesetzt</li>
+<li>Die freien Stellen werden mit den Datenbits besetzt</li>
+<li>Man spricht in diesem Fall von einem "(12, 8)-Code"</li>
+</ul></article>
+</slide>
+<slide  >
+    <hgroup>
+      <h2>Paritätsbits</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><div class="codehilite"><pre><span></span>      12 11 10  9  8  7  6  5  4  3  2  1 (0)
+      D7 D6 D5 D4 P3 D3 D2 D1 P2 D0 P1 P0
+
+P0:    0  1  0  1  0  1  0  1  0  1  0  1 (0) 
+P1:    0  1  1  0  0  1  1  0  0  1  1  0 (0)
+P2:    1  0  0  0  0  1  1  1  1  0  0  0 (0)
+P3:    1  1  1  1  1  0  0  0  0  0  0  0 (0)
+</pre></div>
+
+
+<ul>
+<li>Paritätsbit <em>P0</em> läßt ein Bit frei und verwendet das nächste</li>
+<li>Paritätsbit <em>P1</em> läßt zwei Bit frei und verwendet die nächsten zwei</li>
+<li>Paritätsbit <em>P2</em> läßt vier Bit frei und verwendet die nächsten vier</li>
+<li>...</li>
+<li>Position 0 ist ein Platzhalter</li>
+</ul></article>
+</slide>
+<slide  >
+    <hgroup>
+      <h2>Beispiel: Dekodieren des Wertes 0xFC</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><div class="codehilite"><pre><span></span>      12 11 10  9  8  7  6  5  4  3  2  1 (0)
+      D7 D6 D5 D4 P3 D3 D2 D1 P2 D0 P1 P0
+       1  1  1  1  ?  1  1  0  ?  0  ?  ?
+
+P0:    0  1  0  1  0  1  0  1  0  1  0  1 (0) 
+P1:    0  1  1  0  0  1  1  0  0  1  1  0 (0)
+P2:    1  0  0  0  0  1  1  1  1  0  0  0 (0)
+P3:    1  1  1  1  1  0  0  0  0  0  0  0 (0)
+</pre></div></article>
+</slide>
+<slide  >
+    <hgroup>
+      <h2>Lösung: Dekodieren des Wertes 0xFC</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><div class="codehilite"><pre><span></span>      12 11 10  9  8  7  6  5  4  3  2  1 (0)
+      D7 D6 D5 D4 P3 D3 D2 D1 P2 D0 P1 P0
+       1  1  1  1  0  1  1  0  1  0  0  1
+
+P0:    0  1  0  1  0  1  0  1  0  1  0  1 (0) 
+P1:    0  1  1  0  0  1  1  0  0  1  1  0 (0)
+P2:    1  0  0  0  0  1  1  1  1  0  0  0 (0)
+P3:    1  1  1  1  1  0  0  0  0  0  0  0 (0)
+</pre></div></article>
+</slide>
+<slide  >
+    <hgroup>
+      <h2>Simulation eines Übertragungsfehlers</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><div class="codehilite"><pre><span></span>      12 11 10  9  8  7  6  5  4  3  2  1 (0)
+      D7 D6 D5 D4 P3 D3 D2 D1 P2 D0 P1 P0
+       1  1  1  1  0  0  1  0  1  0  0  1
+
+P0:    0  1  0  1  0  1  0  1  0  1  0  1 (0) 
+P1:    0  1  1  0  0  1  1  0  0  1  1  0 (0)
+P2:    1  0  0  0  0  1  1  1  1  0  0  0 (0)
+P3:    1  1  1  1  1  0  0  0  0  0  0  0 (0)
+</pre></div>
+
+
+<ul class="build">
+<li>Position 7 ist <em>umgefallen</em></li>
+<li>Dadurch stimmen die Paritätsbits P0, P1 und P2 nicht mehr</li>
+<li>Oder anders ausgedrückt {P3, P2, P1, P0}={richtig, falsch, falsch, falsch} -&gt; Binär 0111 gleich 7</li>
+<li>Zum Üben<ul class="build">
+<li>Kodiere den Wert 0x36</li>
+<li>Übertragen wurde 0011 0001 1000 </li>
+<li>Übertragen wurde 0011 1011 0010 </li>
+</ul>
+</li>
+</ul></article>
+</slide>
+<slide class="backdrop"></slide>
+</slides>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>

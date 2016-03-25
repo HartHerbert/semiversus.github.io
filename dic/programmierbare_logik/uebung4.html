@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="description" content="Blog und Unterrichtsmaterial zu Digitale Systeme und Computersysteme">
+  <meta name="author" content="Günther Jena">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../favicon.ico">
+  <title>Semiversus | VHDL Übung 4 - Strukturelles Design</title>
+  <link href="../../theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../theme/css/semiversus.css" rel="stylesheet">
+  <link href="../../theme/css/pygments.css" rel="stylesheet">
+  <script src="../../theme/js/jquery.min.js"></script>
+  <script src="../../theme/js/bootstrap.min.js"></script>
+
+    <script type= "text/javascript">
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = 'https:' == document.location.protocol ? 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'; 
+        s[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" + 
+            "    config: ['MMLorHTML.js']," + 
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS','output/NativeMML']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," + 
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['%%','%%'] ], " +
+            "        processEscapes: false }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax .mo, .MathJax .mi': {color: 'black ! important'}} " +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(s);
+    </script>
+</head>
+<body data-spy="scroll" data-target="#sidebar" data-offset=30>
+  <div id="wrap">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a href="../../index.html" class="navbar-brand">SEMIVERSUS</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Blog</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
+                <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+                <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+                <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+                <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+                <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+                <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+                <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+                <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+                <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+              </ul>
+            <li><a href="../../projekte/projekte.html">Projekte</a></li>
+            <li><a href="../../about.html">Über mich</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+    <div class="visible-print-block">Semiversus | VHDL Übung 4 - Strukturelles Design</div>
+<ol class="breadcrumb hidden-print"><li><a href="../../dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li><li><strong>VHDL Übung 4 - Strukturelles Design</strong></li></ol><nav class="hidden-print"><ul class="pager">
+<li class="previous"><a href="../../dic/programmierbare_logik/uebung3.html">&larr; VHDL Übung 3 - Toggle</a></li><li class="next"><a href="../../dic/programmierbare_logik/uebung5.html">VHDL Übung 5 - Stoppuhr &rarr;</a></li></ul></nav>
+      <div class="row">
+        <div class="col-md-8" role="main">
+  <header><h1>VHDL Übung 4 - Strukturelles Design<div class="pull-right hidden-print"><a href="../../dic/programmierbare_logik/uebung4.md"  class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="bottom" title="Quelltext zu dieser Seite"><span class="glyphicon glyphicon-file"></span></a></div></h1></header>
+  <h1 id="ubungsaufgabe">&Uuml;bungsaufgabe</h1>
+<div class="panel panel-info">
+<div class="panel-heading">In dieser &Uuml;bung wird das BASYS2 Board verwendet</div>
+<div class="panel-body">
+<p>F&uuml;r weitere Fragen zum Board bitte das <a href="../../dic/programmierbare_logik/basys2_manual.pdf">Manual</a> konsultieren.</p>
+</div>
+</div>
+<p>In dieser &Uuml;bung wird die Unterteilung in mehrere Komponenten gezeigt.</p>
+<h1 id="vorbereitung">Vorbereitung</h1>
+<ul>
+<li><a href="../../dic/programmierbare_logik/vhdl_uebung_4.zip">Projektordner</a> herunterladen und entpacken</li>
+<li>Projekt <code>structural.xise</code> &ouml;ffnen</li>
+</ul>
+<h1 id="aufgabe-1-zeichne-eine-schaltung-fur-displayvhd">Aufgabe 1 - Zeichne eine Schaltung f&uuml;r <code>display.vhd</code></h1>
+<p>In der Datei <code>display.vhd</code> werden die vier 7-Segment Anzeigen angesteuert. Dazu wird das Display mittels "Multiplex"
+angesteuert, sprich jeds einzelme 7-Segment Anzeige ist nur abwechselnd nur kurze Zeit aktiv. Durch den schnellen
+Wechsel bekommt das tr&auml;ge Auge des Menschen eine scheinbar "stehende" Anzeige zu sehen.</p>
+<h1 id="aufgabe-2-clk_divider">Aufgabe 2 - <code>CLK_DIVIDER</code></h1>
+<p><code>CLK_DIVIDER</code> ist ein <em>Generic</em> mit dem eine Komponente parametrisiert werden kann. Erweitere die Einbindung vom <code>display</code>
+in <code>structural.vhd</code> wie folgt:</p>
+<div class="codehilite"><pre><span></span><span class="n">display_component</span><span class="o">:</span> <span class="k">entity</span> <span class="nc">work</span><span class="p">.</span><span class="n">display</span>
+  <span class="k">generic</span> <span class="k">map</span> <span class="p">(</span>
+    <span class="n">CLK_DIVIDER</span> <span class="o">=&gt;</span> <span class="mi">50000</span>
+  <span class="p">)</span>
+  <span class="k">port</span> <span class="k">map</span> <span class="p">(</span>
+    <span class="n">digit0_i</span> <span class="o">=&gt;</span> <span class="s">"0011"</span><span class="p">,</span>
+    <span class="n">digit1_i</span> <span class="o">=&gt;</span> <span class="s">"0010"</span><span class="p">,</span>
+    <span class="n">digit2_i</span> <span class="o">=&gt;</span> <span class="s">"0001"</span><span class="p">,</span>
+    <span class="n">digit3_i</span> <span class="o">=&gt;</span> <span class="s">"0000"</span><span class="p">,</span>
+    <span class="n">clk</span> <span class="o">=&gt;</span> <span class="n">clk</span><span class="p">,</span>
+    <span class="n">segments_o</span> <span class="o">=&gt;</span> <span class="n">segments_o</span><span class="p">,</span>
+    <span class="n">an_o</span> <span class="o">=&gt;</span> <span class="n">an_o</span>
+  <span class="p">);</span>
+</pre></div>
+<p>Damit ist die Geschwindigkeit, in der die Anzeigen <em>gemultiplext</em> werden parametrisierbar. Was passiert, wenn <code>CLK_DIVIDER</code>
+die Werte 50 oder 1 zugewiesen wird? Was bei den Werten eine Million oder 50 Millionen?</p>
+<h1 id="aufgabe-3-implementierung-eines-16-bit-zahlers">Aufgabe 3 - Implementierung eines 16 Bit Z&auml;hlers</h1>
+<p>In der Datei <code>structural.vhd</code> soll ein 16 Bit Z&auml;hler implementiert werden, der mit 100 Hertz z&auml;hlt.</p>
+<p>Nutze dazu die signals <code>pre_counter_reg</code> als Vorteiler und <code>counter_reg</code> als 16 Bit Z&auml;hler. Die beiden Z&auml;hler k&ouml;nnen
+mittels zwei <code>process</code> Anweisungen implementiert werden oder auch beide gemeinsam in einer <code>process</code> Anweisung. Im
+folgenden Beispiel wird auch die Aufteilung des 16 Bit Z&auml;hlregisters auf die jeweils 4 Bit Eing&auml;nge <code>digit0_i</code> bis <code>digit3_i</code>
+gezeigt.</p>
+<div class="codehilite"><pre><span></span><span class="k">architecture</span> <span class="nc">behave</span> <span class="k">of</span> <span class="nc">structural</span> <span class="k">is</span>
+  <span class="k">signal</span> <span class="n">pre_counter_reg</span> <span class="o">:</span> <span class="kt">integer</span> <span class="k">range</span> <span class="mi">0</span> <span class="k">to</span> <span class="mi">500000</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">-- 50Mhz/500.000=100Hz</span>
+  <span class="k">signal</span> <span class="n">counter_reg</span> <span class="o">:</span> <span class="kt">unsigned</span><span class="p">(</span><span class="mi">15</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">)</span> <span class="o">:=</span> <span class="p">(</span><span class="k">others</span> <span class="o">=&gt;</span> <span class="sc">'0'</span><span class="p">);</span>
+<span class="k">begin</span>
+  <span class="c1">--</span>
+  <span class="c1">-- &lt; Hier &gt; Implementierung der Z&auml;hler</span>
+  <span class="c1">---</span>
+
+  <span class="n">display_component</span><span class="o">:</span> <span class="k">entity</span> <span class="nc">work</span><span class="p">.</span><span class="n">display</span>
+    <span class="k">port</span> <span class="k">map</span> <span class="p">(</span>
+      <span class="n">digit0_i</span> <span class="o">=&gt;</span> <span class="kt">std_ulogic_vector</span><span class="p">(</span><span class="n">counter_reg</span><span class="p">(</span><span class="mi">3</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">)),</span>
+      <span class="n">digit1_i</span> <span class="o">=&gt;</span> <span class="kt">std_ulogic_vector</span><span class="p">(</span><span class="n">counter_reg</span><span class="p">(</span><span class="mi">7</span> <span class="k">downto</span> <span class="mi">4</span><span class="p">)),</span>
+      <span class="n">digit2_i</span> <span class="o">=&gt;</span> <span class="kt">std_ulogic_vector</span><span class="p">(</span><span class="n">counter_reg</span><span class="p">(</span><span class="mi">11</span> <span class="k">downto</span> <span class="mi">8</span><span class="p">)),</span>
+      <span class="n">digit3_i</span> <span class="o">=&gt;</span> <span class="kt">std_ulogic_vector</span><span class="p">(</span><span class="n">counter_reg</span><span class="p">(</span><span class="mi">15</span> <span class="k">downto</span> <span class="mi">12</span><span class="p">)),</span>
+      <span class="n">clk</span> <span class="o">=&gt;</span> <span class="n">clk</span><span class="p">,</span>
+      <span class="n">segments_o</span> <span class="o">=&gt;</span> <span class="n">segments_o</span><span class="p">,</span>
+      <span class="n">an_o</span> <span class="o">=&gt;</span> <span class="n">an_o</span>
+    <span class="p">);</span>
+<span class="k">end</span> <span class="k">architecture</span><span class="p">;</span>
+</pre></div>
+<h1 id="aufgabe-4-rucksetzen-des-zahlers-mittels-button_i">Aufgabe 4 - R&uuml;cksetzen des Z&auml;hlers mittels <code>button_i</code></h1>
+<p>In der Toplevel-Entity ist ein Eingang <code>button_i</code> vorgesehen, der noch nicht verwendet wurde. Beim Dr&uuml;cken des Buttons
+soll der 16 Bit Z&auml;hler zur&uuml;ckgesetzt werden.</p>
+        </div>
+        <div class="col-md-4" role="complementary">
+    <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
+    <ul class="nav"><li><a href="#ubungsaufgabe">&Uuml;bungsaufgabe</a></li><li><a href="#vorbereitung">Vorbereitung</a></li><li><a href="#aufgabe-1-zeichne-eine-schaltung-fur-displayvhd">Aufgabe 1 - Zeichne eine Schaltung f&uuml;r display.vhd</a></li><li><a href="#aufgabe-2-clk_divider">Aufgabe 2 - CLK_DIVIDER</a></li><li><a href="#aufgabe-3-implementierung-eines-16-bit-zahlers">Aufgabe 3 - Implementierung eines 16 Bit Z&auml;hlers</a></li><li><a href="#aufgabe-4-rucksetzen-des-zahlers-mittels-button_i">Aufgabe 4 - R&uuml;cksetzen des Z&auml;hlers mittels button_i</a></li></ul>
+    </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 25.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/b'5077891'">b'5077891'</a>)</p></div></footer>
+</body>
+</html>

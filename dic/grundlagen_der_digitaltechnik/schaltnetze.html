@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="description" content="Blog und Unterrichtsmaterial zu Digitale Systeme und Computersysteme">
+  <meta name="author" content="Günther Jena">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../favicon.ico">
+  <title>Semiversus | Grundlegende Schaltnetze</title>
+  <link href="../../theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../theme/css/semiversus.css" rel="stylesheet">
+  <link href="../../theme/css/pygments.css" rel="stylesheet">
+  <script src="../../theme/js/jquery.min.js"></script>
+  <script src="../../theme/js/bootstrap.min.js"></script>
+
+    <script type= "text/javascript">
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = 'https:' == document.location.protocol ? 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'; 
+        s[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" + 
+            "    config: ['MMLorHTML.js']," + 
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS','output/NativeMML']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," + 
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['%%','%%'] ], " +
+            "        processEscapes: false }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax .mo, .MathJax .mi': {color: 'black ! important'}} " +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(s);
+    </script>
+</head>
+<body data-spy="scroll" data-target="#sidebar" data-offset=30>
+  <div id="wrap">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a href="../../index.html" class="navbar-brand">SEMIVERSUS</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Blog</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
+                <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+                <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+                <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+                <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+                <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+                <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+                <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+                <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+                <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+              </ul>
+            <li><a href="../../projekte/projekte.html">Projekte</a></li>
+            <li><a href="../../about.html">Über mich</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+    <div class="visible-print-block">Semiversus | Grundlegende Schaltnetze</div>
+<ol class="breadcrumb hidden-print"><li><a href="../../dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li><li><strong>Grundlegende Schaltnetze</strong></li></ol>      <div class="row">
+        <div class="col-md-8" role="main">
+  <header><h1>Grundlegende Schaltnetze<div class="pull-right hidden-print"><a href="../../dic/grundlagen_der_digitaltechnik/schaltnetze.md"  class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="bottom" title="Quelltext zu dieser Seite"><span class="glyphicon glyphicon-file"></span></a></div></h1></header>
+  <h1 id="allgemeines">Allgemeines</h1>
+<p>Es gibt viele Schaltnetze, deren Funktion h&auml;ufig eingesetzt wird. Dabei werden die Schaltnetze nicht mehr auf der Ebene der Logikgatter betrachtet, sondern die Funktionalit&auml;t wird abstrahiert.</p>
+<h2 id="multiplexer">Multiplexer</h2>
+<p>Ein Multiplexer (auch oft kurz "Mux") selektiert aus mehreren Eing&auml;ngen einen einzelnen aus und gibt den Wert, der an diesem Eingang anliegt am Ausgang aus. Man unterscheidet die Multiplexer nach Anzahl der Eing&auml;nge. Die einfachste Form ist ein Multiplexer mit zwei Eing&auml;ngen.</p>
+<p><img alt="Multiplexer mit 2 Eing&auml;ngen" src="../../dic/grundlagen_der_digitaltechnik/mux2_symbol.png"/></p>
+<p>In der Wahrheitstabelle wird ersichtlich, dass nur der jeweils ausgew&auml;hlte Eingang den Ausgang beeinflusst. Ist <code>s0</code>=0 so gilt <code>a</code>=<code>e0</code>, bei <code>s0</code>=1 gilt <code>a</code>=<code>e1</code>.</p>
+<table>
+<thead>
+<tr>
+<th align="center">s0</th>
+<th align="center">e1</th>
+<th align="center">e0</th>
+<th align="center">a</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">x</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">x</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">x</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">x</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<p>Bei mehr als zwei Eing&auml;ngen ist auch mehr als ein Selektionseingang notwendig.</p>
+<p><img alt="Multiplexer mit 4 Eing&auml;ngen" src="../../dic/grundlagen_der_digitaltechnik/mux4_symbol.png"/></p>
+<h2 id="halb-addierer">Halb-Addierer</h2>
+<p>Der Halb-Addierer dient zur Addition von zwei einstelligen Bin&auml;rzahlen. Als Ausgang stehen das Summenbit und ein &Uuml;bertragsbit (engl. <code>Carry</code>)  zur Verf&uuml;gung. Der &Uuml;bertrag wird ben&ouml;tigt, sobald man zwei mindestens zweistellige Bin&auml;rzahlen addieren will.</p>
+<p><img alt="Halbaddierer" src="../../dic/grundlagen_der_digitaltechnik/halbaddierer_struktur.png"/></p>
+<table>
+<thead>
+<tr>
+<th align="center">x</th>
+<th align="center">y</th>
+<th align="center">s</th>
+<th align="center">c</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="voll-addierer">Voll-Addierer</h2>
+<p>Der Voll-Addierer ber&uuml;cksichtigt einen &Uuml;bertrag aus einer vorhergehenden Stufe. Der Voll-Addierer kann mittels zwei Halb-Addierer realisiert werden.</p>
+<p><img alt="Volladdierer" src="../../dic/grundlagen_der_digitaltechnik/volladdierer_struktur.png"/></p>
+<p>Um nun zwei 4 Bit Zahlen zu addieren, werden insgesamt vier einzelne Addierer ben&ouml;tigt, die jeweils zwei Bit unter Ber&uuml;cksichtigung eines &Uuml;bertrages der Vorstufe addieren. Der Addierer, der die niederwertigsten Bits addiert kann auch ein Halbaddierer sein, da kein &Uuml;bertrag beachtet werden muss. Wird ein Voll-Addierer genutzt, muss der entsprechende &Uuml;bertragseingang auf <code>0</code> gesetzt werden.</p>
+<p><img alt="4Bit Addierer" src="../../dic/grundlagen_der_digitaltechnik/ripple_carry_adder.png"/></p>
+<h2 id="komparator">Komparator</h2>
+<p>Ein Komparator vergleicht zwei Bin&auml;rzahlen gleicher Bitbreite miteinander. Eine einfache Ausf&uuml;hrung des Komparators hat dabei nur einen "ist gleich"-Ausgang. Sind also beide Zahlen gleich gro&szlig;, so wird der "ist gleich"-Ausgang auf <code>1</code> gesetzt. Eine Erweiterung stellt die Variante mit zus&auml;tzlichem "gr&ouml;&szlig;er"- und "kleiner"-Ausgang dar.</p>
+<p>Um mehrere Komparatoren zu kombinieren, sind Eing&auml;nge f&uuml;r "ist gleich", "gr&ouml;&szlig;er" und "kleiner" Signale der Vorstufe notwendig.</p>
+<p><img alt="4 Bit Komparator" src="../../dic/grundlagen_der_digitaltechnik/komparator_4bit.png"/></p>
+<h2 id="prioritatsenkoder">Priorit&auml;tsenkoder</h2>
+<p>Der Priorit&auml;tsenkoder gibt die Nummer des aktiven Eingangs aus, der die h&ouml;chste Priorit&auml;t hat. Im folgenden Beispiel gibt es vier Eing&auml;nge (<code>i0</code> bis <code>i3</code>), wobei <code>i3</code> die h&ouml;chste Priorit&auml;t hat. Ist <code>i3</code> aktiv, wird am Ausgang der Wert 3 (<code>y1</code>=1, <code>y0</code>=1), unabh&auml;ngig davon, welchen Zustand die anderen Eing&auml;nge haben.</p>
+<table>
+<thead>
+<tr>
+<th align="center">i3</th>
+<th align="center">i2</th>
+<th align="center">i1</th>
+<th align="center">i0</th>
+<th align="center">y1</th>
+<th align="center">y0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">x</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">x</td>
+<td align="center">x</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">x</td>
+<td align="center">x</td>
+<td align="center">x</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+        </div>
+        <div class="col-md-4" role="complementary">
+    <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
+    <ul class="nav"><li><a href="#allgemeines">Allgemeines</a><ul class="nav"><li><a href="#multiplexer">Multiplexer</a></li><li><a href="#halb-addierer">Halb-Addierer</a></li><li><a href="#voll-addierer">Voll-Addierer</a></li><li><a href="#komparator">Komparator</a></li><li><a href="#prioritatsenkoder">Priorit&auml;tsenkoder</a></li></ul></li></ul>
+    </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 25.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/b'5077891'">b'5077891'</a>)</p></div></footer>
+</body>
+</html>

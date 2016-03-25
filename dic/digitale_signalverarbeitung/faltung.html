@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="description" content="Blog und Unterrichtsmaterial zu Digitale Systeme und Computersysteme">
+  <meta name="author" content="Günther Jena">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../favicon.ico">
+  <title>Semiversus | Faltung</title>
+  <link href="../../theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../theme/css/semiversus.css" rel="stylesheet">
+  <link href="../../theme/css/pygments.css" rel="stylesheet">
+  <script src="../../theme/js/jquery.min.js"></script>
+  <script src="../../theme/js/bootstrap.min.js"></script>
+
+    <script type= "text/javascript">
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = 'https:' == document.location.protocol ? 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'; 
+        s[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" + 
+            "    config: ['MMLorHTML.js']," + 
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS','output/NativeMML']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," + 
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['%%','%%'] ], " +
+            "        processEscapes: false }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax .mo, .MathJax .mi': {color: 'black ! important'}} " +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(s);
+    </script>
+</head>
+<body data-spy="scroll" data-target="#sidebar" data-offset=30>
+  <div id="wrap">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a href="../../index.html" class="navbar-brand">SEMIVERSUS</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Blog</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
+                <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+                <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+                <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+                <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+                <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+                <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+                <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+                <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+                <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+              </ul>
+            <li><a href="../../projekte/projekte.html">Projekte</a></li>
+            <li><a href="../../about.html">Über mich</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+    <div class="visible-print-block">Semiversus | Faltung</div>
+<ol class="breadcrumb hidden-print"><li><a href="../../dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li><li><strong>Faltung</strong></li></ol><nav class="hidden-print"><ul class="pager">
+<li class="previous"><a href="../../dic/digitale_signalverarbeitung/lti_systeme.html">&larr; LTI Systeme</a></li></ul></nav>
+      <div class="row">
+        <div class="col-md-8" role="main">
+  <header><h1>Faltung<div class="pull-right hidden-print"><a href="../../dic/digitale_signalverarbeitung/faltung.md"  class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="bottom" title="Quelltext zu dieser Seite"><span class="glyphicon glyphicon-file"></span></a></div></h1></header>
+  <h1 id="allgemeines">Allgemeines</h1>
+<p>Um die Antwort eines LTI Systems auf eine beliebige Eingangsfolge zu bekommen nutzt man die Eigenschaften der Linearit&auml;t
+und der Zeitin varianz. Da sich jedes Eingangssignal %%x[t]%% als Linearkombination von Einheitspulsen darstellen l&auml;sst,
+kann f&uuml;r das Ausgangssignal eine Linearkombination der entsprechenden Impulsantworten verwendet werden.</p>
+<h1 id="berechnung">Berechnung</h1>
+<p>Ein beliebiges Eingangssignal %%x[n]%% l&auml;sst sich wie folgt darstellen:</p>
+<p>%%x[n]=\ldots + x[-1]\cdot\delta[n+1] + x[0]\cdot\delta[n] + x[1]\cdot\delta[n-1] + \ldots=\sum\limits_{k=-\infty}^{\infty} x[k]\cdot \delta[n-k]%%</p>
+<p>Durch die Impulsantwort wird vollst&auml;ndig festgelegt, wie die Reaktion eines LTI Systems auf ein beliebiges Eingangssignal
+ist.</p>
+<p>Die Gleichung zur Berechnung des Ausgangssignals ausgehend von einem Eingangssignal wird als <em>diskrete Faltung</em> des
+Eingangssignals mit der Impulsantwort bezeichnet. Der Operator der Faltung hei&szlig;t Faltungsstern (%%\ast%%):</p>
+<p>%%x[n]\ast h[n]=\sum\limits_{k=-\infty}^{\infty}x[k]\cdot h[n-k]%%</p>
+<h2 id="visuelle-darstellung">Visuelle Darstellung</h2>
+<p><figure><img src="../../dic/digitale_signalverarbeitung/convolution1.gif"><figcaption>Faltung eines Rechtecksignals mit einem Rechteck (Bild: <a href="https://commons.wikimedia.org/wiki/File:Convolution_of_box_signal_with_itself.gif">Brian Amberg</a> CC BY-SA 3.0)</figcaption></img></figure></p>
+<p>Das zweite Beispiel zeigt ein System mit Tiefpasseigenschaft. Die Impulsantwort eines Tiefpasssystems ist %%e^{-t}%% f&uuml;r %%t\geq 0%%.</p>
+<figure><img src="../../dic/digitale_signalverarbeitung/convolution2.gif"><figcaption>Faltung eines Rechtecksignals mit einer Exponentialfunktion (Bild: <a href="https://commons.wikimedia.org/wiki/File:Convolution_of_spiky_function_with_box2.gif">Brian Amberg/Tinos</a> CC BY-SA 3.0)</figcaption></img></figure>
+<h2 id="berechnung-nach-wozny">Berechnung nach Wozny</h2>
+<p>Eine einfache Art zur Durchf&uuml;hrung der diskreten Faltung ist die Berechnung nach Wozny. Im folgenden Youtube Video findet
+sich eine <a href="https://youtu.be/kVSUnbgul7g?t=24m4s">Anleitung</a>.</p>
+        </div>
+        <div class="col-md-4" role="complementary">
+    <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
+    <ul class="nav"><li><a href="#allgemeines">Allgemeines</a></li><li><a href="#berechnung">Berechnung</a><ul class="nav"><li><a href="#visuelle-darstellung">Visuelle Darstellung</a></li><li><a href="#berechnung-nach-wozny">Berechnung nach Wozny</a></li></ul></li></ul>
+    </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 25.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/b'5077891'">b'5077891'</a>)</p></div></footer>
+</body>
+</html>

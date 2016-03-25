@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="description" content="Blog und Unterrichtsmaterial zu Digitale Systeme und Computersysteme">
+  <meta name="author" content="Günther Jena">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../favicon.ico">
+  <title>Semiversus | Übung Safe</title>
+  <link href="../../theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../theme/css/semiversus.css" rel="stylesheet">
+  <link href="../../theme/css/pygments.css" rel="stylesheet">
+  <script src="../../theme/js/jquery.min.js"></script>
+  <script src="../../theme/js/bootstrap.min.js"></script>
+
+    <script type= "text/javascript">
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = 'https:' == document.location.protocol ? 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'; 
+        s[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" + 
+            "    config: ['MMLorHTML.js']," + 
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS','output/NativeMML']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," + 
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['%%','%%'] ], " +
+            "        processEscapes: false }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax .mo, .MathJax .mi': {color: 'black ! important'}} " +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(s);
+    </script>
+</head>
+<body data-spy="scroll" data-target="#sidebar" data-offset=30>
+  <div id="wrap">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a href="../../index.html" class="navbar-brand">SEMIVERSUS</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Blog</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
+                <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+                <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+                <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+                <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+                <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+                <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+                <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+                <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+                <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+              </ul>
+            <li><a href="../../projekte/projekte.html">Projekte</a></li>
+            <li><a href="../../about.html">Über mich</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+    <div class="visible-print-block">Semiversus | Übung Safe</div>
+<ol class="breadcrumb hidden-print"><li><a href="../../dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li><li><strong>Übung Safe</strong></li></ol>      <div class="row">
+        <div class="col-md-8" role="main">
+  <header><h1>Übung Safe<div class="pull-right hidden-print"><a href="../../dic/mikrocontroller/uebung_safe.md"  class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="bottom" title="Quelltext zu dieser Seite"><span class="glyphicon glyphicon-file"></span></a></div></h1></header>
+  <h1 id="ubungsaufgabe">&Uuml;bungsaufgabe</h1>
+<div class="panel panel-info">
+<div class="panel-heading">In dieser &Uuml;bung wird die Megacard verwendet</div>
+</div>
+<p>In diesem Beispiel soll ein Tresor (engl. <em>Safe</em>) implementiert werden. Dazu werden die vier Tasten <em>S0</em>-<em>S3</em> genutzt,
+um den Code einzutippen ( <em>S0</em> entspricht Ziffer '1', <em>S1</em> entspricht '2', usw.).</p>
+<h1 id="vorbereitung">Vorbereitung</h1>
+<ul>
+<li><a href="../../dic/mikrocontroller/embedded_uebung_safe.zip">Projektordner</a> herunterladen und entpacken</li>
+<li>Projekt <code>safe.avrgccproj</code> &ouml;ffnen</li>
+</ul>
+<h1 id="spezifikation">Spezifikation</h1>
+<ul>
+<li>Der Code hat vier Stellen (mit den Ziffern 1 bis 4)</li>
+<li>Nach dem Reset ist der Code "1234"</li>
+<li>Zustand <code>CLOSED</code>:<ul>
+<li>Nach dem Reset befindet sich die Applikation im Zustand <code>CLOSED</code></li>
+<li>Das Display zeigt den Text "CLOSED" in der ersten Zeile, die zweite Zeile ist leer</li>
+</ul>
+</li>
+<li>Wird einer der Taster <em>S0</em> bis <em>S3</em> gedr&uuml;ckt wird der entsprechende Tastendruck <em>gespeichert</em> und pro Ziffer ein <code>*</code> in der zweiten Zeile angezeigt</li>
+<li>Nach dem vierten Tastendruck wird der eingegebene Code ausgewertet</li>
+<li>Bei falscher Codeeingabe:<ul>
+<li>In der ersten Zeile wird "WRONG" und der zweiten Zeile "CODE" ausgegeben</li>
+<li>Nach zwei Sekunden oder einem Tastendruck wird in den Zustand <code>CLOSED</code> gewechselt</li>
+</ul>
+</li>
+<li>Bei richtiger Codeeingabe<ul>
+<li>In der ersten Zeile wird "OPENED" ausgegeben, die zweiten Zeile ist leer</li>
+<li>Nach drei Sekunden wird in den Zustand <code>CLOSED</code> gewechselt</li>
+<li>Wird innerhalb der drei Sekunden ein Taster gedr&uuml;ckt wird dies als erste Ziffer f&uuml;r den neuen Code verwendet und ein neuer Code kann eingegeben werden</li>
+</ul>
+</li>
+<li>Eingabe eines neuen Codes:<ul>
+<li>In der ersten Zeile steht "NEW CODE", die zweite Zeile zeigt den bisher eingegebenen Code (z.B. "41")</li>
+<li>Sind alle vier Ziffern eingegeben wechselt die Applikation nach zwei Sekunden in den Zustand <code>CLOSED</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="hinweise-zur-implementierung">Hinweise zur Implementierung</h1>
+<h2 id="speicherung-des-codes">Speicherung des Codes</h2>
+<p>Der vierstellige Code kann auf verschiedene Arten gespeichert werden. Es bieten sich zwei M&ouml;glichkeiten an: Speicherung
+im Array und Speicherung als Integer.</p>
+<h3 id="speicherung-im-array">Speicherung im Array</h3>
+<p>Es wird ein Array der L&auml;nge vier genutzt, um die einzelnen Ziffern zu speichern. Es werden zwei Arrays ben&ouml;tigt: eines
+zur Speicherung des geforderten Codes und eines, das den Code w&auml;hrend der Eingabe speichert. Der  und entsprechend mit
+dem Standardcode initialisiert ("1234").</p>
+<div class="codehilite"><pre><span></span><span class="kt">uint8_t</span> <span class="n">code_stored</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">};</span>
+<span class="kt">uint8_t</span> <span class="n">code_actual</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+</pre></div>
+<p>Tippt der Anwender den Code ein wird jede Ziffer an der entsprechenden Stelle im Array gespeichert:</p>
+<div class="codehilite"><pre><span></span><span class="n">code_actual</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">=</span><span class="n">key</span><span class="p">;</span> <span class="c1">// index gibt die aktuelle Codepostion an, key die zu speichernde Ziffer</span>
+</pre></div>
+<p>Um den Code anschlie&szlig;end zu vergleichen:</p>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">code_actual</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="n">code_stored</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">code_actual</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="n">code_stored</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">code_actual</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">==</span><span class="n">code_stored</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&amp;&amp;</span>
+    <span class="n">code_actual</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">==</span><span class="n">code_stored</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="p">{</span>
+  <span class="c1">// Code ist richtig</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+  <span class="c1">// Code ist falsch</span>
+<span class="p">}</span>
+</pre></div>
+<div class="panel panel-warning">
+<div class="panel-heading">Beim Array Vergleich muss jeder Wert einzeln gepr&uuml;ft werden</div>
+<div class="panel-body">
+<p>Es funktioniert <strong>nicht</strong> einen Vergleich von <code>code_actual==code_stored</code> zu machen. Da <code>code_actual</code> und
+<code>code_stored</code> jeweils Arrays und damit Zeiger auf eine Speicherstelle sind werden auch nur diese Zeiger verglichen.
+Und diese werden immer auf unterschiedliche Positionen im Speicher zeigen!</p>
+</div>
+</div>
+<h3 id="speicherung-als-integer">Speicherung als Integer</h3>
+<p>Der Code kann aber auch direkt als Integer gespeichert werden. Wieder sind zwei Variablen notwendig: eine zur Speicherung
+des geforderten Codes und eine, die den Code w&auml;hrend der Eingabe speichert.</p>
+<div class="codehilite"><pre><span></span><span class="kt">uint16_t</span> <span class="n">code_stored</span><span class="o">=</span><span class="mi">1234</span><span class="p">;</span>
+<span class="kt">uint16_t</span> <span class="n">code_actual</span><span class="p">;</span>
+</pre></div>
+<p>Die gr&ouml;&szlig;te zu darzustellende Zahl ist 4444, welche mit einem 16 Bit Integer dargestellt werden kann (%%2^{16}=65535%%).</p>
+<p>Tippt der Anwender eine neue Ziffer ein wird die aktuelle Zahl mit 10 multipliziert und die eingetippte Ziffer
+hinzuaddiert. Durch die Multiplikation mit 10 wird der bisher eingegebene Code um eine Dezimalstelle nach links geschoben.</p>
+<div class="codehilite"><pre><span></span><span class="n">code_actual</span><span class="o">=</span><span class="n">code_actual</span><span class="o">*</span><span class="mi">10</span><span class="o">+</span><span class="n">key</span><span class="p">;</span> <span class="c1">// key beinhaltet die zu speichernde Ziffer</span>
+</pre></div>
+<p>Die &Uuml;berpr&uuml;fung des Codes wird nun wesentlich einfacher:</p>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">code_actual</span><span class="o">==</span><span class="n">code_stored</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">// Code ist richtig</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+  <span class="c1">// Code ist falsch</span>
+<span class="p">}</span>
+</pre></div>
+<h2 id="ausgaben-am-lc-display_1">Ausgaben am LC Display</h2>
+<p>Eine LCD Ausgabe entweder je nach Zustand bei jedem <code>safe_process</code> gemacht werden oder bei einem Zustandswechsel.</p>
+<p>Im folgenden Beispiel sieht man die Ausgabe des Zustands <code>WRONG_CODE</code>. Bei jedem <code>safe_process</code> wird &uuml;ber
+<code>hal_lcd_printf</code> die Ausgabe "WRONG CODE" gemacht. Das Leerzeichen hinter "WRONG" ist beabsichtigt, da zuvor in dieser
+Zeile "CLOSED" steht und dies um einen Buchstaben l&auml;nger ist als "WRONG". Das Leerzeichen &uuml;berschreibt somit den letzten
+Buchstaben von "CLOSED".</p>
+<p>Wenn eine Taste gedr&uuml;ckt wurde oder der Timer abgelaufen ist wird das Display mittels <code>hal_lcd_clear</code> gel&ouml;scht.</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">safe_process</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">uint8_t</span> <span class="n">key</span><span class="o">=</span><span class="n">hal_key_get</span><span class="p">();</span> <span class="c1">// handle keys (0 - no key is pressed, 1 to 4 - corresponding key was pressed)</span>
+
+  <span class="k">switch</span> <span class="p">(</span><span class="n">safe_state</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ... other cases</span>
+    <span class="k">case</span> <span class="nl">WRONG_CODE</span><span class="p">:</span>
+      <span class="n">hal_lcd_printf</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s">"WRONG "</span><span class="p">);</span>
+      <span class="n">hal_lcd_printf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s">"CODE"</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">key</span> <span class="o">||</span> <span class="n">timer_safe</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">safe_state</span><span class="o">=</span><span class="n">CLOSED</span><span class="p">;</span>
+        <span class="n">hal_lcd_clear</span><span class="p">();</span>
+      <span class="p">}</span>
+      <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+</pre></div>
+<h1 id="musterlosung_1">Musterl&ouml;sung</h1>
+<p>Ein Implementierung dieser &Uuml;bung befindet sich hier zum Download:</p>
+<ul>
+<li><a href="../../dic/mikrocontroller/embedded_uebung_safe_loesung.zip">Musterl&ouml;sung</a></li>
+</ul>
+        </div>
+        <div class="col-md-4" role="complementary">
+    <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
+    <ul class="nav"><li><a href="#ubungsaufgabe">&Uuml;bungsaufgabe</a></li><li><a href="#vorbereitung">Vorbereitung</a></li><li><a href="#spezifikation">Spezifikation</a></li><li><a href="#hinweise-zur-implementierung">Hinweise zur Implementierung</a><ul class="nav"><li><a href="#speicherung-des-codes">Speicherung des Codes</a><ul class="nav"><li><a href="#speicherung-im-array">Speicherung im Array</a></li><li><a href="#speicherung-als-integer">Speicherung als Integer</a></li></ul></li><li><a href="#ausgaben-am-lc-display_1">Ausgaben am LC Display</a></li></ul></li><li><a href="#musterlosung_1">Musterl&ouml;sung</a></li></ul>
+    </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 25.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/b'5077891'">b'5077891'</a>)</p></div></footer>
+</body>
+</html>

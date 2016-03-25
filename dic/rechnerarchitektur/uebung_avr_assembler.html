@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="description" content="Blog und Unterrichtsmaterial zu Digitale Systeme und Computersysteme">
+  <meta name="author" content="Günther Jena">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../favicon.ico">
+  <title>Semiversus | Übung AVR Assembler</title>
+  <link href="../../theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../theme/css/semiversus.css" rel="stylesheet">
+  <link href="../../theme/css/pygments.css" rel="stylesheet">
+  <script src="../../theme/js/jquery.min.js"></script>
+  <script src="../../theme/js/bootstrap.min.js"></script>
+
+    <script type= "text/javascript">
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = 'https:' == document.location.protocol ? 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'; 
+        s[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" + 
+            "    config: ['MMLorHTML.js']," + 
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS','output/NativeMML']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," + 
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['%%','%%'] ], " +
+            "        processEscapes: false }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax .mo, .MathJax .mi': {color: 'black ! important'}} " +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(s);
+    </script>
+</head>
+<body data-spy="scroll" data-target="#sidebar" data-offset=30>
+  <div id="wrap">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a href="../../index.html" class="navbar-brand">SEMIVERSUS</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Blog</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
+                <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+                <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+                <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+                <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+                <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+                <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+                <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+                <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+                <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+              </ul>
+            <li><a href="../../projekte/projekte.html">Projekte</a></li>
+            <li><a href="../../about.html">Über mich</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+    <div class="visible-print-block">Semiversus | Übung AVR Assembler</div>
+<ol class="breadcrumb hidden-print"><li><a href="../../dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li><li><strong>Übung AVR Assembler</strong></li></ol>      <div class="row">
+        <div class="col-md-8" role="main">
+  <header><h1>Übung AVR Assembler<div class="pull-right hidden-print"><a href="../../dic/rechnerarchitektur/uebung_avr_assembler.md"  class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="bottom" title="Quelltext zu dieser Seite"><span class="glyphicon glyphicon-file"></span></a></div></h1></header>
+  <h1 id="allgemeines">Allgemeines</h1>
+<p>Die &Uuml;bungen sollten gut kommentiert werden. Ein Programm kann hinsichtlich Programmgr&ouml;&szlig;e oder Ausf&uuml;hrungsgeschwindigkeit
+optimiert werden. Als Hilfe eignet sich die <a href="../../dic/rechnerarchitektur/avr_assembler_befehle.pdf">Kurz&uuml;bersicht</a> der AVR Assembler Befehle.</p>
+<h1 id="daten-vertauschen">Daten vertauschen</h1>
+<p>Daten liegen im SRAM ab Adresse 0x60 bis zur Adresse 0x15F. Ziel des Assembler Programmes ist es, diesen Datenbereich zu
+"drehen" -&gt; Der Wert in Adresse 0x60 wird mit dem Wert in Adresse 0x15F vertauscht, anschlie&szlig;end der Wert in Adresse
+0x61 mit dem Wert in Adresse 0x15E, usw. .</p>
+<h2 id="hinweise">Hinweise</h2>
+<ul>
+<li>Nutze die Register X und Y zur indirekten Adressierung</li>
+<li>Funktioniert das Programm auch, wenn man das Ende des Datenbereiches (0x15F) nach hinten oder vorne verschiebt?</li>
+<li>Beachte den Fall, dass eine ungerade Anzahl von Bytes vertauscht werden!</li>
+<li>Wie gro&szlig; ist das Programm und wie viel Taktzyklen werden f&uuml;r die Ausf&uuml;hrung ben&ouml;tigt?</li>
+</ul>
+<h1 id="multiplikation-aller-elemente-eines-arrays_1">Multiplikation aller Elemente eines Arrays</h1>
+<p>Im SRAM liegen ab Adresse 0x60 insgesamt 32 16-Bit Werte. Diese sollen alle mit 5 mulitpliziert werden und an der
+urspr&uuml;nglichen Stelle im SRAM wieder abgelegt werden.</p>
+<h2 id="hinweise_1">Hinweise</h2>
+<ul>
+<li>Nutze das Y oder Z Register zur indirekten Adressierung (Anwendung von ldd)</li>
+<li>F&uuml;r die Multiplikation <code>m=n*5</code> gilt <code>m=n*4+n</code>, wobei sich Multiplikationen mit dem Faktor zwei durch linksschieben l&ouml;sen lassen</li>
+<li>Das Schieben und Addieren von 16 Bit Werten wird aufgeteit in zwei 8 Bit Operationen mit Ber&uuml;cksichtigung des &Uuml;bertrags</li>
+<li>Wie gro&szlig; ist das Programm und wie viel Taktzyklen werden f&uuml;r die Ausf&uuml;hrung ben&ouml;tigt?</li>
+</ul>
+<h1 id="alarmanlage_1">Alarmanlage</h1>
+<p>An Port A sind drei Alarmsensoren angeschlossen (Bit 0 - 2). Wird ein Alarm ausgel&ouml;st, soll die entsprechende LED an
+Port C (Bit 0 - 2, High-aktiv) aufleuchten, um den Sensor zu signalisieren. Der Alarm wird mittels einem Taster auf
+Port A (Bit 3) zur&uuml;ckgesetzt. Der Taster sowie die Alarmsensoren ben&ouml;tigen einen aktivierten Pull-Up am Eingang und sind
+aktiv (bzw. sollen den Alarm ausl&ouml;sen), wenn sie auf Massepotential sind (Low-aktiv).</p>
+<h2 id="hinweise_2">Hinweise</h2>
+<ul>
+<li>Nutze eine Main-Loop um die Eing&auml;nge dauernd zu &uuml;berpr&uuml;fen</li>
+<li>Weise die Funktion im Simulator und auf der Megacard nach</li>
+<li>Erweiterung 1: Der Alarm soll nur zur&uuml;ckgesetzt werden k&ouml;nnen, wenn kein Alarmsensor mehr aktiv ist</li>
+<li>Erweiterung 2: An Port C (Bit 3) wird ein Relais angesteuert (High-aktiv), um einen Alarmsirene anzusteuern. Wird einmal Alarm ausgel&ouml;st, soll dieses Relais anziehen. Beim Deaktivieren des Alarms soll es wieder abfallen.</li>
+</ul>
+<h1 id="expertenaufgabe-fibonacci_1">Expertenaufgabe: Fibonacci</h1>
+<p>Erstelle eine Subroutine, die rekursiv die n-te Fibonacci Zahl berechnet. Dabei gilt:</p>
+<ul>
+<li>fib(0)=1</li>
+<li>fib(1)=1</li>
+<li>fib(n)=fib(n-1)+fib(n-2)</li>
+</ul>
+<h2 id="hinweise_3">Hinweise</h2>
+<ul>
+<li>Nutze den Stack um die Parameter und Ergebnisse zu &uuml;bertragen</li>
+<li>Nutze das Register Y als Kopie des Stackpointers, um auf Daten relativ zum Stackpointer zuzugreifen (sog. Stackframe-Pointer)</li>
+<li>Mittels Displacment Adressierung kannst du nun auf die Parameter, die am Stack liegen zugreifen</li>
+</ul>
+<h1 id="analyse-1_1">Analyse 1</h1>
+<div class="codehilite"><pre><span></span><span class="na">.include</span> <span class="s">"m16def.inc"</span>
+
+  <span class="nf">clr</span> <span class="no">R16</span>
+<span class="nl">loop:</span>
+  <span class="nf">out</span> <span class="no">PORTB</span><span class="p">,</span> <span class="no">R16</span>
+  <span class="nf">inc</span> <span class="no">R16</span>
+  <span class="nf">mv</span> <span class="no">R17</span><span class="p">,</span> <span class="no">R16</span>
+  <span class="nf">andi</span> <span class="no">R17</span><span class="p">,</span> <span class="mi">0x0F</span>
+  <span class="nf">cpi</span> <span class="no">R17</span><span class="p">,</span> <span class="mi">0x0A</span>
+  <span class="nf">brlo</span> <span class="no">loop</span>
+  <span class="nf">ldi</span> <span class="no">R17</span><span class="p">,</span> <span class="mi">0x06</span>
+  <span class="nf">add</span> <span class="no">R16</span><span class="p">,</span> <span class="no">R17</span>
+  <span class="nf">cpi</span> <span class="no">R16</span><span class="p">,</span> <span class="mi">0xA0</span>
+  <span class="nf">brlo</span> <span class="no">loop</span>
+<span class="nl">end:</span>
+  <span class="nf">rjmp</span> <span class="no">end</span>
+</pre></div>
+<p>Was macht das Programm, wieviele Takte ben&ouml;tigt es f&uuml;r die Ausf&uuml;hrung (bis zum Label <code>end</code>) und wie gro&szlig; ist das Programm?</p>
+<h2 id="hinweise_4">Hinweise</h2>
+<ul>
+<li>Das Programm nutzt die BCD (Binary Coded Decimals) Darstellung einer Zahl</li>
+<li>Bei der Laufzeitanalyse ist wichtig, die genau Anzahl der Schleifendurchl&auml;ufe zu kennen</li>
+<li>Beachte, dass die <em>branch</em>-Befehle je nach Erf&uuml;llung der Bedingung unterschiedlich viele Taktzyklen ben&ouml;tigt</li>
+</ul>
+<h1 id="analyse-2_1">Analyse 2</h1>
+<div class="codehilite"><pre><span></span><span class="na">.include</span> <span class="s">"m16def.inc"</span>
+
+  <span class="nf">clr</span> <span class="no">XH</span>
+  <span class="nf">ldi</span> <span class="no">XL</span><span class="p">,</span> <span class="mi">0x60</span>
+  <span class="nf">clr</span> <span class="no">R17</span>
+  <span class="nf">ldi</span> <span class="no">R18</span><span class="p">,</span> <span class="mi">8</span>
+<span class="nl">loop:</span>
+  <span class="nf">cpi</span> <span class="no">R18</span><span class="p">,</span> <span class="mi">0</span>
+  <span class="nf">breq</span> <span class="no">end</span>
+  <span class="nf">dec</span> <span class="no">R18</span>
+  <span class="nf">ld</span> <span class="no">R16</span><span class="p">,</span> <span class="no">X</span><span class="err">+</span>
+  <span class="nf">cp</span> <span class="no">R16</span><span class="p">,</span> <span class="no">R17</span>
+  <span class="nf">brlo</span> <span class="no">loop</span>
+  <span class="nf">mov</span> <span class="no">R17</span><span class="p">,</span> <span class="no">R16</span>
+  <span class="nf">rjmp</span> <span class="no">loop</span>
+<span class="nl">end:</span>
+  <span class="nf">rjmp</span> <span class="no">end</span>
+</pre></div>
+<p>Der Speicherinhalt vor der Ausf&uuml;hrung des Programmes:</p>
+<table>
+<thead>
+<tr>
+<th>0x5F</th>
+<th>0x60</th>
+<th>0x61</th>
+<th>0x62</th>
+<th>0x63</th>
+<th>0x64</th>
+<th>0x65</th>
+<th>0x66</th>
+<th>0x67</th>
+<th>0x68</th>
+<th>0x69</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x00</td>
+<td>0x03</td>
+<td>0x01</td>
+<td>0x0e</td>
+<td>0x03</td>
+<td>0x05</td>
+<td>0x16</td>
+<td>0x00</td>
+<td>0x05</td>
+<td>0x15</td>
+<td>0x20</td>
+</tr>
+</tbody>
+</table>
+<p>Wie gro&szlig; ist das Programm und wie viel Taktzyklen ben&ouml;tigt es? Wie schaut der Speicher nach der Durchf&uuml;hrung aus?
+Was machen die Register R16, R17 und R18? Versuche in einem Satz zu formulieren, was das Programm macht.</p>
+<h1 id="analyse-3">Analyse 3</h1>
+<div class="codehilite"><pre><span></span><span class="na">.include</span> <span class="s">"m16def.inc"</span>
+
+  <span class="nf">clr</span> <span class="no">XH</span>
+  <span class="nf">ldi</span> <span class="no">XL</span><span class="p">,</span> <span class="mi">0x60</span>
+  <span class="nf">clr</span> <span class="no">R17</span>
+<span class="nl">start:</span>
+  <span class="nf">ld</span> <span class="no">R16</span><span class="p">,</span> <span class="no">X</span><span class="err">+</span>
+  <span class="nf">cpi</span> <span class="no">R16</span><span class="p">,</span> <span class="mi">0x00</span>
+  <span class="nf">breq</span> <span class="no">end</span>
+  <span class="nf">cpi</span> <span class="no">R16</span><span class="p">,</span> <span class="mi">0x61</span>
+  <span class="nf">breq</span> <span class="no">vowelcount</span>
+  <span class="nf">cpi</span> <span class="no">R16</span><span class="p">,</span> <span class="mi">0x65</span>
+  <span class="nf">breq</span> <span class="no">vowelcount</span>
+  <span class="nf">cpi</span> <span class="no">R16</span><span class="p">,</span> <span class="mi">0x69</span>
+  <span class="nf">breq</span> <span class="no">vowelcount</span>
+  <span class="nf">cpi</span> <span class="no">R16</span><span class="p">,</span> <span class="mi">0x6F</span>
+  <span class="nf">breq</span> <span class="no">vowelcount</span>
+  <span class="nf">cpi</span> <span class="no">R16</span><span class="p">,</span> <span class="mi">0x75</span>
+  <span class="nf">brne</span> <span class="no">start</span>
+<span class="nl">vowelcount:</span>
+  <span class="nf">inc</span> <span class="no">R17</span>
+  <span class="nf">rjmp</span> <span class="no">start</span>
+<span class="nl">end:</span>
+  <span class="nf">rjmp</span> <span class="no">end</span>
+</pre></div>
+<p>Der Speicherinhalt vor der Ausf&uuml;hrung des Programmes:</p>
+<table>
+<thead>
+<tr>
+<th>0x5F</th>
+<th>0x60</th>
+<th>0x61</th>
+<th>0x62</th>
+<th>0x63</th>
+<th>0x64</th>
+<th>0x65</th>
+<th>0x66</th>
+<th>0x67</th>
+<th>0x68</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x00</td>
+<td>0x70</td>
+<td>0x6C</td>
+<td>0x61</td>
+<td>0x74</td>
+<td>0x65</td>
+<td>0x61</td>
+<td>0x75</td>
+<td>0x00</td>
+<td>0xAA</td>
+</tr>
+</tbody>
+</table>
+<p>Wie gro&szlig; ist das Programm und wie viel Taktzyklen ben&ouml;tigt es? Wie schaut der Speicher nach der Durchf&uuml;hrung aus?
+Beschreibe in einem Satz die Funktion. Welchen Wert hat nach der Ausf&uuml;hrung das Register R16, R17 und X?</p>
+<h2 id="hinweis">Hinweis</h2>
+<p>Das Programm nutzt die <a href="https://de.wikipedia.org/wiki/Ascii#ASCII-Tabelle">ASCII Darstellung</a> von Zeichen.  </p>
+        </div>
+        <div class="col-md-4" role="complementary">
+    <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
+    <ul class="nav"><li><a href="#allgemeines">Allgemeines</a></li><li><a href="#daten-vertauschen">Daten vertauschen</a><ul class="nav"><li><a href="#hinweise">Hinweise</a></li></ul></li><li><a href="#multiplikation-aller-elemente-eines-arrays_1">Multiplikation aller Elemente eines Arrays</a><ul class="nav"><li><a href="#hinweise_1">Hinweise</a></li></ul></li><li><a href="#alarmanlage_1">Alarmanlage</a><ul class="nav"><li><a href="#hinweise_2">Hinweise</a></li></ul></li><li><a href="#expertenaufgabe-fibonacci_1">Expertenaufgabe: Fibonacci</a><ul class="nav"><li><a href="#hinweise_3">Hinweise</a></li></ul></li><li><a href="#analyse-1_1">Analyse 1</a><ul class="nav"><li><a href="#hinweise_4">Hinweise</a></li></ul></li><li><a href="#analyse-2_1">Analyse 2</a></li><li><a href="#analyse-3">Analyse 3</a><ul class="nav"><li><a href="#hinweis">Hinweis</a></li></ul></li></ul>
+    </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 25.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/b'5077891'">b'5077891'</a>)</p></div></footer>
+</body>
+</html>

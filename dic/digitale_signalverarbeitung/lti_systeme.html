@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="description" content="Blog und Unterrichtsmaterial zu Digitale Systeme und Computersysteme">
+  <meta name="author" content="Günther Jena">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../favicon.ico">
+  <title>Semiversus | LTI Systeme</title>
+  <link href="../../theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../theme/css/semiversus.css" rel="stylesheet">
+  <link href="../../theme/css/pygments.css" rel="stylesheet">
+  <script src="../../theme/js/jquery.min.js"></script>
+  <script src="../../theme/js/bootstrap.min.js"></script>
+
+    <script type= "text/javascript">
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = 'https:' == document.location.protocol ? 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'; 
+        s[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" + 
+            "    config: ['MMLorHTML.js']," + 
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS','output/NativeMML']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," + 
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['%%','%%'] ], " +
+            "        processEscapes: false }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax .mo, .MathJax .mi': {color: 'black ! important'}} " +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(s);
+    </script>
+</head>
+<body data-spy="scroll" data-target="#sidebar" data-offset=30>
+  <div id="wrap">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a href="../../index.html" class="navbar-brand">SEMIVERSUS</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Blog</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
+                <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+                <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+                <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+                <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+                <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+                <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+                <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+                <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+                <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+              </ul>
+            <li><a href="../../projekte/projekte.html">Projekte</a></li>
+            <li><a href="../../about.html">Über mich</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+    <div class="visible-print-block">Semiversus | LTI Systeme</div>
+<ol class="breadcrumb hidden-print"><li><a href="../../dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li><li><strong>LTI Systeme</strong></li></ol><nav class="hidden-print"><ul class="pager">
+<li class="previous"><a href="../../dic/digitale_signalverarbeitung/signale.html">&larr; Signale</a></li><li class="next"><a href="../../dic/digitale_signalverarbeitung/faltung.html">Faltung &rarr;</a></li></ul></nav>
+      <div class="row">
+        <div class="col-md-8" role="main">
+  <header><h1>LTI Systeme<div class="pull-right hidden-print"><a href="../../dic/digitale_signalverarbeitung/lti_systeme.md"  class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="bottom" title="Quelltext zu dieser Seite"><span class="glyphicon glyphicon-file"></span></a></div></h1></header>
+  <h1 id="allgemeines">Allgemeines</h1>
+<p>In der Nachrichtentechnik versteht man ein System als eine Anordnung von verbundenen Komponenten zur Realisierung einer
+Aufgabenstellung. Ein System kann im mathematischen Sinne als Funktion(en) verstanden werden, die einen Zusammenhang
+zwischen Ein- und Ausg&auml;ngen herstellt.</p>
+<p><img alt="Systeme" src="../../dic/digitale_signalverarbeitung/system.png"/></p>
+<p>Je nachdem nach welcher der drei Komponenten (Eingang, Ausgang oder System) gesucht wird unterscheidet man:</p>
+<ul>
+<li><strong>Systemanalyse</strong> - Das Ausgangssignal wird gesucht, gegeben ist das Eingangssignal und das System</li>
+<li><strong>Systemsynthese</strong> - Das System wird gesucht, gegeben ist das Ein- und Ausgangssignal</li>
+<li><strong>Me&szlig;technik</strong> - Das Eingangssignal wird gesucht, gegeben ist das System und das Ausgangssignal</li>
+</ul>
+<h1 id="einordnung-von-systemen">Einordnung von Systemen</h1>
+<h2 id="lineare-systeme">Lineare Systeme</h2>
+<p><em>Linearit&auml;t</em> bedeutet, dass der Zusammenhang des Eingangs und des Ausgangs eines Systems eine <em>Lineare Abbildung</em> ist.</p>
+<div class="panel panel-info">
+<div class="panel-heading">Linearit&auml;t</div>
+<div class="panel-body">
+<p>Wenn der Eingang %%x_1[n]%% zum Ausgang %%y_1[n]%% f&uuml;hrt und %%x_2[n]%% zum Ausgang %%y_2[n]%% f&uuml;hrt, dann muss der
+<em>addierte</em> und <em>skalierte</em> Eingang %%a_1 x_1[n]+ a_2 x_2[n]%% zum addierten und skalierten Ausgang
+%%a_1 y_1[n]+ a_2 y_2[n]%% f&uuml;hren.</p>
+</div>
+</div>
+<p>Die Linearit&auml;t ist eine sehr wichtige Systemeigenschaft, den dadurch wird es m&ouml;gliche komplexe Eingangssignale in
+einfachere Teilsignale zu zerlegen und die resultierenden Ausgangssignale zu berechnen.</p>
+<p>Ein lineares System setzt voraus, dass beim Eingangssignal %%x[n]=0%% das Ausgangssignal %%y[n]=0%% ist, d.h. es darf
+keinen konstanten Term in der Systemgleichung geben (z.B. %%y[n]=x[n]+2%% ist ein nichtlineares System).</p>
+<h2 id="zeitinvariante-systeme">Zeitinvariante Systeme</h2>
+<p><em>Zeitinvarianz</em> bedeutet, dass egal zu welchem Zeitpunkt ein Eingangssignal an ein System angelegt wird, das
+Ausgangssignal (bis auf die zeitliche Verz&ouml;gerung) ident ist.</p>
+<p>Ein lineares System ist zeitinvariant, wenn die Koeffizienten der linearen Differentialgleichung konstant sind. In diesem
+Fall spricht man von <em>LTI</em>- (engl. f&uuml;r <em>Linear Time Invariant</em>) Systemen.</p>
+<p>LTI Systeme sind mittels Digitaltechnik einfach zu realisieren. Bei Analogtechnik gibt hier z.B. Probleme bei der
+Alterung von Bauteilen oder Temperaturabh&auml;ngigkeiten.</p>
+<h2 id="lange-der-impulsantwort">L&auml;nge der Impulsantwort</h2>
+<p>Die Impulsantwort enth&auml;lt die vollst&auml;ndige Information um ein zeitdiskretes LTI System zu beschreiben. Je nach Art
+des Systems gibt es zwei M&ouml;glichkeiten:</p>
+<ul>
+<li><strong>FIR</strong> - engl. f&uuml;r <em>Finite Impuls Response</em>, also endliche Impulsantwort</li>
+<li><strong>IIR</strong> - engl. f&uuml;r <em>Infinite Impuls Response</em>, also unendliche Impulsantwort</li>
+</ul>
+<h3 id="fir">FIR</h3>
+<p>In einem FIR System hat die Impulsantwort %%h[n]%% endlich viele Werte ungleich Null. Die Antwort
+eines solchen <em>FIR</em>-Systems kann einfach mittels Faltung des Eingangssignals und der Impulsantwort berechnet werden.</p>
+<p>Ein FIR System l&auml;sst sich wie folgt beschreiben:</p>
+<p>%%y[n]=h[0]\cdot x[n] + h[1]\cdot x[n-1] + h[2]\cdot x[n-2] + \ldots + h[N]\cdot x[n-N]=\sum\limits_{k=0}^N h[k] \cdot x[n-k]%%</p>
+<h3 id="iir">IIR</h3>
+<p>Ein IIR System liefert eine unendliche lange Impulsantwort. Dies kann der Fall sein, wenn z.B. durch eine R&uuml;ckkopplung
+der Ausgang zum Zeitpunkt %%y[n]%% von %%y[n-1]%% abh&auml;ngig ist.</p>
+<p>%%y[n]=\sum\limits_{k=0}^\infty h[k] \cdot x[n-k]%%</p>
+<h2 id="speicher_1">Speicher</h2>
+<p>Der Ausgang eines speicherlosen Systems ist nur vom aktuellen Eingangswert abh&auml;ngig. Um eine abh&auml;ngigkeit von
+vorangegangenen Eingangswerten zu erm&ouml;glichen ben&ouml;tigt das System einen Speicher, um diese Werte entsprechend
+vorzuhalten.</p>
+<p>Ein speicherloses LTI System kann den Eingangswert nur multiplizieren:</p>
+<p>%%y[n]=a x[n]%%</p>
+<p>Wenn das System einen Speicher besitzt, k&ouml;nnen auch %%N%% <em>fr&uuml;here</em> Einangswerte ber&uuml;cksichtigt werden:</p>
+<p>%%y[n]=a_0 x[n] + a_1 x[n-1] + a_2 x[n-2] + \ldots = \sum\limits_{k=0}^N a_k x[n-k]%%</p>
+<p>Ein System mit einem Speicher nennt man auch ein <em>dynamisches</em> System.</p>
+<h2 id="kausalitat">Kausalit&auml;t</h2>
+<p>Ein System ist <em>kausal</em>, wenn es nur von <em>aktuellen</em> oder <em>fr&uuml;heren</em> Eingangswerten abh&auml;ngt, aber keinen <em>zuk&uuml;nftigen</em>.</p>
+<p>Beim folgende System ist jeder Ausgangswert das arithmetische Mittel dreier Eingangswerte:</p>
+<p>%%y[n]=\frac{1}{3}(x[n-1]+x[n]+x[n+1])%%</p>
+<p>Dieses System ist <em>nicht kausal</em>, da der Ausgangswert zum Zeitpunkt %%n%% von einem Eingangswert zum Zeitpunkt %%n+1%%
+abh&auml;ngt.</p>
+<p>Das System mit der Eigenschaft der Mittelung von drei Werten l&auml;sst sich aber auch <em>kausal</em> formulieren:</p>
+<p>%%y[n]=\frac{1}{3}(x[n-2]+x[n-1]+x[n])%%</p>
+<h2 id="stabilitat">Stabilit&auml;t</h2>
+<p>Ein System gilt als stabil, wenn das Ausgangssignal bei beschr&auml;nktem Eingangssignal nicht &uuml;ber alle Grenzen anw&auml;chst.</p>
+<p>Zur Definition von Stabilit&auml;t gibt es verschiedene Methoden, wobei in der Systemtheorie die sogenannte <em>BIBO</em>-Stabilit&auml;t
+&uuml;blich ist. BIBO steht f&uuml;r engl. <em>bounded input, bounded output</em> (beschr&auml;nkter Eingang, beschr&auml;nkter Ausgang)</p>
+<p>In einem LTI System l&auml;sst sich die BIBO Stabilit&auml;t &uuml;ber die Impulasantwort ausdr&uuml;cken, wenn diese absolut integrierbar
+ist:</p>
+<p>%%\sum\limits_{n=0}^\infty \left|h[n]\right|\ &lt; \infty%%</p>
+<p>Jedes FIR System ist BIBO stabil, da die Summe &uuml;ber die Absolutwerte der Impulsantwort kleiner Unendlich ist (solange
+kein Koeffizient unendlich ist). Bei einem IIR System ist es m&ouml;glich nicht BIBO stabil zu sein.</p>
+<p>So ist die ein IIR System mit der Impulsantwort %%h[n]=u[n]%% (Einheitssprung) nicht BIBO stabil, da die Summe der Werte des
+Ausgangssignals von 0 bis Unendlich gleich Unendlich ist.</p>
+<p>Als Gegenbeispiel ist eine System mit der Impulsantwort %%h[n]=e^{-n}%% (f&uuml;r n gr&ouml;&szlig;er gleich 0) BIBO stabil, obwohl
+die Impulsantwort unendlich lang ist, sie sich aber 0 immer weiter ann&auml;hert und daher die Summe kleiner Unendlich ist.</p>
+        </div>
+        <div class="col-md-4" role="complementary">
+    <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
+    <ul class="nav"><li><a href="#allgemeines">Allgemeines</a></li><li><a href="#einordnung-von-systemen">Einordnung von Systemen</a><ul class="nav"><li><a href="#lineare-systeme">Lineare Systeme</a></li><li><a href="#zeitinvariante-systeme">Zeitinvariante Systeme</a></li><li><a href="#lange-der-impulsantwort">L&auml;nge der Impulsantwort</a><ul class="nav"><li><a href="#fir">FIR</a></li><li><a href="#iir">IIR</a></li></ul></li><li><a href="#speicher_1">Speicher</a></li><li><a href="#kausalitat">Kausalit&auml;t</a></li><li><a href="#stabilitat">Stabilit&auml;t</a></li></ul></li></ul>
+    </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 25.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/b'5077891'">b'5077891'</a>)</p></div></footer>
+</body>
+</html>

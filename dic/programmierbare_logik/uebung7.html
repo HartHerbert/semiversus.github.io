@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="description" content="Blog und Unterrichtsmaterial zu Digitale Systeme und Computersysteme">
+  <meta name="author" content="Günther Jena">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../favicon.ico">
+  <title>Semiversus | VHDL Übung 7 - Testbench</title>
+  <link href="../../theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../theme/css/semiversus.css" rel="stylesheet">
+  <link href="../../theme/css/pygments.css" rel="stylesheet">
+  <script src="../../theme/js/jquery.min.js"></script>
+  <script src="../../theme/js/bootstrap.min.js"></script>
+
+    <script type= "text/javascript">
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = 'https:' == document.location.protocol ? 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'; 
+        s[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" + 
+            "    config: ['MMLorHTML.js']," + 
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS','output/NativeMML']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," + 
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['%%','%%'] ], " +
+            "        processEscapes: false }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax .mo, .MathJax .mi': {color: 'black ! important'}} " +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(s);
+    </script>
+</head>
+<body data-spy="scroll" data-target="#sidebar" data-offset=30>
+  <div id="wrap">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a href="../../index.html" class="navbar-brand">SEMIVERSUS</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Blog</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
+                <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+                <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+                <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+                <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+                <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+                <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+                <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+                <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+                <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+              </ul>
+            <li><a href="../../projekte/projekte.html">Projekte</a></li>
+            <li><a href="../../about.html">Über mich</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+    <div class="visible-print-block">Semiversus | VHDL Übung 7 - Testbench</div>
+<ol class="breadcrumb hidden-print"><li><a href="../../dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li><li><strong>VHDL Übung 7 - Testbench</strong></li></ol><nav class="hidden-print"><ul class="pager">
+<li class="previous"><a href="../../dic/programmierbare_logik/uebung6.html">&larr; VHDL Übung 6 - Clicker</a></li></ul></nav>
+      <div class="row">
+        <div class="col-md-8" role="main">
+  <header><h1>VHDL Übung 7 - Testbench<div class="pull-right hidden-print"><a href="../../dic/programmierbare_logik/uebung7.md"  class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="bottom" title="Quelltext zu dieser Seite"><span class="glyphicon glyphicon-file"></span></a></div></h1></header>
+  <h1 id="ubungsaufgabe">&Uuml;bungsaufgabe</h1>
+<p>In dieser &Uuml;bung geht es um Testbenches.</p>
+<h1 id="vorbereitung">Vorbereitung</h1>
+<ul>
+<li><a href="../../dic/programmierbare_logik/vhdl_uebung_7.zip">Projektordner</a> herunterladen und entpacken</li>
+<li>Projekt <code>testbench.xise</code> &ouml;ffnen</li>
+</ul>
+<h1 id="schreiben-der-testbench">Schreiben der Testbench</h1>
+<h2 id="spezifikation">Spezifikation</h2>
+<p>Die Komponente <code>shifter</code> soll folgender Spezifikation entsprechen</p>
+<ul>
+<li>Die Komponente hat einen Ausgangsvektor <code>leds_o</code> mit 4 Bit Breite</li>
+<li>Nach dem Reset bzw. nach der Initialisierung wird <code>"0001"</code> auf <code>leds_o</code> ausgegeben.</li>
+<li>Ist w&auml;hrend einer steigenden Taktflanke an <code>clk_i</code> der Eingang <code>up_i</code> aktiv sollen die Ausg&auml;nge in folgender Reihenfolge wechseln: <code>"0010"</code>, <code>"0100"</code>, <code>"1000"</code> und dann wieder <code>"0001"</code></li>
+<li>Ist w&auml;hrend einer steigenden Taktflanke an <code>clk_i</code> der Eingang <code>down_i</code> aktiv sollen die Ausg&auml;nge in folgender Reihenfolge wechseln: <code>"1000"</code>, <code>"0100"</code>, <code>"0010"</code> und dann wieder <code>"0001"</code></li>
+<li><code>down_i</code> hat die h&ouml;here Priorit&auml;t wie <code>up_i</code></li>
+<li>Ist weder <code>up_i</code> noch <code>down_i</code> aktiv, soll sich der Ausgang nicht ver&auml;ndern</li>
+<li>Der Eingang <code>reset_i</code> f&uuml;hrt einen asynchronen Reset aus und dies hat die h&ouml;chste Priorit&auml;t</li>
+</ul>
+<h2 id="schreiben-der-testbench_1">Schreiben der Testbench</h2>
+<p>Erweitere die Datei <tt>shifter_tb.vhd</tt>.</p>
+<ul>
+<li>Mittels <code>assert</code> k&ouml;nnen Bedingungen gepr&uuml;ft werden.</li>
+<li>Mittels <code>wait for</code> kann f&uuml;r eine bestimmte Zeit gewartet werden.</li>
+</ul>
+<p>Beispiel:</p>
+<div class="codehilite"><pre><span></span><span class="k">wait</span> <span class="k">for</span> <span class="mi">10</span> <span class="n">ns</span><span class="p">;</span>
+<span class="k">assert</span> <span class="n">leds_o</span><span class="o">=</span><span class="s">"0001"</span> <span class="n">report</span> <span class="s">"Nach dem Reset sollte der Ausgang auf 0001 sein"</span><span class="p">;</span>
+</pre></div>
+<p>Der Teil mit <code>report</code> ist optional. Ein <code>wait for 0 ns</code> wertet einmal alle Signale aus, dies hilft oft direkt nach dem
+Start der Simulation (unmittelbar nach dem Start sind alle Signale <em>uninitialised</em>-<code>'U'</code>).</p>
+<h2 id="prufen-der-testbench">Pr&uuml;fen der Testbench</h2>
+<p>F&uuml;r die Komponente <code>shifter</code> stehen vier verschiedene Implementierungen zur Verf&uuml;gung (<em>architectures</em>). Die Testbench
+soll erkennen, welcher der vier Implementierungen funktioniert.</p>
+<p>Die Testbenches hei&szlig;en <code>behave1</code>, <code>behave2</code>, <code>behave3</code> und <code>behave4</code>.</p>
+        </div>
+        <div class="col-md-4" role="complementary">
+    <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
+    <ul class="nav"><li><a href="#ubungsaufgabe">&Uuml;bungsaufgabe</a></li><li><a href="#vorbereitung">Vorbereitung</a></li><li><a href="#schreiben-der-testbench">Schreiben der Testbench</a><ul class="nav"><li><a href="#spezifikation">Spezifikation</a></li><li><a href="#schreiben-der-testbench_1">Schreiben der Testbench</a></li><li><a href="#prufen-der-testbench">Pr&uuml;fen der Testbench</a></li></ul></li></ul>
+    </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 25.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/b'5077891'">b'5077891'</a>)</p></div></footer>
+</body>
+</html>

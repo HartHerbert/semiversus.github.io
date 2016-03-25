@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="description" content="Blog und Unterrichtsmaterial zu Digitale Systeme und Computersysteme">
+  <meta name="author" content="Günther Jena">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../favicon.ico">
+  <title>Semiversus | Register</title>
+  <link href="../../theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../theme/css/semiversus.css" rel="stylesheet">
+  <link href="../../theme/css/pygments.css" rel="stylesheet">
+  <script src="../../theme/js/jquery.min.js"></script>
+  <script src="../../theme/js/bootstrap.min.js"></script>
+
+    <script type= "text/javascript">
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = 'https:' == document.location.protocol ? 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'; 
+        s[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" + 
+            "    config: ['MMLorHTML.js']," + 
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS','output/NativeMML']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," + 
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['%%','%%'] ], " +
+            "        processEscapes: false }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax .mo, .MathJax .mi': {color: 'black ! important'}} " +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(s);
+    </script>
+</head>
+<body data-spy="scroll" data-target="#sidebar" data-offset=30>
+  <div id="wrap">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a href="../../index.html" class="navbar-brand">SEMIVERSUS</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Blog</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
+                <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+                <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+                <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+                <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+                <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+                <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+                <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+                <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+                <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+              </ul>
+            <li><a href="../../projekte/projekte.html">Projekte</a></li>
+            <li><a href="../../about.html">Über mich</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+    <div class="visible-print-block">Semiversus | Register</div>
+<ol class="breadcrumb hidden-print"><li><a href="../../dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li><li><strong>Register</strong></li></ol><nav class="hidden-print"><ul class="pager">
+<li class="previous"><a href="../../dic/programmierbare_logik/process.html">&larr; Process-Statment</a></li><li class="next"><a href="../../dic/programmierbare_logik/synchronisierung.html">Synchronisierung asynchroner Signale &rarr;</a></li></ul></nav>
+      <div class="row">
+        <div class="col-md-8" role="main">
+  <header><h1>Register<div class="pull-right hidden-print"><a href="../../dic/programmierbare_logik/register.md"  class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="bottom" title="Quelltext zu dieser Seite"><span class="glyphicon glyphicon-file"></span></a></div></h1></header>
+  <h1 id="allgemeines">Allgemeines</h1>
+<p>Register dienen in der Digitaltechnik dazu, Werte zu speichern. Register k&ouml;nnen durch verschiedene Arten von Flip-Flops
+realisiert werden (siehe <a href="../../dic/grundlagen_der_digitaltechnik/sequentielle_logik.html">sequentielle Logik</a>).</p>
+<h1 id="register-mit-reset">Register mit Reset</h1>
+<div class="panel panel-info">
+<div class="panel-heading">Name f&uuml;r das Reset Signal</div>
+<div class="panel-body">
+<p>Wie beim Taktsignal steht es dem Entwickler frei, einen Namen f&uuml;r das Resetsignal zu w&auml;hlen. In der Praxis wird
+meist <code>rst</code> oder <code>reset</code> verwendet. Je nach Anwendung kann es <em>high</em>- oder <em>low</em>-aktiv sein. Bei <em>low</em>-aktiven Resets
+wird meist ein Postfix verwendet, der darauf hindeutet (z.B. <code>rst_n</code> f&uuml;r <em>NOT</em>).</p>
+</div>
+<div class="panel-body">
+<p>In diesem Skriptum wird das Resetsignal mit <code>rst</code> bezeichnet und ist bei <em>High</em> aktiv.</p>
+</div>
+</div>
+<h2 id="mit-asynchronem-reset">Mit asynchronem Reset</h2>
+<div class="codehilite"><pre><span></span><span class="k">library</span> <span class="nn">ieee</span> <span class="p">;</span>
+<span class="k">use</span> <span class="nn">ieee.std_logic_1164.</span><span class="k">all</span><span class="p">;</span>
+
+<span class="k">entity</span> <span class="nc">dff</span> <span class="k">is</span>
+  <span class="k">port</span><span class="p">(</span>
+    <span class="n">clk</span><span class="o">:</span> <span class="k">in</span> <span class="kt">std_ulogic</span><span class="p">;</span>
+    <span class="n">rst</span><span class="o">:</span> <span class="k">in</span> <span class="kt">std_ulogic</span><span class="p">;</span>
+    <span class="n">data_i</span><span class="o">:</span> <span class="k">in</span> <span class="kt">std_ulogic</span><span class="p">;</span>
+    <span class="n">data_o</span><span class="o">:</span> <span class="k">out</span> <span class="kt">std_ulogic</span>
+  <span class="p">);</span>
+<span class="k">end</span> <span class="k">entity</span><span class="p">;</span>
+
+<span class="k">architecture</span> <span class="nc">behave</span> <span class="k">of</span> <span class="nc">dff</span> <span class="k">is</span>
+<span class="k">begin</span>
+    <span class="k">process</span><span class="p">(</span><span class="n">rst</span><span class="p">,</span> <span class="n">clk</span><span class="p">)</span>
+    <span class="k">begin</span>
+      <span class="k">if</span> <span class="n">rst</span><span class="o">=</span><span class="sc">'1'</span> <span class="k">then</span>
+        <span class="n">data_o</span> <span class="o">&lt;=</span> <span class="sc">'0'</span><span class="p">;</span>
+      <span class="k">elsif</span> <span class="n">rising_edge</span><span class="p">(</span><span class="n">clk</span><span class="p">)</span> <span class="k">then</span>
+        <span class="n">data_o</span> <span class="o">&lt;=</span> <span class="n">data_i</span><span class="p">;</span>
+      <span class="k">end</span> <span class="k">if</span><span class="p">;</span>
+    <span class="k">end</span> <span class="k">process</span><span class="p">;</span>  
+<span class="k">end</span> <span class="k">architecture</span><span class="p">;</span>
+</pre></div>
+<p>Dem taktflanken getriggerten D FlipFlop wurde ein asynchroner Reset hinzugef&uuml;gt. <code>rst</code> wurde der Sensitivit&auml;tsliste hinzugef&uuml;gt, d.h. der <code>process</code> wird auch f&uuml;r &Auml;nderungen an <code>rst</code> getriggert. Innerhalb des <code>process</code> wird zuerst <code>rst</code> ausgewertet und erst dann auf eine steigende Taktflanke &uuml;berpr&uuml;ft.</p>
+<p><img alt="D-Flipflop mit asynchronem Reset" src="../../dic/programmierbare_logik/dff_async.png"/></p>
+<h2 id="mit-synchronem-reset">Mit synchronem Reset</h2>
+<p>In diesem Beispiel soll der Zustand nur bei einer steigenden Taktflanke von <code>clk</code> und bei <code>rst</code> auf <code>1</code> zur&uuml;clgesetzt werden. Das Zur&uuml;cksetzen erfolgt also synchron zum Takt.</p>
+<div class="codehilite"><pre><span></span><span class="k">library</span> <span class="nn">ieee</span> <span class="p">;</span>
+<span class="k">use</span> <span class="nn">ieee.std_logic_1164.</span><span class="k">all</span><span class="p">;</span>
+
+<span class="k">entity</span> <span class="nc">dff</span> <span class="k">is</span>
+  <span class="k">port</span><span class="p">(</span>
+    <span class="n">clk</span><span class="o">:</span> <span class="k">in</span> <span class="kt">std_ulogic</span><span class="p">;</span>
+    <span class="n">rst</span><span class="o">:</span> <span class="k">in</span> <span class="kt">std_ulogic</span><span class="p">;</span>
+    <span class="n">data_i</span><span class="o">:</span> <span class="k">in</span> <span class="kt">std_ulogic</span><span class="p">;</span>
+    <span class="n">data_o</span><span class="o">:</span> <span class="k">out</span> <span class="kt">std_ulogic</span>
+  <span class="p">);</span>
+<span class="k">end</span> <span class="k">entity</span><span class="p">;</span>
+
+<span class="k">architecture</span> <span class="nc">behave</span> <span class="k">of</span> <span class="nc">dff</span> <span class="k">is</span>
+<span class="k">begin</span>
+    <span class="k">process</span><span class="p">(</span><span class="n">clk</span><span class="p">)</span>
+    <span class="k">begin</span>
+      <span class="k">if</span> <span class="n">rising_edge</span><span class="p">(</span><span class="n">clk</span><span class="p">)</span> <span class="k">then</span>
+        <span class="k">if</span> <span class="n">rst</span><span class="o">=</span><span class="sc">'1'</span> <span class="k">then</span>
+          <span class="n">data_o</span> <span class="o">&lt;=</span> <span class="sc">'0'</span><span class="p">;</span>
+        <span class="k">else</span>
+          <span class="n">data_o</span> <span class="o">&lt;=</span> <span class="n">data_i</span><span class="p">;</span>
+        <span class="k">end</span> <span class="k">if</span><span class="p">;</span>
+      <span class="k">end</span> <span class="k">if</span><span class="p">;</span>
+    <span class="k">end</span> <span class="k">process</span><span class="p">;</span>  
+<span class="k">end</span> <span class="k">architecture</span><span class="p">;</span>
+</pre></div>
+<p>Die Sensitivity List besteht nur mehr aus dem <code>clk</code> Signal. Bei einer steigenden Taktflanke wird ausgewertet, ob <code>rst</code> gleich <code>1</code> ist. Wenn dies der Fall ist, wird der interne Zustand <code>data_o</code> auf <code>0</code> gesetzt, ansonsten wird der Wert von <code>data_i</code> &uuml;bernommen.</p>
+<p><img alt="D-Flipflop mit synchronem Reset" src="../../dic/programmierbare_logik/dff_sync.png"/></p>
+<h2 id="mittels-initialisierung">Mittels Initialisierung</h2>
+<p>In FPGAs l&auml;sst sich der Zustand eines FlipFlops nach einem Ein-Ausschalt Zyklus auch durch die Initialisierung des
+entsprechenden Signals realisieren. Das Register h&auml;lt dann den entsprechenden Initialisierungswert, nachdem der FPGA
+sein Design geladen.</p>
+<div class="codehilite"><pre><span></span><span class="k">architecture</span> <span class="nc">behave</span> <span class="k">of</span> <span class="nc">dff</span> <span class="k">is</span>
+  <span class="k">signal</span> <span class="n">d_reg</span> <span class="o">:</span> <span class="kt">std_ulogic</span> <span class="o">:=</span> <span class="sc">'0'</span><span class="p">;</span>
+<span class="k">begin</span>
+    <span class="k">process</span><span class="p">(</span><span class="n">clk</span><span class="p">)</span>
+    <span class="k">begin</span>
+      <span class="k">if</span> <span class="n">rising_edge</span><span class="p">(</span><span class="n">clk</span><span class="p">)</span> <span class="k">then</span>
+        <span class="n">d_reg</span> <span class="o">&lt;=</span> <span class="n">data_i</span><span class="p">;</span>
+      <span class="k">end</span> <span class="k">if</span><span class="p">;</span>
+    <span class="k">end</span> <span class="k">process</span><span class="p">;</span>
+
+    <span class="n">data_o</span> <span class="o">&lt;=</span> <span class="n">d_reg</span><span class="p">;</span>
+<span class="k">end</span> <span class="k">architecture</span><span class="p">;</span>
+</pre></div>
+        </div>
+        <div class="col-md-4" role="complementary">
+    <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
+    <ul class="nav"><li><a href="#allgemeines">Allgemeines</a></li><li><a href="#register-mit-reset">Register mit Reset</a><ul class="nav"><li><a href="#mit-asynchronem-reset">Mit asynchronem Reset</a></li><li><a href="#mit-synchronem-reset">Mit synchronem Reset</a></li><li><a href="#mittels-initialisierung">Mittels Initialisierung</a></li></ul></li></ul>
+    </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 25.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/b'5077891'">b'5077891'</a>)</p></div></footer>
+</body>
+</html>

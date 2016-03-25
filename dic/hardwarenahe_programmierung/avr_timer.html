@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="description" content="Blog und Unterrichtsmaterial zu Digitale Systeme und Computersysteme">
+  <meta name="author" content="Günther Jena">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../favicon.ico">
+  <title>Semiversus | Timer beim Atmel AVR</title>
+  <link href="../../theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../theme/css/semiversus.css" rel="stylesheet">
+  <link href="../../theme/css/pygments.css" rel="stylesheet">
+  <script src="../../theme/js/jquery.min.js"></script>
+  <script src="../../theme/js/bootstrap.min.js"></script>
+
+    <script type= "text/javascript">
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = 'https:' == document.location.protocol ? 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'; 
+        s[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" + 
+            "    config: ['MMLorHTML.js']," + 
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS','output/NativeMML']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," + 
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['%%','%%'] ], " +
+            "        processEscapes: false }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax .mo, .MathJax .mi': {color: 'black ! important'}} " +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(s);
+    </script>
+</head>
+<body data-spy="scroll" data-target="#sidebar" data-offset=30>
+  <div id="wrap">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a href="../../index.html" class="navbar-brand">SEMIVERSUS</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Blog</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
+                <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+                <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+                <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+                <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+                <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+                <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+                <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+                <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+                <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+              </ul>
+            <li><a href="../../projekte/projekte.html">Projekte</a></li>
+            <li><a href="../../about.html">Über mich</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+    <div class="visible-print-block">Semiversus | Timer beim Atmel AVR</div>
+<ol class="breadcrumb hidden-print"><li><a href="../../dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li><li><strong>Timer beim Atmel AVR</strong></li></ol>      <div class="row">
+        <div class="col-md-8" role="main">
+  <header><h1>Timer beim Atmel AVR<div class="pull-right hidden-print"><a href="../../dic/hardwarenahe_programmierung/avr_timer.md"  class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="bottom" title="Quelltext zu dieser Seite"><span class="glyphicon glyphicon-file"></span></a></div></h1></header>
+  <div class="panel panel-info">
+<div class="panel-heading">Diese Seite beschreibt die Timer des ATMega16</div>
+<div class="panel-body">
+<p>Prinzipiell l&auml;sst sich diese Information auch auf andere Mikrocontroller der AVR Serie &uuml;bertragen, es empfiehlt sich
+aber die Informationen mit dem entsprechenden Datenblatt zu vergleichen!</p>
+</div>
+</div>
+<div class="panel panel-info">
+<div class="panel-heading">Informationen im Datenblatt</div>
+<div class="panel-body">
+<p>Die Informationen dieser Seite entstammen dem originalen <a href="../../dic/hardwarenahe_programmierung/atmel_atmega16.pdf">Datenblatt</a>
+(Rev. 2466T&ndash;AVR&ndash;07/10) des ATMega16 von Atmel.</p>
+</div>
+<div class="panel-body">
+<ul>
+<li><em>Seite 71-86</em>: Timer0 (8 Bit)<ul>
+<li><em>Seite 71</em>: &Uuml;bersicht und Blockschaltbild</li>
+<li><em>Seite 76-80</em>: Betriebsmodi</li>
+<li><em>Seite 83-86</em>: Registerbeschreibung</li>
+</ul>
+</li>
+<li><em>Seite 89-116</em>: Timer1 (16 Bit)<ul>
+<li><em>Seite 89</em>: &Uuml;bersicht und Blockschaltbild</li>
+<li><em>Seite 101-107</em>: Betriebsmodi</li>
+<li><em>Seite 110-116</em>: Registerbeschreibung</li>
+</ul>
+</li>
+<li><em>Seite 117-134</em>: Timer2 (8 Bit)<ul>
+<li><em>Seite 117</em>: &Uuml;bersicht und Blockschaltbild</li>
+<li><em>Seite 122-125</em>: Betriebsmodi</li>
+<li><em>Seite 128-130</em>: Registerbeschreibung</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<h1 id="allgemeines">Allgemeines</h1>
+<p>Ein <em>Timer</em> ist ein spezieller Z&auml;hler, der Ereignisse z&auml;hlt. Diese Ereignisse k&ouml;nnen sich auch vom Prozessortakt ableiten
+und von daher kommt die Bezeichnung <em>Timer</em>. Prinzipiell ist ein Timer f&uuml;r folgende Aufgaben geeignet:</p>
+<ul>
+<li>Zeiten zwischen zwei Ereignissen messen</li>
+<li>Nach einer bestimmten Zeit ein Ereignis ausl&ouml;sen</li>
+<li>Periodische Ereignisse ausl&ouml;sen</li>
+<li>Ereignisse z&auml;hlen</li>
+<li>Erzeugung von PWM Signalen</li>
+</ul>
+<p>Diese Funktionalit&auml;ten werden in der Praxis sehr oft ben&ouml;tigt. Die universellen Einsatzm&ouml;glichkeiten haben allerdings
+den Nachteil, dass der Timer teilweise recht komplex in der Anwendung sein kann.</p>
+<p>Der ATMega16 enth&auml;lt drei Timer. Timer 0 und 2 sind 8 Bit Timer, Time 1 ist ein 16 Bit Timer.</p>
+<h1 id="timer-0-8-bit-timer">Timer 0 (8 Bit Timer)</h1>
+<p><figure><img src="../../dic/hardwarenahe_programmierung/avr_timer0.png"><figcaption>Blockschaltbild des Timer 0 (Quelle: <a href="http://www.atmel.com/images/doc2466.pdf">Datenblatt ATMega16</a> &copy; Atmel Corporation)</figcaption></img></figure></p>
+<p>Das Blockschaltbild des Timer 0 zeigt den prinzipiellen Aufbau des Timers welcher im folgenden beschrieben wird.</p>
+<h2 id="interrupts">Interrupts</h2>
+<p>Der Timer 0 nutzt zwei Interruptquellen:</p>
+<ul>
+<li><code>TIMER0_OVF_vect</code> (im Blockschaltbild TOV0) - L&ouml;st aus, sobald es zu einem &Uuml;berlauf des Timer Registers <code>TCNT0</code> kommt</li>
+<li><code>TIMER0_COMP_vect</code> (im Blockschaltbild OC0) - L&ouml;st aus, sobald das Timer Register <code>TCNT0</code> gleich <code>OCR0</code> ist</li>
+</ul>
+<h2 id="tcnt0-timer-counter-register"><code>TCNT0</code> - Timer Counter Register</h2>
+<p>Dieses Register ist der Kern des Timers. Beim Timer 0 ist dieses Register 8 Bit gro&szlig;, d.h. es kann von 0 bis 255 z&auml;hlen.</p>
+<p><code>TCNT0</code> kann direkt gelesen und geschrieben werden. Die Steuerung (Control Logic) hat die M&ouml;glichkeit, dieses
+Register auf 0 zu setzen oder das Register um eins zu erh&ouml;hen oder zu erniedrigen.</p>
+<p>Die Steuerung ist abh&auml;ngig von der Konfiguration &uuml;ber <code>TCCR0</code> und dem Status der Vergleiche mit 0, mit 0xFF und dem
+Vergleich mit <code>OCR0</code>.</p>
+<h2 id="ocr0-vergleichsregister"><code>OCR0</code> - Vergleichsregister</h2>
+<p>Das Register <code>OCR0</code> ist ein 8 Bit Register das f&uuml;r den Vergleich mit <code>TCNT0</code> genutzt wird. Der Vergleich kann f&uuml;r drei 
+Funktionen benutzt werden:</p>
+<ul>
+<li>Die Generierung eines PWM Signals mittels <em>Waveform Generetion</em> am Pin <em>OC0</em></li>
+<li>Das Ausl&ouml;sen des Interrupts <code>TIMER0_COMP_vect</code> bei &Auml;quvivalenz mit <code>TCNT0</code></li>
+<li>Die Auswertung mittels der Steuerung des Timer 0</li>
+</ul>
+<h2 id="tccr0-timer-counter-control-register"><code>TCCR0</code> - Timer Counter Control Register</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Bit</th>
+<th align="center">7</th>
+<th align="center">6</th>
+<th align="center">5</th>
+<th align="center">4</th>
+<th align="center">3</th>
+<th align="center">2</th>
+<th align="center">1</th>
+<th align="center">0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Name</td>
+<td align="center">FOC0</td>
+<td align="center">WGM00</td>
+<td align="center">COM01</td>
+<td align="center">COM00</td>
+<td align="center">WGM01</td>
+<td align="center">CS02</td>
+<td align="center">CS01</td>
+<td align="center">CS00</td>
+</tr>
+<tr>
+<td align="left">Read/Write</td>
+<td align="center">W</td>
+<td align="center">R/W</td>
+<td align="center">R/W</td>
+<td align="center">R/W</td>
+<td align="center">R/W</td>
+<td align="center">R/W</td>
+<td align="center">R/W</td>
+<td align="center">R/W</td>
+</tr>
+<tr>
+<td align="left">Init</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="foc">FOC</h3>
+<p>Spezielles Bit zur Ausf&uuml;hrung eines <em>Compare Match</em> in nicht PWM Modi. F&uuml;r weitere Informationen dazu ist im Datenblatt
+nachzulesen.</p>
+<h3 id="wgm01-und-wgm00-betriebsmodi">WGM01 und WGM00 - Betriebsmodi</h3>
+<p>Diese beiden Bits beschreiben die Betriebsmodi des Timers:</p>
+<table>
+<thead>
+<tr>
+<th>Modus</th>
+<th>WGM01</th>
+<th>WGM00</th>
+<th>Bezeichnung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>Normaler Modus</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>PWM, Phasenkorrekt</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>CTC</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+<td>Fast PWM</td>
+</tr>
+</tbody>
+</table>
+<p>Die verschiedenen Modi sind unter "<a href="#betriebsmodi_1">Betriebsmodi</a>" ausf&uuml;hrlich beschrieben.</p>
+<h3 id="com01-und-com00-funktion-des-oc0-pins">COM01 und COM00 - Funktion des <em>OC0</em> Pins</h3>
+<p>Beschreibt die Funktionsweise des Pins <em>OC0</em>. Sind beide Bits auf <code>0</code> wird der Pin als normaler Portpin verwendet
+(Port B Bit 3). Bei anderen Kombinationen ist der <em>Compare Match Output Mode</em> aktiv und die normale Portfunktion wird
+&uuml;berschrieben. Weitere Informationen finden sich unter <a href="../../dic/hardwarenahe_programmierung/avr_pwm.html">PWM Erzeugung</a>.</p>
+<h3 id="cs02-cs01-und-cs00-clock-select">CS02, CS01 und CS00 - Clock Select</h3>
+<table>
+<thead>
+<tr>
+<th>CS02</th>
+<th>CS01</th>
+<th>CS00</th>
+<th>Bezeichnung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>Kein Takt (Timer ist quasi abgeschaltet)</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Prozessortakt</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>Prozessortakt / 8</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>Prozessortakt / 64</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>Prozessortakt / 256</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>Prozessortakt / 1024</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>Fallende Flanke an Pin T0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>Steigende Flanke an Pin T1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="timsk-timer-interrupt-mask-register_1"><code>TIMSK</code> - Timer Interrupt Mask Register</h2>
+<p>&Uuml;ber das <em>Timer Interrupt Mask Register</em> werden die Interruptfreigaben f&uuml;r alle drei Timer gesetzt. F&uuml;r den Timer0 gibt
+es wie bereits beschrieben die beiden Interrupts <code>TOIE0</code> (Timer Overflow) und <code>OCIE0</code> (Output Compare Match). Um den
+jeweiligen Interrupt zu aktivieren muss eine logische <code>1</code> an die entsprechende Stelle geschrieben werden.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Bit</th>
+<th align="center">7</th>
+<th align="center">6</th>
+<th align="center">5</th>
+<th align="center">4</th>
+<th align="center">3</th>
+<th align="center">2</th>
+<th align="center"><strong>1</strong></th>
+<th align="center"><strong>0</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Name</td>
+<td align="center">OCIE2</td>
+<td align="center">TOIE2</td>
+<td align="center">TICIE1</td>
+<td align="center">OCIE1A</td>
+<td align="center">OCIE1B</td>
+<td align="center">TOIE1</td>
+<td align="center"><strong>OCIE0</strong></td>
+<td align="center"><strong>TOIE0</strong></td>
+</tr>
+<tr>
+<td align="left">Read/Write</td>
+<td align="center">R/W</td>
+<td align="center">R/W</td>
+<td align="center">R/W</td>
+<td align="center">R/W</td>
+<td align="center">R/W</td>
+<td align="center">R/W</td>
+<td align="center"><strong>R/W</strong></td>
+<td align="center"><strong>R/W</strong></td>
+</tr>
+<tr>
+<td align="left">Init</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"><strong>0</strong></td>
+<td align="center"><strong>0</strong></td>
+</tr>
+</tbody>
+</table>
+<h1 id="betriebsmodi_1">Betriebsmodi</h1>
+<h2 id="normaler-modus">Normaler Modus</h2>
+<p>Bei diesem Modus z&auml;hlt der Timer bis zum Maximum seines Z&auml;hlbereiches (255 bzw. 65535). Der Timer kann so konfiguriert
+werden, dass beim Erreichen dieses Maximums der <code>TIMERn_OVF_vect</code> ausgel&ouml;st wird.</p>
+<p>Die Frequenz, mit der ein Overflow bei Verwendung des Prozessortakts als Taktquelle auftritt ergibt sich mit:</p>
+<p>%%f_{TOVF}=\frac{f_{CLK}}{Prescaler\cdot N_{max}}%%</p>
+<p>Als Prescaler stehen dabei 1, 8, 64, 256 und 1024 zur Verf&uuml;gung. %%N_{max}%% ist dabei 256 f&uuml;r 8 Bit Timer und 65536 f&uuml;r 
+16 Bit Timer.</p>
+<p>Der Interrupt TIMERn_COMPx_vect kann aktiviert werden und wird ausgel&ouml;st, sobald das Timerregister <code>TCNTn</code> den
+Vergleichswert <code>OCRn</code> erreicht.</p>
+<h2 id="ctc-clear-timer-on-compare">CTC - Clear Timer on Compare</h2>
+<p>Hier z&auml;hlt der Timer nach oben bis zum Erreichen des <code>OCRn</code> Registers. Das Register <code>TCNTn</code> wird beim Erreichen
+zur&uuml;ckgesetzt. Der Timer kann so konfiguriert werden, dass beim Erreichen des <code>OCRn</code> Wertes der <code>TIMERn_COMPx_vect</code>
+ausgel&ouml;st wird.</p>
+<p>Die Frequenz, mit der ein <em>Compare Match</em> bei Verwendung des Prozessortakts als Taktquelle auftritt ergibt sich mit:</p>
+<p>%%f_{COMP}=\frac{f_{CLK}}{Prescaler\cdot (OCRn + 1)}%%</p>
+<h2 id="fast-pwm">Fast PWM</h2>
+<p>Beim Fast PWM z&auml;hlt der Timer bis zum Maximum seines Z&auml;hlberreichs. Das Register <code>OCRn</code> dient als Vergleich und abh&auml;ngig
+davon, ob <code>TCNTn</code> kleiner oder gr&ouml;&szlig;er <code>OCRn</code> ist, kann der OCn Pin auf logisch <code>0</code> oder <code>1</code> gesetzt werden. Mehr dazu im Kapitel <a href="../../dic/hardwarenahe_programmierung/avr_pwm.html">PWM Erzeugung</a>.</p>
+<h2 id="pwm-phasenkorrekt">PWM, Phasenkorrekt</h2>
+<p>Siehe auch hier im Kapitel <a href="../../dic/hardwarenahe_programmierung/avr_pwm.html">PWM Erzeugung</a>.</p>
+<h1 id="pins_1">Pins</h1>
+<figure><img src="../../dic/hardwarenahe_programmierung/avr_timer_pins.png"><figcaption>Pins mit Timerfunktionalit&auml;t (Quelle: <a href="http://www.atmel.com/images/doc2466.pdf">Datenblatt ATMega16</a> &copy; Atmel Corporation)</figcaption></img></figure>
+        </div>
+        <div class="col-md-4" role="complementary">
+    <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
+    <ul class="nav"><li><a href="#allgemeines">Allgemeines</a></li><li><a href="#timer-0-8-bit-timer">Timer 0 (8 Bit Timer)</a><ul class="nav"><li><a href="#interrupts">Interrupts</a></li><li><a href="#tcnt0-timer-counter-register">TCNT0 - Timer Counter Register</a></li><li><a href="#ocr0-vergleichsregister">OCR0 - Vergleichsregister</a></li><li><a href="#tccr0-timer-counter-control-register">TCCR0 - Timer Counter Control Register</a><ul class="nav"><li><a href="#foc">FOC</a></li><li><a href="#wgm01-und-wgm00-betriebsmodi">WGM01 und WGM00 - Betriebsmodi</a></li><li><a href="#com01-und-com00-funktion-des-oc0-pins">COM01 und COM00 - Funktion des OC0 Pins</a></li><li><a href="#cs02-cs01-und-cs00-clock-select">CS02, CS01 und CS00 - Clock Select</a></li></ul></li><li><a href="#timsk-timer-interrupt-mask-register_1">TIMSK - Timer Interrupt Mask Register</a></li></ul></li><li><a href="#betriebsmodi_1">Betriebsmodi</a><ul class="nav"><li><a href="#normaler-modus">Normaler Modus</a></li><li><a href="#ctc-clear-timer-on-compare">CTC - Clear Timer on Compare</a></li><li><a href="#fast-pwm">Fast PWM</a></li><li><a href="#pwm-phasenkorrekt">PWM, Phasenkorrekt</a></li></ul></li><li><a href="#pins_1">Pins</a></li></ul>
+    </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 25.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/b'5077891'">b'5077891'</a>)</p></div></footer>
+</body>
+</html>

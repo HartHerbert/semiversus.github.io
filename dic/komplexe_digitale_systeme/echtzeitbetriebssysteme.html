@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="description" content="Blog und Unterrichtsmaterial zu Digitale Systeme und Computersysteme">
+  <meta name="author" content="Günther Jena">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../favicon.ico">
+  <title>Semiversus | Echtzeitbetriebsssysteme Übersicht</title>
+  <link href="../../theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../theme/css/semiversus.css" rel="stylesheet">
+  <link href="../../theme/css/pygments.css" rel="stylesheet">
+  <script src="../../theme/js/jquery.min.js"></script>
+  <script src="../../theme/js/bootstrap.min.js"></script>
+
+    <script type= "text/javascript">
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = 'https:' == document.location.protocol ? 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'; 
+        s[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" + 
+            "    config: ['MMLorHTML.js']," + 
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS','output/NativeMML']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," + 
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['%%','%%'] ], " +
+            "        processEscapes: false }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax .mo, .MathJax .mi': {color: 'black ! important'}} " +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(s);
+    </script>
+</head>
+<body data-spy="scroll" data-target="#sidebar" data-offset=30>
+  <div id="wrap">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a href="../../index.html" class="navbar-brand">SEMIVERSUS</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Blog</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
+                <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+                <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+                <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+                <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+                <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+                <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+                <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+                <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+                <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+              </ul>
+            <li><a href="../../projekte/projekte.html">Projekte</a></li>
+            <li><a href="../../about.html">Über mich</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+    <div class="visible-print-block">Semiversus | Echtzeitbetriebsssysteme Übersicht</div>
+<ol class="breadcrumb hidden-print"><li><a href="../../dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li><li><strong>Echtzeitbetriebsssysteme Übersicht</strong></li></ol>      <div class="row">
+        <div class="col-md-8" role="main">
+  <header><h1>Echtzeitbetriebsssysteme Übersicht<div class="pull-right hidden-print"><a href="../../dic/komplexe_digitale_systeme/echtzeitbetriebssysteme.md"  class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="bottom" title="Quelltext zu dieser Seite"><span class="glyphicon glyphicon-file"></span></a></div></h1></header>
+  <h1 id="allgemeines">Allgemeines</h1>
+<p>Ein <em>Echtzeitbetriebssystem</em> ist ein Betriebssystem, dass speziell f&uuml;r "Echtzeit"-Anwendungen entwickelt und verwendet wird. Der Schl&uuml;sselkriterium eines Echtzeitbetriebssystems (engl. RTOS f&uuml;r Real Time Operating System) ist die Einhaltung der Zeitbedingungen und die Vorhersagbarkeit des Prozessverhaltens.</p>
+<h1 id="begriffe">Begriffe</h1>
+<h2 id="echtzeit">Echtzeit</h2>
+<p>Abh&auml;ngig von den Folgen wird manchmal zwischen <em>harter Echtzeit</em> (engl. hard real-time), weicher Echtzeit (engl. soft real-time) und fester Echtzeit unterschieden. Hierf&uuml;r gelten jeweils unterschiedliche Echtzeitanforderungen.</p>
+<p><strong>Harte Echtzeitanforderungen</strong>: Eine &Uuml;berschreitung der Antwortzeit wird als ein Fehler gewertet. Echtzeitsysteme (sollten) das korrekte Ergebnis immer innerhalb der vorgegebenen Zeitschranken liefern. Um diese Bedingungen einhalten zu k&ouml;nnen sind genaue Kenntnisse der Resourcenverteilung w&auml;hrend des Betriebs schon in der Entwicklungsphase notwendig, um die entsprechenden Vorkehrungen zu treffen.</p>
+<p><strong>Weiche Echtzeitanforderungen</strong>: Solche Systeme arbeiten typischerweise alle ankommenden Eingaben schnell genug ab. Die Antwortzeit erreicht beispielsweise einen akzeptablen Mittelwert oder ein anderes statistisches Kriterium. Die Zeitanforderungen sind hier als Richtlinien zu sehen. Ein &Uuml;berschreiten der Zeitanforderung muss nicht als Fehler gewertet werden. Zum einen kann die Zeit h&auml;ufig &uuml;berschritten werden, solange sie sich noch in einem Toleranzbereich befindet.</p>
+<p><strong>Feste Echtzeitanforderungen</strong>: Bei festen Echtzeitanforderungen droht kein unmittelbarer Schaden. Nach Ablauf der Zeitanforderungen ist das Ergebnis der Berechnung jedoch nutzlos und kann verworfen werden.</p>
+<p>Die DIN-Norm 44300 definiert unter Echtzeitbetrieb (dort Realzeitbetrieb genannt) den Betrieb eines Rechnersystems, bei dem Programme zur Verarbeitung anfallender Daten st&auml;ndig betriebsbereit sind, derart, dass die Verarbeitungsergebnisse innerhalb einer vorgegebenen Zeitspanne verf&uuml;gbar sind. Diese Begriffsnorm hat sich in der Praxis als alleinig akzeptierte Definition nicht durchsetzen k&ouml;nnen, es dominieren die Begriffe aus dem englischen Sprachraum.</p>
+<h2 id="prozess">Prozess</h2>
+<p>Ein Prozess beschreibt ein f&uuml;r sich lauff&auml;higes Programm (bei Desktopsystemen) oder vereinfacht einer Funktion. Einem Prozess wird durch den <em>Prozesskontext</em> beschrieben. Dieser wird vom Betriebssystem verwaltet und beinhaltet vom Prozess belegte Ressourcen (Speicher, usw.). Vom Betriebssystem zur Verf&uuml;gung gestellte Ressourcen stehen ausschlie&szlig;lich diesem Prozess zur verf&uuml;gung.</p>
+<p>Der Prozesskontext beinhaltet meist auch, welchem Prozess dieser Prozess zugeordnet ist (sprich, welcher Prozess diesen Prozess gestartet hat). Durch diese Abh&auml;ngigkeiten ergibt sich eine Prozesshierarchie.</p>
+<h2 id="prozessmodell">Prozessmodell</h2>
+<p>Da ein Prozessor immer nur einen Prozess pro Zeiteinheit bearbeiten kann, werden verschiedene Prozesszust&auml;nde verwendet, um die Bearbeitung zu erm&ouml;glichen:</p>
+<ul>
+<li><em>BEREIT</em>: Der Prozess besitzt alle Ressourcen und wartet auf die Zuteilung von Prozessorzeit.</li>
+<li><em>LAUFEND</em>: Der Prozess wird aktuell durch den Prozessor bearbeitet.</li>
+<li><em>WARTEND</em>: Der Prozess wartet auf die Zuteilung einer Ressource.</li>
+</ul>
+<p>Meistens werden auch die Zust&auml;nde <em>ERZEUGT</em> und <em>BEENDET</em> beschrieben, die ein Prozess bei der Erzeugung beziehungsweise beim Beenden einnimmt.</p>
+<h2 id="nebenlaufigkeit">Nebenl&auml;ufigkeit</h2>
+<p><em>Nebenl&auml;ufigkeit</em> (engl. concurrency) liegt vor, wenn mehrere Ereignisse in keiner kausalen Beziehung zueinander stehen, sich also nicht beeinflussen. Bei einem Betriebssystem will man diese Nebenl&auml;ufigkeit f&uuml;r die Abarbeitung der Prozesse erreichen. Aus der Sicht eines Prozesses sollte es im Idealfall keinen Rolle spielen, ob es der einzige Prozess im System ist oder ob am System mehrere Prozesse laufen.</p>
+        </div>
+        <div class="col-md-4" role="complementary">
+    <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
+    <ul class="nav"><li><a href="#allgemeines">Allgemeines</a></li><li><a href="#begriffe">Begriffe</a><ul class="nav"><li><a href="#echtzeit">Echtzeit</a></li><li><a href="#prozess">Prozess</a></li><li><a href="#prozessmodell">Prozessmodell</a></li><li><a href="#nebenlaufigkeit">Nebenl&auml;ufigkeit</a></li></ul></li></ul>
+    </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 25.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/b'5077891'">b'5077891'</a>)</p></div></footer>
+</body>
+</html>
