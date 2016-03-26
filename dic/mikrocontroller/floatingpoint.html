@@ -127,7 +127,7 @@
 <figure><img src="../../dic/mikrocontroller/float_ieeee_754.png"><figcaption>Floating Point Darstellung mittels IEEE 754 (Bild: <a href="https://commons.wikimedia.org/wiki/File:IEEE-754-single.svg">RokerHRO</a> Public Domain)</figcaption></img></figure>
 <h2 id="umrechnung">Umrechnung</h2>
 <p>Zur Berechnung des Wertes aus einer <em>IEEE 754</em> Darstellung wird folgende Methode verwendet.</p>
-<p>Beispiel: <code>0 10000011 00100110011001100110011</code> (aus <a href="https://de.wikipedia.org/wiki/IEEE_754">Wikipedia</a>).</p>
+<p>Beispiel: <code>0 10000011 00100110011001100110011</code> (aus <a href="https://de.wikipedia.org/wiki/IEEE_754">Wikipedia</a>){: class="external" }.</p>
 <p>Der Exponent als Dezimalzahl ist hier <code>10000011</code>-&gt;131. Der Exponent wird als Zahl +127 gespeichert, um negative Zahlen darstellen zu k&ouml;nnen (sogenanntes <em>Biasing</em>). Der Exponent ist also 131-127=4.</p>
 <p>Die Mantisse einer Gleitkommazahl wird immer Normalisiert gespeichert. Die Normalisierung schiebt das Komma in die Position, dass die Zahl einem <code>I.Q</code> Format von 1.23 entspricht und das MSB eine <code>1</code> ist. Da nun vor dem Komma immer eine <code>1</code> ist, muss diese nicht mehr gesondert abgespeichert werden. Um nun die Mantisse aus der Gleitkommadarstellung zu bekommen wird eine <code>1</code> vor das Komma gestellt. Die Mantisse ist also <strong>1,</strong><code>00100110011001100110011</code>.</p>
 <p>Da der Exponent 4 ist, m&uuml;ssen wir das Komma um 4 Stellen nach rechts verschieben:
@@ -144,6 +144,6 @@
       </div>
     </div>
   </div>
-  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 26.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/211d68b">211d68b</a>)</p></div></footer>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 26.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/17d8699">17d8699</a>)</p></div></footer>
 </body>
 </html>
