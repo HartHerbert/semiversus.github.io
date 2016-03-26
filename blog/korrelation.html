@@ -7,8 +7,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="../favicon.ico">
-  <title>Semiversus | Interessante Korrelation, oder anders: Abgeschrieben?</title>
+  <title>Semiversus | Interessante Korrelation entdecken mittels <tt>wdiff</tt></title>
   <link href="../theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../theme/css/font-awesome.min.css" rel="stylesheet">
   <link href="../theme/css/semiversus.css" rel="stylesheet">
   <link href="../theme/css/pygments.css" rel="stylesheet">
   <script src="../theme/js/jquery.min.js"></script>
@@ -63,22 +64,24 @@
             <li><a href="../projekte/projekte.html">Projekte</a></li>
             <li><a href="../about.html">Über mich</a></li>
           </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://github.com/semiversus" class="social" data-toggle="tooltip" data-placement="bottom" title="Github.com/Semiversus"><span class="fa fa-github fa-2x"></span></a></li>
+            <li><a href="http://stackoverflow.com/users/363745/günther-jena" class="social" data-toggle="tooltip" data-placement="bottom" title="Stackoverflow.com/Semiversus"><span class="fa fa-stack-overflow fa-2x"></span></a></li>
+          </ul>
         </div>
       </div>
     </nav>
     <div class="container">
-  <div class="visible-print-block">Semiversus | Interessante Korrelation, oder anders: Abgeschrieben?</div>
+  <div class="visible-print-block">Semiversus | Interessante Korrelation entdecken mittels <tt>wdiff</tt></div>
       <div class="row">
         <div class="col-md-8" role="main">
-  <h1>Interessante Korrelation, oder anders: Abgeschrieben?</h1>
-  <p><span class="glyphicon glyphicon-calendar"></span> 31.01.2016
-<a href="../tag/schule.html" class="hidden-print"><span class="label label-primary">Schule</span></a> <a href="../tag/bash.html" class="hidden-print"><span class="label label-primary">BASH</span></a> <a href="../tag/tools.html" class="hidden-print"><span class="label label-primary">Tools</span></a> <a href="../blog/korrelation.md"  class="btn btn-default btn-xs pull-right hidden-print" data-toggle="tooltip" data-placement="bottom" title="Quelltext zu dieser Seite"><span class="glyphicon glyphicon-file"></span></a></p>
-  <p>Jede Lehrperson hat ihre eigene Meinung zum Abschreiben. F&uuml;r mich ist es etwas, das mit Gerechtigkeit
-bei der Beurteilung zu tun hat. Schlie&szlig;lich soll ja die Leistung betreffend der Aufgabenstellung beurteilt
-werden und nicht die soziale Kompetenz im Umgang mit anderen.</p>
-<p>Abschreiben als solches zu erkennen ist keine einfache Sache, da der Aufwand massiv mit der Anzahl der zu vergleichenden
+  <h2>Interessante Korrelation entdecken mittels <tt>wdiff</tt></h2>
+  <p><span class="fa fa-calendar"></span> 31.01.2016
+<a href="../tag/tools.html" class="hidden-print"><span class="label label-primary">Tools</span></a> <a href="../blog/korrelation.md"  class="btn btn-default btn-xs pull-right hidden-print" data-toggle="tooltip" data-placement="bottom" title="Quelltext zu dieser Seite"><span class="fa fa-file-text-o fa-lg"></span></a></p>
+  <p>Abschreiben als solches zu erkennen ist keine einfache Sache, da der Aufwand massiv mit der Anzahl der zu vergleichenden
 Arbeiten steigt. Bei 5 Arbeiten sind insgesamt 10 Vergleiche zu machen: Die erste Aufgabe wird mit den vier anderen
 verglichen, dann die zweite Arbeit mit den drei verbleibenden, usw.</p>
+<p>Mit <tt>wdiff</tt> habe ich ein Tool gefunden, um einfache Textvergleiche machen zu k&ouml;nnen.</p>
 <p>Die Anzahl der Vergleiche ergibt sich dabei mittels den Binomialkoeffizienten zu:</p>
 <p>%%N_{Vergleiche}={N_{Arbeiten} \choose 2}=\frac{N_{Arbeiten}!}{(N_{Arbeiten}-2)!\cdot 2!}%%</p>
 <table>
@@ -120,13 +123,8 @@ an Arbeiten steigt die Anzahl der Vergleiche um (etwas mehr als) das Vierfache.<
 <h1 id="nutzen-von-tools">Nutzen von Tools</h1>
 <p>Bei einer Hausaufgabe habe ich nun das konkrete "<em>Problem</em>" 25 Arbeiten miteinander zu vergleichen. Es handelt sich
 um eine Programmieraufgabe in C.</p>
-<p>Jede L&ouml;sung wird als ZIP-Datei abgegeben. Diese entpacke ich in einen Folder</p>
-<div class="codehilite"><pre><span></span>$&gt; unzip *.zip
-</pre></div>
-<p>In jedem Verzeichnisbaum steckt eine Datei, die bereits in der Aufgabe definiert wurde und zur Bearbeitung entsprechend
-ausprogrammiert werden musste: <tt>game.c</tt>.</p>
 <p>Der Vergleich von zwei Textdateien l&auml;sst sich mittels <code>diff</code> bewerkstelligen. Was ich aber brauche ist eine Statistik,
-die mir angibt, wie gro&szlig; die <em>Korrelation</em> zwischen zwei Dateien ist, sprich wie gro&szlig; der Anteil an Hemeinsamkeiten ist.
+die mir angibt, wie gro&szlig; die <em>Korrelation</em> zwischen zwei Dateien ist, sprich wie gro&szlig; der Anteil an Gemeinsamkeiten ist.
 Bei dem Vergleich sollten Zeilenumbr&uuml;che, Leerzeichen, usw. keine Rolle spielen. Das Tool der Wahl ist <code>wdiff</code>. Die Option
 <code>-s</code> liefert eine entsprechende Statistik.</p>
 <div class="codehilite"><pre><span></span>$&gt; wdiff -s arbeit1.c arbeit2.c
@@ -151,6 +149,8 @@ h&auml;ngt vorallem mit der unterschiedlichen Anzahl an Gesamtworten zusammen.</
   <span class="k">done</span>
 <span class="k">done</span>
 </pre></div>
+<p>Das Skript nutzt zwei Schleifen, um jede Datei mit jeder zu vergleichen. Bei der Ausgabe von <tt>wdiff</tt> werden
+nicht ben&ouml;tigte Teile weggeschnitten.</p>
 <h1 id="auswertung">Auswertung</h1>
 <p>Die Ausf&uuml;hrung f&uuml;hrt dann zu folgendem Ergebnis (ein Ausschnitt):</p>
 <div class="codehilite"><pre><span></span>...
@@ -168,16 +168,16 @@ arbeit20.c arbeit17.c <span class="m">290</span> W&ouml;rter  <span class="m">54
 <p><img alt="Auswertung" src="../blog/2016_01_31_korrelation/auswertung.png"/></p>
 <p>Es zeigen sich zwei "<em>Cluster</em>": <tt>arbeit14.c</tt> und <tt>arbeit20.c</tt> unterscheiden sich durch genau drei "W&ouml;rter",
 <tt>arbeit6.c</tt>, <tt>arbeit15.c</tt> und <tt>arbeit17.c</tt> unterscheiden sich auch nur durch ein paar "W&ouml;rter".</p>
-<h1 id="folgen">Folgen</h1>
-<p>Es f&auml;llt mir schwer zu sagen wie ich <em>richtig</em> handeln soll. Meine L&ouml;sung ist in diesem Fall eine <em>Unterrichtsvereinbarung</em>,
-die ich mit der Klasse am Anfang des Schuljahres definiert habe und in der festgeschrieben ist, dass bei einem solchen Fall
-0 Punkte auf alle L&ouml;sungen mit "zu gro&szlig;er &Auml;hnlichkeit" gegeben wird. Ich habe gehofft, dass dies nie zur Anwendung kommt.</p>
+<h1 id="zusammenfassung">Zusammenfassung</h1>
+<p><tt>wdiff</tt> ist ein m&auml;chtiges Tool f&uuml;r Textvergleiche. Man sollte wahrscheinlich nicht zu pedantisch werden, um als Lehrer
+Kopien zu entdecken. Ich w&uuml;nsche und fordere eine Zusammenarbeit und Wissensaustausch bei Sch&uuml;lern - eine reine Kopie kann ich
+aber nicht unterst&uuml;tzen.</p>
         </div>
         <div class="col-md-4" role="complementary">
         </div>
       </div>
     </div>
   </div>
-  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 25.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/b'5077891'">b'5077891'</a>)</p></div></footer>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 26.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/211d68b">211d68b</a>)</p></div></footer>
 </body>
 </html>
