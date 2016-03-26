@@ -119,7 +119,7 @@ wird meist ein Postfix verwendet, der darauf hindeutet (z.B. <code>rst_n</code> 
 <span class="k">end</span> <span class="k">architecture</span><span class="p">;</span>
 </pre></div>
 <p>Dem taktflanken getriggerten D FlipFlop wurde ein asynchroner Reset hinzugef&uuml;gt. <code>rst</code> wurde der Sensitivit&auml;tsliste hinzugef&uuml;gt, d.h. der <code>process</code> wird auch f&uuml;r &Auml;nderungen an <code>rst</code> getriggert. Innerhalb des <code>process</code> wird zuerst <code>rst</code> ausgewertet und erst dann auf eine steigende Taktflanke &uuml;berpr&uuml;ft.</p>
-<p><img alt="D-Flipflop mit asynchronem Reset" src="../../dic/programmierbare_logik/dff_async.png"/></p>
+<p><img alt="D-Flipflop mit asynchronem Reset" src="../../dic/programmierbare_logik/dff_async.svg"/></p>
 <h2 id="mit-synchronem-reset">Mit synchronem Reset</h2>
 <p>In diesem Beispiel soll der Zustand nur bei einer steigenden Taktflanke von <code>clk</code> und bei <code>rst</code> auf <code>1</code> zur&uuml;clgesetzt werden. Das Zur&uuml;cksetzen erfolgt also synchron zum Takt.</p>
 <div class="codehilite"><pre><span></span><span class="k">library</span> <span class="nn">ieee</span> <span class="p">;</span>
@@ -149,7 +149,7 @@ wird meist ein Postfix verwendet, der darauf hindeutet (z.B. <code>rst_n</code> 
 <span class="k">end</span> <span class="k">architecture</span><span class="p">;</span>
 </pre></div>
 <p>Die Sensitivity List besteht nur mehr aus dem <code>clk</code> Signal. Bei einer steigenden Taktflanke wird ausgewertet, ob <code>rst</code> gleich <code>1</code> ist. Wenn dies der Fall ist, wird der interne Zustand <code>data_o</code> auf <code>0</code> gesetzt, ansonsten wird der Wert von <code>data_i</code> &uuml;bernommen.</p>
-<p><img alt="D-Flipflop mit synchronem Reset" src="../../dic/programmierbare_logik/dff_sync.png"/></p>
+<p><img alt="D-Flipflop mit synchronem Reset" src="../../dic/programmierbare_logik/dff_sync.svg"/></p>
 <h2 id="mittels-initialisierung">Mittels Initialisierung</h2>
 <p>In FPGAs l&auml;sst sich der Zustand eines FlipFlops nach einem Ein-Ausschalt Zyklus auch durch die Initialisierung des
 entsprechenden Signals realisieren. Das Register h&auml;lt dann den entsprechenden Initialisierungswert, nachdem der FPGA
@@ -176,6 +176,6 @@ sein Design geladen.</p>
       </div>
     </div>
   </div>
-  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 26.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/bc373ba">bc373ba</a>)</p></div></footer>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 26.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/9c67d77">9c67d77</a>)</p></div></footer>
 </body>
 </html>
