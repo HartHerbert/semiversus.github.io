@@ -80,7 +80,7 @@
 <p>Es gibt viele Schaltnetze, deren Funktion h&auml;ufig eingesetzt wird. Dabei werden die Schaltnetze nicht mehr auf der Ebene der Logikgatter betrachtet, sondern die Funktionalit&auml;t wird abstrahiert.</p>
 <h2 id="multiplexer">Multiplexer</h2>
 <p>Ein Multiplexer (auch oft kurz "Mux") selektiert aus mehreren Eing&auml;ngen einen einzelnen aus und gibt den Wert, der an diesem Eingang anliegt am Ausgang aus. Man unterscheidet die Multiplexer nach Anzahl der Eing&auml;nge. Die einfachste Form ist ein Multiplexer mit zwei Eing&auml;ngen.</p>
-<p><img alt="Multiplexer mit 2 Eing&auml;ngen" src="../../dic/grundlagen_der_digitaltechnik/mux2_symbol.png"/></p>
+<p><img alt="Multiplexer mit 2 Eing&auml;ngen" src="../../dic/grundlagen_der_digitaltechnik/mux2_symbol.svg"/></p>
 <p>In der Wahrheitstabelle wird ersichtlich, dass nur der jeweils ausgew&auml;hlte Eingang den Ausgang beeinflusst. Ist <code>s0</code>=0 so gilt <code>a</code>=<code>e0</code>, bei <code>s0</code>=1 gilt <code>a</code>=<code>e1</code>.</p>
 <table>
 <thead>
@@ -119,10 +119,10 @@
 </tbody>
 </table>
 <p>Bei mehr als zwei Eing&auml;ngen ist auch mehr als ein Selektionseingang notwendig.</p>
-<p><img alt="Multiplexer mit 4 Eing&auml;ngen" src="../../dic/grundlagen_der_digitaltechnik/mux4_symbol.png"/></p>
+<p><img alt="Multiplexer mit 4 Eing&auml;ngen" src="../../dic/grundlagen_der_digitaltechnik/mux4_symbol.svg"/></p>
 <h2 id="halb-addierer">Halb-Addierer</h2>
 <p>Der Halb-Addierer dient zur Addition von zwei einstelligen Bin&auml;rzahlen. Als Ausgang stehen das Summenbit und ein &Uuml;bertragsbit (engl. <code>Carry</code>)  zur Verf&uuml;gung. Der &Uuml;bertrag wird ben&ouml;tigt, sobald man zwei mindestens zweistellige Bin&auml;rzahlen addieren will.</p>
-<p><img alt="Halbaddierer" src="../../dic/grundlagen_der_digitaltechnik/halbaddierer_struktur.png"/></p>
+<p><img alt="Halbaddierer" src="../../dic/grundlagen_der_digitaltechnik/halbaddierer_struktur.svg"/></p>
 <table>
 <thead>
 <tr>
@@ -161,13 +161,13 @@
 </table>
 <h2 id="voll-addierer">Voll-Addierer</h2>
 <p>Der Voll-Addierer ber&uuml;cksichtigt einen &Uuml;bertrag aus einer vorhergehenden Stufe. Der Voll-Addierer kann mittels zwei Halb-Addierer realisiert werden.</p>
-<p><img alt="Volladdierer" src="../../dic/grundlagen_der_digitaltechnik/volladdierer_struktur.png"/></p>
+<p><img alt="Volladdierer" src="../../dic/grundlagen_der_digitaltechnik/volladdierer_struktur.svg"/></p>
 <p>Um nun zwei 4 Bit Zahlen zu addieren, werden insgesamt vier einzelne Addierer ben&ouml;tigt, die jeweils zwei Bit unter Ber&uuml;cksichtigung eines &Uuml;bertrages der Vorstufe addieren. Der Addierer, der die niederwertigsten Bits addiert kann auch ein Halbaddierer sein, da kein &Uuml;bertrag beachtet werden muss. Wird ein Voll-Addierer genutzt, muss der entsprechende &Uuml;bertragseingang auf <code>0</code> gesetzt werden.</p>
-<p><img alt="4Bit Addierer" src="../../dic/grundlagen_der_digitaltechnik/ripple_carry_adder.png"/></p>
+<p><img alt="4Bit Addierer" src="../../dic/grundlagen_der_digitaltechnik/ripple_carry_adder.svg"/></p>
 <h2 id="komparator">Komparator</h2>
 <p>Ein Komparator vergleicht zwei Bin&auml;rzahlen gleicher Bitbreite miteinander. Eine einfache Ausf&uuml;hrung des Komparators hat dabei nur einen "ist gleich"-Ausgang. Sind also beide Zahlen gleich gro&szlig;, so wird der "ist gleich"-Ausgang auf <code>1</code> gesetzt. Eine Erweiterung stellt die Variante mit zus&auml;tzlichem "gr&ouml;&szlig;er"- und "kleiner"-Ausgang dar.</p>
 <p>Um mehrere Komparatoren zu kombinieren, sind Eing&auml;nge f&uuml;r "ist gleich", "gr&ouml;&szlig;er" und "kleiner" Signale der Vorstufe notwendig.</p>
-<p><img alt="4 Bit Komparator" src="../../dic/grundlagen_der_digitaltechnik/komparator_4bit.png"/></p>
+<p><img alt="4 Bit Komparator" src="../../dic/grundlagen_der_digitaltechnik/komparator_4bit.svg"/></p>
 <h2 id="prioritatsenkoder">Priorit&auml;tsenkoder</h2>
 <p>Der Priorit&auml;tsenkoder gibt die Nummer des aktiven Eingangs aus, der die h&ouml;chste Priorit&auml;t hat. Im folgenden Beispiel gibt es vier Eing&auml;nge (<code>i0</code> bis <code>i3</code>), wobei <code>i3</code> die h&ouml;chste Priorit&auml;t hat. Ist <code>i3</code> aktiv, wird am Ausgang der Wert 3 (<code>y1</code>=1, <code>y0</code>=1), unabh&auml;ngig davon, welchen Zustand die anderen Eing&auml;nge haben.</p>
 <table>
@@ -233,6 +233,6 @@
       </div>
     </div>
   </div>
-  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 26.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/9c67d77">9c67d77</a>)</p></div></footer>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 27.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/f15a6a7">f15a6a7</a>)</p></div></footer>
 </body>
 </html>

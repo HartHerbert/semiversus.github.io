@@ -119,7 +119,7 @@ Das Datenwort ist 0xA7 (bin&auml;r 1010 0111). Die Anzahl der Einsen im Datenwor
 <p>Durch das Parit&auml;tsbit k&ouml;nnen Einzelbitfehler erkannt werden. Wenn in einem Datenwort zwei Bits umkippen, kann der Fehler nicht entdeckt werden.</p>
 <h2 id="blockparitat">Blockparit&auml;t</h2>
 <p>Bei der Blockparit&auml;t (auch Kreuzsicherung genannt) werden die einzelnen Bits in einer Matrix angeordnet und dann jeweils &uuml;ber die Zeilen und Spalten die Parit&auml;t erweitert. Es ergibt sich auch eine Kreuzparit&auml;t &uuml;ber die Spalten- und Zeilen-Parit&auml;tsbits.</p>
-<p><img alt="Kreuzsicherung" src="../../dic/bussysteme/kreuzsicherung.png"/></p>
+<p><img alt="Kreuzsicherung" src="../../dic/bussysteme/kreuzsicherung.svg"/></p>
 <p>In den Beispielen wird die gerade Parit&auml;t verwendet. Die Parit&auml;tsbits werden vom Sender beim Senden entsprechend erweitert und anschlie&szlig;end vom Empf&auml;nger kontrolliert. Bei einem Einzelbitfehler kann die Position ermittelt werden, egal um welches Bit es sich handelt (Datenbereich, Parit&auml;tsbereich oder das Kreuzparit&auml;tsbit).</p>
 <p>Einzelbitfehler k&ouml;nnen somit erkannt und sogar korrigiert werden. Zweibitfehler k&ouml;nnen erkannt werden, aber nicht korrigiert werden. Das gleiche gilt f&uuml;r Dreibitfehler. Bei Dreibitfehler kann es zu ung&uuml;nstigen Konstellationen kommen, so dass es wie ein Einbitfehler aussieht. Bei Vierbitfehlern kann es zu Konstellationen kommen, in denen alle Parit&auml;tsbits wieder stimmen, obwohl insgesamt vier Bits umgefallen sind (siehe oberes Beispiel).</p>
         </div>
@@ -131,6 +131,6 @@ Das Datenwort ist 0xA7 (bin&auml;r 1010 0111). Die Anzahl der Einsen im Datenwor
       </div>
     </div>
   </div>
-  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 26.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/9c67d77">9c67d77</a>)</p></div></footer>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 27.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/f15a6a7">f15a6a7</a>)</p></div></footer>
 </body>
 </html>

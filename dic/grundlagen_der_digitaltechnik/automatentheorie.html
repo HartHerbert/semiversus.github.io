@@ -170,7 +170,7 @@
 <h2 id="moore-und-mealy-automat_1">Moore- und Mealy-Automat</h2>
 <p>Bei der Ausgabefunktion gibt es zwei verschiedene Definitionen: Einmal h&auml;ngt die Ausgabe von Zustand und Eingabe ab und das andere mal nur vom Zustand. Ein Automat, dessen Ausgabe von Zustand und Eingabe abh&auml;ngt wird ''Mealy''-Automat genannt. Im Gegensatz dazu h&auml;ngt bei einem ''Moore''-Automat die Ausgabe nur vom aktuellen Zustand ab.</p>
 <p>Dies kann in folgendem Diagramm zusammengefasst werden:</p>
-<p><img alt="Mealy- und Moore-Automat" src="../../dic/grundlagen_der_digitaltechnik/moore_mealy.png"/></p>
+<p><img alt="Mealy- und Moore-Automat" src="../../dic/grundlagen_der_digitaltechnik/moore_mealy.svg"/></p>
 <p>Es ist m&ouml;glich, einen gegebenen Mealy-Automaten in einen Moore-Automaten umzuwandeln und umgekehrt. F&uuml;r viele Aufgabenstellungen kommt der Mealy-Automat mit weniger Zust&auml;nden aus, da die Eing&auml;nge auch direkt die Ausg&auml;nge beeinflussen k&ouml;nnen. Um das selbe zu erreichen, ben&ouml;tigt der Moore-Automat mehr Zust&auml;nde, da die Ausg&auml;nge immer vom aktuellen Zustand abgeleitet werden.</p>
 <h2 id="beispiel-getrankeautomat">Beispiel Getr&auml;nkeautomat</h2>
 <p>Als Beispiel wird ein Getr&auml;nkeautomat entworfen, der 50 Cent und 1 Euro Geldst&uuml;cke akzeptiert. Au&szlig;erdem gibt es eine Taste f&uuml;r die Getr&auml;nkeausgabe und die Geldr&uuml;ckgabe. Der Getr&auml;nkeautomat kann 50 Cent und 1 Euro St&uuml;cke zur&uuml;ckgeben, sowie ein Getr&auml;nk ausgeben. Ein Getr&auml;nk kostet 1 Euro.</p>
@@ -257,12 +257,12 @@
 <h1 id="graphische-darstellung_1">Graphische Darstellung</h1>
 <p>Bisher kamen wir mit einer rein mathematischen Darstellung aus. In der Praxis ist es aber viel einfacher sich ein Bild von den Zust&auml;nden und den &Uuml;berg&auml;ngen zu machen. Dazu wird das sogenannte ''Zustands&uuml;bertragungsdiagramm'' genutzt.</p>
 <p>Die Darstellungsform f&uuml;r Mealy- oder Moore-Automat unterscheiden sich:</p>
-<p><img alt="Graphische Darstellung: Mealy- und Moore-Automat" src="../../dic/grundlagen_der_digitaltechnik/moore_mealy_graphen.png"/></p>
+<p><img alt="Graphische Darstellung: Mealy- und Moore-Automat" src="../../dic/grundlagen_der_digitaltechnik/moore_mealy_graphen.svg"/></p>
 <p>Zust&auml;nde werden als Kreise dargestellt. Die Bezeichnung des Zustands befindet sich innerhalb des Kreises. Der Startzustand wird mit einem Pfeil markiert, der keinen Zustand als Ursprung hat (hier <code>Z0</code>). Die &Uuml;berg&auml;nge werden mittels Pfeilen dargestellt. Der Beschreibung des Pfeils enth&auml;lt die Eingabe, die f&uuml;r diesen Zustandswechsel notwendig ist. Beim Mealy-Automat sind die Ausgaben vom Zustand und der Eingabe abh&auml;ngig, deshalb wird die Ausgabe in der Beschreibung des entsprechenden Pfeils hinzugef&uuml;gt. Beim Moore-Automat ist die Ausgabe nur vom Zustand abh&auml;ngig, deshalb wird die Ausgabe innerhalb des Kreises hinzugef&uuml;gt.</p>
 <h1 id="anwendung-in-der-digitaltechnik">Anwendung in der Digitaltechnik</h1>
 <p>Bisher gingen wir von allgemeinen Ein- und Ausgaben aus. In der Digitaltechnik sind dies nun Ein- und Ausg&auml;nge, die ausschlie&szlig;lich mit den beiden digitalen Zust&auml;nden 0 und 1 arbeiten. Die Kennwerte f&uuml;r einen digitalen Automat sind die Anzahl der Ein- und Ausg&auml;nge sowie die Anzahl der Flip-Flops.</p>
 <p>Mit <code>n</code> Flip-Flops lassen sich <code>2^n</code> Zust&auml;nde darstellen.</p>
-<p><img alt="Digitale Automaten" src="../../dic/grundlagen_der_digitaltechnik/moore_mealy_logic.png"/></p>
+<p><img alt="Digitale Automaten" src="../../dic/grundlagen_der_digitaltechnik/moore_mealy_logic.svg"/></p>
 <p>Bei den digitalen Automaten kommt neben dem schon bekannten Moore- und Mealy-Automat noch der Medwedew-Automat dazu. Dieser endliche Automat hat keine Ausgabefunktion sondern stellt die Ausg&auml;nge der einzelnen Speicherelemente direkt als Ausg&auml;nge zur Verf&uuml;gung. Bei der Erstellung eines Medwedew-Automat m&uuml;ssen daher die Zust&auml;nde entsprechend der gew&uuml;nschten Ausg&auml;nge gew&auml;hlt werden. Der Medwedew-Automat ist eine Sonderform des Moore-Automaten.</p>
         </div>
         <div class="col-md-4" role="complementary">
@@ -273,6 +273,6 @@
       </div>
     </div>
   </div>
-  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 26.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/9c67d77">9c67d77</a>)</p></div></footer>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 27.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/f15a6a7">f15a6a7</a>)</p></div></footer>
 </body>
 </html>

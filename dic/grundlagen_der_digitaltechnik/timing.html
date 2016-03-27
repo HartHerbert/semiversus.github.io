@@ -123,7 +123,7 @@
 <p><img alt="Kritischer Pfad bei einer kombinatorischen Schaltung" src="../../dic/grundlagen_der_digitaltechnik/kritischer_pfad.png"/></p>
 <p>Der kritische Pfad weist hier eine Verz&ouml;gerung von 2ns + 5ns + 5ns, also 12ns auf.</p>
 <h1 id="definitionen-im-timingdiagramm_1">Definitionen im Timingdiagramm</h1>
-<p><img alt="Timingdiagramm" src="../../dic/grundlagen_der_digitaltechnik/timing_diagramm.png"/></p>
+<p><img alt="Timingdiagramm" src="../../dic/grundlagen_der_digitaltechnik/timing_diagramm.svg"/></p>
 <h2 id="anstiegs-und-abfallzeiten">Anstiegs- und Abfallzeiten</h2>
 <p>Die <em>Signalanstiegszeit</em> (engl. <em>Rise Time</em>) beschreibt die Dauer eines Wechsels von logisch 0 auf logisch 1. Die Zeit wird gemessen zwischen dem Durchgang bei 10 und 90 Prozent Pegel des <em>High</em>-Pegels. Das gleiche gilt f&uuml;r die <em>Signalabfallzeit</em> (engl. <em>Fall Time</em>). Da je nach Technologie der Wechsel von logisch 0 auf 1 langsamer oder schneller als der umgekehrte Wechsel sein kann, werden diese Zeiten auch getrennt angegeben.</p>
 <h2 id="verzogerungszeiten">Verz&ouml;gerungszeiten</h2>
@@ -136,18 +136,18 @@
 <p>Falls bei einer kombinatorischen Schaltung die &Auml;nderung eines einzigen Einganges zu einem St&ouml;rimpuls am Ausgang f&uuml;hrt, spricht man von einem <em>logischem Hazard</em>.</p>
 </blockquote>
 <h3 id="beispiel-multiplexer">Beispiel Multiplexer</h3>
-<p><img alt="Hazard bei einem Multiplexer" src="../../dic/grundlagen_der_digitaltechnik/hazard_mux.png"/></p>
+<p><img alt="Hazard bei einem Multiplexer" src="../../dic/grundlagen_der_digitaltechnik/hazard_mux.svg"/></p>
 <p>Am Beispiel eines Multiplexers sieht man das Auftreten eines <em>Static-1</em> Hazards. Ein <em>Static-1</em> Hazard ist ein St&ouml;rimpuls bei einem Signal, welches rein kombinatorisch bei einer bestimmten &Auml;nderung eines Einganges vor und nach der &Auml;nderung logisch 1 ist. Der Hazard tritt nur auf, wenn <code>A</code> und <code>B</code> logisch 1 sind und <code>S</code> von logisch 1 auf 0 wechselt.</p>
 <p>Die Schaltung ist mittels Disjunktiver Normalform aufgebaut. Zuerst werden die einzelnen Minterme mittels <em>AND</em>-Verkn&uuml;pfung gebildet und diese werden dann mittels <em>OR</em>-Verkn&uuml;pfung zusammengefasst.</p>
 <p>Zeichnet man das KV-Diagramm auf, ergibt sich folgendes Bild:</p>
-<p><img alt="KV-Diagramm des Multiplexers" src="../../dic/grundlagen_der_digitaltechnik/hazard_mux_kv.png"/></p>
+<p><img alt="KV-Diagramm des Multiplexers" src="../../dic/grundlagen_der_digitaltechnik/hazard_mux_kv.svg"/></p>
 <p>Man sieht die zwei unabh&auml;ngige Minterme %%A\overline{S}%% und %%BS%%. Wird das Signal S gewechselt, wechseln auch die zust&auml;ndigen Minterme. Dies ist ein Zeichen daf&uuml;r, dass ein Hazard auftreten <strong>kann</strong>.</p>
 <p>Damit ein logischer Hazard &uuml;berhaupt auftreten kann, m&uuml;ssen folgende drei Bedingungen erf&uuml;llt sein:
 + Das Eingangssignal muss sich in mindestens zwei Pfade auftrennen.
 + Die verschiedenen Pfade m&uuml;ssen unterschiedliche Laufzeiten aufweisen.
 + Die Pfade m&uuml;ssen &uuml;ber logische Verkn&uuml;pfungen wieder an einem Ausgang zusammengefasst werden.</p>
 <p>Durch zus&auml;tzliche Gatter k&ouml;nnen logische Hazards abgefangen werden. Wir haben gesehen, dass der Hazard beim Wechsel zwischen den beiden Mintermen auftritt (bei A und B gleich logisch 1). Um nun diesen Fall abzufangen f&uuml;gen wir einen weiteren Minterm <code>AB</code> hinzu:</p>
-<p><img alt="KV-Diagramm des Hazard-freien Multiplexers" src="../../dic/grundlagen_der_digitaltechnik/hazard_free_mux_kv.png"/></p>
+<p><img alt="KV-Diagramm des Hazard-freien Multiplexers" src="../../dic/grundlagen_der_digitaltechnik/hazard_free_mux_kv.svg"/></p>
 <p>Dieser zus&auml;tzliche Primimplikant ist aus rein kombinatorischer Sicht redundant, er verhindert aber den <em>Logik-Hazard</em>.</p>
 <h2 id="funktionaler-hazard_1">Funktionaler Hazard</h2>
 <blockquote>
@@ -166,6 +166,6 @@
       </div>
     </div>
   </div>
-  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 26.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/9c67d77">9c67d77</a>)</p></div></footer>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 27.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/f15a6a7">f15a6a7</a>)</p></div></footer>
 </body>
 </html>

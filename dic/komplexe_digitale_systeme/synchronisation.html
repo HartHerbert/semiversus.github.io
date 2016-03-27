@@ -91,7 +91,7 @@
 <h2 id="kritischer-abschnitt">Kritischer Abschnitt</h2>
 <p>Mit Hilfe von Semaphoren lassen sich auch kritische Abschnitte realisieren. Darunter wird ein Abschnitt eines Programms bezeichnet, in dem Ressourcen (z.B. Datenstrukturen, Verbindungen, Ger&auml;te usw.) ver&auml;ndert werden und der nicht parallel oder zeitlich verzahnt zu Programmabschnitten anderer Prozesse/Threads ausgef&uuml;hrt werden darf, in denen die gleichen Ressourcen ebenfalls ver&auml;ndert werden. Andernfalls kommt es zu inkonsistenten Zust&auml;nden der Betriebsmittel.</p>
 <p>Das folgende Beispiel zeigt die Inkrementierung einer Variable <code>s</code> durch zwei Prozesse. Dazu wird eine Kopie von <code>s</code> in ein Register geladen, um eins erh&ouml;ht und wieder zur&uuml;ckgeschrieben. Im linken Teil wird der erste Prozess unterbrochen und der zweite Prozess kommt zur Ausf&uuml;hrung. Die Variable ist nun nicht auf 2 sondern auf 1. Im rechten Teil sind die kritischen Abschnitte atomar ausgef&uuml;hrt (sprich nicht unterbrechbar).</p>
-<figure><img src="../../dic/komplexe_digitale_systeme/kritischer_abschnitt.png"><figcaption>Kritischer Abschnitt (Bild: <a href="https://commons.wikimedia.org/wiki/File:Kritischer_abschnitt.svg">miracula_de</a> CC0 1.0)</figcaption></img></figure>
+<figure><img src="../../dic/komplexe_digitale_systeme/kritischer_abschnitt.svg"><figcaption>Kritischer Abschnitt (Bild: <a href="https://commons.wikimedia.org/wiki/File:Kritischer_abschnitt.svg">miracula_de</a> CC0 1.0)</figcaption></img></figure>
 <h2 id="deadlock">Deadlock</h2>
 <p>Deadlock oder Verklemmung bezeichnet einen Zustand, bei dem ein oder mehrere Prozesse auf Betriebsmittel warten, die dem Prozess selbst oder einem anderen beteiligten Prozess zugeteilt sind.</p>
 <p>Der Zustand eines Deadlocks kann folgenderma&szlig;en definiert werden: Eine Menge von Prozessen befindet sich in einem Deadlock, wenn jeder dieser Prozesse auf ein Ereignis wartet, das nur ein anderer Prozess aus dieser Menge verursachen kann.</p>
@@ -112,6 +112,6 @@
       </div>
     </div>
   </div>
-  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 26.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/9c67d77">9c67d77</a>)</p></div></footer>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 27.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/f15a6a7">f15a6a7</a>)</p></div></footer>
 </body>
 </html>

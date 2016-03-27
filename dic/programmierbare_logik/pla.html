@@ -91,13 +91,13 @@
 </ul>
 <h1 id="kombinatorische-grundstruktur">Kombinatorische Grundstruktur</h1>
 <p>Einfache programmierbare Logikbausteine realisieren meist eine Grundstruktur, die es erm&ouml;glicht, die disjunktive Normalform von booleschen Gleichungen zu realisieren. Dazu werden die Eing&auml;nge mittels eines UND-Arrays zu Mintermen zusammengefasst. Die Minterme werden dann durch ein ODER-Array zur disjunktiven Normalform zusammengefasst und an die Ausgangspins gef&uuml;hrt.</p>
-<p><img alt="Realisierung mittels disjunktiver Minimalform" src="../../dic/programmierbare_logik/pla_extended.png"/></p>
+<p><img alt="Realisierung mittels disjunktiver Minimalform" src="../../dic/programmierbare_logik/pla_extended.svg"/></p>
 <p>Mit dieser Struktur k&ouml;nnen alle kombinatorischen Schaltungen realisiert werden, die keine kombinatorische R&uuml;ckkopplung oder Schleife enth&auml;lt. Man  unterscheidet bei den verschiedenen Bauformen, ob das UND- oder das ODER-Array programmierbar ist. Wird eine vom Anwender programmierbare Verbindung nicht genutzt, wird sichergestellt, dass dieses Signal einen Pegel hat, der die Funktionsweise nicht beeintr&auml;chtigt. So wird im UND-Array eine nicht verwendete Leitung auf einem <code>1</code>-Pegel gehalten und im ODER-Array auf einem <code>0</code>-Pegel.</p>
 <p>Um die Darstellung zu vereinfachen werden die parallelen Eing&auml;nge der UND und ODER Gatter meist zusammengefasst:</p>
-<p><img alt="Vereinfachte Darstellung" src="../../dic/programmierbare_logik/pla.png"/></p>
+<p><img alt="Vereinfachte Darstellung" src="../../dic/programmierbare_logik/pla.svg"/></p>
 <h1 id="realisierung">Realisierung</h1>
 <h2 id="rom-baustein">ROM Baustein</h2>
-<p><img alt="Realisierung mittels ROM" src="../../dic/programmierbare_logik/pla_rom.png"/></p>
+<p><img alt="Realisierung mittels ROM" src="../../dic/programmierbare_logik/pla_rom.svg"/></p>
 <p>Eine programmierbare Logik kann auch mit einem Speicher realisiert werden, wobei die Eing&auml;nge die Adresse darstellen und die Ausg&auml;nge sind die entsprechenden Datenausg&auml;nge. Der Speicherinhalt wird dadurch zur Darstellung einer Wahrheitstabelle.</p>
 <table>
 <thead>
@@ -178,7 +178,7 @@
 <p>PALs (Programmable Array Logic) werden heute nicht mehr eingesetzt. Sie sind aber die Vorstufe zu vielen Entwicklungen, die heute noch in Verwendung sind. Bei PALs ist das UND-Array frei programmierbar, das ODER-Array ist festverdrahtet. PAL Bausteine sind nur einmal programmierbar.</p>
 <h2 id="gal">GAL</h2>
 <p>Eine Weiterentwicklung der <em>PAL</em>s stellen die <em>GAL</em> (Generic Array Logic) Bausteine von Lattice dar. Diese sind durch UV-Licht oder elektrisch l&ouml;schbar und dadurch wiederbeschreibbar. An jedem Ausgang befindet sich eine <em>OLMC</em> (Output Logic Macro Cell). Diese Ausgangszelle enth&auml;lt neben der Option, den Ausgang zu invertieren auch die M&ouml;glichkeit, ein Flipflop zu verwenden. Es besteht die M&ouml;glichkeit, Signale der OLMC wieder als Eing&auml;nge zu benutzen. Es ist m&ouml;glich, den Ausgangstreiber hochohmig zu schalten und damit diesen Pin als Eingang zu benutzen.</p>
-<p><img alt="Generic Array Logic" src="../../dic/programmierbare_logik/gal.png"/></p>
+<p><img alt="Generic Array Logic" src="../../dic/programmierbare_logik/gal.svg"/></p>
         </div>
         <div class="col-md-4" role="complementary">
     <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
@@ -188,6 +188,6 @@
       </div>
     </div>
   </div>
-  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 26.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/9c67d77">9c67d77</a>)</p></div></footer>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 27.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/f15a6a7">f15a6a7</a>)</p></div></footer>
 </body>
 </html>

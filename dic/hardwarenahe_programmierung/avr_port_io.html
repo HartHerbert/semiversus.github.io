@@ -84,7 +84,7 @@
 <li>Aktivierbare Ausgangsstufe</li>
 <li>Eing&auml;nge besitzen Schmitt-Trigger und Synchronisierung</li>
 </ul>
-<figure><img src="../../dic/hardwarenahe_programmierung/avr_io_pin.png"><figcaption>AVR IO Pin (Quelle: <a href="http://www.atmel.com/images/doc2466.pdf">Datenblatt ATMega16</a> &copy; Atmel Corporation)</figcaption></img></figure>
+<figure><img src="../../dic/hardwarenahe_programmierung/avr_io_pin.svg"><figcaption>AVR IO Pin (Quelle: <a href="http://www.atmel.com/images/doc2466.pdf">Datenblatt ATMega16</a> &copy; Atmel Corporation)</figcaption></img></figure>
 <p>Um von der Firmware aus auf einen IO Port Pin zuzugreifen, werden drei Register ben&ouml;tigt. Diese drei Register fassen jeweils 8 IO Pins zusammen. Die Gruppierung von 8 IO Pins wird auch <em>Port</em> genannt. Der ATMega16 hat 4 solcher Ports: Port <em>A</em>, <em>B</em>, <em>C</em> und <em>D</em>. Im folgenden wird statt des Portnamens ein <code>x</code> verwendet.</p>
 <h2 id="pinx-das-eingangsregister"><code>PINx</code> - das Eingangsregister</h2>
 <p>Das Eingangsregister zeigt den aktuellen Zustand der Pins an. Der aktuelle Zustand wird auch eingelesen, wenn der Pin als Ausgang beschalten ist. Die notwendigen Pegel zur Detektion einer <code>0</code> oder <code>1</code> ist abh&auml;ngig von Versorgungsspannung und Temperatur.</p>
@@ -144,6 +144,6 @@
       </div>
     </div>
   </div>
-  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 26.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/9c67d77">9c67d77</a>)</p></div></footer>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 27.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/f15a6a7">f15a6a7</a>)</p></div></footer>
 </body>
 </html>

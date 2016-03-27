@@ -90,7 +90,7 @@
 <p>Bei der RS232 Schnittstelle steht (nicht wie im obigen Beispiel) eine negative Spannung f&uuml;r logisch 1 und eine positive Spannung f&uuml;r logisch 0.</p>
 <h3 id="bitstuffing">Bitstuffing</h3>
 <p>Ein Nachteil bei der NRZ Kodierung sind die fehlenden Flanken bei der &Uuml;bertragung von vielen gleichen Symbolen (viele logische 0 oder 1). Um f&uuml;r solche F&auml;lle zus&auml;tzliche Taktflanken zu erzeugen, kann durch <em>Bittstuffing</em> (oder deutsch Bitstopfen) ein zus&auml;tzliches invertiertes Bit eingef&uuml;gt werden. Mit <em>Bitweite</em> beschreibt man dabei die Anzahl der Bits mit gleichem Pegel die zum Einf&uuml;gen eines <em>Stopfbits</em> f&uuml;hrt. Der Empf&auml;nger muss nach dem gleichen Prinzip dieses Stopfbit wieder entfernen.</p>
-<figure><img src="../../dic/bussysteme/bitstuffing.png"><figcaption>Bitstopfen mit Weite 5 (Bild: <a href="https://commons.wikimedia.org/wiki/File:Bitstuffing.svg">Mik81</a> Public Domain)</figcaption></img></figure>
+<figure><img src="../../dic/bussysteme/bitstuffing.svg"><figcaption>Bitstopfen mit Weite 5 (Bild: <a href="https://commons.wikimedia.org/wiki/File:Bitstuffing.svg">Mik81</a> Public Domain)</figcaption></img></figure>
 <p>Am obigen Beispiel sieht man das Einf&uuml;gen eines Stopfbits bei Bitweite 5.</p>
 <h2 id="nrzi_1">NRZI</h2>
 <p>Die <em>Non Return to Zero Invert</em> Kodierung ordnet einem der beiden Bit-Werte den bereits anliegenden Leitungszustand zu, dem anderen Bit-Wert einen Zustandswechsel (Invert). Daraus ergibt sich unmittelbar die Polarit&auml;tsfreiheit bei differentieller &Uuml;bertragung: Ein Verpolen der &Uuml;bertragungsleitung &auml;ndert nicht die Bitfolge. Wenn der Zustand, der keine Leitungszustands&auml;nderung bringt, zu oft &uuml;bertragen wird, kann auch durch die fehlenden Flanken die Synchronisation verloren gehen. Eine L&ouml;sung ist hier ebenfalls das Bitstuffing.</p>
@@ -120,6 +120,6 @@ Hierdurch wird erreicht, dass</p>
       </div>
     </div>
   </div>
-  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 26.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/9c67d77">9c67d77</a>)</p></div></footer>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 27.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/f15a6a7">f15a6a7</a>)</p></div></footer>
 </body>
 </html>

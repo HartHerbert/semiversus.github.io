@@ -202,7 +202,7 @@ soll eine Kombinatorik entworfen werden, um mittels dieser 4 Bit Zahl eine 7 Seg
 </pre></div>
 <h2 id="pinout">Pinout</h2>
 <p>Die Signale <code>switches_i</code>, <code>an_o</code> und <code>segments_o</code> finden sich im folgenden Pinout des BASYS2 Boards:
-<figure><img src="../../dic/programmierbare_logik/basys2_pinout.png"><figcaption>Pinout des BASYS2 Boards(Bild: <a href="http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,790&amp;Prod=BASYS2">Digilent Inc. BASYS2 Manual</a>)</figcaption></img></figure></p>
+<figure><img src="../../dic/programmierbare_logik/basys2_pinout.svg"><figcaption>Pinout des BASYS2 Boards(Bild: <a href="http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,790&amp;Prod=BASYS2">Digilent Inc. BASYS2 Manual</a>)</figcaption></img></figure></p>
 <p>Das Pinout wird in der Datei <code>seven_segments.ucf</code> beschrieben. F&uuml;r dieses VHDL Modell sieht es wie folgt aus:</p>
 <div class="codehilite"><pre><span></span>NET <span class="s2">"switches_i(3)"</span> <span class="nv">LOC</span> <span class="o">=</span> <span class="s2">"B4"</span><span class="p">;</span>
 NET <span class="s2">"switches_i(2)"</span> <span class="nv">LOC</span> <span class="o">=</span> <span class="s2">"K3"</span><span class="p">;</span>
@@ -224,7 +224,7 @@ NET <span class="s2">"segments_o(0)"</span> <span class="nv">LOC</span> <span cl
 </pre></div>
 <h2 id="7-segment-anzeige">7-Segment Anzeige</h2>
 <p>In der folgenden Abbildung sieht man die Anordnung der einzelnen Segmente:
-<figure><img src="../../dic/programmierbare_logik/basys2_7segment.png"><figcaption>7-Segment Anzeige des BASYS2 Boards(Bild: <a href="http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,790&amp;Prod=BASYS2">Digilent Inc. BASYS2 Manual</a>)</figcaption></img></figure></p>
+<figure><img src="../../dic/programmierbare_logik/basys2_7segment.svg"><figcaption>7-Segment Anzeige des BASYS2 Boards(Bild: <a href="http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,790&amp;Prod=BASYS2">Digilent Inc. BASYS2 Manual</a>)</figcaption></img></figure></p>
 <h1 id="aufgabe-1-erweitern-der-kombinatorischen-beschreibung_1">Aufgabe 1 - Erweitern der kombinatorischen Beschreibung</h1>
 <div class="codehilite"><pre><span></span><span class="k">with</span> <span class="n">switches_i</span><span class="p">(</span><span class="mi">3</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">)</span> <span class="k">select</span> <span class="n">segments_o</span> <span class="o">&lt;=</span>
   <span class="s">"0000001"</span> <span class="k">when</span> <span class="s">"0000"</span><span class="p">,</span> <span class="c1">-- digit 0</span>
@@ -305,6 +305,6 @@ Werte 2 bis 9 zu erweitern.</p>
       </div>
     </div>
   </div>
-  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 26.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/9c67d77">9c67d77</a>)</p></div></footer>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 27.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/f15a6a7">f15a6a7</a>)</p></div></footer>
 </body>
 </html>
