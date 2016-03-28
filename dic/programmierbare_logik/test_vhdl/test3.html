@@ -67,6 +67,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="https://github.com/semiversus" class="social" data-toggle="tooltip" data-placement="bottom" title="Github.com/Semiversus"><span class="fa fa-github fa-2x"></span></a></li>
             <li><a href="http://stackoverflow.com/users/363745/günther-jena" class="social" data-toggle="tooltip" data-placement="bottom" title="Stackoverflow.com/Semiversus"><span class="fa fa-stack-overflow fa-2x"></span></a></li>
+            <li><a href="../../../semiversus.atom.xml" class="social" data-toggle="tooltip" data-placement="bottom" title="RSS Feed"><span class="fa fa-rss fa-2x"></span></a></li>
           </ul>
         </div>
       </div>
@@ -85,7 +86,7 @@
 <h1 id="einschaltverzogerung">Einschaltverz&ouml;gerung</h1>
 <h2 id="vorbereitung">Vorbereitung</h2>
 <ul>
-<li>Projekt <tt>led_toggle/led_toggle.xise</tt> &ouml;ffnen</li>
+<li>Projekt <samp>led_toggle/led_toggle.xise</samp> &ouml;ffnen</li>
 </ul>
 <h2 id="aufgabenstellung">Aufgabenstellung</h2>
 <p>Zwei LEDs sollen mittels zwei Taster angesteuert werden. </p>
@@ -97,7 +98,7 @@
 <p><span class="badge">5 Punkte</span></p>
 <p>Zur Realisierung wird eine Zustandsmaschine genutzt.</p>
 <ul>
-<li>Bearbeite die Datei <tt>led_toggle_fsm.vhd</tt></li>
+<li>Bearbeite die Datei <samp>led_toggle_fsm.vhd</samp></li>
 <li>Definiere die drei Zust&auml;nden <code>OFF</code>, <code>LED1</code> und <code>LED2</code></li>
 <li>Der Startzustand ist <code>OFF</code></li>
 <li>Der Eingang <code>toggle_i</code> wechselt von <code>OFF</code> nach <code>LED1</code> bzw. wechselt von <code>LED1</code> nach <code>LED2</code> und umgekehrt</li>
@@ -109,26 +110,26 @@
 <div class="panel panel-info">
 <div class="panel-heading">Testbench</div>
 <div class="panel-body">
-<p>Teste die Implementierung mittels der Testbench <tt>led_toggle_fsm_tb.vhd</tt>. Mittels <kbd>F6</kbd> l&auml;sst sich
+<p>Teste die Implementierung mittels der Testbench <samp>led_toggle_fsm_tb.vhd</samp>. Mittels <kbd>F6</kbd> l&auml;sst sich
 der gesamte Bereich zoomen.</p>
 </div>
 </div>
 <h2 id="implementierung-des-top-levels">Implementierung des Top Levels</h2>
 <p><span class="badge">5 Punkte</span></p>
-<p>Zur Verf&uuml;gung stehen die Komponenten <tt>button_dectect</tt> und <tt>led_toggle_fsm</tt>. Diese
-Komponenten werden genutzt, um im Top Level <tt>led_toggle.vhd</tt> die gew&uuml;nschte Funktionalit&auml;t zu realisieren.</p>
+<p>Zur Verf&uuml;gung stehen die Komponenten <samp>button_dectect</samp> und <samp>led_toggle_fsm</samp>. Diese
+Komponenten werden genutzt, um im Top Level <samp>led_toggle.vhd</samp> die gew&uuml;nschte Funktionalit&auml;t zu realisieren.</p>
 <ul>
-<li>Die Instanz der Komponente <tt>button_detect</tt> mit dem Namen <code>toggle_detect_component</code> ist bereits erstellt<ul>
+<li>Die Instanz der Komponente <samp>button_detect</samp> mit dem Namen <code>toggle_detect_component</code> ist bereits erstellt<ul>
 <li><code>button_i</code> ist mit dem Eingang <code>button_toggle_i</code> verbunden</li>
 <li><code>detect_o</code> ist mit dem (bereits definiertem) Signal <code>toggle_detect</code> verbunden</li>
 </ul>
 </li>
-<li>Erstelle eine Instanz der Komponente <tt>button_detect</tt> mit dem Namen <code>off_detect_component</code> analog zu <code>toggle_detect_component</code><ul>
+<li>Erstelle eine Instanz der Komponente <samp>button_detect</samp> mit dem Namen <code>off_detect_component</code> analog zu <code>toggle_detect_component</code><ul>
 <li><code>button_i</code> ist mit dem Eingang <code>button_off_i</code> verbunden</li>
 <li><code>detect_o</code> ist mit dem (bereits definiertem) Signal <code>off_detect</code> verbunden</li>
 </ul>
 </li>
-<li>Erstelle eine Instanz der Komponente <tt>led_toggle_fsm</tt> mit dem Namen <code>led_toggle_fsm_component</code><ul>
+<li>Erstelle eine Instanz der Komponente <samp>led_toggle_fsm</samp> mit dem Namen <code>led_toggle_fsm_component</code><ul>
 <li><code>toggle_i</code> ist mit dem Signal <code>toggle_detect</code> verbunden</li>
 <li><code>off_i</code> ist mit dem Signal <code>off_detect</code> verbunden</li>
 <li><code>led1_o</code> ist mit dem Ausgang <code>led1_o</code> verbunden</li>
@@ -140,17 +141,17 @@ Komponenten werden genutzt, um im Top Level <tt>led_toggle.vhd</tt> die gew&uuml
 <div class="panel panel-info">
 <div class="panel-heading">Testbench</div>
 <div class="panel-body">
-<p>Teste die Implementierung mittels der Testbench <tt>led_toggle_tb.vhd</tt>.</p>
+<p>Teste die Implementierung mittels der Testbench <samp>led_toggle_tb.vhd</samp>.</p>
 </div>
 </div>
 <h2 id="erweiterung-der-constraints-datei">Erweiterung der <em>Constraints</em> Datei</h2>
 <p><span class="badge">2 Punkte</span></p>
-<p>In der Datei <tt>led_toggle.ucf</tt> ist nur das Signal <code>clk</code> definiert. Erweitere die Datei um folgende Zuordnungen</p>
+<p>In der Datei <samp>led_toggle.ucf</samp> ist nur das Signal <code>clk</code> definiert. Erweitere die Datei um folgende Zuordnungen</p>
 <ul>
-<li><code>button_toggle_i</code> wird durch den Taster <tt>BTN0</tt> angesteuert</li>
-<li><code>button_off_i</code> wird durch den Taster <tt>BTN1</tt> angesteuert</li>
-<li><code>led1_o</code> ist die LED <tt>LD0</tt></li>
-<li><code>led2_o</code> ist die LED <tt>LD1</tt></li>
+<li><code>button_toggle_i</code> wird durch den Taster <samp>BTN0</samp> angesteuert</li>
+<li><code>button_off_i</code> wird durch den Taster <samp>BTN1</samp> angesteuert</li>
+<li><code>led1_o</code> ist die LED <samp>LD0</samp></li>
+<li><code>led2_o</code> ist die LED <samp>LD1</samp></li>
 </ul>
 <figure><img src="../../../dic/programmierbare_logik/basys2_pinout.svg"><figcaption>Pinout des BASYS2 Boards(Bild: <a href="http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,790&amp;Prod=BASYS2">Digilent Inc. BASYS2 Manual</a>)</figcaption></img></figure>
 <h2 id="test-am-board">Test am Board</h2>
@@ -159,7 +160,7 @@ Komponenten werden genutzt, um im Top Level <tt>led_toggle.vhd</tt> die gew&uuml
 <h1 id="ampel-mit-uberwachung_1">Ampel mit &Uuml;berwachung</h1>
 <h2 id="vorbereitung_1">Vorbereitung</h2>
 <ul>
-<li>Projekt <tt>lights/lights.xise</tt> &ouml;ffnen</li>
+<li>Projekt <samp>lights/lights.xise</samp> &ouml;ffnen</li>
 </ul>
 <h2 id="aufgabenstellung_1">Aufgabenstellung</h2>
 <p>Es soll eine Ampel mit zwei Modis realisiert werden: </p>
@@ -185,13 +186,13 @@ den Eingang <code>monitor_i</code> und den Ausgang <code>result_o</code>.</p>
 <li>Liegt eine ung&uuml;ltige Kombination an (z.B. <code>"101"</code>) soll stattdessen die Kombination f&uuml;r Rot ausgegeben werden (<code>"100"</code>)</li>
 <li>G&uuml;ltige Kombinationen sind alle Ausgaben der Zust&auml;nde <code>GREEN</code>, <code>ORANGE</code>, <code>RED</code>, <code>RED_ORANGE</code> und <code>OFF</code></li>
 </ul>
-<p>Die Komponente ist in vier Ausf&uuml;hrungen (<em>Architectures</em>) bereits in der Datei <tt>supervisor.vhd</tt> beschrieben. Die
+<p>Die Komponente ist in vier Ausf&uuml;hrungen (<em>Architectures</em>) bereits in der Datei <samp>supervisor.vhd</samp> beschrieben. Die
 <em>Architectures</em> lauten <code>behave1</code>, <code>behave2</code>, <code>behave3</code> und <code>behave4</code>.</p>
-<p>Erstelle in der Datei <tt>supervisor_tb.vhd</tt> eine Testbench, die herausfindet, welche der vier Ausf&uuml;hrungen
+<p>Erstelle in der Datei <samp>supervisor_tb.vhd</samp> eine Testbench, die herausfindet, welche der vier Ausf&uuml;hrungen
 funktioniert (es ist genau eine).</p>
 <h2 id="komponente-lights_fsm">Komponente <code>lights_fsm</code></h2>
 <p><span class="badge">5 Punkte</span></p>
-<p>Erstelle die Komponente <code>lights_fsm</code> durch Bearbeitung der Datei <tt>lights_fsm.vhd</tt>.</p>
+<p>Erstelle die Komponente <code>lights_fsm</code> durch Bearbeitung der Datei <samp>lights_fsm.vhd</samp>.</p>
 <ul>
 <li>Die Ampel wechselt nur den Zustand, wenn <code>next_i</code> gleich <code>'1'</code> ist</li>
 <li>Ist der Eingang <code>mode_i</code> gleich <code>'0'</code> soll die Ampel zwischen den Zust&auml;nden <code>ORANGE</code> und <code>OFF</code> wechseln</li>
@@ -203,14 +204,14 @@ funktioniert (es ist genau eine).</p>
 <div class="panel panel-info">
 <div class="panel-heading">Testbench</div>
 <div class="panel-body">
-<p>Teste die Implementierung mittels der Testbench <tt>lights_fsm_tb.vhd</tt>.</p>
+<p>Teste die Implementierung mittels der Testbench <samp>lights_fsm_tb.vhd</samp>.</p>
 </div>
 </div>
 <h2 id="implementierung-des-top-levels_1">Implementierung des Top Levels</h2>
 <p><span class="badge">5 Punkte</span></p>
-<p>Zur Verf&uuml;gung stehen die Komponenten <tt>counter</tt>, <tt>light_fsm</tt> und <tt>supervisor</tt>. Diese
-Komponenten werden genutzt, um im Top Level <tt>lights.vhd</tt> die gew&uuml;nschte Funktionalit&auml;t zu realisieren.</p>
-<p>Mit dem <tt>counter</tt> soll ein 700 Millisekunden Takt generiert werden. Wieviel Takte des 50 Mhz Taktes sind dazu
+<p>Zur Verf&uuml;gung stehen die Komponenten <samp>counter</samp>, <samp>light_fsm</samp> und <samp>supervisor</samp>. Diese
+Komponenten werden genutzt, um im Top Level <samp>lights.vhd</samp> die gew&uuml;nschte Funktionalit&auml;t zu realisieren.</p>
+<p>Mit dem <samp>counter</samp> soll ein 700 Millisekunden Takt generiert werden. Wieviel Takte des 50 Mhz Taktes sind dazu
 notwendig und wieviel Bits werden ben&ouml;tigt, um diesen Wert darstellen zu k&ouml;nnen? Trage diese Werte in der Default-Einstellung
 von <code>COUNTER_WIDTH</code> und <code>COUNTER_MAXIMUM</code> ein:</p>
 <div class="codehilite"><pre><span></span><span class="k">entity</span> <span class="nc">lights</span> <span class="k">is</span>
@@ -231,7 +232,7 @@ von <code>COUNTER_WIDTH</code> und <code>COUNTER_MAXIMUM</code> ein:</p>
 <div class="panel panel-info">
 <div class="panel-heading">Testbench</div>
 <div class="panel-body">
-<p>Teste die Implementierung mittels der Testbench <tt>lights_tb.vhd</tt>.</p>
+<p>Teste die Implementierung mittels der Testbench <samp>lights_tb.vhd</samp>.</p>
 </div>
 </div>
 <h2 id="test-am-board_1">Test am Board</h2>

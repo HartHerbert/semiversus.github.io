@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="../favicon.ico">
-  <title>Semiversus | Interessante Korrelation entdecken mittels <tt>wdiff</tt></title>
+  <title>Semiversus | Interessante Korrelation entdecken mittels <samp>wdiff</samp></title>
   <link href="../theme/css/bootstrap.min.css" rel="stylesheet">
   <link href="../theme/css/font-awesome.min.css" rel="stylesheet">
   <link href="../theme/css/semiversus.css" rel="stylesheet">
@@ -67,21 +67,22 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="https://github.com/semiversus" class="social" data-toggle="tooltip" data-placement="bottom" title="Github.com/Semiversus"><span class="fa fa-github fa-2x"></span></a></li>
             <li><a href="http://stackoverflow.com/users/363745/günther-jena" class="social" data-toggle="tooltip" data-placement="bottom" title="Stackoverflow.com/Semiversus"><span class="fa fa-stack-overflow fa-2x"></span></a></li>
+            <li><a href="../semiversus.atom.xml" class="social" data-toggle="tooltip" data-placement="bottom" title="RSS Feed"><span class="fa fa-rss fa-2x"></span></a></li>
           </ul>
         </div>
       </div>
     </nav>
     <div class="container">
-  <div class="visible-print-block">Semiversus | Interessante Korrelation entdecken mittels <tt>wdiff</tt></div>
+  <div class="visible-print-block">Semiversus | Interessante Korrelation entdecken mittels <samp>wdiff</samp></div>
       <div class="row">
         <div class="col-md-8" role="main">
-  <h2>Interessante Korrelation entdecken mittels <tt>wdiff</tt></h2>
+  <h2>Interessante Korrelation entdecken mittels <samp>wdiff</samp></h2>
   <p><span class="fa fa-calendar"></span> 31.01.2016
 <a href="../tag/tools.html" class="hidden-print"><span class="label label-primary">Tools</span></a> <a href="../blog/korrelation.md"  class="btn btn-default btn-xs pull-right hidden-print" data-toggle="tooltip" data-placement="bottom" title="Quelltext zu dieser Seite"><span class="fa fa-file-text-o fa-lg"></span></a></p>
   <p>Abschreiben als solches zu erkennen ist keine einfache Sache, da der Aufwand massiv mit der Anzahl der zu vergleichenden
 Arbeiten steigt. Bei 5 Arbeiten sind insgesamt 10 Vergleiche zu machen: Die erste Aufgabe wird mit den vier anderen
 verglichen, dann die zweite Arbeit mit den drei verbleibenden, usw.</p>
-<p>Mit <tt>wdiff</tt> habe ich ein Tool gefunden, um einfache Textvergleiche machen zu k&ouml;nnen.</p>
+<p>Mit <samp>wdiff</samp> habe ich ein Tool gefunden, um einfache Textvergleiche machen zu k&ouml;nnen.</p>
 <p>Die Anzahl der Vergleiche ergibt sich dabei mittels den Binomialkoeffizienten zu:</p>
 <p>%%N_{Vergleiche}={N_{Arbeiten} \choose 2}=\frac{N_{Arbeiten}!}{(N_{Arbeiten}-2)!\cdot 2!}%%</p>
 <table>
@@ -132,9 +133,9 @@ Bei dem Vergleich sollten Zeilenumbr&uuml;che, Leerzeichen, usw. keine Rolle spi
 arbeit1.c: <span class="m">126</span> W&ouml;rter  <span class="m">48</span> 38% gleich  <span class="m">13</span> 10% gel&ouml;scht  <span class="m">65</span> 52% ver&auml;ndert
 arbeit2.c: <span class="m">140</span> W&ouml;rter  <span class="m">48</span> 34% gleich  <span class="m">7</span> 5% eingef&uuml;gt  <span class="m">85</span> 61% ver&auml;ndert
 </pre></div>
-<p>Der Vergleich von <tt>arbeit1.c</tt> mit <tt>arbeit2.c</tt> liefert ein anderes Ergebnis als der umgekehrte Vergleich und
+<p>Der Vergleich von <samp>arbeit1.c</samp> mit <samp>arbeit2.c</samp> liefert ein anderes Ergebnis als der umgekehrte Vergleich und
 h&auml;ngt vorallem mit der unterschiedlichen Anzahl an Gesamtworten zusammen.</p>
-<p>Zum Vergleich von 25 Arbeiten m&uuml;ssen nun 300 dieser Aufrufe gemacht werden. Dazu dient folgendes <tt>bash</tt>-Skript:</p>
+<p>Zum Vergleich von 25 Arbeiten m&uuml;ssen nun 300 dieser Aufrufe gemacht werden. Dazu dient folgendes <samp>bash</samp>-Skript:</p>
 <div class="codehilite"><pre><span></span><span class="nv">files</span><span class="o">=</span><span class="sb">`</span>ls *.c<span class="sb">`</span>
 
 <span class="k">for</span> work1 in <span class="nv">$files</span><span class="p">;</span>
@@ -149,7 +150,7 @@ h&auml;ngt vorallem mit der unterschiedlichen Anzahl an Gesamtworten zusammen.</
   <span class="k">done</span>
 <span class="k">done</span>
 </pre></div>
-<p>Das Skript nutzt zwei Schleifen, um jede Datei mit jeder zu vergleichen. Bei der Ausgabe von <tt>wdiff</tt> werden
+<p>Das Skript nutzt zwei Schleifen, um jede Datei mit jeder zu vergleichen. Bei der Ausgabe von <samp>wdiff</samp> werden
 nicht ben&ouml;tigte Teile weggeschnitten.</p>
 <h1 id="auswertung">Auswertung</h1>
 <p>Die Ausf&uuml;hrung f&uuml;hrt dann zu folgendem Ergebnis (ein Ausschnitt):</p>
@@ -166,10 +167,10 @@ arbeit20.c arbeit17.c <span class="m">290</span> W&ouml;rter  <span class="m">54
 <p><img alt="Vergleich von arbeit14.c und arbeit20.c" src="../blog/2016_01_31_korrelation/meld.png"/></p>
 <p>Die Liste nach Korrelation sortiert zeigt folgendes Ergebnis:</p>
 <p><img alt="Auswertung" src="../blog/2016_01_31_korrelation/auswertung.png"/></p>
-<p>Es zeigen sich zwei "<em>Cluster</em>": <tt>arbeit14.c</tt> und <tt>arbeit20.c</tt> unterscheiden sich durch genau drei "W&ouml;rter",
-<tt>arbeit6.c</tt>, <tt>arbeit15.c</tt> und <tt>arbeit17.c</tt> unterscheiden sich auch nur durch ein paar "W&ouml;rter".</p>
+<p>Es zeigen sich zwei "<em>Cluster</em>": <samp>arbeit14.c</samp> und <samp>arbeit20.c</samp> unterscheiden sich durch genau drei "W&ouml;rter",
+<samp>arbeit6.c</samp>, <samp>arbeit15.c</samp> und <samp>arbeit17.c</samp> unterscheiden sich auch nur durch ein paar "W&ouml;rter".</p>
 <h1 id="zusammenfassung">Zusammenfassung</h1>
-<p><tt>wdiff</tt> ist ein m&auml;chtiges Tool f&uuml;r Textvergleiche. Man sollte wahrscheinlich nicht zu pedantisch werden, um als Lehrer
+<p><samp>wdiff</samp> ist ein m&auml;chtiges Tool f&uuml;r Textvergleiche. Man sollte wahrscheinlich nicht zu pedantisch werden, um als Lehrer
 Kopien zu entdecken. Ich w&uuml;nsche und fordere eine Zusammenarbeit und Wissensaustausch bei Sch&uuml;lern - eine reine Kopie kann ich
 aber nicht unterst&uuml;tzen.</p>
         </div>

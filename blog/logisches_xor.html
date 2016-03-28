@@ -7,13 +7,33 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="../favicon.ico">
-  <title>Semiversus | Tools</title>
+  <title>Semiversus | Wieso gibt es kein logisches XOR in C?</title>
   <link href="../theme/css/bootstrap.min.css" rel="stylesheet">
   <link href="../theme/css/font-awesome.min.css" rel="stylesheet">
   <link href="../theme/css/semiversus.css" rel="stylesheet">
   <link href="../theme/css/pygments.css" rel="stylesheet">
   <script src="../theme/js/jquery.min.js"></script>
   <script src="../theme/js/bootstrap.min.js"></script>
+
+    <script type= "text/javascript">
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = 'https:' == document.location.protocol ? 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'; 
+        s[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" + 
+            "    config: ['MMLorHTML.js']," + 
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS','output/NativeMML']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," + 
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['%%','%%'] ], " +
+            "        processEscapes: false }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax .mo, .MathJax .mi': {color: 'black ! important'}} " +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(s);
+    </script>
 </head>
 <body data-spy="scroll" data-target="#sidebar" data-offset=30>
   <div id="wrap">
@@ -53,33 +73,41 @@
       </div>
     </nav>
     <div class="container">
+  <div class="visible-print-block">Semiversus | Wieso gibt es kein logisches XOR in C?</div>
       <div class="row">
         <div class="col-md-8" role="main">
-  <h1>Tools</h1>
-    <article>
-      <h2><a href="../blog/anniversary.html">Jubiläumsplan</a></h2>
-      <p><span class="fa fa-calendar"></span> 11.02.2016
-<a href="../tag/tools.html" class="hidden-print"><span class="label label-primary">Tools</span></a> <a href="../tag/verschiedenes.html" class="hidden-print"><span class="label label-primary">Verschiedenes</span></a> </p>
-      <div class="summary"><p>Wieso Jubil&auml;en immer nur nach ganzen Jahren feiern? Wieso nicht bei einer Millon Sekunden Lebenszeit? Oder bei Tausend Wochen?</p>
-<p>Dieses <a class="download" href="../blog/2016_02_11_anniversary/anniversary.ods">Spreadsheet</a> (LibreOffice Calc Sheet) macht es m&ouml;glich. Einfach das Datum und die
-Uhrzeit bei "Geburt" eintragen, Namen anpassen und ausdrucken.</p>
-<p><img alt="Screenshot" src="../blog/2016_02_11_anniversary/anniversary.png"/></p>
-<p>Interessant ist die logarithmische Verteilung: Hat man eine ...</p>
-          <a class="btn btn-default btn-xs" href="../blog/anniversary.html">Weiterlesen...</a>
-      </div>
-    </article>
-<hr />    <article>
-      <h2><a href="../blog/korrelation.html">Interessante Korrelation entdecken mittels <samp>wdiff</samp></a></h2>
-      <p><span class="fa fa-calendar"></span> 31.01.2016
-<a href="../tag/tools.html" class="hidden-print"><span class="label label-primary">Tools</span></a> </p>
-      <div class="summary"><p>Abschreiben als solches zu erkennen ist keine einfache Sache, da der Aufwand massiv mit der Anzahl der zu vergleichenden
-Arbeiten steigt. Bei 5 Arbeiten sind insgesamt 10 Vergleiche zu machen: Die erste Aufgabe wird mit den vier anderen
-verglichen, dann die zweite Arbeit mit den drei verbleibenden, usw.</p>
-<p>Mit <samp>wdiff ...</samp></p>
-          <a class="btn btn-default btn-xs" href="../blog/korrelation.html">Weiterlesen...</a>
-      </div>
-    </article>
-
+  <h2>Wieso gibt es kein logisches XOR in C?</h2>
+  <p><span class="fa fa-calendar"></span> 15.02.2016
+<a href="../tag/programmieren.html" class="hidden-print"><span class="label label-primary">Programmieren</span></a> <a href="../tag/c.html" class="hidden-print"><span class="label label-primary">C</span></a> <a href="../blog/logisches_xor.md"  class="btn btn-default btn-xs pull-right hidden-print" data-toggle="tooltip" data-placement="bottom" title="Quelltext zu dieser Seite"><span class="fa fa-file-text-o fa-lg"></span></a></p>
+  <p>In C gibt es vier bitweise Operatoren (Details dazu im <a href="../dic/mikrocontroller/bitmanipulation.html">Skriptum</a>):</p>
+<ul>
+<li><em>UND</em> Verkn&uuml;pfung - <code>&amp;</code></li>
+<li><em>ODER</em> Verkn&uuml;pfung - <code>|</code></li>
+<li><em>Exklusiv ODER</em> Verk&uuml;pfung - <code>^</code></li>
+<li><em>INVERTIERUNG</em> - <code>~</code></li>
+</ul>
+<p>Neben den bitweisen Operatoren gibt es noch die logische, die den bitweisen entsprechen:</p>
+<ul>
+<li><em>UND</em> Verkn&uuml;pfung - <code>&amp;&amp;</code></li>
+<li><em>ODER</em> Verkn&uuml;pfung - <code>||</code></li>
+<li><em>INVERTIERUNG</em> - <code>!</code></li>
+</ul>
+<p>Hier fehlt offensichtlich die Exklusive <em>ODER</em> Verkn&uuml;pfung - wieso gibt es kein <code>^^</code>?</p>
+<p>Eine gute Antwort findet sich auf dieser <a class="external" href="http://benpfaff.org/writings/clc/logical-xor.html">Seite</a>
+von Ben Pfaff. Und hier eine kurze Zusammenfassung:</p>
+<ul>
+<li>Eine logische <em>Exklusiv ODER</em> Verkn&uuml;pfung ist sehr selten.</li>
+<li>Die Kurzschlussauswertung wird nicht erm&ouml;glicht - Ist bei einer <em>UND</em> Verkn&uuml;pfung der erste Term falsch muss der zweite nicht
+mehr &uuml;berpr&uuml;ft werden. Das gleiche gilt bei <em>ODER</em> mit dem ersten Term wahr. Bei <em>Exklusiv ODER</em> geht dies nicht.</li>
+</ul>
+<h2 id="und-wenn-ich-es-doch-mal-benotige">Und wenn ich es doch mal ben&ouml;tige?</h2>
+<p>Eine logische <em>Exklusiv ODER</em> Verkn&uuml;pfung l&auml;sst sich wie folgt realisieren:</p>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">a</span> <span class="o">!=</span> <span class="o">!</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+<p>Mittels logischer Invertierung <code>!</code> wird der entsprechende Term auf 0 (falsch) oder 1 (wahr) gebracht. Wenn diese logischen
+Terme unterschiedlich sind ist die Gesamtaussage wahr.</p>
         </div>
         <div class="col-md-4" role="complementary">
         </div>

@@ -47,6 +47,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="https://github.com/semiversus" class="social" data-toggle="tooltip" data-placement="bottom" title="Github.com/Semiversus"><span class="fa fa-github fa-2x"></span></a></li>
             <li><a href="http://stackoverflow.com/users/363745/günther-jena" class="social" data-toggle="tooltip" data-placement="bottom" title="Stackoverflow.com/Semiversus"><span class="fa fa-stack-overflow fa-2x"></span></a></li>
+            <li><a href="./semiversus.atom.xml" class="social" data-toggle="tooltip" data-placement="bottom" title="RSS Feed"><span class="fa fa-rss fa-2x"></span></a></li>
           </ul>
         </div>
       </div>
@@ -55,9 +56,30 @@
       <div class="row">
         <div class="col-md-8" role="main">
     <article>
+      <h2><a href="./blog/logisches_xor.html">Wieso gibt es kein logisches XOR in C?</a></h2>
+      <p><span class="fa fa-calendar"></span> 15.02.2016
+<a href="./tag/programmieren.html" class="hidden-print"><span class="label label-primary">Programmieren</span></a> <a href="./tag/c.html" class="hidden-print"><span class="label label-primary">C</span></a> </p>
+      <div class="summary">
+          <p>In C gibt es vier bitweise Operatoren (Details dazu im <a href="./dic/mikrocontroller/bitmanipulation.html">Skriptum</a>):</p>
+<ul>
+<li><em>UND</em> Verkn&uuml;pfung - <code>&amp;</code></li>
+<li><em>ODER</em> Verkn&uuml;pfung - <code>|</code></li>
+<li><em>Exklusiv ODER</em> Verk&uuml;pfung - <code>^</code></li>
+<li><em>INVERTIERUNG</em> - <code>~</code></li>
+</ul>
+<p>Neben den bitweisen Operatoren gibt es noch die logische, die den bitweisen entsprechen:</p>
+<ul>
+<li><em>UND</em> Verkn&uuml;pfung - <code>&amp;&amp;</code></li>
+<li><em>ODER</em> Verkn&uuml;pfung - <code>||</code></li>
+<li><em>INVERTIERUNG</em> - <code>!</code></li>
+</ul>
+<p>Hier fehlt offensichtlich die Exklusive <em>ODER</em> Verkn&uuml;pfung ...</p>
+<a class="btn btn-default btn-xs" href="./blog/logisches_xor.html">Weiterlesen...</a>      </div>
+    </article>
+<hr />    <article>
       <h2><a href="./blog/anniversary.html">Jubiläumsplan</a></h2>
       <p><span class="fa fa-calendar"></span> 11.02.2016
-<a href="./tag/tools.html" class="hidden-print"><span class="label label-primary">Tools</span></a> </p>
+<a href="./tag/tools.html" class="hidden-print"><span class="label label-primary">Tools</span></a> <a href="./tag/verschiedenes.html" class="hidden-print"><span class="label label-primary">Verschiedenes</span></a> </p>
       <div class="summary">
           <p>Wieso Jubil&auml;en immer nur nach ganzen Jahren feiern? Wieso nicht bei einer Millon Sekunden Lebenszeit? Oder bei Tausend Wochen?</p>
 <p>Dieses <a class="download" href="./blog/2016_02_11_anniversary/anniversary.ods">Spreadsheet</a> (LibreOffice Calc Sheet) macht es m&ouml;glich. Einfach das Datum und die
@@ -69,7 +91,7 @@ Uhrzeit bei "Geburt" eintragen, Namen anpassen und ausdrucken.</p>
 <hr />    <article>
       <h2><a href="./blog/radioparadise.html">Webstream Radio Paradise</a></h2>
       <p><span class="fa fa-calendar"></span> 08.02.2016
-<a href="./tag/webstream.html" class="hidden-print"><span class="label label-primary">Webstream</span></a> </p>
+<a href="./tag/webstream.html" class="hidden-print"><span class="label label-primary">Webstream</span></a> <a href="./tag/empfehlung.html" class="hidden-print"><span class="label label-primary">Empfehlung</span></a> </p>
       <div class="summary">
           <p><img alt="Logo Radio Paradise" class="pull-left" src="./blog/2016_02_08_radioparadise/logo.svg" style="padding-right:8px;"/></p>
 <p>Die meisten Webradios scheitern an mindestem einen der folgenden Punkte: Kostenlos, gute Qualit&auml;t, keine Werbung, ... und gute Musik.</p>
@@ -78,14 +100,14 @@ mittels Unterst&uuml;tzung durch die H&ouml;rer.</p>
       </div>
     </article>
 <hr />    <article>
-      <h2><a href="./blog/korrelation.html">Interessante Korrelation entdecken mittels <tt>wdiff</tt></a></h2>
+      <h2><a href="./blog/korrelation.html">Interessante Korrelation entdecken mittels <samp>wdiff</samp></a></h2>
       <p><span class="fa fa-calendar"></span> 31.01.2016
 <a href="./tag/tools.html" class="hidden-print"><span class="label label-primary">Tools</span></a> </p>
       <div class="summary">
           <p>Abschreiben als solches zu erkennen ist keine einfache Sache, da der Aufwand massiv mit der Anzahl der zu vergleichenden
 Arbeiten steigt. Bei 5 Arbeiten sind insgesamt 10 Vergleiche zu machen: Die erste Aufgabe wird mit den vier anderen
 verglichen, dann die zweite Arbeit mit den drei verbleibenden, usw.</p>
-<p>Mit <tt>wdiff ...</tt></p>
+<p>Mit <samp>wdiff ...</samp></p>
 <a class="btn btn-default btn-xs" href="./blog/korrelation.html">Weiterlesen...</a>      </div>
     </article>
 

@@ -67,6 +67,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="https://github.com/semiversus" class="social" data-toggle="tooltip" data-placement="bottom" title="Github.com/Semiversus"><span class="fa fa-github fa-2x"></span></a></li>
             <li><a href="http://stackoverflow.com/users/363745/günther-jena" class="social" data-toggle="tooltip" data-placement="bottom" title="Stackoverflow.com/Semiversus"><span class="fa fa-stack-overflow fa-2x"></span></a></li>
+            <li><a href="../../../semiversus.atom.xml" class="social" data-toggle="tooltip" data-placement="bottom" title="RSS Feed"><span class="fa fa-rss fa-2x"></span></a></li>
           </ul>
         </div>
       </div>
@@ -85,7 +86,7 @@
 <h1 id="einschaltverzogerung">Einschaltverz&ouml;gerung</h1>
 <h2 id="vorbereitung">Vorbereitung</h2>
 <ul>
-<li>Projekt <tt>led_delay/led_delay.xise</tt> &ouml;ffnen</li>
+<li>Projekt <samp>led_delay/led_delay.xise</samp> &ouml;ffnen</li>
 </ul>
 <h2 id="aufgabenstellung">Aufgabenstellung</h2>
 <p>Es ist eine einfache Einschaltverz&ouml;gerung zu entwerfen. Diese Einschaltverz&ouml;gerung steuert eine LED an und wird mittels zwei Tasten
@@ -98,7 +99,7 @@ bedient:</p>
 <p><span class="badge">5 Punkte</span></p>
 <p>Zur Realisierung wird eine Zustandsmaschine genutzt.</p>
 <ul>
-<li>Bearbeite die Datei <tt>led_delay_fsm.vhd</tt></li>
+<li>Bearbeite die Datei <samp>led_delay_fsm.vhd</samp></li>
 <li>Definiere die drei Zust&auml;nden <code>OFF</code>, <code>LIGHT</code> und <code>DELAY</code></li>
 <li>Der Startzustand ist <code>OFF</code></li>
 <li>Der Eingang <code>toggle_i</code> wechselt von <code>LIGHT</code> nach <code>OFF</code> bzw. von <code>OFF</code> oder <code>DELAY</code> nach <code>LIGHT</code></li>
@@ -112,26 +113,26 @@ bedient:</p>
 <div class="panel panel-info">
 <div class="panel-heading">Testbench</div>
 <div class="panel-body">
-<p>Teste die Implementierung mittels der Testbench <tt>led_delay_fsm_tb.vhd</tt>. Mittels <kbd>F6</kbd> l&auml;sst sich
+<p>Teste die Implementierung mittels der Testbench <samp>led_delay_fsm_tb.vhd</samp>. Mittels <kbd>F6</kbd> l&auml;sst sich
 der gesamte Bereich zoomen.</p>
 </div>
 </div>
 <h2 id="implementierung-des-top-levels">Implementierung des Top Levels</h2>
 <p><span class="badge">5 Punkte</span></p>
-<p>Zur Verf&uuml;gung stehen die Komponenten <tt>counter</tt>, <tt>button_dectect</tt> und <tt>led_delay_fsm</tt>. Diese
-Komponenten werden genutzt, um im Top Level <tt>led_delay.vhd</tt> die gew&uuml;nschte Funktionalit&auml;t zu realisieren.</p>
+<p>Zur Verf&uuml;gung stehen die Komponenten <samp>counter</samp>, <samp>button_dectect</samp> und <samp>led_delay_fsm</samp>. Diese
+Komponenten werden genutzt, um im Top Level <samp>led_delay.vhd</samp> die gew&uuml;nschte Funktionalit&auml;t zu realisieren.</p>
 <ul>
-<li>Die Instanz der Komponente <tt>button_detect</tt> mit dem Namen <code>toggle_detect_component</code> ist bereits erstellt<ul>
+<li>Die Instanz der Komponente <samp>button_detect</samp> mit dem Namen <code>toggle_detect_component</code> ist bereits erstellt<ul>
 <li><code>button_i</code> ist mit dem Eingang <code>button_toggle_i</code> verbunden</li>
 <li><code>detect_o</code> ist mit dem (bereits definiertem) Signal <code>toggle_detect</code> verbunden</li>
 </ul>
 </li>
-<li>Erstelle eine Instanz der Komponente <tt>button_detect</tt> mit dem Namen <code>on_detect_component</code> analog zu <code>toggle_detect_component</code><ul>
+<li>Erstelle eine Instanz der Komponente <samp>button_detect</samp> mit dem Namen <code>on_detect_component</code> analog zu <code>toggle_detect_component</code><ul>
 <li><code>button_i</code> ist mit dem Eingang <code>button_on_i</code> verbunden</li>
 <li><code>detect_o</code> ist mit dem (bereits definiertem) Signal <code>on_detect</code> verbunden</li>
 </ul>
 </li>
-<li>Erstelle eine Instanz der Komponente <tt>led_delay_fsm</tt> mit dem Namen <code>led_delay_fsm_component</code><ul>
+<li>Erstelle eine Instanz der Komponente <samp>led_delay_fsm</samp> mit dem Namen <code>led_delay_fsm_component</code><ul>
 <li><code>toggle_i</code> ist mit dem Signal <code>toggle_detect</code> verbunden</li>
 <li><code>on_i</code> ist mit dem Signal <code>on_detect</code> verbunden</li>
 <li><code>timeout_i</code> ist mit dem (bereits definiertem) Signal <code>timeout</code> verbunden</li>
@@ -140,7 +141,7 @@ Komponenten werden genutzt, um im Top Level <tt>led_delay.vhd</tt> die gew&uuml;
 <li><code>timer_clear_o</code> ist mit dem (bereits definiertem) Signal <code>timer_clear</code> verbunden</li>
 </ul>
 </li>
-<li>Erstelle eine Instanz der Komponente <tt>counter</tt> mit dem Namen <code>timeout_component</code><ul>
+<li>Erstelle eine Instanz der Komponente <samp>counter</samp> mit dem Namen <code>timeout_component</code><ul>
 <li><code>WIDTH</code> in der <em>generic map</em> wird auf 28 gestellt (28 Bit)</li>
 <li><code>MAXIMUM</code> wird auf <code>CLK_TIMEOUT_DIVIDER</code> gestellt (ist im <em>generic</em> Teil des Top Levels bereits definiert)</li>
 <li><code>enable_i</code> ist mit dem Signal <code>timer_enable</code> verbunden</li>
@@ -154,16 +155,16 @@ Komponenten werden genutzt, um im Top Level <tt>led_delay.vhd</tt> die gew&uuml;
 <div class="panel panel-info">
 <div class="panel-heading">Testbench</div>
 <div class="panel-body">
-<p>Teste die Implementierung mittels der Testbench <tt>led_delay_tb.vhd</tt>.</p>
+<p>Teste die Implementierung mittels der Testbench <samp>led_delay_tb.vhd</samp>.</p>
 </div>
 </div>
 <h2 id="erweiterung-der-constraints-datei">Erweiterung der <em>Constraints</em> Datei</h2>
 <p><span class="badge">2 Punkte</span></p>
-<p>In der Datei <tt>led_delay.ucf</tt> ist nur das Signal <code>clk</code> definiert. Erweitere die Datei um folgende Zuordnungen</p>
+<p>In der Datei <samp>led_delay.ucf</samp> ist nur das Signal <code>clk</code> definiert. Erweitere die Datei um folgende Zuordnungen</p>
 <ul>
-<li><code>button_toggle_i</code> wird durch den Taster <tt>BTN0</tt> angesteuert</li>
-<li><code>button_on_i</code> wird durch den Taster <tt>BTN1</tt> angesteuert</li>
-<li><code>led_o</code> ist die LED <tt>LD0</tt></li>
+<li><code>button_toggle_i</code> wird durch den Taster <samp>BTN0</samp> angesteuert</li>
+<li><code>button_on_i</code> wird durch den Taster <samp>BTN1</samp> angesteuert</li>
+<li><code>led_o</code> ist die LED <samp>LD0</samp></li>
 </ul>
 <figure><img src="../../../dic/programmierbare_logik/basys2_pinout.svg"><figcaption>Pinout des BASYS2 Boards(Bild: <a href="http://www.digilentinc.com/Products/Detail.cfm?NavPath=2,400,790&amp;Prod=BASYS2">Digilent Inc. BASYS2 Manual</a>)</figcaption></img></figure>
 <h2 id="test-am-board">Test am Board</h2>
@@ -172,7 +173,7 @@ Komponenten werden genutzt, um im Top Level <tt>led_delay.vhd</tt> die gew&uuml;
 <h1 id="wurfel_1">W&uuml;rfel</h1>
 <h2 id="vorbereitung_1">Vorbereitung</h2>
 <ul>
-<li>Projekt <tt>dice/dice.xise</tt> &ouml;ffnen</li>
+<li>Projekt <samp>dice/dice.xise</samp> &ouml;ffnen</li>
 </ul>
 <h2 id="aufgabenstellung_1">Aufgabenstellung</h2>
 <p>Mittels sieben LEDs wird ein W&uuml;rfel dargestellt. Eine Taste startet durch das Dr&uuml;cken einen <em>Zufallsgenerator</em> und beim
@@ -256,13 +257,13 @@ wird folgende kodierung verwendet:</p>
 <li><em>Ein</em> wird mittels <code>'1'</code> kodiert, <em>Aus</em> mittels <code>'0'</code></li>
 <li>Bei nicht definierten Zust&auml;nde sollen alle LEDs aus sein</li>
 </ul>
-<p>Die Komponente ist in vier Ausf&uuml;hrungen (<em>Architectures</em>) bereits in der Datei <tt>decoder.vhd</tt> beschrieben. Die
+<p>Die Komponente ist in vier Ausf&uuml;hrungen (<em>Architectures</em>) bereits in der Datei <samp>decoder.vhd</samp> beschrieben. Die
 <em>Architectures</em> lauten <code>behave1</code>, <code>behave2</code>, <code>behave3</code> und <code>behave4</code>.</p>
-<p>Erstelle in der Datei <tt>decoder_tb.vhd</tt> eine Testbench, die herausfindet, welche der vier Ausf&uuml;hrungen
+<p>Erstelle in der Datei <samp>decoder_tb.vhd</samp> eine Testbench, die herausfindet, welche der vier Ausf&uuml;hrungen
 funktioniert (es ist genau eine).</p>
 <h2 id="komponente-shuffle">Komponente <code>shuffle</code></h2>
 <p><span class="badge">5 Punkte</span></p>
-<p>Erstelle die Komponente <code>shuffle</code> durch Bearbeitung der Datei <tt>shuffle.vhd</tt> nach folgender Skizze:</p>
+<p>Erstelle die Komponente <code>shuffle</code> durch Bearbeitung der Datei <samp>shuffle.vhd</samp> nach folgender Skizze:</p>
 <p><img alt="Shuffle Komponente" src="../../../dic/programmierbare_logik/test_vhdl/test2_shuffle.jpg"/></p>
 <ul>
 <li>Wenn <code>enable_i</code> auf <code>'1'</code> ist, soll der interne Z&auml;hler <code>counter_reg</code> bei einer steigenden Taktflanke hinaufz&auml;hlen</li>
@@ -272,17 +273,17 @@ funktioniert (es ist genau eine).</p>
 <div class="panel panel-info">
 <div class="panel-heading">Testbench</div>
 <div class="panel-body">
-<p>Teste die Implementierung mittels der Testbench <tt>shuffle_tb.vhd</tt>.</p>
+<p>Teste die Implementierung mittels der Testbench <samp>shuffle_tb.vhd</samp>.</p>
 </div>
 </div>
 <h2 id="implementierung-des-top-levels_1">Implementierung des Top Levels</h2>
 <p><span class="badge">5 Punkte</span></p>
-<p>Zur Verf&uuml;gung stehen die Komponenten <tt>shuffle</tt>, <tt>decoder</tt>. Diese
-Komponenten werden genutzt, um im Top Level <tt>dice.vhd</tt> die gew&uuml;nschte Funktionalit&auml;t zu realisieren.</p>
+<p>Zur Verf&uuml;gung stehen die Komponenten <samp>shuffle</samp>, <samp>decoder</samp>. Diese
+Komponenten werden genutzt, um im Top Level <samp>dice.vhd</samp> die gew&uuml;nschte Funktionalit&auml;t zu realisieren.</p>
 <div class="panel panel-info">
 <div class="panel-heading">Testbench</div>
 <div class="panel-body">
-<p>Teste die Implementierung mittels der Testbench <tt>dice_tb.vhd</tt>.</p>
+<p>Teste die Implementierung mittels der Testbench <samp>dice_tb.vhd</samp>.</p>
 </div>
 </div>
 <h2 id="test-am-board_1">Test am Board</h2>

@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="../favicon.ico">
-  <title>Semiversus | Tools</title>
+  <title>Semiversus | C</title>
   <link href="../theme/css/bootstrap.min.css" rel="stylesheet">
   <link href="../theme/css/font-awesome.min.css" rel="stylesheet">
   <link href="../theme/css/semiversus.css" rel="stylesheet">
@@ -55,28 +55,26 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8" role="main">
-  <h1>Tools</h1>
+  <h1>C</h1>
     <article>
-      <h2><a href="../blog/anniversary.html">Jubiläumsplan</a></h2>
-      <p><span class="fa fa-calendar"></span> 11.02.2016
-<a href="../tag/tools.html" class="hidden-print"><span class="label label-primary">Tools</span></a> <a href="../tag/verschiedenes.html" class="hidden-print"><span class="label label-primary">Verschiedenes</span></a> </p>
-      <div class="summary"><p>Wieso Jubil&auml;en immer nur nach ganzen Jahren feiern? Wieso nicht bei einer Millon Sekunden Lebenszeit? Oder bei Tausend Wochen?</p>
-<p>Dieses <a class="download" href="../blog/2016_02_11_anniversary/anniversary.ods">Spreadsheet</a> (LibreOffice Calc Sheet) macht es m&ouml;glich. Einfach das Datum und die
-Uhrzeit bei "Geburt" eintragen, Namen anpassen und ausdrucken.</p>
-<p><img alt="Screenshot" src="../blog/2016_02_11_anniversary/anniversary.png"/></p>
-<p>Interessant ist die logarithmische Verteilung: Hat man eine ...</p>
-          <a class="btn btn-default btn-xs" href="../blog/anniversary.html">Weiterlesen...</a>
-      </div>
-    </article>
-<hr />    <article>
-      <h2><a href="../blog/korrelation.html">Interessante Korrelation entdecken mittels <samp>wdiff</samp></a></h2>
-      <p><span class="fa fa-calendar"></span> 31.01.2016
-<a href="../tag/tools.html" class="hidden-print"><span class="label label-primary">Tools</span></a> </p>
-      <div class="summary"><p>Abschreiben als solches zu erkennen ist keine einfache Sache, da der Aufwand massiv mit der Anzahl der zu vergleichenden
-Arbeiten steigt. Bei 5 Arbeiten sind insgesamt 10 Vergleiche zu machen: Die erste Aufgabe wird mit den vier anderen
-verglichen, dann die zweite Arbeit mit den drei verbleibenden, usw.</p>
-<p>Mit <samp>wdiff ...</samp></p>
-          <a class="btn btn-default btn-xs" href="../blog/korrelation.html">Weiterlesen...</a>
+      <h2><a href="../blog/logisches_xor.html">Wieso gibt es kein logisches XOR in C?</a></h2>
+      <p><span class="fa fa-calendar"></span> 15.02.2016
+<a href="../tag/programmieren.html" class="hidden-print"><span class="label label-primary">Programmieren</span></a> <a href="../tag/c.html" class="hidden-print"><span class="label label-primary">C</span></a> </p>
+      <div class="summary"><p>In C gibt es vier bitweise Operatoren (Details dazu im <a href="../dic/mikrocontroller/bitmanipulation.html">Skriptum</a>):</p>
+<ul>
+<li><em>UND</em> Verkn&uuml;pfung - <code>&amp;</code></li>
+<li><em>ODER</em> Verkn&uuml;pfung - <code>|</code></li>
+<li><em>Exklusiv ODER</em> Verk&uuml;pfung - <code>^</code></li>
+<li><em>INVERTIERUNG</em> - <code>~</code></li>
+</ul>
+<p>Neben den bitweisen Operatoren gibt es noch die logische, die den bitweisen entsprechen:</p>
+<ul>
+<li><em>UND</em> Verkn&uuml;pfung - <code>&amp;&amp;</code></li>
+<li><em>ODER</em> Verkn&uuml;pfung - <code>||</code></li>
+<li><em>INVERTIERUNG</em> - <code>!</code></li>
+</ul>
+<p>Hier fehlt offensichtlich die Exklusive <em>ODER</em> Verkn&uuml;pfung ...</p>
+          <a class="btn btn-default btn-xs" href="../blog/logisches_xor.html">Weiterlesen...</a>
       </div>
     </article>
 
