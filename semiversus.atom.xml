@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Semiversus Blog</title><link href="https://www.semiversus.com/" rel="alternate"></link><link href="https://www.semiversus.com/semiversus.atom.xml" rel="self"></link><id>https://www.semiversus.com/</id><updated>2016-03-30T00:00:00+02:00</updated><entry><title>Wenn Muttersprache weh tut...</title><link href="https://www.semiversus.com/blog/foreigner.html" rel="alternate"></link><updated>2016-03-30T00:00:00+02:00</updated><author><name>Günther Jena</name></author><id>tag:www.semiversus.com,2016-03-30:blog/foreigner.html</id><summary type="html">&lt;p&gt;&lt;img alt="Kommentar" src="https://www.semiversus.com/blog/2016_03_30_foreigner/pinwall.jpg"/&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Semiversus Blog</title><link href="https://www.semiversus.com/" rel="alternate"></link><link href="https://www.semiversus.com/semiversus.atom.xml" rel="self"></link><id>https://www.semiversus.com/</id><updated>2016-03-31T00:00:00+02:00</updated><entry><title>Der Tempel des Snofru</title><link href="https://www.semiversus.com/blog/snofru.html" rel="alternate"></link><updated>2016-03-31T00:00:00+02:00</updated><author><name>Günther Jena</name></author><id>tag:www.semiversus.com,2016-03-31:blog/snofru.html</id><summary type="html">&lt;p&gt;Das Spiel (hier zum &lt;a class="download" href="https://www.semiversus.com/blog/2016_03_31_snofru/snofru.zip"&gt;Download&lt;/a&gt;) habe ich im Alter von 14 geschrieben und
+ist eine Sokoban-Variante (siehe &lt;a class="external" href="https://de.wikipedia.org/wiki/Sokoban"&gt;Wikipedia&lt;/a&gt;). Ich dachte
+eigentlich, dass das Spiel verschollen ist, doch Internet sei Dank hab ich es wieder gefunden.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Gameplay" src="https://www.semiversus.com/blog/2016_03_31_snofru/snofru.gif"/&gt;&lt;/p&gt;
+&lt;p&gt;Das Spiel ist ziemlich einfach gestrickt. Man steuert eine Spielfigur mittels Pfeiltasten durch ein Labyrinth mit Hindernissen
+in Form von verschiebbaren Steinen und herumlaufenden Soldaten.&lt;/p&gt;
+&lt;h2 id="archiveorg"&gt;Archive.org&lt;/h2&gt;
+&lt;p&gt;&lt;figure class="pull-right"&gt;&lt;img src="https://www.semiversus.com/blog/2016_03_31_snofru/gamestar.jpg"&gt;&lt;figcaption&gt;GameStar 7/1998 (Bild: &lt;a href="http://de.videospielzeitschriften.wikia.com/wiki/Datei:GameStar_1998-07.jpg"&gt;Maniacfan&lt;/a&gt;, Urheberrechtlich gesch&amp;uuml;tzt durch &lt;a href="http://www.gamestar.de/impressum/"&gt;GameStar&lt;/a&gt;&lt;/figcaption&gt;&lt;/img&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Wer &lt;a class="external" href="https://archive.org"&gt;Archive.org&lt;/a&gt; nicht kennt, sollte es sich unbedingt anschauen. Ein Projekt
+  zum Archivieren des Internets - und das nicht nur einmal, sondern in vielen Kopien zu verschiedenen Zeiten: Hier ist
+die fr&amp;uuml;heste Version meiner &lt;a class="external" href="https://web.archive.org/web/20110201022701/http://www.semiversus.com/"&gt;Homepage&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Und weil beim Archivieren des Internets wahrscheinlich nicht genug Daten anfallen archivieren sie auch viele frei zug&amp;auml;ngliche CDs, DVDs usw.&lt;/p&gt;
+&lt;p&gt;Das Spiel wurde damals auf der beiliegenden CD zur GameStar 7/1998 ver&amp;ouml;ffentlicht - und diese CD gibts auch auf
+&lt;a class="external" href="https://archive.org/details/cdgs0798"&gt;Archive.org&lt;/a&gt; zum Download.&lt;/p&gt;
+&lt;h2 id="das-spiel"&gt;Das Spiel&lt;/h2&gt;
+&lt;p&gt;Viele Dinge w&amp;uuml;rde ich heute anders machen:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Das Spiel l&amp;auml;uft auf nur einer Plattform (Windows)&lt;/li&gt;
+&lt;li&gt;Es wurde in VisualBasic programmiert&lt;/li&gt;
+&lt;li&gt;Es ist nicht frei skalierbar&lt;/li&gt;
+&lt;li&gt;Es ist nicht Open Source sondern Shareware...&lt;/li&gt;
+&lt;li&gt;Der Gameplot entspricht der &lt;em&gt;Damsel in Distress&lt;/em&gt; (&lt;a class='"external' href="https://www.youtube.com/watch?v=X6p5AZp7r_Q"&gt;Youtube&lt;/a&gt; - sehenswert).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Die Daten f&amp;uuml;r die einzelnen Levels sind in der Datei &lt;samp&gt;Game.dat&lt;/samp&gt; gespeichert. Jede Zeile entspricht einem Level.&lt;/p&gt;
+&lt;p&gt;Es gab sogar einen Leveleditor, aber nur in der Vollversion f&amp;uuml;r 50 Schilling (inflationsangepasst w&amp;auml;ren das heute 6-7&amp;euro;).
+Das Einkommen durch das Spiel hat f&amp;uuml;r den Lebensunterhalt nicht gereicht und so hab ich dann die Schule fertig gemacht... &lt;/p&gt;</summary><category term="Programmieren"></category></entry><entry><title>Wenn Muttersprache weh tut...</title><link href="https://www.semiversus.com/blog/foreigner.html" rel="alternate"></link><updated>2016-03-30T00:00:00+02:00</updated><author><name>Günther Jena</name></author><id>tag:www.semiversus.com,2016-03-30:blog/foreigner.html</id><summary type="html">&lt;p&gt;&lt;img alt="Kommentar" src="https://www.semiversus.com/blog/2016_03_30_foreigner/pinwall.jpg"/&gt;&lt;/p&gt;
 &lt;p&gt;Dieser Ausschnitt h&amp;auml;ngt seit einer Ewigkeit auf meiner Pinnwand. Es hat einen seltsamen Reiz diesen Kommentar
 zu lesen. Ich habe den Namen der schreibenden Person unkenntlich gemacht, das originale Kommentar ist aber nach wie vor
 online abzurufen.&lt;/p&gt;</summary><category term="Verschiedenes"></category></entry><entry><title>Reflection meets tree</title><link href="https://www.semiversus.com/blog/reflection_meets_tree.html" rel="alternate"></link><updated>2016-03-29T00:00:00+02:00</updated><author><name>Günther Jena</name></author><id>tag:www.semiversus.com,2016-03-29:blog/reflection_meets_tree.html</id><summary type="html">&lt;p&gt;&lt;img alt="Baum nah ohne Sonne" src="https://www.semiversus.com/blog/2016_03_29_reflection_meets_tree/tree2.jpg"/&gt;&lt;/p&gt;
