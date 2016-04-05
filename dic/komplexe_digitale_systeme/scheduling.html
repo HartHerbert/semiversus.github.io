@@ -80,7 +80,9 @@
         <div class="col-md-8" role="main">
   <header><h1>Scheduling<div class="pull-right hidden-print"><a href="https://www.semiversus.com/dic/komplexe_digitale_systeme/scheduling.md"  class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="bottom" title="Quelltext zu dieser Seite"><span class="fa fa-file-text-o fa-lg"></span></a></div></h1></header>
   <h1 id="allgemeines">Allgemeines</h1>
-<p>Unter Scheduling (englisch f&uuml;r &bdquo;Zeitplanerstellung&ldquo;), versteht man das Erstellen eines Ablaufplanes (schedule), der Prozessen zeitlich begrenzt Ressourcen zuteilt. Dem Scheduler stehen als Entscheidungsbasis die anstehenden Aufgaben zur Verf&uuml;gung.</p>
+<p>Unter Scheduling (englisch f&uuml;r &bdquo;Zeitplanerstellung&ldquo;), versteht man das Erstellen eines Ablaufplanes (schedule), der
+Prozessen zeitlich begrenzt Ressourcen zuteilt. Dem Scheduler stehen als Entscheidungsbasis die anstehenden Aufgaben zur
+Verf&uuml;gung.</p>
 <h1 id="kriterien">Kriterien</h1>
 <p>Ein gutes Scheduling-Verfahren zeichnet sich dadurch aus, dass es die folgenden Kriterien optimiert:</p>
 <ul>
@@ -92,7 +94,7 @@
 <li><strong>Einfach und schnell</strong>: F&uuml;r Implementierungen kann es sinnvoll sein, m&ouml;glichst wenig Ressourcen im Scheduler selbst zu verbrauchen.</li>
 </ul>
 <h1 id="praemptiv-und-nicht-praemptiv">Pr&auml;emptiv und Nicht-Pr&auml;emptiv</h1>
-<p>Beim nicht-pr&auml;emptiven Verfahren &uuml;bergibt ein Prozess die ben&ouml;tigten Ressourcen selbstst&auml;ndig, wenn diese nicht mehr ben&ouml;tigt werden. Dies gilt insbesondere f&uuml;r die Prozessorzeit. Wird einem Prozess also Prozessorzeit zugeteilt wird der Prozess solange bearbeitet, bis dieser selbst die Kontrolle an das Betriebssystem zur&uuml;ckgibt. Dieses Verfahren wird auch kooperatives Verfahren genannt. Wenn ein Prozess durch einen Fehler die Kontrolle nicht zur&uuml;ckgibt bleibt das ganze System "h&auml;ngen". Dieses Verfahren kann aber gro&szlig;e Vorteile bei Echtzeitbetriebssystemen haben, da die Ressourcen sehr gut genutzt werden k&ouml;nnen.</p>
+<p>Beim nicht-pr&auml;emptiven Verfahren &uuml;bergibt ein Prozess die ben&ouml;tigten Ressourcen selbstst&auml;ndig, wenn diese nicht mehr ben&ouml;tigt werden. Dies gilt insbesondere f&uuml;r die Prozessorzeit. Wenn einem Prozess also Prozessorzeit zugeteilt wird kann dieser Prozess frei entscheiden, wann er die Kontrolle an das Betriebssystem zur&uuml;ck gibt. Dieses Verfahren wird auch kooperatives Verfahren genannt. Wenn ein Prozess durch einen Fehler die Kontrolle nicht zur&uuml;ck gibt bleibt das ganze System <em>h&auml;ngen</em>. Dieses Verfahren kann aber gro&szlig;e Vorteile bei Echtzeitbetriebssystemen haben, da es m&ouml;glich ist, die Ressourcen sehr gut zu nutzen.</p>
 <p>Das pr&auml;emtive (engl. preemptive) Verfahren hat die M&ouml;glichkeit, dem Prozess die Zuteilung des Prozessors zu entziehen. Dieses Verfahren wird meist mit festen Zeitschlitzen implementiert, nach deren Ende jeweils ein Prozesswechsel vollzogen wird.</p>
 <h1 id="scheduling-strategien">Scheduling Strategien</h1>
 <p>Das gr&ouml;&szlig;te Problem des Schedulers ist die Tatsache, dass die ben&ouml;tigten Betriebsmittel f&uuml;r die einzelnen Prozesse meist nicht im Vorfeld bekannt sind. Es l&auml;sst sich also im Allgemeinen keine optimale Planung erstellen, sondern der Scheduler muss dynamisch auf ge&auml;nderte Anforderungen reagieren. Dabei k&ouml;nnen (abh&auml;ngig vom Scheduler) verschiedene Zuteilungsstrategien zum Einsatz kommen.</p>
@@ -288,6 +290,6 @@ Lotterie-Scheduling l&ouml;st das Problem des Verhungerns. Wenn man jedem Prozes
       </div>
     </div>
   </div>
-  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 4.4.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/d1bba0f">d1bba0f</a>) <a href="https://plus.google.com/111972313670421914746/about" rel="author" class="hidden">Google+</a></p></div></footer>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 6.4.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/4966a4b">4966a4b</a>) <a href="https://plus.google.com/111972313670421914746/about" rel="author" class="hidden">Google+</a></p></div></footer>
 </body>
 </html>
