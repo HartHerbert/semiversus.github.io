@@ -83,16 +83,18 @@
   <h1 id="allgemeines">Allgemeines</h1>
 <ul>
 <li>Download des <a class="download" href="https://www.semiversus.com/dic/mikrocontroller/embedded_template_hal.zip">Megacard Templates</a></li>
-<li>Derzeit werden folgende Komponenten unterst&uuml;tzt:<ul>
-<li>Ansteuerung der LEDs</li>
-<li>Auswertung der Tastendr&uuml;cken <em>S0</em> bis <em>S3</em></li>
-<li>Ausgabe von T&ouml;nen &uuml;ber den Lautsprecher</li>
-<li>Timerabstraktion</li>
-<li>LC Display ansteuerung</li>
 </ul>
-</li>
+<p>Die Verwendung der Hardwareabstraktion (kurz <em>HAL</em> f&uuml;r engl. <em>Hardware Abstraction Layer</em>) wird im folgenden erl&auml;utert.</p>
+<p>Folgende Hardwareeinheiten werden von der HAL angesteuert:</p>
+<ul>
+<li>LEDs (Port C)</li>
+<li>Taster S0-S3 (Port A0..3)</li>
+<li>Lautsprecher (Port A4)</li>
+<li>Timer0 f&uuml;r 800 Mikrosekunden Basis</li>
+<li>Timer1 f&uuml;r Soundausgabe</li>
+<li>LCD (Port A und Port B)</li>
 </ul>
-<p>Die  verwendung der Hardwareabstraktion (kurz <em>HAL</em> f&uuml;r engl. <em>Hardware Abstraction Layer</em>) wird im folgenden erl&auml;utert.</p>
+<p>Die globale Interruptfreigabe wird durch bei der Initialisierung gesetzt (mittels <code>sei()</code>).</p>
 <h1 id="ansteuerung-der-leds">Ansteuerung der LEDs</h1>
 <p>Zur Ansteuerung der LEDs gibt es zwei Funktionen.</p>
 <h2 id="einzelne-led-steuern">Einzelne LED steuern</h2>
@@ -219,6 +221,6 @@ Dezimaldarstellung rechnet. In diesem Beispiel wird statt in Grad Celsius in 1/1
       </div>
     </div>
   </div>
-  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 7.5.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/f2e695b">f2e695b</a>) <a href="https://plus.google.com/111972313670421914746/about" rel="author" class="hidden">Google+</a></p></div></footer>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 7.5.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/46b2774">46b2774</a>) <a href="https://plus.google.com/111972313670421914746/about" rel="author" class="hidden">Google+</a></p></div></footer>
 </body>
 </html>
