@@ -147,7 +147,14 @@ aber die Informationen mit dem entsprechenden Datenblatt zu vergleichen!</p>
 <h3 id="adps20-adc-prescaler-select-bits"><samp>ADPS2:0</samp> - ADC Prescaler Select Bits</h3>
 <p>W&auml;hlt den Teiler f&uuml;r die Wandlung des ADCs. Der ADC arbeitet mit einer Frequenz zwischen 50kHz und 200kHz. Diese Frequenz wird aus dem Prozessortakt und diesem Teiler erzeugt.</p>
 <p>%%f_{ADC}=\frac{f_{CLK}}{Teiler}%%</p>
-<h1 id="beispiele_2">Beispiele</h1>
+<h1 id="umrechnung_2">Umrechnung</h1>
+<p>Bei der Umrechnung einer Spannung am Eingang des ADC hin zum Wert als Zahl wird die Eingangsspannung im Verh&auml;ltnis zur
+Referenzspannung betrachtet und entsprechend der Aufl&ouml;sung (in Bits} des ADC umgewandelt:</p>
+<p>%%Wert_{ADC}=\frac{U_{Eingang}}{U_{Referenz}} \cdot 2^{Bits}%%</p>
+<p>Der Umgekehrte Fall ist dann die Umrechnung von einem Wert in die anliegende Spannung:</p>
+<p>%%U_{Eingang}=\frac{Wert_{ADC}}{2^{Bits}} \cdot U_{Referenz}%%</p>
+<p>Beim ATMega16 ist die Aufl&ouml;sung 10 Bit, d.h. es k&ouml;nnen %%2^{10}=1024%% <em>verschiedene Spannungen unterschieden</em> werden.</p>
+<h1 id="beispiele">Beispiele</h1>
 <p>Im folgenden Beispiel wird an Kanal 5 (Port A5) die Spannung gemessen. Als Referenz dient die Spannung am Pin AREF. Vom
 10 Bit Ergebnis werden die oberen 8 Bit auf dem Port C ausgegeben.</p>
 <h2 id="ohne-interrupt">Ohne Interrupt</h2>
@@ -196,12 +203,12 @@ eine neue Wandlung gestartet.</p>
         </div>
         <div class="col-md-4" role="complementary">
     <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
-    <ul class="nav"><li><a href="#allgemeines">Allgemeines</a></li><li><a href="#aufbau">Aufbau</a><ul class="nav"><li><a href="#eingange">Eing&auml;nge</a></li><li><a href="#ad-wandlung">AD Wandlung</a></li><li><a href="#referenz">Referenz</a></li></ul></li><li><a href="#register_1">Register</a><ul class="nav"><li><a href="#register-admux">Register ADMUX</a></li><li><a href="#register-adcsra">Register ADCSRA</a><ul class="nav"><li><a href="#aden-adc-enable">ADEN - ADC Enable</a></li><li><a href="#adsc-adc-start-conversion">ADSC - ADC Start Conversion</a></li><li><a href="#adate-adc-auto-trigger-enable">ADATE - ADC Auto Trigger Enable</a></li><li><a href="#adif-adc-interrupt-flag">ADIF - ADC Interrupt Flag</a></li><li><a href="#adie-adc-interrupt-enable">ADIE -ADC Interrupt Enable</a></li><li><a href="#adps20-adc-prescaler-select-bits">ADPS2:0 - ADC Prescaler Select Bits</a></li></ul></li></ul></li><li><a href="#beispiele_2">Beispiele</a><ul class="nav"><li><a href="#ohne-interrupt">Ohne Interrupt</a></li><li><a href="#mit-interrupt">Mit Interrupt</a></li></ul></li></ul>
+    <ul class="nav"><li><a href="#allgemeines">Allgemeines</a></li><li><a href="#aufbau">Aufbau</a><ul class="nav"><li><a href="#eingange">Eing&auml;nge</a></li><li><a href="#ad-wandlung">AD Wandlung</a></li><li><a href="#referenz">Referenz</a></li></ul></li><li><a href="#register_1">Register</a><ul class="nav"><li><a href="#register-admux">Register ADMUX</a></li><li><a href="#register-adcsra">Register ADCSRA</a><ul class="nav"><li><a href="#aden-adc-enable">ADEN - ADC Enable</a></li><li><a href="#adsc-adc-start-conversion">ADSC - ADC Start Conversion</a></li><li><a href="#adate-adc-auto-trigger-enable">ADATE - ADC Auto Trigger Enable</a></li><li><a href="#adif-adc-interrupt-flag">ADIF - ADC Interrupt Flag</a></li><li><a href="#adie-adc-interrupt-enable">ADIE -ADC Interrupt Enable</a></li><li><a href="#adps20-adc-prescaler-select-bits">ADPS2:0 - ADC Prescaler Select Bits</a></li></ul></li></ul></li><li><a href="#umrechnung_2">Umrechnung</a></li><li><a href="#beispiele">Beispiele</a><ul class="nav"><li><a href="#ohne-interrupt">Ohne Interrupt</a></li><li><a href="#mit-interrupt">Mit Interrupt</a></li></ul></li></ul>
     </nav>
         </div>
       </div>
     </div>
   </div>
-  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 25.5.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/b5647fb">b5647fb</a>) <a href="https://plus.google.com/111972313670421914746/about" rel="author" class="hidden">Google+</a></p></div></footer>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 28.5.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/3845648">3845648</a>) <a href="https://plus.google.com/111972313670421914746/about" rel="author" class="hidden">Google+</a></p></div></footer>
 </body>
 </html>
