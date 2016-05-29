@@ -13,9 +13,9 @@ Für die Übertragung wird neben der gemeinsamen Masse ein differentielles Signa
 Signalpfade <samp>CAN+</samp> und <samp>CAN-</samp> (oft auch <samp>CAN_HIGH</samp> und <samp>CAN_LOW</samp> genannt).
 
 Der Bus arbeitet nach dem Multi-Master Prinzip, d.h. jede Komponente kann aktiv auf den Bus zugreifen. Ein
-<abrr title="Carrier Sense Multiple Access/Collision Resolution">CSMA/CR</abbr>-Verfahren stellt sicher, dass Nachrichten
+<abbr title="Carrier Sense Multiple Access/Collision Resolution">CSMA/CR</abbr>-Verfahren stellt sicher, dass Nachrichten
 mit höher Priorität nicht durch gleichzeitig startende Nachrichten mit niedriger Prioriät beschädigt werden
-(siehe <a href="#Arbitrierung">Arbitrierung</a>).
+(siehe <a href="#arbitrierung">Arbitrierung</a>).
 
 Die beiden logischen Wert 0 und 1 werden mittels zweier Zustände übermittelt. Die logische 1 wird dabei *rezessiv* übertragen,
 die logische 0 wird *dominant* übertragen. Durch diese zwei Zustände setzt sich am Bus eine logische 0 gegenüber einer gleichzeitig
@@ -46,7 +46,7 @@ diese wird sich gegen alle anderen IDs durchsetzen.
 
 !!! panel-info "Eindeutigkeit der ID"
     Identifikationsnummern identifizieren das Datentelegramm, nicht den Teilnehmer selbst! Für ein CAN System
-    muss sichergestellt werden, dass Identifikationsnummern eindeutig sind."
+    muss sichergestellt werden, dass Identifikationsnummern eindeutig sind.
 
 ## Beispiel
 Im folgenden Beispiel senden drei Teilnehmer ein Packet. Die Identifikationsnummern der Datentelegramme ist dabei:
