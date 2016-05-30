@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="description" content="Mein Name ist Günther Jena und ich hieß früher Günther Jehle. Ich wohne in Rankweil und arbeite als Elektronik/Softwareentwickler und als Lehrer.">
+  <meta name="description" content="Bei jeder Konferenz das gleiche Bild: Kurz vor dem Start eines Vortrags wird deutlich darauf hingewiesen, dass niemand stehen müsste, wenn alle Plätze in den Reihen gefüllt würden. Teilweise gibt es große Lücken und man fragt sich wieso. Das Problem ist ein menschliches - viele ...">
   <meta name="author" content="Günther Jena">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="https://www.semiversus.com/favicon.ico">
-  <title>Günther Jena</title>
+  <title>Algorithmus zur Belegung der Sitzplätze</title>
   <link href="https://www.semiversus.com/theme/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="https://www.semiversus.com/theme/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href="https://www.semiversus.com/theme/css/semiversus.css" rel="stylesheet" type="text/css">
@@ -37,7 +37,7 @@
             "}); ";
         (document.body || document.getElementsByTagName('head')[0]).appendChild(s);
     </script>
-<link rel="alternate" hreflang="en" href="https://www.semiversus.com/about-en.html" /></head>
+</head>
 <body data-spy="scroll" data-target="#sidebar" data-offset=30>
   <div id="wrap">
     <nav class="navbar navbar-inverse">
@@ -78,21 +78,52 @@
       </div>
     </nav>
     <div class="container">
-    <div class="visible-print-block">Semiversus | Günther Jena</div>
+  <div class="visible-print-block">Semiversus | Algorithmus zur Belegung der Sitzplätze</div>
       <div class="row">
         <div class="col-md-8" role="main">
-  <header><h1>Günther Jena<div class="pull-right hidden-print"><a href="https://www.semiversus.com/about-en.html" class="btn btn-primary btn-xs">English</a><a href="https://www.semiversus.com/about.md"  class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="bottom" title="Quelltext zu dieser Seite"><span class="fa fa-file-text-o fa-lg"></span></a></div></h1></header>
-  <p><img alt="Foto Günther Jena (Jehle)" class="pull-left img-thumbnail" title="Foto von Günther Jena (Jehle)" style="margin-right:10px; " src="https://www.semiversus.com/pages/guenther_jena_jehle.jpg" /></p>
-<p>Mein Name ist Günther Jena und komme aus Kappl in Österreich. Ich wohne und arbeite in Rankweil. Vor meiner Hochzeit hieß ich noch Günther Jehle und Jena ist nun die Zusammensetzung aus meinem bisherigen Nachnamen "Jehle" und dem bisherigen Nachnamen meiner Frau "Nagel".</p>
-<p>Ich beschäftige mich mit Softwareentwicklung und Elektronik. Auf dieser Seite möchte ich in Zukunft ein paar meiner Projekte vorstellen und den Blog als einen öffentlichen Notizzettel nutzen.</p>
-<div class="clearfix"></div>
+  <h2>Algorithmus zur Belegung der Sitzplätze<a href="https://www.semiversus.com/blog/algorithm.md"  class="btn btn-default btn-xs pull-right hidden-print" data-toggle="tooltip" data-placement="bottom" title="Quelltext zu dieser Seite"><span class="fa fa-file-text-o fa-lg"></span></a></h2>
+<p><span class="fa fa-calendar"></span> 03.04.2016 | <a href="https://www.semiversus.com/blog/algorithm.html#isso-thread"><span class="fa fa-spinner fa-pulse"></span> Kommentare</a> | Tag:
+<a href="https://www.semiversus.com/tag_programmieren.html">Programmieren</a><span class="pull-right hidden-print">
+<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.semiversus.com%2Fblog%2Falgorithm.html" title="Teilen auf Facebook" target="_blank" class="btn btn-facebook btn-xs"><span class="fa fa-fw fa-facebook"></span><span class="hidden-xs"> Facebook</span></a>
+<a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.semiversus.com%2Fblog%2Falgorithm.html" title="Teilen auf Google+" target="_blank" class="btn btn-googleplus btn-xs"><span class="fa fa-fw fa-google-plus"></span><span class="hidden-xs"> Google+</span></a>
+<a href="http://twitter.com/home?status=https%3A%2F%2Fwww.semiversus.com%2Fblog%2Falgorithm.html" title="Teilen auf Twitter" target="_blank" class="btn btn-twitter btn-xs"><span class="fa fa-fw fa-twitter"></span><span class="hidden-xs"> Twitter</span></a>
+</span></p>
+<div class="clearfix"></div>  <p>Bei jeder Konferenz das gleiche Bild: Kurz vor dem Start eines Vortrags wird deutlich darauf hingewiesen, dass niemand
+stehen m&uuml;sste, wenn alle Pl&auml;tze in den Reihen gef&uuml;llt w&uuml;rden. Teilweise gibt es gro&szlig;e L&uuml;cken und man fragt sich wieso.</p>
+<p>Das Problem ist ein menschliches - viele Teilnehmende sind bereits l&auml;nger hier und fanden einen quasi freien Raum vor und
+da setzt man sich eben irgendwo hin. So langsam f&uuml;llt sich der Raum, da aber das eigene Notebook, Getr&auml;nke und der Snack
+zwischendurch bereits ausgebreitet wurden ist ein Platzwechsel sehr m&uuml;hsam.</p>
+<p>F&uuml;r Softwarekonferenzen habe ich folgenden Algorithmus zur Platzvergabe entwickelt. Solange alle diesem Algorithmus bei
+der Platzsuche folgen werden die verf&uuml;gbare Sitzpl&auml;tze optimal ausgenutzt.</p>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">PythonesqueHuman</span><span class="p">(</span><span class="n">Human</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">find_seat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">room</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">room</span><span class="o">.</span><span class="n">rows</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">isSeatFree</span><span class="p">():</span>
+                <span class="n">seat_index</span><span class="o">=</span><span class="mi">0</span>
+            <span class="k">elif</span> <span class="n">row</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">isSeatFree</span><span class="p">():</span>
+                <span class="n">seat_index</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">row</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">continue</span>
 
-<h2>Kontakt</h2>
-<p>E-Mail: <a href="mailto:guenther@jena.at">guenther@jena.at&nbsp;<span class="fa fa-envelope-o"></a><br />
-GnuPG Key: <a href="https://www.semiversus.com/pages/jena.asc" class="download"><samp>ADD6 34D7 ADE7 72D2 B2D1  A3D0 03B8 2F59 6F67 72C2</samp></a><br />
-Github: <a href="https://github.com/semiversus" class="external">Semiversus</a><br />
-Stack-Overflow: <a href="http://stackoverflow.com/users/166605" class="external">Günther Jena</a></p>
-        </div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">takeSeat</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">seat_index</span><span class="p">)</span>
+
+            <span class="n">direction</span><span class="o">=</span><span class="mi">1</span> <span class="k">if</span> <span class="n">seat_index</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">row</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+
+            <span class="k">while</span> <span class="n">row</span><span class="p">[</span><span class="n">seat_index</span><span class="o">+</span><span class="n">direction</span><span class="p">]</span><span class="o">.</span><span class="n">isSeatFree</span><span class="p">()</span> <span class="ow">and</span> <span class="n">seat_index</span><span class="o">!=</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">row</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">):</span>
+                <span class="n">seat_index</span><span class="o">+=</span><span class="n">direction</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">takeSeat</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">seat_index</span><span class="p">)</span>
+
+            <span class="k">return</span>
+
+        <span class="k">raise</span> <span class="ne">EnvironmentError</span><span class="p">(</span><span class="s2">"No seat left in this ro in this room"</span><span class="p">)</span>
+</pre></div>
+<div class="well hidden-print">
+<a class="btn btn-primary" role="button" data-toggle="collapse" href="#comments" aria-expanded="false" aria-controls="isso-thread">Kommentare</a>
+<div id="comments" class="collapse">
+<section id="isso-thread" data-title="algorithmus-zur-belegung-der-sitzplatze"></section>
+</div>
+</div>
+</div>        </div>
         <div class="col-md-4" role="complementary">
         </div>
       </div>
