@@ -143,7 +143,7 @@
 <p>Zus&auml;tzlich zu den Taktquellen sind noch Startzeiten f&uuml;r die einzelnen Taktquellen &uuml;ber die Fuse Bits einstellbar. Diese Startzeiten werden ben&ouml;tigt, da die einzelnen Taktquellen eine bestimmte Zeit ben&ouml;tigen, bis sie auf ihrer Frequenz schwingen. Erst wenn diese Startzeit (Anzahl an definierten Taktzyklen und zus&auml;tzliche Verz&ouml;gerung) vergangen ist, wird der Prozessorkern mit dem Takt versorgt. In der Praxis reicht es meist aus, einfach das Maximum an Startverz&ouml;gerung einzustellen, da die daraus resultierende Zeit immer unter 100 Millisekunden ist.</p>
 <h1 id="sleep-modes-seite-32-36">Sleep Modes (<em>Seite 32-36</em>)</h1>
 <p>Der Stromverbrauch jeder Komponente eines Mikrocontrollers besteht aus einem statischen Grundverbrauch (Leckstr&ouml;me, usw.) und einem dynamischen Verbrauch, der durch die Umschaltvorg&auml;nge, die vom Taktsignal ausgel&ouml;st werden, bestimmt wird. Der dynamische Verbrauch macht den gr&ouml;&szlig;ten Teil aus. Dadurch ist bei niedriger Taktfrequenz auch der Stromverbrauch niedriger. Wird f&uuml;r einen bestimmten Zeitraum der Prozessorkern nicht ben&ouml;tigt, kann dieser durch Abschalten des Prozessortaktes in einen sogenannten Schlafmodus gebracht werden und der Stromverbrauch reduziert sich.</p>
-<p>Es stehen verschiedene Stromsparmode zur Verf&uuml;gung:</p>
+<p>Es stehen verschiedene Stromsparmodi zur Verf&uuml;gung:</p>
 <ul>
 <li><strong>Idle</strong>: Prozessor h&auml;lt, bis ein Interrupt auftritt</li>
 <li><strong>ADC Noise Reduction</strong>: Solange eine Analogwandlung l&auml;uft und kein Interrupt eintritt, wird der Takt des Prozessors und der IO Komponenten gestoppt. Dies verbessert die Messungen, indem St&ouml;rungen minimiert werden.</li>
@@ -159,6 +159,6 @@
       </div>
     </div>
   </div>
-  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit">Günther Jena 2011 - 2016 | Letztes Update am 8.6.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/d0cf566">d0cf566</a>) <a href="https://plus.google.com/111972313670421914746/about" rel="author" class="hidden">Google+</a><a href="http://creativecommons.org/licenses/by-sa/3.0/de/" class="pull-right"><img src="https://www.semiversus.com/theme/img/cc_by_sa.svg" /></a></p></div></footer>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit">Günther Jena 2011 - 2016 | Letztes Update am 12.6.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/e38362b">e38362b</a>) <a href="https://plus.google.com/111972313670421914746/about" rel="author" class="hidden">Google+</a><a href="http://creativecommons.org/licenses/by-sa/3.0/de/" class="pull-right"><img src="https://www.semiversus.com/theme/img/cc_by_sa.svg" /></a></p></div></footer>
 </body>
 </html>
