@@ -1,14 +1,13 @@
-title: Interessante Korrelation, oder anders: Abgeschrieben?
-date: 31.1.2016
-tags: Schule, BASH, Tools
-
-Jede Lehrperson hat ihre eigene Meinung zum Abschreiben. Für mich ist es etwas, das mit Gerechtigkeit
-bei der Beurteilung zu tun hat. Schließlich soll ja die Leistung betreffend der Aufgabenstellung beurteilt
-werden und nicht die soziale Kompetenz im Umgang mit anderen.
+title: Interessante Korrelation entdecken mittels <samp>wdiff</samp>
+date: 2016-01-31 
+tags: Tools
+image: meld_tb.png
 
 Abschreiben als solches zu erkennen ist keine einfache Sache, da der Aufwand massiv mit der Anzahl der zu vergleichenden
 Arbeiten steigt. Bei 5 Arbeiten sind insgesamt 10 Vergleiche zu machen: Die erste Aufgabe wird mit den vier anderen
 verglichen, dann die zweite Arbeit mit den drei verbleibenden, usw.
+
+Mit <samp>wdiff</samp> habe ich ein Tool gefunden, um einfache Textvergleiche machen zu können.
 
 Die Anzahl der Vergleiche ergibt sich dabei mittels den Binomialkoeffizienten zu:
 
@@ -31,16 +30,8 @@ an Arbeiten steigt die Anzahl der Vergleiche um (etwas mehr als) das Vierfache.
 Bei einer Hausaufgabe habe ich nun das konkrete "*Problem*" 25 Arbeiten miteinander zu vergleichen. Es handelt sich
 um eine Programmieraufgabe in C.
 
-Jede Lösung wird als ZIP-Datei abgegeben. Diese entpacke ich in einen Folder
-
-    #!bash
-    $> unzip *.zip
-
-In jedem Verzeichnisbaum steckt eine Datei, die bereits in der Aufgabe definiert wurde und zur Bearbeitung entsprechend
-ausprogrammiert werden musste: <tt>game.c</tt>.
-
 Der Vergleich von zwei Textdateien lässt sich mittels `diff` bewerkstelligen. Was ich aber brauche ist eine Statistik,
-die mir angibt, wie groß die *Korrelation* zwischen zwei Dateien ist, sprich wie groß der Anteil an Hemeinsamkeiten ist.
+die mir angibt, wie groß die *Korrelation* zwischen zwei Dateien ist, sprich wie groß der Anteil an Gemeinsamkeiten ist.
 Bei dem Vergleich sollten Zeilenumbrüche, Leerzeichen, usw. keine Rolle spielen. Das Tool der Wahl ist `wdiff`. Die Option
 `-s` liefert eine entsprechende Statistik.
 
@@ -50,10 +41,10 @@ Bei dem Vergleich sollten Zeilenumbrüche, Leerzeichen, usw. keine Rolle spielen
     arbeit1.c: 126 Wörter  48 38% gleich  13 10% gelöscht  65 52% verändert
     arbeit2.c: 140 Wörter  48 34% gleich  7 5% eingefügt  85 61% verändert
 
-Der Vergleich von <tt>arbeit1.c</tt> mit <tt>arbeit2.c</tt> liefert ein anderes Ergebnis als der umgekehrte Vergleich und
+Der Vergleich von <samp>arbeit1.c</samp> mit <samp>arbeit2.c</samp> liefert ein anderes Ergebnis als der umgekehrte Vergleich und
 hängt vorallem mit der unterschiedlichen Anzahl an Gesamtworten zusammen.
 
-Zum Vergleich von 25 Arbeiten müssen nun 300 dieser Aufrufe gemacht werden. Dazu dient folgendes <tt>bash</tt>-Skript:
+Zum Vergleich von 25 Arbeiten müssen nun 300 dieser Aufrufe gemacht werden. Dazu dient folgendes <samp>bash</samp>-Skript:
 
     #!bash
     files=`ls *.c`
@@ -70,6 +61,9 @@ Zum Vergleich von 25 Arbeiten müssen nun 300 dieser Aufrufe gemacht werden. Daz
       done
     done
 
+Das Skript nutzt zwei Schleifen, um jede Datei mit jeder zu vergleichen. Bei der Ausgabe von <samp>wdiff</samp> werden
+nicht benötigte Teile weggeschnitten.
+
 # Auswertung
 Die Ausführung führt dann zu folgendem Ergebnis (ein Ausschnitt):
 
@@ -84,7 +78,7 @@ Die Ausführung führt dann zu folgendem Ergebnis (ein Ausschnitt):
 
 Es fällt der zweite Eintrag auf: 97% Übereinstimmung. Da muss sehr viel Zufall im Spiel sein, oder auch nicht.
 
-Ein direkter Vergleich mittels [Meld](http://meldmerge.org/) zeigt:
+Ein direkter Vergleich mittels [Meld](http://meldmerge.org/){: class="external" } zeigt:
 
 ![Vergleich von arbeit14.c und arbeit20.c]({filename}meld.png)
 
@@ -92,10 +86,10 @@ Die Liste nach Korrelation sortiert zeigt folgendes Ergebnis:
 
 ![Auswertung]({filename}auswertung.png)
 
-Es zeigen sich zwei "*Cluster*": <tt>arbeit14.c</tt> und <tt>arbeit20.c</tt> unterscheiden sich durch genau drei "Wörter",
-<tt>arbeit6.c</tt>, <tt>arbeit15.c</tt> und <tt>arbeit17.c</tt> unterscheiden sich auch nur durch ein paar "Wörter".
+Es zeigen sich zwei "*Cluster*": <samp>arbeit14.c</samp> und <samp>arbeit20.c</samp> unterscheiden sich durch genau drei "Wörter",
+<samp>arbeit6.c</samp>, <samp>arbeit15.c</samp> und <samp>arbeit17.c</samp> unterscheiden sich auch nur durch ein paar "Wörter".
 
-# Folgen
-Es fällt mir schwer zu sagen wie ich *richtig* handeln soll. Meine Lösung ist in diesem Fall eine *Unterrichtsvereinbarung*,
-die ich mit der Klasse am Anfang des Schuljahres definiert habe und in der festgeschrieben ist, dass bei einem solchen Fall
-0 Punkte auf alle Lösungen mit "zu großer Ähnlichkeit" gegeben wird. Ich habe gehofft, dass dies nie zur Anwendung kommt.
+# Zusammenfassung
+<samp>wdiff</samp> ist ein mächtiges Tool für Textvergleiche. Man sollte wahrscheinlich nicht zu pedantisch werden, um als Lehrer
+Kopien zu entdecken. Ich wünsche und fordere eine Zusammenarbeit und Wissensaustausch bei Schülern - eine reine Kopie kann ich
+aber nicht unterstützen.

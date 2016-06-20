@@ -3,15 +3,20 @@ parent: uebersicht.md
 
 # Allgemeines
 
-* Download des [Megacard Templates]({filename}embedded_template_hal.compress)
-* Derzeit werden folgende Komponenten unterstützt:
-    * Ansteuerung der LEDs
-    * Auswertung der Tastendrücken *S0* bis *S3*
-    * Ausgabe von Tönen über den Lautsprecher
-    * Timerabstraktion
-    * LC Display ansteuerung
+* Download des [Megacard Templates]({filename}embedded_template_hal.compress){: class="download" }
 
-Die  verwendung der Hardwareabstraktion (kurz *HAL* für engl. *Hardware Abstraction Layer*) wird im folgenden erläutert.
+Die Verwendung der Hardwareabstraktion (kurz *HAL* für engl. *Hardware Abstraction Layer*) wird im folgenden erläutert.
+
+Folgende Hardwareeinheiten werden von der HAL angesteuert:
+
+* LEDs (Port C)
+* Taster S0-S3 (Port A0..3)
+* Lautsprecher (Port A4)
+* Timer0 für 800 Mikrosekunden Basis
+* Timer1 für Soundausgabe
+* LCD (Port A und Port B)
+
+Die globale Interruptfreigabe wird durch bei der Initialisierung gesetzt (mittels `sei()`).
 
 # Ansteuerung der LEDs
 
@@ -137,7 +142,7 @@ eingefügt: `%04d`.
 
     #!c
     hal_lcd_printf(0, 0, "Test"); // gibt "Test" aus
-    hal_lcd_printf(0, 0, "%d", -117); // gibt "117" aus
+    hal_lcd_printf(0, 0, "%d", -117); // gibt "-117" aus
     hal_lcd_printf(0, 0, "%3dX%3d", 2, 17); // gibt "  2X 17" aus
 
 Die Ausgabe von Floatzahlen wird nicht direkt unterstützt, es kann aber emuliert werden:

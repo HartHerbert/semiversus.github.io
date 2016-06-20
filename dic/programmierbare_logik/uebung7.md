@@ -7,7 +7,7 @@ In dieser Übung geht es um Testbenches.
 
 # Vorbereitung
 
-* [Projektordner]({filename}vhdl_uebung_7.compress) herunterladen und entpacken
+* [Projektordner]({filename}vhdl_uebung_7.compress){: class="download" } herunterladen und entpacken
 * Projekt `testbench.xise` öffnen
 
 # Schreiben der Testbench
@@ -23,7 +23,7 @@ Die Komponente `shifter` soll folgender Spezifikation entsprechen
 * Der Eingang `reset_i` führt einen asynchronen Reset aus und dies hat die höchste Priorität
 
 ## Schreiben der Testbench
-Erweitere die Datei <tt>shifter_tb.vhd</tt>.
+Erweitere die Datei <samp>shifter_tb.vhd</samp>.
 
 * Mittels `assert` können Bedingungen geprüft werden.
 * Mittels `wait for` kann für eine bestimmte Zeit gewartet werden.

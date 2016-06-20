@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="Aufgabe ADXL345 In dieser Übung wird der Beschleunigungssensor ADXL345 von Analog Devices angesteuert. Die angaben stammen aus dem entsprechenden Datenblatt. Die 7-Bit Adresse des Bausteins wird für diese Übung mit 001 1101 (0x1D) angenommen. Register Der Baustein verfügt intern über mehrere Register. Jeder Register ist ein Byte gro ...">
+  <meta name="author" content="Günther Jena">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://www.semiversus.com/favicon.ico">
+  <title>I&sup2;C Übungsaufgaben</title>
+  <link rel="stylesheet" href="https://www.semiversus.com/theme/css/semiversus.min.css?29549690">
+  <script src="https://www.semiversus.com/theme/js/semiversus.min.js?c49a6400"></script>
+  <meta name="google-site-verification" content="O-3LVEziPiVrCYqFCwbLmB3s7lNG__cPMLLAr_RUxbA" />
+
+    <script type= "text/javascript">
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = 'https:' == document.location.protocol ? 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'; 
+        s[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" + 
+            "    config: ['MMLorHTML.js']," + 
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS','output/NativeMML']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," + 
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['%%','%%'] ], " +
+            "        processEscapes: false }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax .mo, .MathJax .mi': {color: 'black ! important'}} " +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(s);
+    </script>
+</head>
+<body data-spy="scroll" data-target="#sidebar" data-offset=30>
+  <div id="wrap">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a href="https://www.semiversus.com/index.html" class="navbar-brand">SEMIVERSUS</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="https://www.semiversus.com/index.html">Blog</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Unterricht<span class="carret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="https://www.semiversus.com/dic/uebersicht.html"><em>Übersicht</em></a></li>
+                <li><a href="https://www.semiversus.com/dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+                <li><a href="https://www.semiversus.com/dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+                <li><a href="https://www.semiversus.com/dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+                <li><a href="https://www.semiversus.com/dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+                <li><a href="https://www.semiversus.com/dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+                <li><a href="https://www.semiversus.com/dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+                <li><a href="https://www.semiversus.com/dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+                <li><a href="https://www.semiversus.com/dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+                <li><a href="https://www.semiversus.com/dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+              </ul>
+            </li>
+            <li><a href="https://www.semiversus.com/projekte/projekte.html">Projekte</a></li>
+            <li><a href="https://www.semiversus.com/about.html">Über mich</a></li>
+          </ul>
+          <form class="navbar-form navbar-right" role="search" action="https://www.semiversus.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="form-control" placeholder="Suche" name="q" id="tipue_search_input"></form>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://github.com/semiversus" class="social" data-toggle="tooltip" data-placement="bottom" title="Github.com/Semiversus"><span class="fa fa-github fa-2x"></span><span class="hidden-sm hidden-md hidden-lg">&nbsp;Github</span></a></li>
+            <li><a href="http://stackoverflow.com/users/166605" class="social" data-toggle="tooltip" data-placement="bottom" title="Stackoverflow.com/Semiversus"><span class="fa fa-stack-overflow fa-2x"></span>&nbsp;<span class="hidden-sm hidden-md hidden-lg">Stack Overflow</span></a></li>
+            <li><a href="https://www.semiversus.com/semiversus.atom.xml" class="social" data-toggle="tooltip" data-placement="bottom" title="RSS Feed"><span class="fa fa-rss fa-2x"></span>&nbsp;<span class="hidden-sm hidden-md hidden-lg">RSS Feed</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+    <div class="visible-print-block">Semiversus | I&sup2;C Übungsaufgaben</div>
+<ol class="breadcrumb hidden-print"><li><a href="https://www.semiversus.com/dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="https://www.semiversus.com/dic/bussysteme/uebersicht.html">Bussysteme</a></li><li><a href="https://www.semiversus.com/dic/bussysteme/i2c.html">I&sup2;C Bus</a></li><li><strong>I&sup2;C Übungsaufgaben</strong></li></ol>      <div class="row">
+        <div class="col-md-8" role="main">
+  <header><h1>I&sup2;C Übungsaufgaben<div class="pull-right hidden-print"><a href="https://www.semiversus.com/dic/bussysteme/uebung_i2c.md"  class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="bottom" title="Quelltext zu dieser Seite"><span class="fa fa-file-text-o fa-lg"></span></a></div></h1></header>
+  <h1 id="aufgabe-adxl345">Aufgabe ADXL345</h1>
+<p>In dieser &Uuml;bung wird der Beschleunigungssensor <a class="external" href="http://www.analog.com/en/products/mems/mems-accelerometers/adxl345.html">ADXL345</a> von <a class="external" href="http://www.analog.com/">Analog Devices</a> angesteuert. Die angaben stammen aus dem entsprechenden <a class="download" href="http://www.analog.com/media/en/technical-documentation/data-sheets/ADXL345.pdf">Datenblatt</a>.</p>
+<p>Die 7-Bit Adresse des Bausteins wird f&uuml;r diese &Uuml;bung mit <samp>001 1101</samp> (0x1D) angenommen.</p>
+<h2 id="register">Register</h2>
+<p>Der Baustein verf&uuml;gt intern &uuml;ber mehrere Register. Jeder Register ist ein Byte gro&szlig;.
+<figure><img src="https://www.semiversus.com/dic/bussysteme/adxl345_registers.svg"><figcaption>Register&uuml;bersicht (Bild: <a href="http://www.analog.com/media/en/technical-documentation/data-sheets/ADXL345.pdf">Datenblatt ADXL345</a> &copy;Analog Devices)</figcaption></img></figure></p>
+<p>In der folgenden Abbildung sieht man insgesamt vier &Uuml;bertragungsarten:</p>
+<ul>
+<li>Schreiben eines Bytes in ein Register</li>
+<li>Schreiben mehrerer Byte in mehrere Register</li>
+<li>Lesen eines Bytes aus einem Register</li>
+<li>Lesen mehrere Bytes aus mehreren Registern</li>
+</ul>
+<figure><img src="https://www.semiversus.com/dic/bussysteme/adxl345_overview.svg"><figcaption>Lesen und Schreiben einzelner sowie mehrer Bytes (Bild: <a href="http://www.analog.com/media/en/technical-documentation/data-sheets/ADXL345.pdf">Datenblatt ADXL345</a> &copy;Analog Devices)</figcaption></img></figure>
+<p>Hinweise zum Bild:</p>
+<ol>
+<li>Dieses <em>START</em> ist entweder ein <em>repeated START</em> oder ein <em>STOP</em> mit anschlie&szlig;endem <em>START</em></li>
+<li>Der graue schattierte Bereich markiert die Phasen, in denen die entsprechende Komponente den Buszustand beobachtet</li>
+</ol>
+<h2 id="beispiel">Beispiel</h2>
+<p>Beschreiben des Registers <samp>OFSX</samp> (0x1E) mit dem Wert 0x02:</p>
+<p><img alt="Schreibe 0x02 auf das Register 0x1E" src="https://www.semiversus.com/dic/bussysteme/i2c_write_0x1E_0x02.svg"/></p>
+<p>Lesen der Register <samp>THRES_ACT</samp> und <samp>THRES_INACT</samp> (0x24 und 0x25)</p>
+<p><img alt="Lesen der Register 0x24 und 0x25" src="https://www.semiversus.com/dic/bussysteme/i2c_read_0x24.svg"/></p>
+<h2 id="aufgabenstellung">Aufgabenstellung</h2>
+<p>Skizziere folgende &Uuml;bertragungen am I&sup2;C Bus:</p>
+<ul>
+<li>Beschreiben des Registers <code>DUR</code> mit dem Wert <samp>0x05</samp></li>
+<li>Bechreiben der Registers <code>OFSX</code>, <code>OFSY</code>, <code>OFSZ</code> mit den  Werten <samp>[0x17, 0x2A, 0x04]</samp> (mit nur einem Zugriff)</li>
+<li>Lesen des Registers <code>ACT_TAP_STATUS</code> (angenommener Inhalt ist <samp>0x10</samp>)</li>
+<li>Lesen der Register <code>DATAX0</code> bis <code>DATAY1</code> (angenommener Inhalt ist <samp>[0x08, 0xE3, 0x01, 0xA7]</samp>, mit nur einem Zugriff)</li>
+</ul>
+        </div>
+        <div class="col-md-4" role="complementary">
+    <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
+    <ul class="nav"><li><a href="#aufgabe-adxl345">Aufgabe ADXL345</a><ul class="nav"><li><a href="#register">Register</a></li><li><a href="#beispiel">Beispiel</a></li><li><a href="#aufgabenstellung">Aufgabenstellung</a></li></ul></li></ul>
+    </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit">Günther Jena 2011 - 2016 | Letztes Update am 20.6.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/e61544b">e61544b</a>) <a href="https://plus.google.com/111972313670421914746/about" rel="author" class="hidden">Google+</a><a href="http://creativecommons.org/licenses/by-sa/3.0/de/" class="pull-right"><img src="https://www.semiversus.com/theme/img/cc_by_sa.svg" /></a></p></div></footer>
+</body>
+</html>

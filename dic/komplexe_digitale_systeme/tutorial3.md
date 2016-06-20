@@ -3,21 +3,21 @@ parent: uebersicht.md
 next: tutorial4.md
 
 !!! panel-info "Unterlagen der Tuxcadamy"
-    Dieses Tutorial baut auf den Unterlagen der [Tuxcadamy](https://www.tuxcademy.org/) auf. Auch Aufgabenstellungen
-    sind teilweise dort übernommen worden. Die Unterlagen stehen unter der [CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)
+    Dieses Tutorial baut auf den Unterlagen der [Tuxcadamy](https://www.tuxcademy.org/){: class="external" } auf. Auch Aufgabenstellungen
+    sind teilweise dort übernommen worden. Die Unterlagen stehen unter der [CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/){: class="external" }
     Lizenz und somit auch dieses Tutorial.
 
-    Eine Kopie der Unterlagen kann man [hier]({filename}grd1-de-manual.pdf) herunterladen.
+    Eine Kopie der Unterlagen kann man [hier]({filename}grd1-de-manual.pdf){: class="download" } herunterladen.
 
 # Vorbereitung
 
-Für die folgende Übung benötigen wir die Datei [frosch.txt]({filename}frosch.txt) auf der virtuellen Maschine.
+Für die folgende Übung benötigen wir die Datei [frosch.txt]({filename}frosch.txt){: class="download" } auf der virtuellen Maschine.
 
 Dazu gibt es zwei Möglichkeiten: Download mittels `wget` oder Einrichten eines gemeinsamen Ordners. Es wird also nur
 ein Weg der zwei genannten benötigt.
 
 ## Download mittels `wget`
-`wget` ist ein Kommandozeilentool um Dateien mittels <tt>http://</tt> Protokoll herunterzuladen. `wget` hat einen riesigen
+`wget` ist ein Kommandozeilentool um Dateien mittels <samp>http://</samp> Protokoll herunterzuladen. `wget` hat einen riesigen
 Funktionsumfang, wir benötigen aber nur das notwendigste:
 
     #!bash
@@ -29,7 +29,7 @@ Wenn eine Internetverbindung besteht sollte die Datei heruntergeladen werden und
 
 ## Einrichten eines gemeinsamen Ordners
 
-Im VirtualBox Manager wird <tt>DICbian</tt> ausgewählt und in der Toolbar auf <tt>Ändern</tt> geklickt. Unter dem Punkt
+Im VirtualBox Manager wird <samp>DICbian</samp> ausgewählt und in der Toolbar auf <samp>Ändern</samp> geklickt. Unter dem Punkt
 *Gemeinsame Ordner* wird ein entsprechender Eintrag hinzugefügt. 
 
 ![Gemeinsamer Ordner]({filename}tutorial_shared_folder.png)

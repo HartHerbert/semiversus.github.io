@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta name="description" content="Blog und Unterrichtsmaterial zu Digitale Systeme und Computersysteme">
-  <meta name="author" content="Günther Jena">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="Allgemeines Bei der Betrachtung von kombinatorischen Schaltungen geht man von einer Zustandslosigkeit des Schaltnetzes aus. Damit können keine Informationen (über die Schaltungsfunktion selbst hinaus) gespeichert werden. Die sequentielle Logik ist das Teilgebiet der Digitaltechnik, welches sich mit dem Speichern von Information beschäftigt. Die Ausgänge einer Schaltung mit ...">
+  <meta name="author" content="Günther Jena">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="../../favicon.ico">
-  <title>Semiversus | Sequentielle Logik</title>
-  <link href="../../theme/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../../theme/css/semiversus.css" rel="stylesheet">
-  <link href="../../theme/css/pygments.css" rel="stylesheet">
-  <script src="../../theme/js/jquery.min.js"></script>
-  <script src="../../theme/js/bootstrap.min.js"></script>
+  <link rel="icon" href="https://www.semiversus.com/favicon.ico">
+  <title>Sequentielle Logik</title>
+  <link rel="stylesheet" href="https://www.semiversus.com/theme/css/semiversus.min.css?29549690">
+  <script src="https://www.semiversus.com/theme/js/semiversus.min.js?c49a6400"></script>
+  <meta name="google-site-verification" content="O-3LVEziPiVrCYqFCwbLmB3s7lNG__cPMLLAr_RUxbA" />
 
     <script type= "text/javascript">
         var s = document.createElement('script');
@@ -42,42 +40,49 @@
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
           </button>
-          <a href="../../index.html" class="navbar-brand">SEMIVERSUS</a>
+          <a href="https://www.semiversus.com/index.html" class="navbar-brand">SEMIVERSUS</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="../../index.html">Blog</a></li>
-            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
+            <li><a href="https://www.semiversus.com/index.html">Blog</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Unterricht<span class="carret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
-                <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
-                <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
-                <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
-                <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
-                <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
-                <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
-                <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
-                <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
-                <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+                <li><a href="https://www.semiversus.com/dic/uebersicht.html"><em>Übersicht</em></a></li>
+                <li><a href="https://www.semiversus.com/dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+                <li><a href="https://www.semiversus.com/dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+                <li><a href="https://www.semiversus.com/dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+                <li><a href="https://www.semiversus.com/dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+                <li><a href="https://www.semiversus.com/dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+                <li><a href="https://www.semiversus.com/dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+                <li><a href="https://www.semiversus.com/dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+                <li><a href="https://www.semiversus.com/dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+                <li><a href="https://www.semiversus.com/dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
               </ul>
-            <li><a href="../../projekte/projekte.html">Projekte</a></li>
-            <li><a href="../../about.html">Über mich</a></li>
+            </li>
+            <li><a href="https://www.semiversus.com/projekte/projekte.html">Projekte</a></li>
+            <li><a href="https://www.semiversus.com/about.html">Über mich</a></li>
+          </ul>
+          <form class="navbar-form navbar-right" role="search" action="https://www.semiversus.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="form-control" placeholder="Suche" name="q" id="tipue_search_input"></form>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://github.com/semiversus" class="social" data-toggle="tooltip" data-placement="bottom" title="Github.com/Semiversus"><span class="fa fa-github fa-2x"></span><span class="hidden-sm hidden-md hidden-lg">&nbsp;Github</span></a></li>
+            <li><a href="http://stackoverflow.com/users/166605" class="social" data-toggle="tooltip" data-placement="bottom" title="Stackoverflow.com/Semiversus"><span class="fa fa-stack-overflow fa-2x"></span>&nbsp;<span class="hidden-sm hidden-md hidden-lg">Stack Overflow</span></a></li>
+            <li><a href="https://www.semiversus.com/semiversus.atom.xml" class="social" data-toggle="tooltip" data-placement="bottom" title="RSS Feed"><span class="fa fa-rss fa-2x"></span>&nbsp;<span class="hidden-sm hidden-md hidden-lg">RSS Feed</span></a></li>
           </ul>
         </div>
       </div>
     </nav>
     <div class="container">
     <div class="visible-print-block">Semiversus | Sequentielle Logik</div>
-<ol class="breadcrumb hidden-print"><li><a href="../../dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li><li><strong>Sequentielle Logik</strong></li></ol>      <div class="row">
+<ol class="breadcrumb hidden-print"><li><a href="https://www.semiversus.com/dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="https://www.semiversus.com/dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li><li><strong>Sequentielle Logik</strong></li></ol>      <div class="row">
         <div class="col-md-8" role="main">
-  <header><h1>Sequentielle Logik<a href="../../dic/grundlagen_der_digitaltechnik/sequentielle_logik.md"  class="btn btn-default btn-xs pull-right hidden-print" data-toggle="tooltip" data-placement="bottom" title="Quelltext zu dieser Seite"><span class="glyphicon glyphicon-file"></span></a></h1></header>
+  <header><h1>Sequentielle Logik<div class="pull-right hidden-print"><a href="https://www.semiversus.com/dic/grundlagen_der_digitaltechnik/sequentielle_logik.md"  class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="bottom" title="Quelltext zu dieser Seite"><span class="fa fa-file-text-o fa-lg"></span></a></div></h1></header>
   <h1 id="allgemeines">Allgemeines</h1>
 <p>Bei der Betrachtung von kombinatorischen Schaltungen geht man von einer Zustandslosigkeit des Schaltnetzes aus. Damit k&ouml;nnen keine Informationen (&uuml;ber die Schaltungsfunktion selbst hinaus) gespeichert werden. Die sequentielle Logik ist das Teilgebiet der Digitaltechnik, welches sich mit dem Speichern von Information besch&auml;ftigt.</p>
 <p>Die Ausg&auml;nge einer Schaltung mit sequentieller Logik h&auml;ngen nun also nicht mehr ausschlie&szlig;lich von den Eing&auml;ngen ab sondern zus&auml;tzlich vom Zustand der enthaltenen Speicherelemente.</p>
 <h1 id="speicherelement">Speicherelement</h1>
 <p>Ein Speicherelement kann ein Bit speichern und besitzt zwei stabile Zus&auml;nde (0 oder 1). Es wird deshalb auch als <em>bistabile Kippstufe</em> bezeichnet. Gew&ouml;hnlicherweise wird der Zustand nur gespeichert, solange eine Spannungsversorgung vorhanden ist.</p>
 <h2 id="prinzip-der-ruckkopplung">Prinzip der R&uuml;ckkopplung</h2>
-<p><img alt="Latch-Realisierung mittels Multiplexer" src="../../dic/grundlagen_der_digitaltechnik/latch_mux.png"/></p>
+<p><img alt="Latch-Realisierung mittels Multiplexer" src="https://www.semiversus.com/dic/grundlagen_der_digitaltechnik/latch_mux.svg"/></p>
 <p>Speicherelemente beinhalten immer eine Art von R&uuml;ckkopplung, um den Zustand speichern zu k&ouml;nnen. Bei der dargestellten Schaltung wird ein Multiplexer so verschalten, dass ein Eingang direkt mit dem Ausgang verbunden ist. Dadurch ergibt sich folgende Funktionalit&auml;t:</p>
 <h2 id="transparente-phase">Transparente Phase</h2>
 <p><strong><code>G</code>=1</strong>: Der Eingang 1 des Multiplexers, an dem das Signal <code>D</code> anliegt, wird auf den Ausgang ausgegeben. Wenn also <code>G</code> gleich 1 ist folgt das Signal <code>Q</code> dem Signal <code>D</code>.</p>
@@ -86,7 +91,7 @@
 <h1 id="pegelgesteuerte-latches_1">Pegelgesteuerte Latches</h1>
 <p>Laut Definition ist ein <em>Latch</em> ein Speicherelement, welches abh&auml;ngig vom Pegel der Eing&auml;nge den Zustand &auml;ndert. Anders ist dies beim <em>Flip-Flop</em>, welches per Definition nicht vom Pegel abh&auml;ngig, sondern von einer Flanke des Taktsignals den neuen Zustand einnimmt. In der Praxis werden die Begriffe <em>Latch</em> und <em>Flip-Flop</em> oft als &auml;quivalente Begriffe verwendet. Um Missverst&auml;ndnisse zu vermeiden wird in diesem Skriptum immer streng zwischen <em>Latch</em> und <em>Flip-Flop</em> unterschieden.</p>
 <h2 id="transparentes-rs-latch">Transparentes RS Latch</h2>
-<p><img alt="Latch-Realisierung mittels NOR Gatter" src="../../dic/grundlagen_der_digitaltechnik/rs_latch_nor.png"/></p>
+<p><img alt="Latch-Realisierung mittels NOR Gatter" src="https://www.semiversus.com/dic/grundlagen_der_digitaltechnik/rs_latch_nor.svg"/></p>
 <p>Anhand der Schaltung und des Impulsdiagramm k&ouml;nnen wir die Funktionsweise des RS Latch nachvollziehen. Angenommen wird ein Anfangszustand von %%Q%% gleich 0 und %%\overline{Q}%% gleich 1.
 Im Impulsdiagramm sieht man folgenden Signalverlauf:</p>
 <table>
@@ -109,7 +114,7 @@ Im Impulsdiagramm sieht man folgenden Signalverlauf:</p>
 <td align="center">1</td>
 <td align="center">1</td>
 <td align="center">0</td>
-<td q="Q">Damit wechselt der Ausgang %%Q%% auf 1 und der Ausgang %%\overline</td>
+<td>Damit wechselt der Ausgang %%Q%% auf 1 und der Ausgang %%\overline{Q}%% wechselt auf 0.</td>
 </tr>
 <tr>
 <td align="center">2</td>
@@ -121,7 +126,7 @@ Im Impulsdiagramm sieht man folgenden Signalverlauf:</p>
 <td align="center">3</td>
 <td align="center">0</td>
 <td align="center">1</td>
-<td q="Q">Damit wechselt der Ausgang %%Q%% auf 0 und der Ausgang %%\overline</td>
+<td>Damit wechselt der Ausgang %%Q%% auf 0 und der Ausgang %%\overline{Q}%% wechselt auf 1.</td>
 </tr>
 <tr>
 <td align="center">4</td>
@@ -133,13 +138,13 @@ Im Impulsdiagramm sieht man folgenden Signalverlauf:</p>
 <td align="center">5</td>
 <td align="center">1</td>
 <td align="center">0</td>
-<td q="Q">Der Ausgang %%Q%% wechselt auf 1 und der Ausgang %%\overline</td>
+<td>Der Ausgang %%Q%% wechselt auf 1 und der Ausgang %%\overline{Q}%% auf 0.</td>
 </tr>
 <tr>
 <td align="center">6</td>
 <td align="center">1</td>
 <td align="center">1</td>
-<td q="Q">Der Ausgang %%Q%% und %%\overline</td>
+<td>Der Ausgang %%Q%% und %%\overline{Q}%% sind gleich 0.</td>
 </tr>
 <tr>
 <td align="center">7</td>
@@ -159,21 +164,21 @@ Im Impulsdiagramm sieht man folgenden Signalverlauf:</p>
 <li>Undefiniert wird das Verhalten, wenn beide Eing&auml;nge auf 1 sind und gleichzeitig auf 0 wechseln.</li>
 </ul>
 <p>Das hier gezeigt RS Latch ist mittels <code>NOR</code>-Gatter aufgebaut, deswegen spricht man auch vom RS-NOR-Latch. Im folgenden sieht man ein RS Latch, welches mittels <code>NAND</code>-Gatter aufgebaut ist. Man spricht dann vom RS-NAND-Latch.</p>
-<p><img alt="Latch-Realisierung mittels NAND Gatter" src="../../dic/grundlagen_der_digitaltechnik/rs_latch_nand.png"/></p>
+<p><img alt="Latch-Realisierung mittels NAND Gatter" src="https://www.semiversus.com/dic/grundlagen_der_digitaltechnik/rs_latch_nand.svg"/></p>
 <h2 id="taktzustandgesteuertes-rs-latch">Taktzustandgesteuertes RS Latch</h2>
 <p>Bei einem taktzustandgesteuertem RS Latch wird ein zus&auml;tzlicher Eingang <code>C</code> hinzugef&uuml;gt. Von diesem Eingang <code>C</code> h&auml;ngt nun ab, ob das Latch <em>transparent</em> (<code>R</code> und <code>S</code> k&ouml;nnen den Zustand &auml;ndern) oder ob es im <em>Halte</em> Modus betrieben wird. Im <em>Halte</em> Modus k&ouml;nnen die Eing&auml;nge <code>R</code> und <code>S</code> den Zustand nicht &auml;ndern, der momentane Zustand wird also gehalten.</p>
-<p><img alt="Taktzustandsgesteuertes RS Latch" src="../../dic/grundlagen_der_digitaltechnik/rs_latch_taktzustandsgesteuert.png"/></p>
+<p><img alt="Taktzustandsgesteuertes RS Latch" src="https://www.semiversus.com/dic/grundlagen_der_digitaltechnik/rs_latch_taktzustandsgesteuert.svg"/></p>
 <h2 id="taktzustandgesteuertes-d-latch">Taktzustandgesteuertes D Latch</h2>
 <p>In der Praxis gibt es viele Anwendungen, in denen ein Bit gespeichert werden soll. Die Schaltung eines taktzustandgesteuerten RS Latch wird also so erweitert, dass ein einzelner Eingang die Funktion von <code>R</code> und <code>S</code> &uuml;bernimmt.</p>
-<p><img alt="Taktzustandsgesteuertes D Latch" src="../../dic/grundlagen_der_digitaltechnik/d_latch.png"/></p>
+<p><img alt="Taktzustandsgesteuertes D Latch" src="https://www.semiversus.com/dic/grundlagen_der_digitaltechnik/d_latch.svg"/></p>
 <p>Hier werden die urspr&uuml;nglichen Eing&auml;nge <code>R</code> und <code>S</code> durch den Eingang <code>D</code> ersetzt. Dieser Eingang hat steuert direkt den urspr&uuml;nglichen <em>Set</em>-Eingang an und in invertierter Form den urspr&uuml;nglichen <em>Reset</em>-Eingang. F&uuml;r den Eingang <code>C</code> gleich 1 gilt: Ist Eingang <code>D</code> gleich 1 wird das RS Latch gesetzt, bei <code>D</code> gleich 0 wird es zur&uuml;ckgesetzt. Ist der Eingang <code>C</code> auf 0 ist das D Latch im <em>Halte</em> Modus.</p>
 <h1 id="flankengetriggerte-flip-flops_1">Flankengetriggerte Flip-Flops</h1>
 <p>Es gibt viele Anwendungen, die ein Speicherelement ben&ouml;tigen, welches auf eine Taktflanke reagiert. Der transparente Modus ist hier nicht gew&uuml;nscht.</p>
 <h2 id="d-flip-flop">D Flip-Flop</h2>
 <p>Um dies zu erreichen werden zwei Latches miteinander kombiniert:</p>
-<p><img alt="Einflanken-getriggertes Flip-Flop" src="../../dic/grundlagen_der_digitaltechnik/d_flipflop.png"/></p>
+<p><img alt="Einflanken-getriggertes Flip-Flop" src="https://www.semiversus.com/dic/grundlagen_der_digitaltechnik/d_flipflop.svg"/></p>
 <p>Ist der Eingang <code>C</code> gleich 1, so ist das Master Latch <em>transparent</em> und das Slave Latch im <em>Halte</em> Zustand. Ist der Eingang <code>C</code> gleich 0, h&auml;lt das Master Latch seinen Zustand und das Slave Latch ist transparent. Wenn <code>C</code> also von 0 auf 1 wechselt, wird der Zustand am Eingang <code>D</code> gespeichert und am Ausgang ausgegeben. Man spricht in diesem Fall von einem Flip-Flop, das auf die positive Flanke des Signals <code>C</code> reagiert. Die Flankentriggerung wird im DIN Symbol mittels einem Dreieck am Eingang symbolisiert.</p>
-<p>Als Beispiel f&uuml;r ein Datenblatt dient uns ein 74HC74. Dieser Baustein enth&auml;lt zwei flankengetriggerte D-Flip-Flops mit asynchronem Reset und Set Eingang (<a href="http://www.nxp.com/documents/data_sheet/74HC_HCT74.pdf">Datenblatt</a>).</p>
+<p>Als Beispiel f&uuml;r ein Datenblatt dient uns ein 74HC74. Dieser Baustein enth&auml;lt zwei flankengetriggerte D-Flip-Flops mit asynchronem Reset und Set Eingang (<a class="external" href="http://www.nxp.com/documents/data_sheet/74HC_HCT74.pdf">Datenblatt</a>).</p>
 <h2 id="rs-flip-flops">RS Flip-Flops</h2>
 <p>Durch Kombination von zwei Latches in dieser Master-Slave Anordnung l&auml;sst sich auch ein RS Flip-Flop konstruieren.</p>
 <h2 id="jk-flip-flops">JK Flip-Flops</h2>
@@ -192,8 +197,8 @@ Im Impulsdiagramm sieht man folgenden Signalverlauf:</p>
 <tr>
 <td align="center">0</td>
 <td align="center">0</td>
-<td -1="-1" align="center">%%Q_</td>
-<td align="center" q__-1="Q_{-1">%%\overline</td>
+<td align="center">%%Q_{-1}%%</td>
+<td align="center">%%\overline{Q_{-1}}%%</td>
 <td>Halten</td>
 </tr>
 <tr>
@@ -213,20 +218,20 @@ Im Impulsdiagramm sieht man folgenden Signalverlauf:</p>
 <tr>
 <td align="center">1</td>
 <td align="center">1</td>
-<td align="center" q__-1="Q_{-1">%%\overline</td>
-<td -1="-1" align="center">%%Q_</td>
+<td align="center">%%\overline{Q_{-1}}%%</td>
+<td align="center">%%Q_{-1}%%</td>
 <td>Toggeln</td>
 </tr>
 </tbody>
 </table>
 <p>Hier wird also das gleichzeitige Setzen der Eing&auml;nge genutzt, um eine neue Funktion einzuf&uuml;hren: Das Invertieren des aktuellen Zustandes.</p>
-<p><img alt="JK Flip-Flop" src="../../dic/grundlagen_der_digitaltechnik/jk_flipflop.png"/></p>
+<p><img alt="JK Flip-Flop" src="https://www.semiversus.com/dic/grundlagen_der_digitaltechnik/jk_flipflop.svg"/></p>
 <h2 id="t-flip-flop">T Flip-Flop</h2>
 <p>Ein T Flip-Flop reagiert auf eine Taktflanke und hat einen Eingang. Der Eingang gibt an, ob der Zustand beibehalten werden soll (<code>T</code>=0) oder ob er wechseln soll (<code>T</code>=1).</p>
-<p><img alt="T Flip-Flop" src="../../dic/grundlagen_der_digitaltechnik/t_flipflop.png"/></p>
+<p><img alt="T Flip-Flop" src="https://www.semiversus.com/dic/grundlagen_der_digitaltechnik/t_flipflop.svg"/></p>
 <h2 id="asynchrone-eingange">Asynchrone Eing&auml;nge</h2>
 <p>Je nach Bauart k&ouml;nnen auch noch zus&auml;tzliche asynchrone Eing&auml;nge vorhanden sein. Diese <code>asynchronen</code> Eing&auml;nge ver&auml;ndern den Zustand unabh&auml;ngig vom Taktsignal. So kann ein asynchroner Reset genutzt werden, das Flip-Flop unabh&auml;ngig vom Takt in einen definierten Zustand zu bringen.</p>
-<p><img alt="Asynchrone Eing&auml;nge" src="../../dic/grundlagen_der_digitaltechnik/d_flipflop_async.png"/></p>
+<p><img alt="Asynchrone Eing&auml;nge" src="https://www.semiversus.com/dic/grundlagen_der_digitaltechnik/d_flipflop_async.svg"/></p>
         </div>
         <div class="col-md-4" role="complementary">
     <nav class="well well-sm" data-spy="affix" data-offset-top="0" id="sidebar">
@@ -236,6 +241,6 @@ Im Impulsdiagramm sieht man folgenden Signalverlauf:</p>
       </div>
     </div>
   </div>
-  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 22.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/a602de5">a602de5</a>)</p></div></footer>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit">Günther Jena 2011 - 2016 | Letztes Update am 20.6.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/e61544b">e61544b</a>) <a href="https://plus.google.com/111972313670421914746/about" rel="author" class="hidden">Google+</a><a href="http://creativecommons.org/licenses/by-sa/3.0/de/" class="pull-right"><img src="https://www.semiversus.com/theme/img/cc_by_sa.svg" /></a></p></div></footer>
 </body>
 </html>

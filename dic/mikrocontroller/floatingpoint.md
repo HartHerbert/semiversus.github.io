@@ -1,4 +1,4 @@
-title: Fließkommazahlen
+title: Fest- und Gleitkommazahlen
 parent: uebersicht.md
 
 # Allgemeines
@@ -11,7 +11,7 @@ Beispiel `3.5` Format und der Binärzahl `01101011`:
 
 0 | 1 | 1**,** | 0 | 1 | 0 | 1 | 1 
 :-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
-%%2^{2}%% | %%2^{1}%% | %%2^{0}%% | %%2^{-1}%% | %%2^{-2}%% | %%2^{-3}%% | %%2^{-4}%% | %%2^{-5}%%
+%%2^\{2\}%% | %%2^\{1\}%% | %%2^\{0\}%% | %%2^\{-1\}%% | %%2^\{-2\}%% | %%2^\{-3\}%% | %%2^\{-4\}%% | %%2^\{-5\}%%
 4 | 2 | 1 | 0.5 | 0.25 | 0.125 | 0.0625 | 0.03125
 
 Die oben dargestellte Zahl hat den Wert (**0** * 4) + (**1** * 2) + (**1** * 1) + (**0** * 0.5) + (**1** * 0.25) + (**0** * 0.125) + (**1** * 0.0625) + (**1** * 0.03125) = **3.34375**
@@ -19,7 +19,7 @@ Die oben dargestellte Zahl hat den Wert (**0** * 4) + (**1** * 2) + (**1** * 1) 
 Bei der Addition und Subtraktion können die Zahlen als reine Integer betrachtet werden. Bei Multiplikation und Division muss eine Anpassung der Kommastelle durchgeführt werden.
 
 ## Gleitkomma Zahlen
-Bei der Gleitkommazahl wird die Darstellung mittels *Mantisse*(`M`) und *Exponent*(`E`) genutzt. Das Vorzeichen wird durch die Variable `S` beschrieben. Bei `S`=0 ist die Zahl Positiv, bei `S`=1 negativ.
+Bei der Gleitkommazahl (auch *Fließkommazahl* genannt) wird die Darstellung mittels *Mantisse*(`M`) und *Exponent*(`E`) genutzt. Das Vorzeichen wird durch die Variable `S` beschrieben. Bei `S`=0 ist die Zahl Positiv, bei `S`=1 negativ.
 
 %%x=-1^{S} \cdot M \cdot B^{E}%%
 
@@ -32,7 +32,7 @@ In der *IEEE 754* wird die Anzahl und Position der Bits für Mantisse und Expone
 ## Umrechnung
 Zur Berechnung des Wertes aus einer *IEEE 754* Darstellung wird folgende Methode verwendet.
 
-Beispiel: `0 10000011 00100110011001100110011` (aus [Wikipedia](https://de.wikipedia.org/wiki/IEEE_754)).
+Beispiel: `0 10000011 00100110011001100110011` (aus [Wikipedia](https://de.wikipedia.org/wiki/IEEE_754){: class="external" }).
 
 Der Exponent als Dezimalzahl ist hier `10000011`->131. Der Exponent wird als Zahl +127 gespeichert, um negative Zahlen darstellen zu können (sogenanntes *Biasing*). Der Exponent ist also 131-127=4.
 

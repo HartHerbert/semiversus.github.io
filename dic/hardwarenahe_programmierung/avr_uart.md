@@ -6,7 +6,7 @@ parent: uebersicht.md
     aber die Informationen mit dem entsprechenden Datenblatt zu vergleichen!
 
 !!! panel-info "Informationen im Datenblatt"
-    Die Informationen dieser Seite entstammen dem originalen [Datenblatt]({filename}atmel_atmega16.pdf)
+    Die Informationen dieser Seite entstammen dem originalen [Datenblatt]({filename}atmel_atmega16.pdf){: class="download" }
     (Rev. 2466T–AVR–07/10) des ATMega16 von Atmel.
 
     * *Seite 144-145*: Blockschaltbild und allgemeine Information
@@ -14,7 +14,7 @@ parent: uebersicht.md
     * *Seite 167-171*: UART Baudrateregister und Beispiele für Baudrates
 
 # Allgemeines
-Um eine serielle Schnittstelle (siehe [RS232]({filename}rs232.md)) zu realisieren stellt der Atmel AVR eine *USART*
+Um eine serielle Schnittstelle (siehe [RS232]({filename}../bussysteme/rs232.md)) zu realisieren stellt der Atmel AVR eine *USART*
 (engl. für *Universal Synchronous and Asynchrouns Serial Receiver and Transmitter*) zur Verfügung.
 
 Zur Arbeit mit dem *USART* werden fünf Register genutzt:
@@ -114,7 +114,7 @@ Dieses Flag muss auf `1` sein, um den Sender der UART einzuschalten.
 # Baudrate Generierung
 Zur Generierung der Baudrate gilt folgende Formel:
 
-%%f_{Baudrate}=\frac{f_{CLK}}{8\cdot(UBRR+1)} \Leftrightarrow UBRR=\frac{f_{CLK}}{16\cdot f_{Baudrate}}-1%%
+%%f_{Baudrate}=\frac{f_{CLK}}{16\cdot(UBRR+1)} \Leftrightarrow UBRR=\frac{f_{CLK}}{16\cdot f_{Baudrate}}-1%%
 
 Diese Formel gilt wenn das `U2X` in `UCSRA` gleich `0` ist. Für `U2X` gleich `1` gilt folgende Formel: 
 

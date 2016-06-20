@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta name="description" content="Blog und Unterrichtsmaterial zu Digitale Systeme und Computersysteme">
-  <meta name="author" content="Günther Jena">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="Abschreiben als solches zu erkennen ist keine einfache Sache, da der Aufwand massiv mit der Anzahl der zu vergleichenden Arbeiten steigt. Bei 5 Arbeiten sind insgesamt 10 Vergleiche zu machen: Die erste Aufgabe wird mit den vier anderen verglichen, dann die zweite Arbeit mit den drei verbleibenden, usw. Mit wdiff ...">
+  <meta name="author" content="Günther Jena">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="../favicon.ico">
-  <title>Semiversus | Interessante Korrelation, oder anders: Abgeschrieben?</title>
-  <link href="../theme/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../theme/css/semiversus.css" rel="stylesheet">
-  <link href="../theme/css/pygments.css" rel="stylesheet">
-  <script src="../theme/js/jquery.min.js"></script>
-  <script src="../theme/js/bootstrap.min.js"></script>
+  <link rel="icon" href="https://www.semiversus.com/favicon.ico">
+  <title>Interessante Korrelation entdecken mittels <samp>wdiff</samp></title>
+  <link rel="stylesheet" href="https://www.semiversus.com/theme/css/semiversus.min.css?29549690">
+  <script src="https://www.semiversus.com/theme/js/semiversus.min.js?c49a6400"></script>
+  <meta name="google-site-verification" content="O-3LVEziPiVrCYqFCwbLmB3s7lNG__cPMLLAr_RUxbA" />
 
     <script type= "text/javascript">
         var s = document.createElement('script');
@@ -42,43 +40,52 @@
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
           </button>
-          <a href="../index.html" class="navbar-brand">SEMIVERSUS</a>
+          <a href="https://www.semiversus.com/index.html" class="navbar-brand">SEMIVERSUS</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="../index.html">Blog</a></li>
-            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
+            <li><a href="https://www.semiversus.com/index.html">Blog</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Unterricht<span class="carret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="../dic/uebersicht.html"><em>Übersicht</em></a></li>
-                <li><a href="../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
-                <li><a href="../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
-                <li><a href="../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
-                <li><a href="../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
-                <li><a href="../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
-                <li><a href="../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
-                <li><a href="../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
-                <li><a href="../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
-                <li><a href="../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+                <li><a href="https://www.semiversus.com/dic/uebersicht.html"><em>Übersicht</em></a></li>
+                <li><a href="https://www.semiversus.com/dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+                <li><a href="https://www.semiversus.com/dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+                <li><a href="https://www.semiversus.com/dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+                <li><a href="https://www.semiversus.com/dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+                <li><a href="https://www.semiversus.com/dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+                <li><a href="https://www.semiversus.com/dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+                <li><a href="https://www.semiversus.com/dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+                <li><a href="https://www.semiversus.com/dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+                <li><a href="https://www.semiversus.com/dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
               </ul>
-            <li><a href="../projekte/projekte.html">Projekte</a></li>
-            <li><a href="../about.html">Über mich</a></li>
+            </li>
+            <li><a href="https://www.semiversus.com/projekte/projekte.html">Projekte</a></li>
+            <li><a href="https://www.semiversus.com/about.html">Über mich</a></li>
+          </ul>
+          <form class="navbar-form navbar-right" role="search" action="https://www.semiversus.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="form-control" placeholder="Suche" name="q" id="tipue_search_input"></form>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://github.com/semiversus" class="social" data-toggle="tooltip" data-placement="bottom" title="Github.com/Semiversus"><span class="fa fa-github fa-2x"></span><span class="hidden-sm hidden-md hidden-lg">&nbsp;Github</span></a></li>
+            <li><a href="http://stackoverflow.com/users/166605" class="social" data-toggle="tooltip" data-placement="bottom" title="Stackoverflow.com/Semiversus"><span class="fa fa-stack-overflow fa-2x"></span>&nbsp;<span class="hidden-sm hidden-md hidden-lg">Stack Overflow</span></a></li>
+            <li><a href="https://www.semiversus.com/semiversus.atom.xml" class="social" data-toggle="tooltip" data-placement="bottom" title="RSS Feed"><span class="fa fa-rss fa-2x"></span>&nbsp;<span class="hidden-sm hidden-md hidden-lg">RSS Feed</span></a></li>
           </ul>
         </div>
       </div>
     </nav>
     <div class="container">
-  <div class="visible-print-block">Semiversus | Interessante Korrelation, oder anders: Abgeschrieben?</div>
+  <div class="visible-print-block">Semiversus | Interessante Korrelation entdecken mittels <samp>wdiff</samp></div>
       <div class="row">
         <div class="col-md-8" role="main">
-  <h1>Interessante Korrelation, oder anders: Abgeschrieben?</h1>
-  <p><span class="glyphicon glyphicon-calendar"></span> 31.01.2016
-<a href="../tag/schule.html" class="hidden-print"><span class="label label-primary">Schule</span></a> <a href="../tag/bash.html" class="hidden-print"><span class="label label-primary">BASH</span></a> <a href="../tag/tools.html" class="hidden-print"><span class="label label-primary">Tools</span></a> <a href="../blog/korrelation.md"  class="btn btn-default btn-xs pull-right hidden-print" data-toggle="tooltip" data-placement="bottom" title="Quelltext zu dieser Seite"><span class="glyphicon glyphicon-file"></span></a></p>
-  <p>Jede Lehrperson hat ihre eigene Meinung zum Abschreiben. F&uuml;r mich ist es etwas, das mit Gerechtigkeit
-bei der Beurteilung zu tun hat. Schlie&szlig;lich soll ja die Leistung betreffend der Aufgabenstellung beurteilt
-werden und nicht die soziale Kompetenz im Umgang mit anderen.</p>
-<p>Abschreiben als solches zu erkennen ist keine einfache Sache, da der Aufwand massiv mit der Anzahl der zu vergleichenden
+  <h2>Interessante Korrelation entdecken mittels <samp>wdiff</samp><a href="https://www.semiversus.com/blog/korrelation.md"  class="btn btn-default btn-xs pull-right hidden-print" data-toggle="tooltip" data-placement="bottom" title="Quelltext zu dieser Seite"><span class="fa fa-file-text-o fa-lg"></span></a></h2>
+<p><span class="fa fa-calendar"></span> 31.01.2016 | <a href="https://www.semiversus.com/blog/korrelation.html#isso-thread"><span class="fa fa-spinner fa-pulse"></span> Kommentare</a> | Tag:
+<a href="https://www.semiversus.com/tag_tools.html">Tools</a><span class="pull-right hidden-print">
+<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.semiversus.com%2Fblog%2Fkorrelation.html" title="Teilen auf Facebook" target="_blank" class="btn btn-facebook btn-xs"><span class="fa fa-fw fa-facebook"></span><span class="hidden-xs"> Facebook</span></a>
+<a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.semiversus.com%2Fblog%2Fkorrelation.html" title="Teilen auf Google+" target="_blank" class="btn btn-googleplus btn-xs"><span class="fa fa-fw fa-google-plus"></span><span class="hidden-xs"> Google+</span></a>
+<a href="http://twitter.com/home?status=https%3A%2F%2Fwww.semiversus.com%2Fblog%2Fkorrelation.html" title="Teilen auf Twitter" target="_blank" class="btn btn-twitter btn-xs"><span class="fa fa-fw fa-twitter"></span><span class="hidden-xs"> Twitter</span></a>
+</span></p>
+<div class="clearfix"></div>  <p>Abschreiben als solches zu erkennen ist keine einfache Sache, da der Aufwand massiv mit der Anzahl der zu vergleichenden
 Arbeiten steigt. Bei 5 Arbeiten sind insgesamt 10 Vergleiche zu machen: Die erste Aufgabe wird mit den vier anderen
 verglichen, dann die zweite Arbeit mit den drei verbleibenden, usw.</p>
+<p>Mit <samp>wdiff</samp> habe ich ein Tool gefunden, um einfache Textvergleiche machen zu k&ouml;nnen.</p>
 <p>Die Anzahl der Vergleiche ergibt sich dabei mittels den Binomialkoeffizienten zu:</p>
 <p>%%N_{Vergleiche}={N_{Arbeiten} \choose 2}=\frac{N_{Arbeiten}!}{(N_{Arbeiten}-2)!\cdot 2!}%%</p>
 <table>
@@ -120,13 +127,8 @@ an Arbeiten steigt die Anzahl der Vergleiche um (etwas mehr als) das Vierfache.<
 <h1 id="nutzen-von-tools">Nutzen von Tools</h1>
 <p>Bei einer Hausaufgabe habe ich nun das konkrete "<em>Problem</em>" 25 Arbeiten miteinander zu vergleichen. Es handelt sich
 um eine Programmieraufgabe in C.</p>
-<p>Jede L&ouml;sung wird als ZIP-Datei abgegeben. Diese entpacke ich in einen Folder</p>
-<div class="codehilite"><pre><span></span>$&gt; unzip *.zip
-</pre></div>
-<p>In jedem Verzeichnisbaum steckt eine Datei, die bereits in der Aufgabe definiert wurde und zur Bearbeitung entsprechend
-ausprogrammiert werden musste: <tt>game.c</tt>.</p>
 <p>Der Vergleich von zwei Textdateien l&auml;sst sich mittels <code>diff</code> bewerkstelligen. Was ich aber brauche ist eine Statistik,
-die mir angibt, wie gro&szlig; die <em>Korrelation</em> zwischen zwei Dateien ist, sprich wie gro&szlig; der Anteil an Hemeinsamkeiten ist.
+die mir angibt, wie gro&szlig; die <em>Korrelation</em> zwischen zwei Dateien ist, sprich wie gro&szlig; der Anteil an Gemeinsamkeiten ist.
 Bei dem Vergleich sollten Zeilenumbr&uuml;che, Leerzeichen, usw. keine Rolle spielen. Das Tool der Wahl ist <code>wdiff</code>. Die Option
 <code>-s</code> liefert eine entsprechende Statistik.</p>
 <div class="codehilite"><pre><span></span>$&gt; wdiff -s arbeit1.c arbeit2.c
@@ -134,9 +136,9 @@ Bei dem Vergleich sollten Zeilenumbr&uuml;che, Leerzeichen, usw. keine Rolle spi
 arbeit1.c: <span class="m">126</span> W&ouml;rter  <span class="m">48</span> 38% gleich  <span class="m">13</span> 10% gel&ouml;scht  <span class="m">65</span> 52% ver&auml;ndert
 arbeit2.c: <span class="m">140</span> W&ouml;rter  <span class="m">48</span> 34% gleich  <span class="m">7</span> 5% eingef&uuml;gt  <span class="m">85</span> 61% ver&auml;ndert
 </pre></div>
-<p>Der Vergleich von <tt>arbeit1.c</tt> mit <tt>arbeit2.c</tt> liefert ein anderes Ergebnis als der umgekehrte Vergleich und
+<p>Der Vergleich von <samp>arbeit1.c</samp> mit <samp>arbeit2.c</samp> liefert ein anderes Ergebnis als der umgekehrte Vergleich und
 h&auml;ngt vorallem mit der unterschiedlichen Anzahl an Gesamtworten zusammen.</p>
-<p>Zum Vergleich von 25 Arbeiten m&uuml;ssen nun 300 dieser Aufrufe gemacht werden. Dazu dient folgendes <tt>bash</tt>-Skript:</p>
+<p>Zum Vergleich von 25 Arbeiten m&uuml;ssen nun 300 dieser Aufrufe gemacht werden. Dazu dient folgendes <samp>bash</samp>-Skript:</p>
 <div class="codehilite"><pre><span></span><span class="nv">files</span><span class="o">=</span><span class="sb">`</span>ls *.c<span class="sb">`</span>
 
 <span class="k">for</span> work1 in <span class="nv">$files</span><span class="p">;</span>
@@ -151,6 +153,8 @@ h&auml;ngt vorallem mit der unterschiedlichen Anzahl an Gesamtworten zusammen.</
   <span class="k">done</span>
 <span class="k">done</span>
 </pre></div>
+<p>Das Skript nutzt zwei Schleifen, um jede Datei mit jeder zu vergleichen. Bei der Ausgabe von <samp>wdiff</samp> werden
+nicht ben&ouml;tigte Teile weggeschnitten.</p>
 <h1 id="auswertung">Auswertung</h1>
 <p>Die Ausf&uuml;hrung f&uuml;hrt dann zu folgendem Ergebnis (ein Ausschnitt):</p>
 <div class="codehilite"><pre><span></span>...
@@ -162,22 +166,29 @@ arbeit20.c arbeit17.c <span class="m">290</span> W&ouml;rter  <span class="m">54
 ...
 </pre></div>
 <p>Es f&auml;llt der zweite Eintrag auf: 97% &Uuml;bereinstimmung. Da muss sehr viel Zufall im Spiel sein, oder auch nicht.</p>
-<p>Ein direkter Vergleich mittels <a href="http://meldmerge.org/">Meld</a> zeigt:</p>
-<p><img alt="Vergleich von arbeit14.c und arbeit20.c" src="../blog/2016_01_31_korrelation/meld.png"/></p>
+<p>Ein direkter Vergleich mittels <a class="external" href="http://meldmerge.org/">Meld</a> zeigt:</p>
+<p><img alt="Vergleich von arbeit14.c und arbeit20.c" src="https://www.semiversus.com/blog/2016_01_31_korrelation/meld.png"/></p>
 <p>Die Liste nach Korrelation sortiert zeigt folgendes Ergebnis:</p>
-<p><img alt="Auswertung" src="../blog/2016_01_31_korrelation/auswertung.png"/></p>
-<p>Es zeigen sich zwei "<em>Cluster</em>": <tt>arbeit14.c</tt> und <tt>arbeit20.c</tt> unterscheiden sich durch genau drei "W&ouml;rter",
-<tt>arbeit6.c</tt>, <tt>arbeit15.c</tt> und <tt>arbeit17.c</tt> unterscheiden sich auch nur durch ein paar "W&ouml;rter".</p>
-<h1 id="folgen">Folgen</h1>
-<p>Es f&auml;llt mir schwer zu sagen wie ich <em>richtig</em> handeln soll. Meine L&ouml;sung ist in diesem Fall eine <em>Unterrichtsvereinbarung</em>,
-die ich mit der Klasse am Anfang des Schuljahres definiert habe und in der festgeschrieben ist, dass bei einem solchen Fall
-0 Punkte auf alle L&ouml;sungen mit "zu gro&szlig;er &Auml;hnlichkeit" gegeben wird. Ich habe gehofft, dass dies nie zur Anwendung kommt.</p>
-        </div>
+<p><img alt="Auswertung" src="https://www.semiversus.com/blog/2016_01_31_korrelation/auswertung.png"/></p>
+<p>Es zeigen sich zwei "<em>Cluster</em>": <samp>arbeit14.c</samp> und <samp>arbeit20.c</samp> unterscheiden sich durch genau drei "W&ouml;rter",
+<samp>arbeit6.c</samp>, <samp>arbeit15.c</samp> und <samp>arbeit17.c</samp> unterscheiden sich auch nur durch ein paar "W&ouml;rter".</p>
+<h1 id="zusammenfassung">Zusammenfassung</h1>
+<p><samp>wdiff</samp> ist ein m&auml;chtiges Tool f&uuml;r Textvergleiche. Man sollte wahrscheinlich nicht zu pedantisch werden, um als Lehrer
+Kopien zu entdecken. Ich w&uuml;nsche und fordere eine Zusammenarbeit und Wissensaustausch bei Sch&uuml;lern - eine reine Kopie kann ich
+aber nicht unterst&uuml;tzen.</p>
+<script data-isso="https://comments.semiversus.com" data-isso-vote="false" data-isso-lang="de" data-isso-reveal-on-click="true" src="https://www.semiversus.com/theme/js/embed.min.js"></script>
+<div class="well hidden-print">
+<a class="btn btn-primary" role="button" data-toggle="collapse" href="#comments" aria-expanded="false" aria-controls="isso-thread">Kommentare</a>
+<div id="comments" class="collapse">
+<section id="isso-thread" data-title="interessante-korrelation-entdecken-mittels-wdiff"></section>
+</div>
+</div>
+</div>        </div>
         <div class="col-md-4" role="complementary">
         </div>
       </div>
     </div>
   </div>
-  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 22.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/a602de5">a602de5</a>)</p></div></footer>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit">Günther Jena 2011 - 2016 | Letztes Update am 20.6.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/e61544b">e61544b</a>) <a href="https://plus.google.com/111972313670421914746/about" rel="author" class="hidden">Google+</a><a href="http://creativecommons.org/licenses/by-sa/3.0/de/" class="pull-right"><img src="https://www.semiversus.com/theme/img/cc_by_sa.svg" /></a></p></div></footer>
 </body>
 </html>

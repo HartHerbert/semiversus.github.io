@@ -6,7 +6,7 @@ parent: uebersicht.md
     aber die Informationen mit dem entsprechenden Datenblatt zu vergleichen!
 
 !!! panel-info "Informationen im Datenblatt"
-    Die Informationen dieser Seite entstammen dem originalen [Datenblatt]({filename}atmel_atmega16.pdf)
+    Die Informationen dieser Seite entstammen dem originalen [Datenblatt]({filename}atmel_atmega16.pdf){: class="download" }
     (Rev. 2466T–AVR–07/10) des ATMega16 von Atmel.
 
     * *Seite 71-86*: Timer0 (8 Bit)
@@ -21,6 +21,12 @@ parent: uebersicht.md
         * *Seite 117*: Übersicht und Blockschaltbild
         * *Seite 122-125*: Betriebsmodi
         * *Seite 128-130*: Registerbeschreibung
+
+!!! panel-info "Anwendungen"
+    Je nach Anwendung liefert die folgende Übersicht eine Hilfestellung beim Einstellen der Register:
+
+    * **Timer0**: [PWM]({filename}timer0_pwm.svg), [Periodische Events]({filename}timer0_ctc.svg), [Zählen]({filename}timer0_count.jpg)
+    * **Timer1**: [PWM]({filename}timer1_pwm.jpg), [Periodische Events]({filename}timer1_ctc.jpg), [Zählen]({filename}timer1_count.jpg), [Zeiten messen]({filename}timer1_measure.jpg)
 
 # Allgemeines
 Ein *Timer* ist ein spezieller Zähler, der Ereignisse zählt. Diese Ereignisse können sich auch vom Prozessortakt ableiten

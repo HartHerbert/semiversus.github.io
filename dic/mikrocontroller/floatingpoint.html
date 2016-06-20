@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta name="description" content="Blog und Unterrichtsmaterial zu Digitale Systeme und Computersysteme">
-  <meta name="author" content="Günther Jena">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="Allgemeines Im Vergleich zu einer Zahl ohne Nachkommastellen (Integer-Zahl bzw. Ganzzahl) benötigt man für die Speicherung und Verarbeitung von Zahlen mit Nachkommastellen eigene Zahlenformate. Festkomma Zahlen Die Anzahl der Nachkommastellen ist hier fix. Bei der Angabe des Formats gibt man oft die Anzahl der Vorkommastellen (bezeichnet mittels ...">
+  <meta name="author" content="Günther Jena">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="../../favicon.ico">
-  <title>Semiversus | Fließkommazahlen</title>
-  <link href="../../theme/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../../theme/css/semiversus.css" rel="stylesheet">
-  <link href="../../theme/css/pygments.css" rel="stylesheet">
-  <script src="../../theme/js/jquery.min.js"></script>
-  <script src="../../theme/js/bootstrap.min.js"></script>
+  <link rel="icon" href="https://www.semiversus.com/favicon.ico">
+  <title>Fest- und Gleitkommazahlen</title>
+  <link rel="stylesheet" href="https://www.semiversus.com/theme/css/semiversus.min.css?29549690">
+  <script src="https://www.semiversus.com/theme/js/semiversus.min.js?c49a6400"></script>
+  <meta name="google-site-verification" content="O-3LVEziPiVrCYqFCwbLmB3s7lNG__cPMLLAr_RUxbA" />
 
     <script type= "text/javascript">
         var s = document.createElement('script');
@@ -42,35 +40,42 @@
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
           </button>
-          <a href="../../index.html" class="navbar-brand">SEMIVERSUS</a>
+          <a href="https://www.semiversus.com/index.html" class="navbar-brand">SEMIVERSUS</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="../../index.html">Blog</a></li>
-            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Unterricht<b class="carret"></b></a>
+            <li><a href="https://www.semiversus.com/index.html">Blog</a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Unterricht<span class="carret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="../../dic/uebersicht.html"><em>Übersicht</em></a></li>
-                <li><a href="../../dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
-                <li><a href="../../dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
-                <li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
-                <li><a href="../../dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
-                <li><a href="../../dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
-                <li><a href="../../dic/bussysteme/uebersicht.html">Bussysteme</a></li>
-                <li><a href="../../dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
-                <li><a href="../../dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
-                <li><a href="../../dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
+                <li><a href="https://www.semiversus.com/dic/uebersicht.html"><em>Übersicht</em></a></li>
+                <li><a href="https://www.semiversus.com/dic/grundlagen_der_digitaltechnik/uebersicht.html">Grundlagen der Digitaltechnik</a></li>
+                <li><a href="https://www.semiversus.com/dic/programmierbare_logik/uebersicht.html">Programmierbare Logik</a></li>
+                <li><a href="https://www.semiversus.com/dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li>
+                <li><a href="https://www.semiversus.com/dic/hardwarenahe_programmierung/uebersicht.html">Hardwarenahe Programmierung</a></li>
+                <li><a href="https://www.semiversus.com/dic/halbleiterelemente/uebersicht.html">Halbleiterelemente</a></li>
+                <li><a href="https://www.semiversus.com/dic/bussysteme/uebersicht.html">Bussysteme</a></li>
+                <li><a href="https://www.semiversus.com/dic/rechnerarchitektur/uebersicht.html">Rechnerarchitektur</a></li>
+                <li><a href="https://www.semiversus.com/dic/digitale_signalverarbeitung/uebersicht.html">Digitale Signalverarbeitung</a></li>
+                <li><a href="https://www.semiversus.com/dic/komplexe_digitale_systeme/uebersicht.html">Komplexe digitale Systeme</a></li>
               </ul>
-            <li><a href="../../projekte/projekte.html">Projekte</a></li>
-            <li><a href="../../about.html">Über mich</a></li>
+            </li>
+            <li><a href="https://www.semiversus.com/projekte/projekte.html">Projekte</a></li>
+            <li><a href="https://www.semiversus.com/about.html">Über mich</a></li>
+          </ul>
+          <form class="navbar-form navbar-right" role="search" action="https://www.semiversus.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="form-control" placeholder="Suche" name="q" id="tipue_search_input"></form>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://github.com/semiversus" class="social" data-toggle="tooltip" data-placement="bottom" title="Github.com/Semiversus"><span class="fa fa-github fa-2x"></span><span class="hidden-sm hidden-md hidden-lg">&nbsp;Github</span></a></li>
+            <li><a href="http://stackoverflow.com/users/166605" class="social" data-toggle="tooltip" data-placement="bottom" title="Stackoverflow.com/Semiversus"><span class="fa fa-stack-overflow fa-2x"></span>&nbsp;<span class="hidden-sm hidden-md hidden-lg">Stack Overflow</span></a></li>
+            <li><a href="https://www.semiversus.com/semiversus.atom.xml" class="social" data-toggle="tooltip" data-placement="bottom" title="RSS Feed"><span class="fa fa-rss fa-2x"></span>&nbsp;<span class="hidden-sm hidden-md hidden-lg">RSS Feed</span></a></li>
           </ul>
         </div>
       </div>
     </nav>
     <div class="container">
-    <div class="visible-print-block">Semiversus | Fließkommazahlen</div>
-<ol class="breadcrumb hidden-print"><li><a href="../../dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="../../dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li><li><strong>Fließkommazahlen</strong></li></ol>      <div class="row">
+    <div class="visible-print-block">Semiversus | Fest- und Gleitkommazahlen</div>
+<ol class="breadcrumb hidden-print"><li><a href="https://www.semiversus.com/dic/uebersicht.html">Digitale Systeme und Computersysteme</a></li><li><a href="https://www.semiversus.com/dic/mikrocontroller/uebersicht.html">Mikrocontroller</a></li><li><strong>Fest- und Gleitkommazahlen</strong></li></ol>      <div class="row">
         <div class="col-md-8" role="main">
-  <header><h1>Fließkommazahlen<a href="../../dic/mikrocontroller/floatingpoint.md"  class="btn btn-default btn-xs pull-right hidden-print" data-toggle="tooltip" data-placement="bottom" title="Quelltext zu dieser Seite"><span class="glyphicon glyphicon-file"></span></a></h1></header>
+  <header><h1>Fest- und Gleitkommazahlen<div class="pull-right hidden-print"><a href="https://www.semiversus.com/dic/mikrocontroller/floatingpoint.md"  class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="bottom" title="Quelltext zu dieser Seite"><span class="fa fa-file-text-o fa-lg"></span></a></div></h1></header>
   <h1 id="allgemeines">Allgemeines</h1>
 <p>Im Vergleich zu einer Zahl ohne Nachkommastellen (<em>Integer</em>-Zahl bzw. Ganzzahl) ben&ouml;tigt man f&uuml;r die Speicherung und Verarbeitung von Zahlen mit Nachkommastellen eigene Zahlenformate.</p>
 <h2 id="festkomma-zahlen">Festkomma Zahlen</h2>
@@ -91,14 +96,14 @@
 </thead>
 <tbody>
 <tr>
-<td 2="2" align="center">%%2^</td>
-<td 1="1" align="center">%%2^</td>
-<td 0="0" align="center">%%2^</td>
-<td -1="-1" align="center">%%2^</td>
-<td -2="-2" align="center">%%2^</td>
-<td -3="-3" align="center">%%2^</td>
-<td -4="-4" align="center">%%2^</td>
-<td -5="-5" align="center">%%2^</td>
+<td align="center">%%2^{2}%%</td>
+<td align="center">%%2^{1}%%</td>
+<td align="center">%%2^{0}%%</td>
+<td align="center">%%2^{-1}%%</td>
+<td align="center">%%2^{-2}%%</td>
+<td align="center">%%2^{-3}%%</td>
+<td align="center">%%2^{-4}%%</td>
+<td align="center">%%2^{-5}%%</td>
 </tr>
 <tr>
 <td align="center">4</td>
@@ -115,14 +120,14 @@
 <p>Die oben dargestellte Zahl hat den Wert (<strong>0</strong> * 4) + (<strong>1</strong> * 2) + (<strong>1</strong> * 1) + (<strong>0</strong> * 0.5) + (<strong>1</strong> * 0.25) + (<strong>0</strong> * 0.125) + (<strong>1</strong> * 0.0625) + (<strong>1</strong> * 0.03125) = <strong>3.34375</strong></p>
 <p>Bei der Addition und Subtraktion k&ouml;nnen die Zahlen als reine Integer betrachtet werden. Bei Multiplikation und Division muss eine Anpassung der Kommastelle durchgef&uuml;hrt werden.</p>
 <h2 id="gleitkomma-zahlen">Gleitkomma Zahlen</h2>
-<p>Bei der Gleitkommazahl wird die Darstellung mittels <em>Mantisse</em>(<code>M</code>) und <em>Exponent</em>(<code>E</code>) genutzt. Das Vorzeichen wird durch die Variable <code>S</code> beschrieben. Bei <code>S</code>=0 ist die Zahl Positiv, bei <code>S</code>=1 negativ.</p>
+<p>Bei der Gleitkommazahl (auch <em>Flie&szlig;kommazahl</em> genannt) wird die Darstellung mittels <em>Mantisse</em>(<code>M</code>) und <em>Exponent</em>(<code>E</code>) genutzt. Das Vorzeichen wird durch die Variable <code>S</code> beschrieben. Bei <code>S</code>=0 ist die Zahl Positiv, bei <code>S</code>=1 negativ.</p>
 <p>%%x=-1^{S} \cdot M \cdot B^{E}%%</p>
 <p>In der Digitaltechnik wird durchwegs 2 als Basis(<code>B</code>) verwendet. Um mit Gleitkommazahlen zu Rechnen sind genau Vorgaben zum Zahlenformat und zur Durchf&uuml;hrung mathematischer Operationen, insbesondere f&uuml;r Rundungen, notwendig. Die Norm <em>IEEE 754</em> stellt eine solche Beschreibung dar.</p>
 <p>In der <em>IEEE 754</em> wird die Anzahl und Position der Bits f&uuml;r Mantisse und Exponent definiert:</p>
-<figure><img src="../../dic/mikrocontroller/float_ieeee_754.png"><figcaption>Floating Point Darstellung mittels IEEE 754 (Bild: <a href="https://commons.wikimedia.org/wiki/File:IEEE-754-single.svg">RokerHRO</a> Public Domain)</figcaption></img></figure>
+<figure><img src="https://www.semiversus.com/dic/mikrocontroller/float_ieeee_754.svg"><figcaption>Floating Point Darstellung mittels IEEE 754 (Bild: <a href="https://commons.wikimedia.org/wiki/File:IEEE-754-single.svg">RokerHRO</a> Public Domain)</figcaption></img></figure>
 <h2 id="umrechnung">Umrechnung</h2>
 <p>Zur Berechnung des Wertes aus einer <em>IEEE 754</em> Darstellung wird folgende Methode verwendet.</p>
-<p>Beispiel: <code>0 10000011 00100110011001100110011</code> (aus <a href="https://de.wikipedia.org/wiki/IEEE_754">Wikipedia</a>).</p>
+<p>Beispiel: <code>0 10000011 00100110011001100110011</code> (aus <a class="external" href="https://de.wikipedia.org/wiki/IEEE_754">Wikipedia</a>).</p>
 <p>Der Exponent als Dezimalzahl ist hier <code>10000011</code>-&gt;131. Der Exponent wird als Zahl +127 gespeichert, um negative Zahlen darstellen zu k&ouml;nnen (sogenanntes <em>Biasing</em>). Der Exponent ist also 131-127=4.</p>
 <p>Die Mantisse einer Gleitkommazahl wird immer Normalisiert gespeichert. Die Normalisierung schiebt das Komma in die Position, dass die Zahl einem <code>I.Q</code> Format von 1.23 entspricht und das MSB eine <code>1</code> ist. Da nun vor dem Komma immer eine <code>1</code> ist, muss diese nicht mehr gesondert abgespeichert werden. Um nun die Mantisse aus der Gleitkommadarstellung zu bekommen wird eine <code>1</code> vor das Komma gestellt. Die Mantisse ist also <strong>1,</strong><code>00100110011001100110011</code>.</p>
 <p>Da der Exponent 4 ist, m&uuml;ssen wir das Komma um 4 Stellen nach rechts verschieben:
@@ -139,6 +144,6 @@
       </div>
     </div>
   </div>
-  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit"><a href="http://creativecommons.org/licenses/by-sa/3.0/de/">CC-BY-SA</a> | Günther Jena 2011 - 2016 | Letztes Update am 22.3.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/a602de5">a602de5</a>)</p></div></footer>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit">Günther Jena 2011 - 2016 | Letztes Update am 20.6.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/e61544b">e61544b</a>) <a href="https://plus.google.com/111972313670421914746/about" rel="author" class="hidden">Google+</a><a href="http://creativecommons.org/licenses/by-sa/3.0/de/" class="pull-right"><img src="https://www.semiversus.com/theme/img/cc_by_sa.svg" /></a></p></div></footer>
 </body>
 </html>
