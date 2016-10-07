@@ -51,6 +51,11 @@
 <changefreq>weekly</changefreq>
 <priority>0.80</priority>
 </url><url>
+<loc>https://www.semiversus.com/dic/rechnerarchitektur/uebung_avr_assembler.html</loc>
+<lastmod>2016-10-07</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.50</priority>
+</url><url>
 <loc>https://www.semiversus.com/dic/robotik/raspberry.html</loc>
 <lastmod>2016-09-26</lastmod>
 <changefreq>monthly</changefreq>
@@ -217,11 +222,6 @@
 <priority>0.50</priority>
 </url><url>
 <loc>https://www.semiversus.com/pages/projects-en.html</loc>
-<lastmod>2016-04-25</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.50</priority>
-</url><url>
-<loc>https://www.semiversus.com/dic/rechnerarchitektur/uebung_avr_assembler.html</loc>
 <lastmod>2016-04-25</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.50</priority>

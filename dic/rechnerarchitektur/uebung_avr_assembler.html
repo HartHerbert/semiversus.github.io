@@ -80,7 +80,8 @@
   <header><h1>Übung AVR Assembler<div class="pull-right hidden-print"><a href="https://www.semiversus.com/dic/rechnerarchitektur/uebung_avr_assembler.md"  class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="bottom" title="Quelltext zu dieser Seite"><span class="fa fa-file-text-o fa-lg"></span></a></div></h1></header>
   <h1 id="allgemeines">Allgemeines</h1>
 <p>Die &Uuml;bungen sollten gut kommentiert werden. Ein Programm kann hinsichtlich Programmgr&ouml;&szlig;e oder Ausf&uuml;hrungsgeschwindigkeit
-optimiert werden. Als Hilfe eignet sich die <a class="download" href="https://www.semiversus.com/dic/rechnerarchitektur/avr_assembler_befehle.pdf">Kurz&uuml;bersicht</a> der AVR Assembler Befehle.</p>
+optimiert werden. Als Hilfe eignet sich die <a class="download" href="https://www.semiversus.com/dic/rechnerarchitektur/avr_assembler_befehle.pdf">Kurz&uuml;bersicht</a>
+der AVR Assembler Befehle.</p>
 <h1 id="daten-vertauschen">Daten vertauschen</h1>
 <p>Daten liegen im SRAM ab Adresse 0x60 bis zur Adresse 0x15F. Ziel des Assembler Programmes ist es, diesen Datenbereich zu
 "drehen" -&gt; Der Wert in Adresse 0x60 wird mit dem Wert in Adresse 0x15F vertauscht, anschlie&szlig;end der Wert in Adresse
@@ -93,8 +94,8 @@ optimiert werden. Als Hilfe eignet sich die <a class="download" href="https://ww
 <li>Wie gro&szlig; ist das Programm und wie viel Taktzyklen werden f&uuml;r die Ausf&uuml;hrung ben&ouml;tigt?</li>
 </ul>
 <h1 id="multiplikation-aller-elemente-eines-arrays_1">Multiplikation aller Elemente eines Arrays</h1>
-<p>Im SRAM liegen ab Adresse 0x60 insgesamt 32 16-Bit Werte. Diese sollen alle mit 5 mulitpliziert werden und an der
-urspr&uuml;nglichen Stelle im SRAM wieder abgelegt werden.</p>
+<p>Im SRAM liegen ab Adresse 0x60 insgesamt 32 16-Bit Werte (auf 0x60 liegt das h&ouml;herwertigere Byte). Diese sollen alle mit
+5 mulitpliziert werden und an der urspr&uuml;nglichen Stelle im SRAM wieder abgelegt werden.</p>
 <h2 id="hinweise_1">Hinweise</h2>
 <ul>
 <li>Nutze das Y oder Z Register zur indirekten Adressierung (Anwendung von ldd)</li>
@@ -111,6 +112,7 @@ aktiv (bzw. sollen den Alarm ausl&ouml;sen), wenn sie auf Massepotential sind (L
 <ul>
 <li>Nutze eine Main-Loop um die Eing&auml;nge dauernd zu &uuml;berpr&uuml;fen</li>
 <li>Weise die Funktion im Simulator und auf der Megacard nach</li>
+<li>Wenn ein Sensor ausgel&ouml;st hat und sp&auml;ter ein zweiter ausl&ouml;st soll auch dieser angezeigt werden.</li>
 <li>Erweiterung 1: Der Alarm soll nur zur&uuml;ckgesetzt werden k&ouml;nnen, wenn kein Alarmsensor mehr aktiv ist</li>
 <li>Erweiterung 2: An Port C (Bit 3) wird ein Relais angesteuert (High-aktiv), um einen Alarmsirene anzusteuern. Wird einmal Alarm ausgel&ouml;st, soll dieses Relais anziehen. Beim Deaktivieren des Alarms soll es wieder abfallen.</li>
 </ul>
@@ -134,7 +136,7 @@ aktiv (bzw. sollen den Alarm ausl&ouml;sen), wenn sie auf Massepotential sind (L
 <span class="nl">loop:</span>
   <span class="nf">out</span> <span class="no">PORTB</span><span class="p">,</span> <span class="no">R16</span>
   <span class="nf">inc</span> <span class="no">R16</span>
-  <span class="nf">mv</span> <span class="no">R17</span><span class="p">,</span> <span class="no">R16</span>
+  <span class="nf">mov</span> <span class="no">R17</span><span class="p">,</span> <span class="no">R16</span>
   <span class="nf">andi</span> <span class="no">R17</span><span class="p">,</span> <span class="mi">0x0F</span>
   <span class="nf">cpi</span> <span class="no">R17</span><span class="p">,</span> <span class="mi">0x0A</span>
   <span class="nf">brlo</span> <span class="no">loop</span>
@@ -276,6 +278,6 @@ Beschreibe in einem Satz die Funktion. Welchen Wert hat nach der Ausf&uuml;hrung
       </div>
     </div>
   </div>
-  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit">Günther Jena 2011 - 2016 | Letztes Update am 1.10.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/ed5e858">ed5e858</a>) <a href="https://plus.google.com/111972313670421914746/about" rel="author" class="hidden">Google+</a><a href="http://creativecommons.org/licenses/by-sa/3.0/de/" class="pull-right"><img src="https://www.semiversus.com/theme/img/cc_by_sa.svg" /></a></p></div></footer>
+  <footer class="footer hidden-print"><div class="container"><p class="text-muted credit">Günther Jena 2011 - 2016 | Letztes Update am 7.10.2016 (Rev. <a href="https://github.com/semiversus/semiversus.github.io-source/commit/2937547">2937547</a>) <a href="https://plus.google.com/111972313670421914746/about" rel="author" class="hidden">Google+</a><a href="http://creativecommons.org/licenses/by-sa/3.0/de/" class="pull-right"><img src="https://www.semiversus.com/theme/img/cc_by_sa.svg" /></a></p></div></footer>
 </body>
 </html>
