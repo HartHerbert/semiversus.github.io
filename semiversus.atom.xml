@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Semiversus Blog</title><link href="https://www.semiversus.com/" rel="alternate"></link><link href="https://www.semiversus.com/semiversus.atom.xml" rel="self"></link><id>https://www.semiversus.com/</id><updated>2016-04-03T00:00:00+02:00</updated><entry><title>Algorithmus zur Belegung der Sitzplätze</title><link href="https://www.semiversus.com/blog/algorithm.html" rel="alternate"></link><published>2016-04-03T00:00:00+02:00</published><author><name>Günther Jena</name></author><id>tag:www.semiversus.com,2016-04-03:blog/algorithm.html</id><summary type="html">&lt;p&gt;Bei jeder Konferenz das gleiche Bild: Kurz vor dem Start eines Vortrags wird deutlich darauf hingewiesen, dass niemand
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Semiversus Blog</title><link href="https://www.semiversus.com/" rel="alternate"></link><link href="https://www.semiversus.com/semiversus.atom.xml" rel="self"></link><id>https://www.semiversus.com/</id><updated>2016-10-22T00:00:00+02:00</updated><entry><title>Linuxtag in Dornbirn/Vorarlberg</title><link href="https://www.semiversus.com/blog/linuxtag.html" rel="alternate"></link><published>2016-10-22T00:00:00+02:00</published><author><name>Günther Jena</name></author><id>tag:www.semiversus.com,2016-10-22:blog/linuxtag.html</id><summary type="html">&lt;p&gt;Am 26. November 2016 ist es wieder soweit: &lt;strong&gt;Linuxtag&lt;/strong&gt; in Vorarlberg!&lt;/p&gt;
+&lt;p&gt;Ich werde dort zwei Vortr&amp;auml;ge halten:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ligthning Talk &amp;uuml;ber &lt;em&gt;Nesolution&lt;/em&gt; - Computeralgorithmen spielen Nintendo&lt;/li&gt;
+&lt;li&gt;Vortrag &amp;uuml;ber &lt;a class="external" href="https://www.linuxday.at/webseiten-erstellen-mit-pelican"&gt;statische Webseitenerstellung&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Folgende Infos stammen von der Infoseite unter &lt;a class="external" href="https://www.linuxday.at/"&gt;https://www.linuxday.at&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;Der LinuxDay in Vorarlberg ist im 4 L&amp;auml;ndereck von Deutschland, Schweiz, Liechtenstein und &amp;Ouml;sterreich mit bis zu 500
+Besuchern die gr&amp;ouml;&amp;szlig;te Veranstaltung zu Linux und Freier Software . Er wird von der Linux User Group Vorarlberg in
+Zusammenarbeit mit der HTL Dornbirn (link is external) organisiert.&lt;/p&gt;
+&lt;p&gt;Der LinuxDay ist bereits eine feste Institution in der Bodensee-Region. Tats&amp;auml;chlich ist es bereits der 18. in Serie und
+damit wohl eine der dienst&amp;auml;ltesten Veranstaltungen zu Freier Software, die immer noch regelm&amp;auml;&amp;szlig;ig stattfindet und gut
+besucht wird.&lt;/p&gt;
+&lt;p&gt;Geboten wird ein reiches Sortiment an voneinander unabh&amp;auml;ngigen Vortr&amp;auml;gen.
+In zwei parallelen Vortragsreihen erfahren Anwender, Linuxprofis bzw. Entscheidungstr&amp;auml;ger aus Wirtschaft und
+&amp;ouml;ffentlicher Verwaltung Wissenswertes &amp;uuml;ber Freie und Open Source Software. Zus&amp;auml;tzlich werden 2016 erstmalig auch 
+Workshops stattfinden.&lt;/p&gt;
+&lt;p&gt;W&amp;auml;hrend der gesamten Veranstaltung k&amp;ouml;nnen Besucher ihren zus&amp;auml;tzlichen Wissensdurst an zahlreichen Informationsst&amp;auml;nden
+international bekannter Projekte und regionaler Dienstleister stillen.
+Ein Restaurant mit g&amp;uuml;nstigen Preisen l&amp;auml;dt zum Fachsimpeln und zum Verweilen ein.&lt;/p&gt;
+&lt;p&gt;Der Eintritt ist frei!&lt;/p&gt;</summary><category term="Verschiedenes"></category></entry><entry><title>Algorithmus zur Belegung der Sitzplätze</title><link href="https://www.semiversus.com/blog/algorithm.html" rel="alternate"></link><published>2016-04-03T00:00:00+02:00</published><author><name>Günther Jena</name></author><id>tag:www.semiversus.com,2016-04-03:blog/algorithm.html</id><summary type="html">&lt;p&gt;Bei jeder Konferenz das gleiche Bild: Kurz vor dem Start eines Vortrags wird deutlich darauf hingewiesen, dass niemand
 stehen m&amp;uuml;sste, wenn alle Pl&amp;auml;tze in den Reihen gef&amp;uuml;llt w&amp;uuml;rden. Teilweise gibt es gro&amp;szlig;e L&amp;uuml;cken und man fragt sich wieso.&lt;/p&gt;
 &lt;p&gt;Das Problem ist ein menschliches - viele Teilnehmende sind bereits l&amp;auml;nger hier und fanden einen quasi freien Raum vor und
 da setzt man sich eben irgendwo hin. So langsam f&amp;uuml;llt sich der Raum, da aber das eigene Notebook, Getr&amp;auml;nke und der Snack
