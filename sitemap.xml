@@ -2,9 +2,19 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://www.semiversus.com/</loc>
-<lastmod>2016-10-22</lastmod>
+<lastmod>2016-12-30</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.00</priority>
+</url><url>
+<loc>https://www.semiversus.com/blog/spectra_physics.html</loc>
+<lastmod>2016-12-30</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.80</priority>
+</url><url>
+<loc>https://www.semiversus.com/blog/microchip_tipsntricks.html</loc>
+<lastmod>2016-11-13</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.80</priority>
 </url><url>
 <loc>https://www.semiversus.com/blog/linuxtag.html</loc>
 <lastmod>2016-10-22</lastmod>
@@ -572,7 +582,12 @@
 <priority>0.50</priority>
 </url><url>
 <loc>https://www.semiversus.com/tag_c.html</loc>
-<lastmod>2016-02-15</lastmod>
+<lastmod>2016-11-13</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.40</priority>
+</url><url>
+<loc>https://www.semiversus.com/tag_elektronik.html</loc>
+<lastmod>2016-11-13</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.40</priority>
 </url><url>
@@ -582,7 +597,7 @@
 <priority>0.40</priority>
 </url><url>
 <loc>https://www.semiversus.com/tag_programmieren.html</loc>
-<lastmod>2016-04-03</lastmod>
+<lastmod>2016-11-13</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.40</priority>
 </url><url>
@@ -592,7 +607,7 @@
 <priority>0.40</priority>
 </url><url>
 <loc>https://www.semiversus.com/tag_verschiedenes.html</loc>
-<lastmod>2016-10-22</lastmod>
+<lastmod>2016-12-30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.40</priority>
 </url><url>
