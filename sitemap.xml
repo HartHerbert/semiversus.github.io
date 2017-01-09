@@ -66,6 +66,11 @@
 <changefreq>weekly</changefreq>
 <priority>0.80</priority>
 </url><url>
+<loc>https://www.semiversus.com/dic/digitale_signalverarbeitung/signale.html</loc>
+<lastmod>2017-01-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.50</priority>
+</url><url>
 <loc>https://www.semiversus.com/dic/rechnerarchitektur/test_rechnerarchitektur.html</loc>
 <lastmod>2016-11-17</lastmod>
 <changefreq>monthly</changefreq>
@@ -127,11 +132,6 @@
 <priority>0.50</priority>
 </url><url>
 <loc>https://www.semiversus.com/dic/halbleiterelemente/bipolarer_transistor_schalter.html</loc>
-<lastmod>2016-06-06</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.50</priority>
-</url><url>
-<loc>https://www.semiversus.com/dic/digitale_signalverarbeitung/signale.html</loc>
 <lastmod>2016-06-06</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.50</priority>
